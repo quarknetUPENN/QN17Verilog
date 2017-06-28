@@ -1,0 +1,26 @@
+#--------------------------------#
+#-----RPi Communication Pins-----#
+#--------------------------------#
+//first tube, arbitrary name X
+NET "TUBEX<0>" LOC = "P142";
+NET "TUBEX<1>" LOC = "P2";	 
+NET "TUBEX<2>" LOC = "P3";	
+NET "TUBEX<3>" LOC = "P4";
+NET "TUBEX<4>" LOC = "P5";
+NET "TUBEX<5>" LOC = "P139";
+NET "TUBEX<6>" LOC = "P7";
+NET "TUBEX<7>" LOC = "P8";
+//second tube, arbitrary name Y
+NET "TUBEY<0>" LOC = "P15";
+NET "TUBEY<1>" LOC = "P14";	 
+NET "TUBEY<2>" LOC = "P21";	
+NET "TUBEY<3>" LOC = "P17";
+NET "TUBEY<4>" LOC = "P22";
+NET "TUBEY<5>" LOC = "P23";
+NET "TUBEY<6>" LOC = "P25";
+NET "TUBEY<7>" LOC = "P26";
+//control pins for FIFO
+NET "RD_CLK" LOC = "P32";
+NET "RD_EN" LOC = "P33";
+NET "RD_EMPTY" LOC = "P34";
+NET "RD_VALID" LOC = "P35";
