@@ -1,0 +1,2 @@
+verilog work "ipcore_dir/fifo128x16.v"
+verilog work "counter_8.v"

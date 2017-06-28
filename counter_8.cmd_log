@@ -1,0 +1,171 @@
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+xst -intstyle ise -ifn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.xst" -ofn "C:/Users/HEP/Documents/Quarknet 2015/counterDemo/counter_8.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc COUNTER_8.ucf -p xc3s100e-tq144-4 "counter_8.ngc" counter_8.ngd  
+map -intstyle ise -p xc3s100e-tq144-4 -cm area -ir off -pr off -c 100 -o counter_8_map.ncd counter_8.ngd counter_8.pcf 
+par -w -intstyle ise -ol high -t 1 counter_8_map.ncd counter_8.ncd counter_8.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml counter_8.twx counter_8.ncd -o counter_8.twr counter_8.pcf -ucf COUNTER_8.ucf 
+bitgen -intstyle ise -f counter_8.ut counter_8.ncd 

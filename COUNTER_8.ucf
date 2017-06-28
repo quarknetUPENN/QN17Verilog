@@ -1,0 +1,27 @@
+
+NET clk100	LOC = P126; # |  IOSTANDARD = "LVCMOS33";
+#NET "clk100" TNM_NET = "clk100";
+#TIMESPEC "TSSYSCLK" = PERIOD "clk100" 24.9 ns HIGH 50 %;
+
+#LED assignments
+#NET "LED<7>"	LOC = "P142";
+#NET "LED<6>" 	LOC = "P2";
+#NET "LED<5>" 	LOC = "P3";
+#NET "LED<4>" 	LOC = "P4";
+#NET "LED<3>" 	LOC = "P5";
+#NET "LED<2>" 	LOC = "P139";
+#NET "LED<1>" 	LOC = "P7";
+#NET "LED<0>" 	LOC = "P8";
+
+NET "DATAREADY"	LOC = "P20";
+
+#NET "LED<9>" LOC = "P23";
+#NET "LED<8>" LOC = "P22";
+NET "LED<7>" LOC = "P142";
+NET "LED<6>" LOC = "P139";	 
+NET "LED<5>" LOC = "P8";	
+NET "LED<4>" LOC = "P7";
+NET "LED<3>" LOC = "P5";
+NET "LED<2>" LOC = "P4";
+NET "LED<1>" LOC = "P3";
+NET "LED<0>" LOC = "P2";
