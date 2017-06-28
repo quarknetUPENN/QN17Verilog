@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\HEP\Documents\Quarknet 2015\counterDemo\counter_8.ncd
-OUTFILE=C:\Users\HEP\Documents\Quarknet 2015\counterDemo\counter_8.bit
-FAMILY=Spartan3E
-PART=xc3s100e-4tq144
-WORKINGDIR=C:\Users\HEP\Documents\Quarknet 2015\counterDemo
-LICENSE=ISE
-USER_INFO=176227461_174110084_210643854_909
