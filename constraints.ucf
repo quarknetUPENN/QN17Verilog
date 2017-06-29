@@ -24,3 +24,44 @@ NET "RD_CLK" LOC = "P32";
 NET "RD_EN" LOC = "P33";
 NET "RD_EMPTY" LOC = "P34";
 NET "RD_VALID" LOC = "P35";
+
+#--------------------------------#
+#---------Tube Data Pins---------#
+#--------------------------------#
+NET "TUBE3A<0>" LOC = "P53";
+NET "TUBE3A<1>" LOC = "P58";	 
+NET "TUBE3A<2>" LOC = "P67";	
+NET "TUBE3A<3>" LOC = "P74";
+NET "TUBE3A<4>" LOC = "P76";
+NET "TUBE3A<5>" LOC = "P81";
+NET "TUBE3A<6>" LOC = "P85";
+NET "TUBE3A<7>" LOC = "P87";
+
+NET "TUBE3B<0>" LOC = "P54";
+NET "TUBE3B<1>" LOC = "P59";	 
+NET "TUBE3B<2>" LOC = "P68";	
+NET "TUBE3B<3>" LOC = "P75";
+NET "TUBE3B<4>" LOC = "P77";
+NET "TUBE3B<5>" LOC = "P82";
+NET "TUBE3B<6>" LOC = "P86";
+NET "TUBE3B<7>" LOC = "P88";
+
+NET "TUBE4A<0>" LOC = "P91";
+NET "TUBE4A<1>" LOC = "P93";	 
+NET "TUBE4A<2>" LOC = "P97";	
+NET "TUBE4A<3>" LOC = "P103";
+NET "TUBE4A<4>" LOC = "P105";
+NET "TUBE4A<5>" LOC = "P112";
+NET "TUBE4A<6>" LOC = "P116";
+NET "TUBE4A<7>" LOC = "P119";
+
+NET "TUBE4B<0>" LOC = "P92";
+NET "TUBE4B<1>" LOC = "P94";	 
+NET "TUBE4B<2>" LOC = "P96";	
+NET "TUBE4B<3>" LOC = "P104";
+NET "TUBE4B<4>" LOC = "P106";
+NET "TUBE4B<5>" LOC = "P113";
+NET "TUBE4B<6>" LOC = "P117";
+NET "TUBE4B<7>" LOC = "P120";
+
+
