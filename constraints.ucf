@@ -1,24 +1,26 @@
-#--------------------------------#
-#-----RPi Communication Pins-----#
-#--------------------------------#
+NET clk100	LOC = P126; 
+
+--------------------------------#
+-----RPi Communication Pins-----#
+--------------------------------#
 //first tube, arbitrary name X
-NET "OTUBEX<0>" LOC = "P142";
-NET "OTUBEX<1>" LOC = "P2";	 
-NET "OTUBEX<2>" LOC = "P3";	
-NET "OTUBEX<3>" LOC = "P4";
-NET "OTUBEX<4>" LOC = "P5";
-NET "OTUBEX<5>" LOC = "P139";
-NET "OTUBEX<6>" LOC = "P7";
-NET "OTUBEX<7>" LOC = "P8";
+NET "OTUBEN<0>" LOC = "P142";
+NET "OTUBEN<1>" LOC = "P2";	 
+NET "OTUBEN<2>" LOC = "P3";	
+NET "OTUBEN<3>" LOC = "P4";
+NET "OTUBEN<4>" LOC = "P5";
+NET "OTUBEN<5>" LOC = "P139";
+NET "OTUBEN<6>" LOC = "P7";
+NET "OTUBEN<7>" LOC = "P8";
 //second tube, arbitrary name Y
-NET "OTUBEY<0>" LOC = "P15";
-NET "OTUBEY<1>" LOC = "P14";	 
-NET "OTUBEY<2>" LOC = "P21";	
-NET "OTUBEY<3>" LOC = "P17";
-NET "OTUBEY<4>" LOC = "P22";
-NET "OTUBEY<5>" LOC = "P23";
-NET "OTUBEY<6>" LOC = "P25";
-NET "OTUBEY<7>" LOC = "P26";
+NET "OTUBER<0>" LOC = "P15";
+NET "OTUBER<1>" LOC = "P14";	 
+NET "OTUBER<2>" LOC = "P21";	
+NET "OTUBER<3>" LOC = "P17";
+NET "OTUBER<4>" LOC = "P22";
+NET "OTUBER<5>" LOC = "P23";
+NET "OTUBER<6>" LOC = "P25";
+NET "OTUBE<7>" LOC = "P26";
 //control pins for FIFO
 NET "RD_CLK" LOC = "P32";
 NET "RD_EN" LOC = "P33";

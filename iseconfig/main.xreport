@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-06-28T17:51:03</DateModified>
+  <DateModified>2017-06-29T14:49:17</DateModified>
   <ModuleName>main</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Matthew/Documents/QN17Verilog/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Matthew/Documents/QN17Verilog\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/iseconfig/main.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog\</ImplementationReportsDirectory>
   <DateInitialized>2017-06-28T17:49:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
