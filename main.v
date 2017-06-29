@@ -19,8 +19,19 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module main(
-    input rd_clk
-    );
-
+		input SCIN_COIN,
+		input [0:7] TUBE3A,
+		input [0:7] TUBE3B,
+		input [0:7] TUBE4A,
+		input [0:7] TUBE4B,
+		
+		//RPi facing pins
+		output [0:7] OTUBEX,
+		output [0:7] OTUBEY,
+		input RD_CLK,
+		input RD_EN,
+		output RD_EMPTY,
+		output RD_VALID
+		);
 
 endmodule

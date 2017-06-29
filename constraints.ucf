@@ -2,23 +2,23 @@
 #-----RPi Communication Pins-----#
 #--------------------------------#
 //first tube, arbitrary name X
-NET "TUBEX<0>" LOC = "P142";
-NET "TUBEX<1>" LOC = "P2";	 
-NET "TUBEX<2>" LOC = "P3";	
-NET "TUBEX<3>" LOC = "P4";
-NET "TUBEX<4>" LOC = "P5";
-NET "TUBEX<5>" LOC = "P139";
-NET "TUBEX<6>" LOC = "P7";
-NET "TUBEX<7>" LOC = "P8";
+NET "OTUBEX<0>" LOC = "P142";
+NET "OTUBEX<1>" LOC = "P2";	 
+NET "OTUBEX<2>" LOC = "P3";	
+NET "OTUBEX<3>" LOC = "P4";
+NET "OTUBEX<4>" LOC = "P5";
+NET "OTUBEX<5>" LOC = "P139";
+NET "OTUBEX<6>" LOC = "P7";
+NET "OTUBEX<7>" LOC = "P8";
 //second tube, arbitrary name Y
-NET "TUBEY<0>" LOC = "P15";
-NET "TUBEY<1>" LOC = "P14";	 
-NET "TUBEY<2>" LOC = "P21";	
-NET "TUBEY<3>" LOC = "P17";
-NET "TUBEY<4>" LOC = "P22";
-NET "TUBEY<5>" LOC = "P23";
-NET "TUBEY<6>" LOC = "P25";
-NET "TUBEY<7>" LOC = "P26";
+NET "OTUBEY<0>" LOC = "P15";
+NET "OTUBEY<1>" LOC = "P14";	 
+NET "OTUBEY<2>" LOC = "P21";	
+NET "OTUBEY<3>" LOC = "P17";
+NET "OTUBEY<4>" LOC = "P22";
+NET "OTUBEY<5>" LOC = "P23";
+NET "OTUBEY<6>" LOC = "P25";
+NET "OTUBEY<7>" LOC = "P26";
 //control pins for FIFO
 NET "RD_CLK" LOC = "P32";
 NET "RD_EN" LOC = "P33";
@@ -28,6 +28,7 @@ NET "RD_VALID" LOC = "P35";
 #--------------------------------#
 #---------Tube Data Pins---------#
 #--------------------------------#
+NET "SCIN_COIN" LOC = "P128";
 NET "TUBE3A<0>" LOC = "P53";
 NET "TUBE3A<1>" LOC = "P58";	 
 NET "TUBE3A<2>" LOC = "P67";	
