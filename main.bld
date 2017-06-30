@@ -1,14 +1,13 @@
-Release 14.6 ngdbuild P.68d (nt64)
+Release 14.7 ngdbuild P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -nt timestamp -uc constraints.ucf -p xc3s100e-tq144-5
-main.ngc main.ngd
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc constraints.ucf -p
+xc3s100e-tq144-5 main.ngc main.ngd
 
 Reading NGO file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.ngc" ...
-Loading design module "C:\Users\HEP\Documents\Quarknet
-2017\QN17Verilog/main.ngc"...
-WARNING:NgdBuild:578 - Design contains no instances.
+Loading design module "ipcore_dir/fif64x256.ngc"...
+Loading design module "ipcore_dir/fif64x16.ngc"...
 Gathering constraint information from source properties...
 Done.
 
@@ -28,9 +27,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   1
+  Number of warnings:   0
 
-Total memory usage is 156508 kilobytes
+Total memory usage is 159792 kilobytes
 
 Writing NGD file "main.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec

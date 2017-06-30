@@ -20,35 +20,131 @@
 //////////////////////////////////////////////////////////////////////////////////
 module main(
 		input clk100,
+		output overflowLight,
 		input SCIN_COIN,
 		input [0:7] TUBE3A,
 		input [0:7] TUBE3B,
 		input [0:7] TUBE4A,
 		input [0:7] TUBE4B,
+
 		
 		//RPi facing pins
 		output [0:7] OTUBEN,
 		output [0:7] OTUBER,
-		input RD_CLK,
-		input RD_EN,
+		input RD_CLK1,
+		input RD_EN1,
 		output RD_EMPTY,
 		output RD_VALID);
-
-parameter clockcntrmax = 100;
-
-reg [0:255] tuberad;
+	
+		
+// a reg holding all the data from every tube sequentially
+reg [0:255] tuberad = 'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111;
+// the counter that provides timing information for each tube
 reg [0:7] cntr;
 
+// SET UP ififo
+reg ififo_rst = 0;
+reg ififo_wr_clk = 0;
+reg ififo_wr_en = 1;
+wire ififo_full = 0;
+reg ififo_rd_clk = 0;
+reg ififo_rd_en = 1;
+wire ififo_empty;
+wire [0:255] ififo_dout = 'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111;
+fif64x256 ififo(.rst(ififo_rst),
+						.wr_clk(ififo_wr_clk),
+						.din(tuberad),
+						.wr_en(ififo_wr_en),
+						.full(ififo_full),
+						.rd_clk(ififo_rd_clk),
+						.dout(ififo_dout),
+						.rd_en(ififo_rd_en),
+						.empty(ififo_empty));
+
+
+// SET UP ofifo
+reg ofifo_rst = 0;
+reg ofifo_wr_en = 1;
+wire ofifo_rd_en = 1;
+reg ofifo_wr_clk = 0;
+reg [0:15] ofifo_din;
+wire ofifo_full = 0;
+wire ofifo_rd_clk = 0;
+wire [0:15] ofifo_dout = 'b1111111111111111;
+wire ofifo_empty;
+wire ofifo_valid;
+wire [0:6] ofifo_wr_data_count = 0;
+wire buffer_ofifo_clock;
+BUFG BUFG_inst (
+	.O(buffer_ofifo_clock),     // Clock buffer output
+	.I(RD_CLK1)      				 // Clock buffer input
+);
+fif64x16 ofifo(.rst(ofifo_rst),
+					.wr_clk(ofifo_wr_clk),
+					.din(ofifo_din),
+					.wr_en(ofifo_wr_en),
+					.full(ofifo_full),
+					.rd_clk(buffered_ofifo_clock),
+					.dout(ofifo_dout),
+					.rd_en(RD_EN1),
+					.empty(ofifo_empty),
+					.valid(ofifo_valid),
+					.wr_data_count(ofifo_wr_data_count));
+
+
+
+// if the internal fifo is full, show it
+assign overflowLight = ififo_full;
+
+// make the output ofifo control pins work
+assign RD_VALID = ofifo_valid;
+assign RD_EMPTY = ofifo_empty;
+
+integer i;
+integer j;
+
+always @ (posedge ofifo_empty) begin
+	ififo_rd_clk = 1;
+	#30 ififo_rd_clk = 0;
+	
+   for (i = 0; i < 32; i = i +1) begin
+		j = 8*i+7;
+		if (j < 64) begin
+			ofifo_din[0:4] = 'b1100;
+		end else if (j < 128) begin
+			ofifo_din[0:4] = 'b1101;
+		end else if (j < 192) begin
+			ofifo_din[0:4] = 'b0010;
+		end else if (j < 256) begin
+			ofifo_din[0:4] = 'b0011;
+		end else begin
+			ofifo_din[0:4] = 'b1111;
+		end
+		ofifo_din[5:7] = i % 7;
+     	//ofifo_din[8:15] = tuberad[j-7+:8];  //this should work but I'm getting multiple driver errors on tuberad
+		//interestingly if I decrease the loop counts, the section of tuberad it's complaining about changes
+		ofifo_wr_clk = 1;
+		#30 ofifo_wr_clk = 0;
+  	end
+	//parse and add ififo_dout to ofifo_din
+end
+
+
+
+
 always @ (posedge clk100) begin
-		cntr <=cntr + 1;
+	cntr <= cntr + 1;
 end
 
 always @ (posedge SCIN_COIN) begin
-		cntr = 0;
+	cntr = 0;
+	#320 ififo_wr_clk = 1;
+	#30 ififo_wr_clk = 0;
+	tuberad <= 'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111;
 end
 
 always @ (posedge TUBE3A[0]) begin
-	tuberad[0:7] = cntr;
+	tuberad[0:7] = cntr; 
 end
 
 always @ (posedge TUBE3A[1]) begin
