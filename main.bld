@@ -6,6 +6,9 @@ Command Line: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 main.ngc main.ngd
 
 Reading NGO file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.ngc" ...
+Loading design module "C:\Users\HEP\Documents\Quarknet
+2017\QN17Verilog/main.ngc"...
+WARNING:NgdBuild:578 - Design contains no instances.
 Gathering constraint information from source properties...
 Done.
 
@@ -25,12 +28,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   0
+  Number of warnings:   1
 
-Total memory usage is 156636 kilobytes
+Total memory usage is 156508 kilobytes
 
 Writing NGD file "main.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total CPU time to NGDBUILD completion:   4 sec
 
 Writing NGDBUILD log file "main.bld"...

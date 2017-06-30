@@ -34,10 +34,10 @@ module main(
 		output RD_EMPTY,
 		output RD_VALID);
 
-parameter clockcntrmax = 100
+parameter clockcntrmax = 100;
 
-reg tuberad [0:255]= {256{1'b1}}
-reg [0:7] cntr
+reg [0:255] tuberad;
+reg [0:7] cntr;
 
 always @ (posedge clk100) begin
 		cntr <=cntr + 1;
@@ -151,6 +151,7 @@ end
 always @ (posedge TUBE4B[0]) begin
 	tuberad[192:199] = cntr;
 end
+
 always @ (posedge TUBE4B[1]) begin
 	tuberad[200:207] = cntr;
 end

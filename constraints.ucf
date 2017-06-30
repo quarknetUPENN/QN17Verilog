@@ -1,8 +1,8 @@
 NET clk100	LOC = P126; 
 
---------------------------------#
------RPi Communication Pins-----#
---------------------------------#
+#--------------------------------#
+#-----RPi Communication Pins-----#
+#--------------------------------#
 //first tube, arbitrary name X
 NET "OTUBEN<0>" LOC = "P142";
 NET "OTUBEN<1>" LOC = "P2";	 
@@ -20,7 +20,7 @@ NET "OTUBER<3>" LOC = "P17";
 NET "OTUBER<4>" LOC = "P22";
 NET "OTUBER<5>" LOC = "P23";
 NET "OTUBER<6>" LOC = "P25";
-NET "OTUBE<7>" LOC = "P26";
+NET "OTUBER<7>" LOC = "P26";
 //control pins for FIFO
 NET "RD_CLK" LOC = "P32";
 NET "RD_EN" LOC = "P33";

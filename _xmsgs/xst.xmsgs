@@ -5,22 +5,28 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompilers" num="26" delta="old" >&quot;<arg fmt="%s" index="1">main.v</arg>&quot; line <arg fmt="%d" index="2">37</arg> <arg fmt="%s" index="3">unexpected token: &apos;100&apos;</arg>
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">RD_EN</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="old" >&quot;<arg fmt="%s" index="1">main.v</arg>&quot; line <arg fmt="%d" index="2">39</arg> <arg fmt="%s" index="3">expecting &apos;:&apos;, found &apos;]&apos;</arg>
+<msg type="warning" file="Xst" num="1306" delta="new" >Output &lt;<arg fmt="%s" index="1">RD_VALID</arg>&gt; is never assigned.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="old" >&quot;<arg fmt="%s" index="1">main.v</arg>&quot; line <arg fmt="%d" index="2">42</arg> <arg fmt="%s" index="3">expecting &apos;;&apos;, found &apos;)&apos;</arg>
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">RD_CLK</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="new" >&quot;<arg fmt="%s" index="1">main.v</arg>&quot; line <arg fmt="%d" index="2">43</arg> <arg fmt="%s" index="3">unexpected token: &apos;&lt;=&apos;</arg>
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">SCIN_COIN</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="old" >&quot;<arg fmt="%s" index="1">main.v</arg>&quot; line <arg fmt="%d" index="2">43</arg> <arg fmt="%s" index="3">unexpected token: &apos;+&apos;</arg>
+<msg type="warning" file="Xst" num="1306" delta="new" >Output &lt;<arg fmt="%s" index="1">RD_EMPTY</arg>&gt; is never assigned.
 </msg>
 
-<msg type="error" file="HDLCompilers" num="26" delta="old" >&quot;<arg fmt="%s" index="1">main.v</arg>&quot; line <arg fmt="%d" index="2">43</arg> <arg fmt="%s" index="3">expecting &apos;endmodule&apos;, found &apos;1&apos;</arg>
+<msg type="warning" file="Xst" num="1306" delta="new" >Output &lt;<arg fmt="%s" index="1">OTUBEN</arg>&gt; is never assigned.
+</msg>
+
+<msg type="warning" file="Xst" num="1306" delta="new" >Output &lt;<arg fmt="%s" index="1">OTUBER</arg>&gt; is never assigned.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">tuberad</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
 </messages>

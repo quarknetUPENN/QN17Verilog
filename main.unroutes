@@ -1,13 +1,69 @@
 Release 14.6 - par P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Jun 29 16:46:02 2017
+Fri Jun 30 10:30:11 2017
 
 All signals are completely routed.
 
-WARNING:ParHelpers:361 - There are 1 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:362 - There are 18 sourceless signals in this design. This design will not pass the DRC check run by
+   Bitgen.
+
+   OTUBEN<0>_OBUF
+   OTUBEN<1>_OBUF
+   OTUBEN<2>_OBUF
+   OTUBEN<3>_OBUF
+   OTUBEN<4>_OBUF
+   OTUBEN<5>_OBUF
+   OTUBEN<6>_OBUF
+   OTUBEN<7>_OBUF
+   OTUBER<0>_OBUF
+   OTUBER<1>_OBUF
+   OTUBER<2>_OBUF
+   OTUBER<3>_OBUF
+   OTUBER<4>_OBUF
+   OTUBER<5>_OBUF
+   OTUBER<6>_OBUF
+   OTUBER<7>_OBUF
+   RD_EMPTY_OBUF
+   RD_VALID_OBUF
+WARNING:ParHelpers:361 - There are 36 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
+   RD_CLK_IBUF
+   RD_EN_IBUF
+   SCIN_COIN_IBUF
+   TUBE3A<0>_IBUF
+   TUBE3A<1>_IBUF
+   TUBE3A<2>_IBUF
+   TUBE3A<3>_IBUF
+   TUBE3A<4>_IBUF
+   TUBE3A<5>_IBUF
+   TUBE3A<6>_IBUF
+   TUBE3A<7>_IBUF
+   TUBE3B<0>_IBUF
+   TUBE3B<1>_IBUF
+   TUBE3B<2>_IBUF
+   TUBE3B<3>_IBUF
+   TUBE3B<4>_IBUF
+   TUBE3B<5>_IBUF
+   TUBE3B<6>_IBUF
+   TUBE3B<7>_IBUF
+   TUBE4A<0>_IBUF
+   TUBE4A<1>_IBUF
+   TUBE4A<2>_IBUF
+   TUBE4A<3>_IBUF
+   TUBE4A<4>_IBUF
+   TUBE4A<5>_IBUF
+   TUBE4A<6>_IBUF
+   TUBE4A<7>_IBUF
+   TUBE4B<0>_IBUF
+   TUBE4B<1>_IBUF
+   TUBE4B<2>_IBUF
+   TUBE4B<3>_IBUF
+   TUBE4B<4>_IBUF
+   TUBE4B<5>_IBUF
+   TUBE4B<6>_IBUF
+   TUBE4B<7>_IBUF
    clk100_IBUF
 
 

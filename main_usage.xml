@@ -4,8 +4,8 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="32">
-<DesignStatistics TimeStamp="Thu Jun 29 16:46:17 2017"><group name="NetStatistics">
+<DeviceUsageSummary rev="33">
+<DesignStatistics TimeStamp="Fri Jun 30 10:30:02 2017"><group name="NetStatistics">
 <item name="NumNets_Active" rev="32">
 <attrib name="value" value="10"/></item>
 <item name="NumNets_Gnd" rev="32">
@@ -32,31 +32,16 @@
 <attrib name="value" value="3"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="31">
-<attrib name="value" value="9"/></item>
-<item name="AGG_IO" rev="31">
-<attrib name="value" value="9"/></item>
-<item name="NUM_BONDED_IBUF" rev="31">
-<attrib name="value" value="1"/></item>
-<item name="NUM_BONDED_IOB" rev="31">
-<attrib name="value" value="8"/></item>
+<item name="AGG_BONDED_IO" rev="33">
+<attrib name="value" value="54"/></item>
+<item name="AGG_IO" rev="33">
+<attrib name="value" value="54"/></item>
+<item name="NUM_BONDED_IBUF" rev="33">
+<attrib name="value" value="36"/></item>
+<item name="NUM_BONDED_IOB" rev="33">
+<attrib name="value" value="18"/></item>
 </group>
 </DesignStatistics>
-<DeviceUsage TimeStamp="Thu Jun 29 16:46:17 2017"><group name="SiteSummary">
-<item name="IBUF" rev="32">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="IBUF_INBUF" rev="32">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="IBUF_PAD" rev="32">
-<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
-<item name="IOB" rev="32">
-<attrib name="total" value="1000000"/><attrib name="used" value="8"/></item>
-<item name="IOB_OUTBUF" rev="32">
-<attrib name="total" value="1000000"/><attrib name="used" value="8"/></item>
-<item name="IOB_PAD" rev="32">
-<attrib name="total" value="1000000"/><attrib name="used" value="8"/></item>
-</group>
-</DeviceUsage>
 <ReportConfigData TimeStamp="Thu Jun 29 16:46:17 2017"><group name="IBUF_PAD">
 <item name="IOATTRBOX" rev="32">
 <attrib name="LVCMOS25" value="1"/></item>
