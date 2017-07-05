@@ -1,0 +1,94 @@
+
+****** PlanAhead v14.6 (64-bit)
+  **** Build 269223 by xbuild on Wed Jun  5 11:14:03 MDT 2013
+    ** Copyright 1986-1999, 2001-2012 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.6/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.6/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.6/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source {C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/pa.fromNetlist.tcl}
+# create_project -name doublebuffer -dir "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/planAhead_run_2" -part xc3s100etq144-5
+create_project: Time (s): elapsed = 00:00:06 . Memory (MB): peak = 402.609 ; gain = 73.801
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog} {ipcore_dir} }
+# add_files [list {ipcore_dir/fif64x16.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/fif64x256.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/fifo128x256.ncf}] -fileset [get_property constrset [current_run]]
+# set_property target_constrs_file "constraints.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/constraints.ucf' to fileset 'constrs_1'
+# add_files [list {constraints.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc3s100etq144-5
+Release 14.6 - ngc2edif P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design main.ngc ...
+WARNING:NetListWriters:298 - No output is written to main.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file main.edif ...
+ngc2edif: Total memory usage is 81064 kilobytes
+
+Parsing EDIF File [./planAhead_run_2/doublebuffer.data/cache/main_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_2/doublebuffer.data/cache/main_ngc_zx.edif]
+Release 14.6 - ngc2edif P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design fif64x256.ngc ...
+WARNING:NetListWriters:298 - No output is written to fif64x256.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fif64x256.edif ...
+ngc2edif: Total memory usage is 81064 kilobytes
+
+Reading core file 'C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/fif64x256.ngc' for (cell view 'fif64x256', library 'main_lib', file 'main.ngc')
+Parsing EDIF File [./planAhead_run_2/doublebuffer.data/cache/fif64x256_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_2/doublebuffer.data/cache/fif64x256_ngc_zx.edif]
+Release 14.6 - ngc2edif P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design fif64x16.ngc ...
+WARNING:NetListWriters:298 - No output is written to fif64x16.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file fif64x16.edif ...
+ngc2edif: Total memory usage is 80936 kilobytes
+
+Reading core file 'C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/fif64x16.ngc' for (cell view 'fif64x16', library 'main_lib', file 'main.ngc')
+Parsing EDIF File [./planAhead_run_2/doublebuffer.data/cache/fif64x16_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_2/doublebuffer.data/cache/fif64x16_ngc_zx.edif]
+INFO: [Designutils 20-910] Reading macro library C:/Xilinx/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
+Parsing EDIF File [C:/Xilinx/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Finished Parsing EDIF File [C:/Xilinx/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn]
+Loading clock regions from C:/Xilinx/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s100e/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s100e/ClockBuffers.xml
+Loading package from C:/Xilinx/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s100e/tq144/Package.xml
+Loading io standards from C:/Xilinx/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/IOStandards.xml
+INFO: [Device 21-19] Loading pkg sso from C:/Xilinx/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/xc3s100e/tq144/SSORules.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.6/ISE_DS/PlanAhead/data\./parts/xilinx/spartan3e/spartan3e/drc.xml
+INFO: [Timing 38-77] Reading timing library C:/Xilinx/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/spartan3e-5.lib.
+INFO: [Timing 38-34] Done reading timing library C:/Xilinx/14.6/ISE_DS/PlanAhead/data\parts/xilinx/spartan3e/spartan3e/spartan3e-5.lib.
+Parsing UCF File [C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/fif64x16.ncf]
+Finished Parsing UCF File [C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/fif64x16.ncf]
+Parsing UCF File [C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/fif64x256.ncf]
+Finished Parsing UCF File [C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/fif64x256.ncf]
+Parsing UCF File [C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/constraints.ucf]
+Finished Parsing UCF File [C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/constraints.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: edb8db72
+link_design: Time (s): elapsed = 00:00:38 . Memory (MB): peak = 521.348 ; gain = 118.738
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Wed Jul 05 11:26:49 2017...
+INFO: [Common 17-83] Releasing license: PlanAhead

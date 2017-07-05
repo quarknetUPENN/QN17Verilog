@@ -2,25 +2,25 @@ NET "clk100" LOC = "P126";
 
 NET "overflowLight" LOC = "P20";
 
-##--------------------------------#
-##-----RPi Communication Pins-----#
-##--------------------------------#
-#NET "OTUBEN<0>" LOC = "P142";
-#NET "OTUBEN<1>" LOC = "P2";	 
-#NET "OTUBEN<2>" LOC = "P3";	
-#NET "OTUBEN<3>" LOC = "P4";
-#NET "OTUBEN<4>" LOC = "P5";
-#NET "OTUBEN<5>" LOC = "P139";
-#NET "OTUBEN<6>" LOC = "P7";
-#NET "OTUBEN<7>" LOC = "P8";
-#NET "OTUBER<0>" LOC = "P15";
-#NET "OTUBER<1>" LOC = "P14";	 
-#NET "OTUBER<2>" LOC = "P21";	
-#NET "OTUBER<3>" LOC = "P17";
-#NET "OTUBER<4>" LOC = "P22";
-#NET "OTUBER<5>" LOC = "P23";
-#NET "OTUBER<6>" LOC = "P25";
-#NET "OTUBER<7>" LOC = "P26";
+#--------------------------------#
+#-----RPi Communication Pins-----#
+#--------------------------------#
+NET "OTUBE<0>" LOC = "P142";
+NET "OTUBE<1>" LOC = "P2";	 
+NET "OTUBE<2>" LOC = "P3";	
+NET "OTUBE<3>" LOC = "P4";
+NET "OTUBE<4>" LOC = "P5";
+NET "OTUBE<5>" LOC = "P139";
+NET "OTUBE<6>" LOC = "P7";
+NET "OTUBE<7>" LOC = "P8";
+NET "OTUBE<8>" LOC = "P15";
+NET "OTUBE<9>" LOC = "P14";	 
+NET "OTUBE<10>" LOC = "P21";	
+NET "OTUBE<11>" LOC = "P17";
+NET "OTUBE<12>" LOC = "P22";
+NET "OTUBE<13>" LOC = "P23";
+NET "OTUBE<14>" LOC = "P25";
+NET "OTUBE<15>" LOC = "P26";
 //control pins for FIFO
 NET "RD_CLK1" LOC = "P32";
 NET "RD_EN1" LOC = "P33";

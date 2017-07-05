@@ -110,7 +110,24 @@
 <msg type="warning" file="Par" num="288" delta="old" >The signal <arg fmt="%s" index="1">SCIN_COIN_IBUF</arg> has no load.  PAR will not attempt to route this signal.
 </msg>
 
+<msg type="error" file="Place" num="1018" delta="old" >A clock IOB / clock component pair have been found that are not placed at an optimal clock IOB / clock site pair. The clock component &lt;<arg fmt="%s" index="1">BUFG_inst</arg>&gt; is placed at site &lt;<arg fmt="%s" index="2">BUFGMUX_X1Y1</arg>&gt;. The IO component &lt;<arg fmt="%s" index="3">RD_CLK1</arg>&gt; is placed at site &lt;<arg fmt="%s" index="4">P32</arg>&gt;.  This will not allow the use of the fast path between the IO and the Clock buffer. If this sub optimal condition is acceptable for this design, you may use the CLOCK_DEDICATED_ROUTE constraint in the .ucf file to demote this message to a WARNING and allow your design to continue. However, the use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design. A list of all the COMP.PINs used in this clock placement rule is listed below. These examples can be used directly in the .ucf file to override this clock rule.
+<arg fmt="%s" index="5">&lt; NET &quot;RD_CLK1&quot; CLOCK_DEDICATED_ROUTE = FALSE; &gt;
+</arg>
+</msg>
+
+<msg type="warning" file="ParHelpers" num="360" delta="old" >Design is not completely routed.
+
+</msg>
+
 <msg type="warning" file="ParHelpers" num="361" delta="old" >There are <arg fmt="%d" index="1">34</arg> loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+</msg>
+
+<msg type="warning" file="Par" num="100" delta="old" >Design is not completely routed. There are <arg fmt="%d" index="1">191</arg> signals that are not
+completely routed in this design. See the &quot;<arg fmt="%s" index="2">main.unroutes</arg>&quot; file for a list of
+all unrouted signals. Check for other warnings in your PAR report that might
+indicate why these nets are unroutable. These nets can also be evaluated
+in FPGA Editor by selecting &quot;Unrouted Nets&quot; in the List Window.
 
 </msg>
 

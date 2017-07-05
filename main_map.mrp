@@ -1,4 +1,4 @@
-Release 14.7 Map P.20131013 (nt64)
+Release 14.6 Map P.68d (nt64)
 Xilinx Mapping Report File for Design 'main'
 
 Design Information
@@ -9,24 +9,30 @@ Target Device  : xc3s100e
 Target Package : tq144
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed Jul 05 09:28:24 2017
+Mapped Date    : Wed Jul 05 13:28:59 2017
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:   36
+Number of warnings:   58
 Logic Utilization:
+  Number of Slice Flip Flops:           125 out of   1,920    6%
+  Number of 4 input LUTs:                71 out of   1,920    3%
 Logic Distribution:
-    Number of Slices containing only related logic:       0 out of       0   0%
-    Number of Slices containing unrelated logic:          0 out of       0   0%
+  Number of occupied Slices:             88 out of     960    9%
+    Number of Slices containing only related logic:      88 out of      88 100%
+    Number of Slices containing unrelated logic:          0 out of      88   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Number of bonded IOBs:                 37 out of     108   34%
+  Total Number of 4 input LUTs:          71 out of   1,920    3%
+  Number of bonded IOBs:                 55 out of     108   50%
+  Number of RAMB16s:                      2 out of       4   50%
+  Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                0.00
+Average Fanout of Non-Clock Nets:                2.22
 
-Peak Memory Usage:  269 MB
+Peak Memory Usage:  270 MB
 Total REAL time to MAP completion:  2 secs 
-Total CPU time to MAP completion:   1 secs 
+Total CPU time to MAP completion:   2 secs 
 
 NOTES:
 
@@ -67,10 +73,6 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:MapLib:701 - Signal RD_EN1 connected to top level port RD_EN1 has been
-   removed.
-WARNING:MapLib:701 - Signal RD_CLK1 connected to top level port RD_CLK1 has been
-   removed.
 WARNING:PhysDesignRules:367 - The signal <clk100_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <TUBE3A<0>_IBUF> is incomplete. The
@@ -139,17 +141,113 @@ WARNING:PhysDesignRules:367 - The signal <TUBE4B<7>_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SCIN_COIN_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB8> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB9> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB10> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB11> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB12> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB13> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB14> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB15> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB16> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB17> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB18> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB19> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB20> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB21> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB22> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB23> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB24> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB25> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB26> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB27> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB28> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB29> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB30> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
+WARNING:PhysDesignRules:812 - Dangling pin <DOB31> on
+   block:<ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/
+   gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].
+   ram.r/s3_noinit.ram/dpram.dp36x36.ram.B>:<RAMB16_RAMB16B>.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network OTUBEN<0> has no load.
-INFO:LIT:395 - The above info message is repeated 321 more times for the
+INFO:LIT:243 - Logical network clk100_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 289 more times for the
    following (max. 5 shown):
-   OTUBEN<1>,
-   OTUBEN<2>,
-   OTUBEN<3>,
-   OTUBEN<4>,
-   OTUBEN<5>
+   SCIN_COIN_IBUF,
+   TUBE3A<0>_IBUF,
+   TUBE3A<1>_IBUF,
+   TUBE3A<2>_IBUF,
+   TUBE3A<3>_IBUF
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -158,9 +256,9 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
- 371 block(s) removed
-   4 block(s) optimized away
- 634 signal(s) removed
+  83 block(s) removed
+  72 block(s) optimized away
+ 361 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -175,11 +273,6 @@ To quickly locate the original cause for the removal of a chain of logic, look
 above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
-Loadless block "BUFG_inst" (CKBUF) removed.
- The signal "RD_CLK1_IBUFG" is loadless and has been removed.
-  Loadless block "RD_CLK1_IBUFG" (CKBUF) removed.
-   The signal "RD_CLK1" is loadless and has been removed.
-    Loadless block "RD_CLK1" (PAD) removed.
 The signal
 "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
 sts/ram_full_i" is sourceless and has been removed.
@@ -431,945 +524,390 @@ The signal "ififo/dout<11>" is sourceless and has been removed.
 The signal "ififo/dout<10>" is sourceless and has been removed.
 The signal "ififo/dout<9>" is sourceless and has been removed.
 The signal "ififo/dout<8>" is sourceless and has been removed.
-The signal "ififo/N0" is sourceless and has been removed.
- Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg" (FF)
-removed.
-  The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg"
-is sourceless and has been removed.
-   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1" (FF)
-removed.
-    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1" is
-sourceless and has been removed.
-     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2" (FF)
-removed.
-      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2" is
-sourceless and has been removed.
-       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb1" (ROM)
-removed.
-        The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb"
-is sourceless and has been removed.
-         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1" (FF)
-removed.
-          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<1>" is
-sourceless and has been removed.
-           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_4" (FF) removed.
-            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<4>" is sourceless and has been removed.
-             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_4" (FF) removed.
-              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<4>" is sourceless and has been removed.
-               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_4" (FF) removed.
-                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<4>" is sourceless and has been removed.
-                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0001_Result1" (ROM) removed.
-                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0001" is sourceless and has been removed.
-                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_3" (FF) removed.
-                    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<3>" is sourceless and has been removed.
-                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_3" (FF) removed.
-                      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<3>" is sourceless and has been removed.
-                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_3" (FF) removed.
-                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<3>" is sourceless and has been removed.
-                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00011" (ROM) removed.
-                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0001" is sourceless and has been removed.
-                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_3" (FF) removed.
-                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<3>" is sourceless and has been removed.
-                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000053" (ROM) removed.
-                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000053" is sourceless and has been removed.
-                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000218_SW0" (ROM) removed.
-                                The signal "ififo/N35" is sourceless and has been removed.
-                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000218" (ROM) removed.
-                                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000" is sourceless and has been removed.
-                                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i" (FF) removed.
-                                    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i" is sourceless and has been removed.
-                                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_r
-d_en1" (ROM) removed.
-                                      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_r
-d_en" is sourceless and has been removed.
-                                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/ram_rd
-_en_i1" (ROM) removed.
-                                      The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_rd_en" is
-sourceless and has been removed.
-                                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_0" (FF) removed.
-                                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<0>" is sourceless and has been removed.
-                                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0004_Result1" (ROM) removed.
-                                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0004" is sourceless and has been removed.
-                                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_0" (FF) removed.
-                                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<0>" is sourceless and has been removed.
-                                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_0" (FF) removed.
-                                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<0>" is sourceless and has been removed.
-                                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_0" (FF) removed.
-                                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<0>" is sourceless and has been removed.
-                                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00041" (ROM) removed.
-*The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0004" is sourceless and has been removed.
-* Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_0" (FF) removed.
-*  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<0>" is sourceless and has been removed.
-*   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000191" (ROM) removed.
-*    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000191" is sourceless and has been removed.
-*     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000230" (ROM) removed.
-*      The signal
+The signal
 "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
 sts/ram_full_i_mux0000" is sourceless and has been removed.
-*       Sourceless block
+ Sourceless block
 "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
 sts/ram_full_i" (FF) removed.
-*       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_fb_i" (FF) removed.
-*        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_fb_i" is sourceless and has been removed.
-*         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr
-_en_i1" (ROM) removed.
-*          The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en" is
+The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2" is
 sourceless and has been removed.
-*           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_3" (FF) removed.
-*            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<3>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_3" (FF) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<3>" is sourceless and has been removed.
-*               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_3" (FF) removed.
-*                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<3>" is sourceless and has been removed.
-*                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0002_Result1" (ROM) removed.
-*                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0002" is sourceless and has been removed.
-*                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_2" (FF) removed.
-*                    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<2>" is sourceless and has been removed.
-*                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_2" (FF) removed.
-*                      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<2>" is sourceless and has been removed.
-*                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_2" (FF) removed.
-*                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<2>" is sourceless and has been removed.
-*                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00021" (ROM) removed.
-*                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0002" is sourceless and has been removed.
-*                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_2" (FF) removed.
-*                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<2>" is sourceless and has been removed.
-*                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000080" (ROM) removed.
-*                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000080" is sourceless and has been removed.
-*                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000191" (ROM) removed.
-*                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000191" is sourceless and has been removed.
-*                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00032" (ROM) removed.
-*                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0003" is sourceless and has been removed.
-*                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_1" (FF) removed.
-*                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<1>" is sourceless and has been removed.
-*                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129" (ROM) removed.
-*                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129/O" is sourceless and has been removed.
-*                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129/LUT4_L_BUF" (BUF) removed.
-*                                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129" is sourceless and has been removed.
-*                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00041" (ROM) removed.
-*                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0004" is sourceless and has been removed.
-*                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_0" (FF) removed.
-*                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<0>" is sourceless and has been removed.
-*                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000026" (ROM) removed.
-*                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000026/O" is sourceless and has been removed.
-*                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000026/LUT4_L_BUF" (BUF) removed.
-*                                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000026" is sourceless and has been removed.
-*               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000053" (ROM) removed.
-*                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000053" is sourceless and has been removed.
-*                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000095" (ROM) removed.
-*                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000095" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<4>11" (ROM) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<4>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<5>11" (ROM) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<5>" is sourceless and has been removed.
-*               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_5" (FF) removed.
-*                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<5>" is sourceless and has been removed.
-*                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_5" (FF) removed.
-*                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<5>" is sourceless and has been removed.
-*                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_5" (FF) removed.
-*                    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<5>" is sourceless and has been removed.
-*                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_5" (FF) removed.
-*                      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<5>" is sourceless and has been removed.
-*                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_5" (FF) removed.
-*                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<5>" is sourceless and has been removed.
-*                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_5" (FF) removed.
-*                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<5>" is sourceless and has been removed.
-*                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_5" (FF) removed.
-*                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<5>" is sourceless and has been removed.
-*                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000164" (ROM) removed.
-*                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000164" is sourceless and has been removed.
-*                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00001" (ROM) removed.
-*                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0000" is sourceless and has been removed.
-*                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_4" (FF) removed.
-*                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<4>" is sourceless and has been removed.
-*                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129_SW0" (ROM) removed.
-*                                The signal "ififo/N37" is sourceless and has been removed.
-*                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0000_Result1" (ROM) removed.
-*                      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0000" is sourceless and has been removed.
-*                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_4" (FF) removed.
-*                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<4>" is sourceless and has been removed.
-*                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_4" (FF) removed.
-*                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<4>" is sourceless and has been removed.
-*                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_4" (FF) removed.
-*                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<4>" is sourceless and has been removed.
-*                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000026" (ROM) removed.
-*                    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000026/O" is sourceless and has been removed.
-*                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000026/LUT4_L_BUF" (BUF) removed.
-*                      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000026" is sourceless and has been removed.
-*                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000207_SW0" (ROM) removed.
-*                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000207_SW0/O" is sourceless and has been removed.
-*                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000207_SW0/LUT4_L_BUF" (BUF) removed.
-*                    The signal "ififo/N33" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000164" (ROM) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000164" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<3>12" (ROM) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<3>" is sourceless and has been removed.
-*           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_2" (FF) removed.
-*            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<2>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_2" (FF) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<2>" is sourceless and has been removed.
-*               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_2" (FF) removed.
-*                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<2>" is sourceless and has been removed.
-*                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0003_Result1" (ROM) removed.
-*                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0003" is sourceless and has been removed.
-*                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_1" (FF) removed.
-*                    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<1>" is sourceless and has been removed.
-*                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_1" (FF) removed.
-*                      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<1>" is sourceless and has been removed.
-*                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_1" (FF) removed.
-*                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<1>" is sourceless and has been removed.
-*               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000080" (ROM) removed.
-*                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000080" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<2>11" (ROM) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<2>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<3>111" (ROM) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-N2" is sourceless and has been removed.
-*               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<3>111/LUT3_D_BUF" (BUF) removed.
-*                The signal "ififo/N40" is sourceless and has been removed.
-*           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_1" (FF) removed.
-*            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<1>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_1" (FF) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<1>" is sourceless and has been removed.
-*               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_1" (FF) removed.
-*                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<1>" is sourceless and has been removed.
-*                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0004_Result1" (ROM) removed.
-*                  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0004" is sourceless and has been removed.
-*                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_0" (FF) removed.
-*                    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<0>" is sourceless and has been removed.
-*                     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_0" (FF) removed.
-*                      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<0>" is sourceless and has been removed.
-*                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_0" (FF) removed.
-*                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<0>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<1>11" (ROM) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<1>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000127" (ROM) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000127" is sourceless and has been removed.
-*           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_0" (FF) removed.
-*            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<0>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_0" (FF) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<0>" is sourceless and has been removed.
-*               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_0" (FF) removed.
-*                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<0>" is sourceless and has been removed.
-*             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<0>11_INV_0" (BUF) removed.
-*              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<0>" is sourceless and has been removed.
-                                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_1" (FF) removed.
-                                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<1>" is sourceless and has been removed.
-                                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0003_Result1" (ROM) removed.
-                                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0003" is sourceless and has been removed.
-                                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_1" (FF) removed.
-                                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<1>" is sourceless and has been removed.
-                                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_1" (FF) removed.
-                                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<1>" is sourceless and has been removed.
-                                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_1" (FF) removed.
-                                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<1>" is sourceless and has been removed.
-                                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00032" (ROM) removed.
-*The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0003" is sourceless and has been removed.
-* Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_1" (FF) removed.
-*  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<1>" is sourceless and has been removed.
-                                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_2" (FF) removed.
-                                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<2>" is sourceless and has been removed.
-                                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0002_Result1" (ROM) removed.
-                                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0002" is sourceless and has been removed.
-                                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_2" (FF) removed.
-                                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<2>" is sourceless and has been removed.
-                                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_2" (FF) removed.
-                                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<2>" is sourceless and has been removed.
-                                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_2" (FF) removed.
-                                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<2>" is sourceless and has been removed.
-                                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00021" (ROM) removed.
-*The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0002" is sourceless and has been removed.
-* Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_2" (FF) removed.
-*  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<2>" is sourceless and has been removed.
-                                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_3" (FF) removed.
-                                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<3>" is sourceless and has been removed.
-                                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0001_Result1" (ROM) removed.
-                                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0001" is sourceless and has been removed.
-                                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_3" (FF) removed.
-                                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<3>" is sourceless and has been removed.
-                                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_3" (FF) removed.
-                                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<3>" is sourceless and has been removed.
-                                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_3" (FF) removed.
-                                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<3>" is sourceless and has been removed.
-                                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00011" (ROM) removed.
-*The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0001" is sourceless and has been removed.
-* Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_3" (FF) removed.
-*  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<3>" is sourceless and has been removed.
-                                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_4" (FF) removed.
-                                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<4>" is sourceless and has been removed.
-                                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0000_Result1" (ROM) removed.
-                                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0000" is sourceless and has been removed.
-                                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_4" (FF) removed.
-                                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<4>" is sourceless and has been removed.
-                                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_4" (FF) removed.
-                                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<4>" is sourceless and has been removed.
-                                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_4" (FF) removed.
-                                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<4>" is sourceless and has been removed.
-                                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00001" (ROM) removed.
-*The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0000" is sourceless and has been removed.
-* Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_4" (FF) removed.
-*  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<4>" is sourceless and has been removed.
-                                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_5" (FF) removed.
-                                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<5>" is sourceless and has been removed.
-                                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_5" (FF) removed.
-                                          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<5>" is sourceless and has been removed.
-                                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_5" (FF) removed.
-                                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<5>" is sourceless and has been removed.
-                                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_5" (FF) removed.
-                                              The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<5>" is sourceless and has been removed.
-                                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_5" (FF) removed.
-                                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<5>" is sourceless and has been removed.
-                                       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_0" (FF) removed.
-                                        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<0>" is sourceless and has been removed.
-                                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<1>11" (ROM) removed.
-                                          The signal "ififo/Result<1>" is sourceless and has been removed.
-                                           Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_1" (FF) removed.
-                                            The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<1>" is sourceless and has been removed.
-                                             Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<2>11" (ROM) removed.
-                                              The signal "ififo/Result<2>" is sourceless and has been removed.
-                                               Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_2" (FF) removed.
-                                                The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<2>" is sourceless and has been removed.
-                                                 Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<3>11" (ROM) removed.
-*The signal "ififo/Result<3>" is sourceless and has been removed.
-* Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_3" (FF) removed.
-*  The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<3>" is sourceless and has been removed.
-*   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_cy<3>11" (ROM) removed.
-*    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_cy<3>" is sourceless and has been removed.
-*     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<5>11" (ROM) removed.
-*      The signal "ififo/Result<5>" is sourceless and has been removed.
-*       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_5" (FF) removed.
-*        The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<5>" is sourceless and has been removed.
-*     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_cy<3>11/LUT4_D_BUF" (BUF) removed.
-*      The signal "ififo/N41" is sourceless and has been removed.
-*       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<4>11" (ROM) removed.
-*        The signal "ififo/Result<4>" is sourceless and has been removed.
-*         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_4" (FF) removed.
-*          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<4>" is sourceless and has been removed.
-                                         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<0>11_INV_0" (BUF) removed.
-                                          The signal "ififo/Result<0>" is sourceless and has been removed.
-                                   Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_i" (FF) removed.
-                                    The signal "ififo_empty" is sourceless and has been removed.
-                                     Sourceless block "ififo_empty_inv1_INV_0" (BUF) removed.
-                                      The signal "ififo_empty_inv" is sourceless and has been removed.
-                                       Sourceless block "ofifo_din_9" (FF) removed.
-                                        The signal "ofifo_din<9>" is sourceless and has been removed.
-                                       Sourceless block "ofifo_din_15" (FF) removed.
-                                        The signal "ofifo_din<15>" is sourceless and has been removed.
-                                       Sourceless block "ofifo_din_14" (FF) removed.
-                                        The signal "ofifo_din<14>" is sourceless and has been removed.
-                                       Sourceless block "ofifo_din_13" (FF) removed.
-                                        The signal "ofifo_din<13>" is sourceless and has been removed.
-                                       Sourceless block "ofifo_din_12" (FF) removed.
-                                        The signal "ofifo_din<12>" is sourceless and has been removed.
-                                       Sourceless block "ofifo_din_11" (FF) removed.
-                                        The signal "ofifo_din<11>" is sourceless and has been removed.
-                                       Sourceless block "ofifo_din_10" (FF) removed.
-                                        The signal "ofifo_din<10>" is sourceless and has been removed.
-                                       Sourceless block "ofifo_din_8" (FF) removed.
-                                        The signal "ofifo_din<8>" is sourceless and has been removed.
-         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0" (FF)
-removed.
-          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<0>" is
+ Sourceless block "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d3"
+(FF) removed.
+  The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d3" is
 sourceless and has been removed.
- Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg" (FF)
-removed.
-  The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg"
-is sourceless and has been removed.
    Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1" (FF)
-removed.
-    The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1" is
-sourceless and has been removed.
-     Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d2" (FF)
-removed.
-      The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d2" is
-sourceless and has been removed.
-       Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb1" (ROM)
-removed.
-        The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb"
-is sourceless and has been removed.
-         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2" (FF)
-removed.
-          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<2>" is
-sourceless and has been removed.
-         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1" (FF)
-removed.
-          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<1>" is
-sourceless and has been removed.
-         Sourceless block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0" (FF)
-removed.
-          The signal
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<0>" is
-sourceless and has been removed.
- Sourceless block "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d1"
-(FF) removed.
-  The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d1" is
-sourceless and has been removed.
-   Sourceless block "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2"
-(FF) removed.
-    The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2" is
-sourceless and has been removed.
-     Sourceless block "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d3"
-(FF) removed.
-      The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d3" is
-sourceless and has been removed.
-       Sourceless block
 "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN" (FF)
 removed.
-        The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN"
+    The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN"
 is sourceless and has been removed.
+     Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000230" (ROM) removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1" is
+sourceless and has been removed.
+The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d1" is
+sourceless and has been removed.
+ Sourceless block "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2"
+(FF) removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<1>" is
+sourceless and has been removed.
+ Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_5" (FF) removed.
+  The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc<5>" is sourceless and has been removed.
+   Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg_5" (FF) removed.
+    The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg<5>" is sourceless and has been removed.
+     Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg_5" (FF) removed.
+      The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg<5>" is sourceless and has been removed.
+       Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_5" (FF) removed.
+        The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin<5>" is sourceless and has been removed.
+         Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000026" (ROM) removed.
+          The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000026/O" is sourceless and has been removed.
+           Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000026/LUT4_L_BUF" (BUF) removed.
+            The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000026" is sourceless and has been removed.
+             Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000095" (ROM) removed.
+              The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000095" is sourceless and has been removed.
+         Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000207_SW0" (ROM) removed.
+          The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000207_SW0/O" is sourceless and has been removed.
+           Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000207_SW0/LUT4_L_BUF" (BUF) removed.
+            The signal "ififo/N33" is sourceless and has been removed.
+       Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor00001" (ROM) removed.
+        The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor0000" is sourceless and has been removed.
+         Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_4" (FF) removed.
+          The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin<4>" is sourceless and has been removed.
+           Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000053" (ROM) removed.
+            The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000053" is sourceless and has been removed.
+           Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000164" (ROM) removed.
+            The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000164" is sourceless and has been removed.
+       Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor00011" (ROM) removed.
+        The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor0001" is sourceless and has been removed.
+         Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_3" (FF) removed.
+          The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin<3>" is sourceless and has been removed.
+       Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor00021" (ROM) removed.
+        The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor0002" is sourceless and has been removed.
+         Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_2" (FF) removed.
+          The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin<2>" is sourceless and has been removed.
+           Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000080" (ROM) removed.
+            The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux000080" is sourceless and has been removed.
+           Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000191" (ROM) removed.
+            The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000191" is sourceless and has been removed.
+         Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor00032" (ROM) removed.
+          The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor0003" is sourceless and has been removed.
+           Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_1" (FF) removed.
+            The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin<1>" is sourceless and has been removed.
+             Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000127" (ROM) removed.
+              The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i_mux0000127" is sourceless and has been removed.
+         Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor00041" (ROM) removed.
+          The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_xor0004" is sourceless and has been removed.
+           Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin_0" (FF) removed.
+            The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_bin<0>" is sourceless and has been removed.
+ Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_4" (FF) removed.
+  The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc<4>" is sourceless and has been removed.
+   Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg_4" (FF) removed.
+    The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg<4>" is sourceless and has been removed.
+     Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg_4" (FF) removed.
+      The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg<4>" is sourceless and has been removed.
+ Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_3" (FF) removed.
+  The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc<3>" is sourceless and has been removed.
+   Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg_3" (FF) removed.
+    The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg<3>" is sourceless and has been removed.
+     Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg_3" (FF) removed.
+      The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg<3>" is sourceless and has been removed.
+ Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_2" (FF) removed.
+  The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc<2>" is sourceless and has been removed.
+   Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg_2" (FF) removed.
+    The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg<2>" is sourceless and has been removed.
+     Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg_2" (FF) removed.
+      The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg<2>" is sourceless and has been removed.
+ Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_1" (FF) removed.
+  The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc<1>" is sourceless and has been removed.
+   Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg_1" (FF) removed.
+    The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg<1>" is sourceless and has been removed.
+     Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg_1" (FF) removed.
+      The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg<1>" is sourceless and has been removed.
+ Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_0" (FF) removed.
+  The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc<0>" is sourceless and has been removed.
+   Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg_0" (FF) removed.
+    The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].wr_stg_inst/Q_reg<0>" is sourceless and has been removed.
+     Sourceless block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg_0" (FF) removed.
+      The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[2].wr_stg_inst/Q_reg<0>" is sourceless and has been removed.
+The signal "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb"
+is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<1>" is
+sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<0>" is
+sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+Result<4>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+Result<3>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+Result<5>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+Result<2>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+Result<1>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+Result<0>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+count_d1<2>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+count_d1<0>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+count_d1<1>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+count_d1<5>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+count_d1<3>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
+count_d1<4>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc<0>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].rd_stg_inst/Q_reg<0>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc<1>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].rd_stg_inst/Q_reg<1>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc<2>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].rd_stg_inst/Q_reg<2>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc<3>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].rd_stg_inst/Q_reg<3>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc<4>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].rd_stg_inst/Q_reg<4>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc<5>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
+c_stage[1].rd_stg_inst/Q_reg<5>" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_bin_xor0000" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_bin_xor0001" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_bin_xor0003" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_bin_xor0004" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_xor0000" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_xor0001" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_xor0002" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_xor0003" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
+ntr_gc_xor0004" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc_xor0000" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc_xor0001" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc_xor0002" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc_xor0003" is sourceless and has been removed.
+The signal
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
+ntr_gc_xor0004" is sourceless and has been removed.
 The signal
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
 sts/ram_full_i" is sourceless and has been removed.
@@ -1391,1101 +929,130 @@ wdc0.wdc/wr_data_count_i<1>" is sourceless and has been removed.
 The signal
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
 wdc0.wdc/wr_data_count_i<0>" is sourceless and has been removed.
-The signal "ofifo/dout<15>" is sourceless and has been removed.
-The signal "ofifo/dout<14>" is sourceless and has been removed.
-The signal "ofifo/dout<13>" is sourceless and has been removed.
-The signal "ofifo/dout<12>" is sourceless and has been removed.
-The signal "ofifo/dout<11>" is sourceless and has been removed.
-The signal "ofifo/dout<10>" is sourceless and has been removed.
-The signal "ofifo/dout<9>" is sourceless and has been removed.
-The signal "ofifo/dout<8>" is sourceless and has been removed.
-The signal "ofifo/dout<7>" is sourceless and has been removed.
-The signal "ofifo/dout<6>" is sourceless and has been removed.
-The signal "ofifo/dout<5>" is sourceless and has been removed.
-The signal "ofifo/dout<4>" is sourceless and has been removed.
-The signal "ofifo/dout<3>" is sourceless and has been removed.
-The signal "ofifo/dout<2>" is sourceless and has been removed.
-The signal "ofifo/dout<1>" is sourceless and has been removed.
-The signal "ofifo/dout<0>" is sourceless and has been removed.
-The signal "ofifo/N0" is sourceless and has been removed.
+The signal "ofifo/N1" is sourceless and has been removed.
  Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg" (FF)
-removed.
-  The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg"
-is sourceless and has been removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>" (MUX) removed.
+  The signal
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>" is sourceless and has been removed.
    Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1" (FF)
-removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>" (MUX) removed.
     The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1" is
-sourceless and has been removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>" is sourceless and has been removed.
      Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2" (FF)
-removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>" (MUX) removed.
       The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2" is
-sourceless and has been removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>" is sourceless and has been removed.
        Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb1" (ROM)
-removed.
-        The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb"
-is sourceless and has been removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>" (MUX) removed.
+        The signal
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>" is sourceless and has been removed.
          Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1" (FF)
-removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>" (MUX) removed.
           The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<1>" is
-sourceless and has been removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>" is sourceless and has been removed.
            Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_0" (FF) removed.
-           Sourceless block
+wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<5>" (XOR) removed.
+            The signal
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_1" (FF) removed.
-           Sourceless block
+wdc0.wdc/wr_data_count_i_sub0000<5>" is sourceless and has been removed.
+             Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_2" (FF) removed.
-           Sourceless block
+wdc0.wdc/wr_data_count_i_5" (FF) removed.
+         Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_3" (FF) removed.
+wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<4>" (XOR) removed.
+          The signal
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/wr_data_count_i_sub0000<4>" is sourceless and has been removed.
            Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
 wdc0.wdc/wr_data_count_i_4" (FF) removed.
-           Sourceless block
+       Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_5" (FF) removed.
-           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_4" (FF) removed.
-            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<4>" is sourceless and has been removed.
-             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_4" (FF) removed.
-              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<4>" is sourceless and has been removed.
-               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_4" (FF) removed.
-                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<4>" is sourceless and has been removed.
-                 Sourceless block
+wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<3>" (XOR) removed.
+        The signal
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<4>" (ROM) removed.
-                  The signal
+wdc0.wdc/wr_data_count_i_sub0000<3>" is sourceless and has been removed.
+         Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<4>" is sourceless and has been
-removed.
-                   Sourceless block
+wdc0.wdc/wr_data_count_i_3" (FF) removed.
+     Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>" (MUX) removed.
-                    The signal
+wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<2>" (XOR) removed.
+      The signal
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<4>" is sourceless and has been removed.
-                     Sourceless block
+wdc0.wdc/wr_data_count_i_sub0000<2>" is sourceless and has been removed.
+       Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<5>" (XOR) removed.
-                      The signal
+wdc0.wdc/wr_data_count_i_2" (FF) removed.
+   Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_sub0000<5>" is sourceless and has been removed.
-                   Sourceless block
+wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<1>" (XOR) removed.
+    The signal
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<4>" (XOR) removed.
-                    The signal
+wdc0.wdc/wr_data_count_i_sub0000<1>" is sourceless and has been removed.
+     Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_sub0000<4>" is sourceless and has been removed.
-                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0001_Result1" (ROM) removed.
-                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0001" is sourceless and has been removed.
-                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_3" (FF) removed.
-                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<3>" is sourceless and has been removed.
-                     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_3" (FF) removed.
-                      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<3>" is sourceless and has been removed.
-                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_3" (FF) removed.
-                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<3>" is sourceless and has been removed.
-                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00011" (ROM) removed.
-                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0001" is sourceless and has been removed.
-                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_3" (FF) removed.
-                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<3>" is sourceless and has been removed.
-                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000053" (ROM) removed.
-                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000053" is sourceless and has been removed.
-                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000218_SW0" (ROM) removed.
-                                The signal "ofifo/N39" is sourceless and has been removed.
-                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000218" (ROM) removed.
-                                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000" is sourceless and has been removed.
-                                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i" (FF) removed.
-                                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i" is sourceless and has been removed.
-                                     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_r
-d_en1" (ROM) removed.
-                                      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/tmp_ram_r
-d_en" is sourceless and has been removed.
-                                     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/ram_rd
-_en_i1" (ROM) removed.
-                                      The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_rd_en" is
-sourceless and has been removed.
-                                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_0" (FF) removed.
-                                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<0>" is sourceless and has been removed.
-                                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0004_Result1" (ROM) removed.
-                                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0004" is sourceless and has been removed.
-                                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_0" (FF) removed.
-                                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<0>" is sourceless and has been removed.
-                                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_0" (FF) removed.
-                                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<0>" is sourceless and has been removed.
-                                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_0" (FF) removed.
-                                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<0>" is sourceless and has been removed.
-                                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00041" (ROM) removed.
-*The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0004" is sourceless and has been removed.
-* Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_0" (FF) removed.
-*  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<0>" is sourceless and has been removed.
-*   Sourceless block
+wdc0.wdc/wr_data_count_i_1" (FF) removed.
+ Sourceless block
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0>" (ROM) removed.
-*    The signal
+wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<0>" (XOR) removed.
+  The signal
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/wr_data_count_i_sub0000<0>" is sourceless and has been removed.
+   Sourceless block
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/wr_data_count_i_0" (FF) removed.
+The signal
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
 wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0>" is sourceless and has been
 removed.
-*     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>" (MUX) removed.
-*      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<0>" is sourceless and has been removed.
-*       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>" (MUX) removed.
-*        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<1>" is sourceless and has been removed.
-*         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>" (MUX) removed.
-*          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<2>" is sourceless and has been removed.
-*           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>" (MUX) removed.
-*            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_cy<3>" is sourceless and has been removed.
-*           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<3>" (XOR) removed.
-*            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_sub0000<3>" is sourceless and has been removed.
-*         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<2>" (XOR) removed.
-*          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_sub0000<2>" is sourceless and has been removed.
-*       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<1>" (XOR) removed.
-*        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_sub0000<1>" is sourceless and has been removed.
-*     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_xor<0>" (XOR) removed.
-*      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/wr_data_count_i_sub0000<0>" is sourceless and has been removed.
-*   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000026" (ROM) removed.
-*    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000026" is sourceless and has been removed.
-*     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000218_SW0" (ROM) removed.
-*      The signal "ofifo/N33" is sourceless and has been removed.
-*       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000229" (ROM) removed.
-*        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000" is sourceless and has been removed.
-*         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i" (FF) removed.
-*         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_fb_i" (FF) removed.
-*          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_fb_i" is sourceless and has been removed.
-*           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr
-_en_i1" (ROM) removed.
-*            The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en" is
-sourceless and has been removed.
-*             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_3" (FF) removed.
-*              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<3>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_3" (FF) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<3>" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_3" (FF) removed.
-*                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<3>" is sourceless and has been removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<3>" (ROM) removed.
-*                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<3>" is sourceless and has been
-removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0002_Result1" (ROM) removed.
-*                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0002" is sourceless and has been removed.
-*                     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_2" (FF) removed.
-*                      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<2>" is sourceless and has been removed.
-*                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_2" (FF) removed.
-*                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<2>" is sourceless and has been removed.
-*                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_2" (FF) removed.
-*                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<2>" is sourceless and has been removed.
-*                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00021" (ROM) removed.
-*                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0002" is sourceless and has been removed.
-*                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_2" (FF) removed.
-*                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<2>" is sourceless and has been removed.
-*                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000080" (ROM) removed.
-*                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000080" is sourceless and has been removed.
-*                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000191" (ROM) removed.
-*                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000191" is sourceless and has been removed.
-*                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00032" (ROM) removed.
-*                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0003" is sourceless and has been removed.
-*                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_1" (FF) removed.
-*                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<1>" is sourceless and has been removed.
-*                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129" (ROM) removed.
-*                                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129/O" is sourceless and has been removed.
-*                                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129/LUT4_L_BUF" (BUF) removed.
-*                                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129" is sourceless and has been removed.
-*                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00041" (ROM) removed.
-*                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0004" is sourceless and has been removed.
-*                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_0" (FF) removed.
-*                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<0>" is sourceless and has been removed.
-*                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000026" (ROM) removed.
-*                                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000026/O" is sourceless and has been removed.
-*                                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000026/LUT4_L_BUF" (BUF) removed.
-*                                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or000026" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000053" (ROM) removed.
-*                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000053" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<4>11" (ROM) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<4>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<5>11" (ROM) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<5>" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_5" (FF) removed.
-*                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<5>" is sourceless and has been removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_5" (FF) removed.
-*                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<5>" is sourceless and has been removed.
-*                     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_5" (FF) removed.
-*                      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<5>" is sourceless and has been removed.
-*                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<5>" (ROM) removed.
-*                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<5>" is sourceless and has been
-removed.
-*                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_5" (FF) removed.
-*                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<5>" is sourceless and has been removed.
-*                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_5" (FF) removed.
-*                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<5>" is sourceless and has been removed.
-*                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_5" (FF) removed.
-*                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<5>" is sourceless and has been removed.
-*                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_5" (FF) removed.
-*                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<5>" is sourceless and has been removed.
-*                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000164" (ROM) removed.
-*                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000164" is sourceless and has been removed.
-*                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor00001" (ROM) removed.
-*                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_xor0000" is sourceless and has been removed.
-*                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin_4" (FF) removed.
-*                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_bin<4>" is sourceless and has been removed.
-*                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.r
-sts/ram_empty_fb_i_or0000129_SW0" (ROM) removed.
-*                                  The signal "ofifo/N41" is sourceless and has been removed.
-*                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0000_Result1" (ROM) removed.
-*                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0000" is sourceless and has been removed.
-*                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_4" (FF) removed.
-*                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<4>" is sourceless and has been removed.
-*                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_4" (FF) removed.
-*                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<4>" is sourceless and has been removed.
-*                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_4" (FF) removed.
-*                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<4>" is sourceless and has been removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000129_SW0" (ROM) removed.
-*                    The signal "ofifo/N37" is sourceless and has been removed.
-*                     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000129" (ROM) removed.
-*                      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000129/O" is sourceless and has been removed.
-*                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000129/LUT4_L_BUF" (BUF) removed.
-*                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000129" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<3>12" (ROM) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<3>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000164" (ROM) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000164/O" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000164/LUT4_L_BUF" (BUF) removed.
-*                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000164" is sourceless and has been removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000218_SW1" (ROM) removed.
-*                    The signal "ofifo/N35" is sourceless and has been removed.
-*             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_2" (FF) removed.
-*              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<2>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_2" (FF) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<2>" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_2" (FF) removed.
-*                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<2>" is sourceless and has been removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<2>" (ROM) removed.
-*                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<2>" is sourceless and has been
-removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0003_Result1" (ROM) removed.
-*                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0003" is sourceless and has been removed.
-*                     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_1" (FF) removed.
-*                      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<1>" is sourceless and has been removed.
-*                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_1" (FF) removed.
-*                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<1>" is sourceless and has been removed.
-*                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_1" (FF) removed.
-*                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<1>" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000080" (ROM) removed.
-*                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000080/O" is sourceless and has been removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000080/LUT4_L_BUF" (BUF) removed.
-*                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux000080" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<2>11" (ROM) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<2>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000191" (ROM) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
-sts/ram_full_i_mux0000191" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<3>111" (ROM) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-N2" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<3>111/LUT3_D_BUF" (BUF) removed.
-*                  The signal "ofifo/N43" is sourceless and has been removed.
-*             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_1" (FF) removed.
-*              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<1>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_1" (FF) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<1>" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_1" (FF) removed.
-*                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<1>" is sourceless and has been removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
-wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<1>" (ROM) removed.
-*                    The signal
+The signal
 "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
 wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<1>" is sourceless and has been
 removed.
-*                   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_wr_pntr_gc_xor0004_Result1" (ROM) removed.
-*                    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_xor0004" is sourceless and has been removed.
-*                     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc_0" (FF) removed.
-*                      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_p
-ntr_gc<0>" is sourceless and has been removed.
-*                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg_0" (FF) removed.
-*                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].rd_stg_inst/Q_reg<0>" is sourceless and has been removed.
-*                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg_0" (FF) removed.
-*                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].rd_stg_inst/Q_reg<0>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<1>11" (ROM) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<1>" is sourceless and has been removed.
-*             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_0" (FF) removed.
-*              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count<0>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1_0" (FF) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d1<0>" is sourceless and has been removed.
-*                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2_0" (FF) removed.
-*                  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-count_d2<0>" is sourceless and has been removed.
-*               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Mcount_count_xor<0>11_INV_0" (BUF) removed.
-*                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/
-Result<0>" is sourceless and has been removed.
-                                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_1" (FF) removed.
-                                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<1>" is sourceless and has been removed.
-                                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0003_Result1" (ROM) removed.
-                                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0003" is sourceless and has been removed.
-                                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_1" (FF) removed.
-                                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<1>" is sourceless and has been removed.
-                                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_1" (FF) removed.
-                                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<1>" is sourceless and has been removed.
-                                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_1" (FF) removed.
-                                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<1>" is sourceless and has been removed.
-                                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00032" (ROM) removed.
-*The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0003" is sourceless and has been removed.
-* Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_1" (FF) removed.
-*  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<1>" is sourceless and has been removed.
-                                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_2" (FF) removed.
-                                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<2>" is sourceless and has been removed.
-                                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0002_Result1" (ROM) removed.
-                                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0002" is sourceless and has been removed.
-                                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_2" (FF) removed.
-                                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<2>" is sourceless and has been removed.
-                                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_2" (FF) removed.
-                                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<2>" is sourceless and has been removed.
-                                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_2" (FF) removed.
-                                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<2>" is sourceless and has been removed.
-                                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00021" (ROM) removed.
-*The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0002" is sourceless and has been removed.
-* Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_2" (FF) removed.
-*  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<2>" is sourceless and has been removed.
-                                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_3" (FF) removed.
-                                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<3>" is sourceless and has been removed.
-                                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0001_Result1" (ROM) removed.
-                                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0001" is sourceless and has been removed.
-                                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_3" (FF) removed.
-                                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<3>" is sourceless and has been removed.
-                                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_3" (FF) removed.
-                                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<3>" is sourceless and has been removed.
-                                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_3" (FF) removed.
-                                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<3>" is sourceless and has been removed.
-                                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00011" (ROM) removed.
-*The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0001" is sourceless and has been removed.
-* Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_3" (FF) removed.
-*  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<3>" is sourceless and has been removed.
-                                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_4" (FF) removed.
-                                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<4>" is sourceless and has been removed.
-                                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
-_rd_pntr_gc_xor0000_Result1" (ROM) removed.
-                                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_xor0000" is sourceless and has been removed.
-                                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_4" (FF) removed.
-                                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<4>" is sourceless and has been removed.
-                                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_4" (FF) removed.
-                                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<4>" is sourceless and has been removed.
-                                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_4" (FF) removed.
-                                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<4>" is sourceless and has been removed.
-                                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor00001" (ROM) removed.
-*The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_xor0000" is sourceless and has been removed.
-* Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_4" (FF) removed.
-*  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<4>" is sourceless and has been removed.
-                                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1_5" (FF) removed.
-                                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_d1<5>" is sourceless and has been removed.
-                                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc_5" (FF) removed.
-                                          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_gc<5>" is sourceless and has been removed.
-                                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg_5" (FF) removed.
-                                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[1].wr_stg_inst/Q_reg<5>" is sourceless and has been removed.
-                                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg_5" (FF) removed.
-                                              The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsyn
-c_stage[2].wr_stg_inst/Q_reg<5>" is sourceless and has been removed.
-                                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin_5" (FF) removed.
-                                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_p
-ntr_bin<5>" is sourceless and has been removed.
-                                       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_0" (FF) removed.
-                                        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<0>" is sourceless and has been removed.
-                                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<1>11" (ROM) removed.
-                                          The signal "ofifo/Result<1>" is sourceless and has been removed.
-                                           Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_1" (FF) removed.
-                                            The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<1>" is sourceless and has been removed.
-                                             Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<2>11" (ROM) removed.
-                                              The signal "ofifo/Result<2>" is sourceless and has been removed.
-                                               Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_2" (FF) removed.
-                                                The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<2>" is sourceless and has been removed.
-                                                 Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<3>11" (ROM) removed.
-*The signal "ofifo/Result<3>" is sourceless and has been removed.
-* Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_3" (FF) removed.
-*  The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<3>" is sourceless and has been removed.
-*   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_cy<3>11" (ROM) removed.
-*    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_cy<3>" is sourceless and has been removed.
-*     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<5>11" (ROM) removed.
-*      The signal "ofifo/Result<5>" is sourceless and has been removed.
-*       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_5" (FF) removed.
-*        The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<5>" is sourceless and has been removed.
-*     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_cy<3>11/LUT4_D_BUF" (BUF) removed.
-*      The signal "ofifo/N44" is sourceless and has been removed.
-*       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<4>11" (ROM) removed.
-*        The signal "ofifo/Result<4>" is sourceless and has been removed.
-*         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count_4" (FF) removed.
-*          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-count<4>" is sourceless and has been removed.
-                                         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/
-Mcount_count_xor<0>11_INV_0" (BUF) removed.
-                                          The signal "ofifo/Result<0>" is sourceless and has been removed.
-         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0" (FF)
-removed.
-          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<0>" is
-sourceless and has been removed.
- Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg" (FF)
-removed.
-  The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg"
-is sourceless and has been removed.
-   Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1" (FF)
-removed.
-    The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1" is
-sourceless and has been removed.
-     Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d2" (FF)
-removed.
-      The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d2" is
-sourceless and has been removed.
-       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb1" (ROM)
-removed.
-        The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb"
-is sourceless and has been removed.
-         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2" (FF)
-removed.
-          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<2>" is
-sourceless and has been removed.
-         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1" (FF)
-removed.
-          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<1>" is
-sourceless and has been removed.
-         Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0" (FF)
-removed.
-          The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<0>" is
-sourceless and has been removed.
- Sourceless block "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d1"
-(FF) removed.
-  The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d1" is
-sourceless and has been removed.
-   Sourceless block "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2"
-(FF) removed.
-    The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2" is
-sourceless and has been removed.
-     Sourceless block "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d3"
-(FF) removed.
-      The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d3" is
-sourceless and has been removed.
-       Sourceless block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN" (FF)
-removed.
-        The signal "ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN"
-is sourceless and has been removed.
-The signal "ofifo/N1" is sourceless and has been removed.
 The signal
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grhf.r
-hf/ram_valid_i" is sourceless and has been removed.
-
-The trimmed logic reported below is either:
-   1. part of a cycle
-   2. part of disabled logic
-   3. a side-effect of other trimmed logic
-
-The signal "N1" is unused and has been removed.
- Unused block "XST_VCC" (ONE) removed.
-The signal "RD_EN1" is unused and has been removed.
- Unused block "RD_EN1" (PAD) removed.
-The signal "RD_EN1_IBUF" is unused and has been removed.
- Unused block "RD_EN1_IBUF" (BUF) removed.
-The signal "ififo_dout<248>" is unused and has been removed.
-The signal "ififo_dout<249>" is unused and has been removed.
-The signal "ififo_dout<250>" is unused and has been removed.
-The signal "ififo_dout<251>" is unused and has been removed.
-The signal "ififo_dout<252>" is unused and has been removed.
-The signal "ififo_dout<253>" is unused and has been removed.
-The signal "ififo_dout<254>" is unused and has been removed.
-The signal "ififo_dout<255>" is unused and has been removed.
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<2>" is sourceless and has been
+removed.
+The signal
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<3>" is sourceless and has been
+removed.
+The signal
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<4>" is sourceless and has been
+removed.
+The signal
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<5>" is sourceless and has been
+removed.
 Unused block
-"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.
-gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noi
-nit.ram/dpram.dp36x36.ram" (RAMB16_S36_S36) removed.
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
+_rd_pntr_gc_xor0000_Result1" (ROM) removed.
+Unused block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
+_rd_pntr_gc_xor0001_Result1" (ROM) removed.
+Unused block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
+_rd_pntr_gc_xor0002_Result1" (ROM) removed.
+Unused block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
+_rd_pntr_gc_xor0003_Result1" (ROM) removed.
+Unused block
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxor
+_rd_pntr_gc_xor0004_Result1" (ROM) removed.
 Unused block
 "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.
 gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s3_noi
@@ -2514,29 +1081,301 @@ Unused block
 "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.
 gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s3_noi
 nit.ram/dpram.dp36x36.ram" (RAMB16_S36_S36) removed.
-Unused block "ififo/XST_GND" (ZERO) removed.
 Unused block
-"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.
-gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noi
-nit.ram/dpram.dp36x36.ram" (RAMB16_S36_S36) removed.
-Unused block "ofifo/XST_GND" (ZERO) removed.
+"ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1" (FF)
+removed.
+Unused block "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d1"
+(FF) removed.
+Unused block
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<0>" (ROM) removed.
+Unused block
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<1>" (ROM) removed.
+Unused block
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<2>" (ROM) removed.
+Unused block
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<3>" (ROM) removed.
+Unused block
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<4>" (ROM) removed.
+Unused block
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.g
+wdc0.wdc/Msub_wr_data_count_i_sub0000_lut<5>" (ROM) removed.
+Unused block
+"ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
+sts/ram_full_i" (FF) removed.
 Unused block "ofifo/XST_VCC" (ONE) removed.
 
 Optimized Block(s):
 TYPE 		BLOCK
 GND 		XST_GND
-FDP
-		ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.
-rsts/ram_empty_i
-   optimized to 1
-FDC
-		ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grhf.
-rhf/ram_valid_d1
+VCC 		XST_VCC
+LUT2
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxo
+r_wr_pntr_gc_xor0000_Result1
    optimized to 0
 LUT2
-		ofifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grhf.
-rhf/ram_valid_i1
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxo
+r_wr_pntr_gc_xor0001_Result1
    optimized to 0
+LUT2
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxo
+r_wr_pntr_gc_xor0002_Result1
+   optimized to 0
+LUT2
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxo
+r_wr_pntr_gc_xor0003_Result1
+   optimized to 0
+LUT2
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/Mxo
+r_wr_pntr_gc_xor0004_Result1
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[1].rd_stg_inst/Q_reg_0
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[1].rd_stg_inst/Q_reg_1
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[1].rd_stg_inst/Q_reg_2
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[1].rd_stg_inst/Q_reg_3
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[1].rd_stg_inst/Q_reg_4
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[1].rd_stg_inst/Q_reg_5
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[2].rd_stg_inst/Q_reg_0
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[2].rd_stg_inst/Q_reg_1
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[2].rd_stg_inst/Q_reg_2
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[2].rd_stg_inst/Q_reg_3
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[2].rd_stg_inst/Q_reg_4
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsy
+nc_stage[2].rd_stg_inst/Q_reg_5
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_0
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_1
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_2
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_3
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_4
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_5
+   optimized to 0
+LUT2
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_xor00001
+   optimized to 0
+LUT3
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_xor00011
+   optimized to 0
+LUT4
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_xor00021
+   optimized to 0
+LUT2
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_xor00032
+   optimized to 0
+LUT3
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_bin_xor00041
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_gc_0
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_gc_1
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_gc_2
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_gc_3
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_gc_4
+   optimized to 0
+FDC
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_
+pntr_gc_5
+   optimized to 0
+FDP
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.
+wsts/ram_full_fb_i
+   optimized to 1
+LUT2
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_w
+r_en_i1
+   optimized to 0
+INV
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/Mcount_count_xor<0>11_INV_0
+LUT2
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/Mcount_count_xor<1>11
+   optimized to 1
+LUT3
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/Mcount_count_xor<2>11
+   optimized to 0
+LUT3_D
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/Mcount_count_xor<3>111
+   optimized to 1
+LOCALBUF
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/Mcount_count_xor<3>111/LUT3_D_BUF
+LUT4
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/Mcount_count_xor<3>12
+   optimized to 0
+LUT3
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/Mcount_count_xor<4>11
+   optimized to 0
+LUT4
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/Mcount_count_xor<5>11
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_0
+   optimized to 0
+FDPE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_1
+   optimized to 1
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_2
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_3
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_4
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_5
+   optimized to 0
+FDPE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d1_0
+   optimized to 1
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d1_1
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d1_2
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d1_3
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d1_4
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d1_5
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d2_0
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d2_1
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d2_2
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d2_3
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d2_4
+   optimized to 0
+FDCE
+		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr
+/count_d2_5
+   optimized to 0
+FDPE 		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg
+   optimized to 1
+FD 		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1
+   optimized to 0
+FD 		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2
+   optimized to 0
+LUT2 		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb1
+   optimized to 1
+FDP 		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0
+   optimized to 1
+FDP 		ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1
+   optimized to 1
+GND 		ififo/XST_GND
+GND 		ofifo/XST_GND
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
 
 Section 6 - IOB Properties
 --------------------------
@@ -2545,7 +1384,25 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| OTUBE<0>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<1>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<2>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<3>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<4>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<5>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<6>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<7>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<8>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<9>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<10>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<11>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<12>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<13>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<14>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| OTUBE<15>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| RD_CLK1                            | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | RD_EMPTY                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| RD_EN1                             | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | RD_VALID                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | SCIN_COIN                          | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | TUBE3A<0>                          | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |

@@ -6,7 +6,7 @@ SET_PARAMETER enable_data_counts_wdch false
 SET_PARAMETER programmable_full_type No_Programmable_Full_Threshold
 SET_PARAMETER inject_dbit_error_wrch false
 SET_PARAMETER fifo_application_type_wdch Data_FIFO
-SET_PARAMETER input_data_width 256
+SET_PARAMETER input_data_width 16
 SET_PARAMETER programmable_full_type_axis No_Programmable_Full_Threshold
 SET_PARAMETER enable_tkeep false
 SET_PARAMETER register_slice_mode_wach Fully_Registered
@@ -41,7 +41,7 @@ SET_PARAMETER inject_dbit_error_wdch false
 SET_PARAMETER input_depth 64
 SET_PARAMETER overflow_sense_axi Active_High
 SET_PARAMETER tkeep_width 4
-SET_PARAMETER valid_flag false
+SET_PARAMETER valid_flag true
 SET_PARAMETER empty_threshold_assert_value_rach 1022
 SET_PARAMETER enable_common_overflow false
 SET_PARAMETER programmable_full_type_rdch No_Programmable_Full_Threshold
@@ -63,7 +63,7 @@ SET_PARAMETER awuser_width 1
 SET_PARAMETER fifo_implementation_wrch Common_Clock_Block_RAM
 SET_PARAMETER valid_sense Active_High
 SET_PARAMETER enable_tuser false
-SET_PARAMETER output_data_width 256
+SET_PARAMETER output_data_width 16
 SET_PARAMETER enable_ecc_wrch false
 SET_PARAMETER inject_sbit_error_wrch false
 SET_PARAMETER programmable_empty_type_rach No_Programmable_Empty_Threshold
@@ -104,7 +104,7 @@ SET_PARAMETER use_extra_logic false
 SET_PARAMETER underflow_flag_axi false
 SET_PARAMETER programmable_empty_type_wach No_Programmable_Empty_Threshold
 SET_PARAMETER enable_data_counts_wach false
-SET_PARAMETER component_name fif64x256
+SET_PARAMETER component_name fif64x16
 SET_PARAMETER underflow_sense Active_High
 SET_PARAMETER empty_threshold_assert_value_rdch 1022
 SET_PARAMETER enable_write_channel false
@@ -130,7 +130,7 @@ SET_PARAMETER full_threshold_assert_value_wach 1023
 SET_PARAMETER enable_data_counts_rdch false
 SET_PARAMETER axi_data_width 64
 SET_PARAMETER fifo_application_type_rdch Data_FIFO
-SET_PARAMETER write_data_count false
+SET_PARAMETER write_data_count true
 SET_PARAMETER almost_full_flag false
 SET_PARAMETER write_acknowledge_sense Active_High
 SET_PARAMETER programmable_empty_type_wrch No_Programmable_Empty_Threshold

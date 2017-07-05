@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.6 (64-bit)
+# Build 269223 by xbuild on Wed Jun  5 11:14:03 MDT 2013
+# Start of session at: Wed Jul 05 11:21:48 2017
+# Process ID: 3612
+# Log file: C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/pa.fromNetlist.tcl}
