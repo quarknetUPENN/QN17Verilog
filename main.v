@@ -50,7 +50,7 @@ wire ififo_full = 0;
 reg ififo_rd_clk = 0;
 reg ififo_rd_en = 1;
 wire ififo_empty;
-wire [0:255] ififo_dout = 'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111;
+wire [0:255] ififo_dout;
 fif64x256 ififo(.rst(ififo_rst),
 						.wr_clk(ififo_wr_clk),
 						.din(tuberad),
@@ -70,7 +70,7 @@ reg ofifo_wr_clk = 0;
 reg [0:15] ofifo_din;
 wire ofifo_full = 0;
 wire ofifo_rd_clk = 0;
-wire [0:15] ofifo_dout = 'b1111111111111111;
+wire [0:15] ofifo_dout;
 wire ofifo_empty;
 wire ofifo_valid;
 wire [0:6] ofifo_wr_data_count = 0;
@@ -100,33 +100,48 @@ assign overflowLight = ififo_full;
 assign RD_VALID = ofifo_valid;
 assign RD_EMPTY = ofifo_empty;
 
+
+
 integer i;
 integer j;
 
+//if there is a value to be sent to the rpi from the ififo, move it to the ofifo
 always @ (posedge ofifo_empty) begin
-	ififo_rd_clk = 1;
-	#30 ififo_rd_clk = 0;
-	
-   for (i = 0; i < 32; i = i +1) begin
-		j = 8*i+7;
-		if (j < 64) begin
-			ofifo_din[0:4] = 'b1100;
-		end else if (j < 128) begin
-			ofifo_din[0:4] = 'b1101;
-		end else if (j < 192) begin
-			ofifo_din[0:4] = 'b0010;
-		end else if (j < 256) begin
-			ofifo_din[0:4] = 'b0011;
-		end else begin
-			ofifo_din[0:4] = 'b1111;
+	//don't move data if there be no data
+	//what am a break statement
+	if (!ififo_empty) begin
+		//Get top value from ififo
+		ififo_rd_clk = 1;
+		#30 ififo_rd_clk = 0;
+		
+		//parse top value from ififo
+		for (i = 0; i < 32; i = i +1) begin
+			j = 8*i+7; //the ending bit
+			
+			//fills in [0:3] based on the level number [3,4]
+			//fills in 4 based on the sublevel letter A,B -> 0,1
+			if (j < 64) begin
+				ofifo_din[0:4] = 'b1100;
+			end else if (j < 128) begin
+				ofifo_din[0:4] = 'b1101;
+			end else if (j < 192) begin
+				ofifo_din[0:4] = 'b0010;
+			end else if (j < 256) begin
+				ofifo_din[0:4] = 'b0011;
+			end else begin
+				ofifo_din[0:4] = 'b1111;
+			end
+			//fills in [5:7] as the tube number [0,7]
+			ofifo_din[5:7] = i % 7;
+			
+			//fills in [8:15] as the tube radius from the event stored in the ififo
+			ofifo_din[8:15] = ififo_dout[j-7+:8];  
+			
+			//sends ofifo_din into the ofifo
+			ofifo_wr_clk = 1;
+			#30 ofifo_wr_clk = 0;
 		end
-		ofifo_din[5:7] = i % 7;
-     	//ofifo_din[8:15] = tuberad[j-7+:8];  //this should work but I'm getting multiple driver errors on tuberad
-		//interestingly if I decrease the loop counts, the section of tuberad it's complaining about changes
-		ofifo_wr_clk = 1;
-		#30 ofifo_wr_clk = 0;
-  	end
-	//parse and add ififo_dout to ofifo_din
+	end
 end
 
 
