@@ -1,0 +1,5 @@
+verilog work "ipcore_dir/fif64x256.v"
+verilog work "ipcore_dir/fif64x16.v"
+verilog work "main.v"
+verilog work "testbench2017.v"
+verilog work "/raid/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
