@@ -136,7 +136,7 @@ always @ (posedge ofifo_empty) begin
 			ofifo_din[5:7] = i % 7;
 			
 			//fills in [8:15] as the tube radius from the event stored in the ififo
-			ofifo_din[8:15] = ififo_dout[0:8];  
+			ofifo_din[8:15] = ififo_dout[8*i+:8];  
 			
 			//sends ofifo_din into the ofifo
 			bigcntr = 0;

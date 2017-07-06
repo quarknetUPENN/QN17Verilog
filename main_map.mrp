@@ -9,7 +9,7 @@ Target Device  : xc3s100e
 Target Package : tq144
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Thu Jul 06 11:20:17 2017
+Mapped Date    : Thu Jul 06 12:56:42 2017
 
 Design Summary
 --------------
@@ -30,7 +30,7 @@ Logic Distribution:
 
 Average Fanout of Non-Clock Nets:                1.38
 
-Peak Memory Usage:  269 MB
+Peak Memory Usage:  270 MB
 Total REAL time to MAP completion:  2 secs 
 Total CPU time to MAP completion:   1 secs 
 
@@ -245,6 +245,14 @@ The signal
 "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.w
 sts/ram_full_i" is sourceless and has been removed.
 The signal "ififo/dout<255>" is sourceless and has been removed.
+The signal "ififo/dout<254>" is sourceless and has been removed.
+The signal "ififo/dout<253>" is sourceless and has been removed.
+The signal "ififo/dout<252>" is sourceless and has been removed.
+The signal "ififo/dout<251>" is sourceless and has been removed.
+The signal "ififo/dout<250>" is sourceless and has been removed.
+The signal "ififo/dout<249>" is sourceless and has been removed.
+The signal "ififo/dout<248>" is sourceless and has been removed.
+The signal "ififo/dout<247>" is sourceless and has been removed.
 The signal "ififo/dout<246>" is sourceless and has been removed.
 The signal "ififo/dout<245>" is sourceless and has been removed.
 The signal "ififo/dout<244>" is sourceless and has been removed.
@@ -484,14 +492,6 @@ The signal "ififo/dout<11>" is sourceless and has been removed.
 The signal "ififo/dout<10>" is sourceless and has been removed.
 The signal "ififo/dout<9>" is sourceless and has been removed.
 The signal "ififo/dout<8>" is sourceless and has been removed.
-The signal "ififo/dout<7>" is sourceless and has been removed.
-The signal "ififo/dout<6>" is sourceless and has been removed.
-The signal "ififo/dout<5>" is sourceless and has been removed.
-The signal "ififo/dout<4>" is sourceless and has been removed.
-The signal "ififo/dout<3>" is sourceless and has been removed.
-The signal "ififo/dout<2>" is sourceless and has been removed.
-The signal "ififo/dout<1>" is sourceless and has been removed.
-The signal "ififo/dout<0>" is sourceless and has been removed.
 The signal "ififo/N0" is sourceless and has been removed.
  Sourceless block
 "ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg" (FF)
@@ -1955,14 +1955,14 @@ The trimmed logic reported below is either:
    2. part of disabled logic
    3. a side-effect of other trimmed logic
 
-The signal "ififo_dout<1>" is unused and has been removed.
-The signal "ififo_dout<2>" is unused and has been removed.
-The signal "ififo_dout<3>" is unused and has been removed.
-The signal "ififo_dout<4>" is unused and has been removed.
-The signal "ififo_dout<5>" is unused and has been removed.
-The signal "ififo_dout<6>" is unused and has been removed.
-The signal "ififo_dout<7>" is unused and has been removed.
-The signal "ififo_dout<8>" is unused and has been removed.
+The signal "ififo_dout<248>" is unused and has been removed.
+The signal "ififo_dout<249>" is unused and has been removed.
+The signal "ififo_dout<250>" is unused and has been removed.
+The signal "ififo_dout<251>" is unused and has been removed.
+The signal "ififo_dout<252>" is unused and has been removed.
+The signal "ififo_dout<253>" is unused and has been removed.
+The signal "ififo_dout<254>" is unused and has been removed.
+The signal "ififo_dout<255>" is unused and has been removed.
 The signal "ififo_empty_inv" is unused and has been removed.
 The signal "ofifo_din<10>" is unused and has been removed.
 The signal "ofifo_din<11>" is unused and has been removed.

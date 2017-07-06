@@ -153,8 +153,8 @@ INFO:Xst:2679 - Register <ofifo_wr_clk> in unit <main> has a constant value of 1
 Synthesizing Unit <main>.
     Related source file is "main.v".
 WARNING:Xst:647 - Input <SCIN_COIN> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:646 - Signal <photosynthesis> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <ififo_wr_clk> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <ififo_dout<0:247>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 256-bit up counter for signal <bigcntr>.
     Found 8-bit up counter for signal <cntr>.
     Found 8-bit register for signal <ofifo_din<8:15>>.
@@ -484,11 +484,11 @@ Offset:              5.962ns (Levels of Logic = 2)
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.86 secs
+Total CPU time to Xst completion: 10.00 secs
  
 --> 
 
-Total memory usage is 281772 kilobytes
+Total memory usage is 281452 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)

@@ -1,7 +1,7 @@
 Release 14.6 par P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-HEP-PC::  Thu Jul 06 11:20:22 2017
+HEP-PC::  Thu Jul 06 12:56:48 2017
 
 par -w -intstyle ise -ol high -t 1 main_map.ncd main.ncd main.pcf 
 
@@ -117,18 +117,18 @@ Phase 6.36  Local Placement Optimization (Checksum:bed9ffd4) REAL time: 2 secs
 Phase 7.8  Global Placement
 ..
 .........
-Phase 7.8  Global Placement (Checksum:c86de484) REAL time: 3 secs 
+Phase 7.8  Global Placement (Checksum:c86de484) REAL time: 4 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:c86de484) REAL time: 3 secs 
+Phase 8.5  Local Placement Optimization (Checksum:c86de484) REAL time: 4 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:c7ab621f) REAL time: 3 secs 
+Phase 9.18  Placement Optimization (Checksum:c7ab621f) REAL time: 4 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:c7ab621f) REAL time: 3 secs 
+Phase 10.5  Local Placement Optimization (Checksum:c7ab621f) REAL time: 4 secs 
 
-Total REAL time to Placer completion: 3 secs 
+Total REAL time to Placer completion: 4 secs 
 Total CPU  time to Placer completion: 3 secs 
 Writing design to file main.ncd
 
@@ -151,15 +151,15 @@ Updating file: main.ncd with current fully routed design.
 
 Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 5 secs 
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 6 secs 
 
-Total REAL time to Router completion: 5 secs 
+Total REAL time to Router completion: 6 secs 
 Total CPU time to Router completion: 4 secs 
 
 Partition Implementation Status
