@@ -38,11 +38,51 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Wed Jul 05 12:57:58 2017 
+Setup/Hold to clock RD_CLK1
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+RD_EN1      |    2.520(R)|    0.864(R)|buffer_ofifo_clock|   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock RD_CLK1 to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+OTUBE<0>    |    9.564(R)|buffer_ofifo_clock|   0.000|
+OTUBE<1>    |    9.297(R)|buffer_ofifo_clock|   0.000|
+OTUBE<2>    |    9.532(R)|buffer_ofifo_clock|   0.000|
+OTUBE<3>    |    9.308(R)|buffer_ofifo_clock|   0.000|
+OTUBE<4>    |    9.298(R)|buffer_ofifo_clock|   0.000|
+OTUBE<5>    |    9.549(R)|buffer_ofifo_clock|   0.000|
+OTUBE<6>    |    9.298(R)|buffer_ofifo_clock|   0.000|
+OTUBE<7>    |    9.532(R)|buffer_ofifo_clock|   0.000|
+OTUBE<8>    |    8.994(R)|buffer_ofifo_clock|   0.000|
+OTUBE<9>    |    8.785(R)|buffer_ofifo_clock|   0.000|
+OTUBE<10>   |    9.038(R)|buffer_ofifo_clock|   0.000|
+OTUBE<11>   |    8.785(R)|buffer_ofifo_clock|   0.000|
+OTUBE<12>   |    9.000(R)|buffer_ofifo_clock|   0.000|
+OTUBE<13>   |    9.009(R)|buffer_ofifo_clock|   0.000|
+OTUBE<14>   |    9.295(R)|buffer_ofifo_clock|   0.000|
+OTUBE<15>   |    9.298(R)|buffer_ofifo_clock|   0.000|
+RD_EMPTY    |    7.427(R)|buffer_ofifo_clock|   0.000|
+RD_VALID    |    7.436(R)|buffer_ofifo_clock|   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock RD_CLK1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+RD_CLK1        |    3.636|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Thu Jul 06 11:20:32 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:

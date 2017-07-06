@@ -45,30 +45,24 @@ reg [0:255] scinclk1;
 
 
 // SET UP ififo
-reg ififo_rst = 0;
-reg ififo_wr_clk = 0;
-reg ififo_wr_en = 1;
+reg ififo_wr_clk;
 wire ififo_full = 0;
-reg ififo_rd_clk = 0;
-reg ififo_rd_en = 1;
+reg ififo_rd_clk;
 wire ififo_empty;
 wire [0:255] ififo_dout;
-fif64x256 ififo(.rst(ififo_rst),
+fif64x256 ififo(.rst(0),
 						.wr_clk(ififo_wr_clk),
 						.din(tuberad),
-						.wr_en(ififo_wr_en),
+						.wr_en(1),
 						.full(ififo_full),
 						.rd_clk(ififo_rd_clk),
 						.dout(ififo_dout),
-						.rd_en(ififo_rd_en),
+						.rd_en(1),
 						.empty(ififo_empty));
 
 
 // SET UP ofifo
-reg ofifo_rst = 0;
-reg ofifo_wr_en = 1;
-//wire ofifo_rd_en = 1;
-reg ofifo_wr_clk = 0;
+reg ofifo_wr_clk;
 reg [0:15] ofifo_din;
 //wire ofifo_full = 0;
 //wire ofifo_rd_clk = 0;
@@ -80,10 +74,10 @@ BUFG BUFG_inst (
 	.O(buffer_ofifo_clock),     // Clock buffer output
 	.I(RD_CLK1)      				 // Clock buffer input
 	);
-fif64x16 ofifo(.rst(ofifo_rst),
+fif64x16 ofifo(.rst(0),
 					.wr_clk(ofifo_wr_clk),
 					.din(ofifo_din),
-					.wr_en(ofifo_wr_en),
+					.wr_en(1),
 					//.full(ofifo_full),
 					.rd_clk(buffer_ofifo_clock),
 					.dout(OTUBE),
@@ -104,8 +98,8 @@ assign RD_EMPTY = ofifo_empty;
 
 
 integer i;
-integer j;
 
+	
 //if there is a value to be sent to the rpi from the ififo, move it to the ofifo
 always @ (posedge ofifo_empty) begin
 	//don't move data if there be no data
@@ -119,29 +113,30 @@ always @ (posedge ofifo_empty) begin
 		end
 		
 		
-		
 		//parse top value from ififo
-		for (i = 0; i < 32; i = i +1) begin
-			j = 8*i+7; //the ending bit
-			
+		for (i=0; i < 32; i=i+1) begin
 			//fills in [0:3] based on the level number [3,4]
 			//fills in 4 based on the sublevel letter A,B -> 0,1
-			if (j < 64) begin
+			if (8*i+7 < 64) begin
 				ofifo_din[0:4] = 'b11000;
-			end else if (j < 128) begin
+			end 
+			else if (8*i+7 < 128) begin
 				ofifo_din[0:4] = 'b11001;
-			end else if (j < 192) begin
+			end 
+			else if (8*i+7 < 192) begin
 				ofifo_din[0:4] = 'b00100;
-			end else if (j < 256) begin
+			end 
+			else if (8*i+7 < 256) begin
 				ofifo_din[0:4] = 'b00101;
-			end else begin
+			end 
+			else begin
 				ofifo_din[0:4] = 'b11101;
 			end
 			//fills in [5:7] as the tube number [0,7]
 			ofifo_din[5:7] = i % 7;
 			
 			//fills in [8:15] as the tube radius from the event stored in the ififo
-			ofifo_din[8:15] = ififo_dout[j-7+:8];  
+			ofifo_din[8:15] = ififo_dout[0:8];  
 			
 			//sends ofifo_din into the ofifo
 			bigcntr = 0;
@@ -154,17 +149,21 @@ always @ (posedge ofifo_empty) begin
 end
 
 
-
+//reg dumb =0;
 	
 
 always @ (posedge clk100) begin
 	cntr <= cntr + 1;
 	bigcntr <= bigcntr + 1;
-	scinclk1 <= scinclk1 + 1;
-	
+	scinclk1 <= scinclk1 + 1;	
 end
 
+//always @ (posedge SCIN_COIN) begin
+//	dumb = dumb +1;
+//end 
+
 always @ (posedge SCIN_COIN) begin
+//	dumb = dumb +1;
 	cntr = 0;
 	scinclk1 = 0;
 	while (scinclk1 > 32) begin //delay 320ns

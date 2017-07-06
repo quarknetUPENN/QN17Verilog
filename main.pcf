@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.68d on Wed Jul 05 13:29:01 2017
+// Written by: Map P.68d on Thu Jul 06 11:20:19 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -54,7 +54,7 @@ COMP "TUBE4A<7>" LOCATE = SITE "P119" LEVEL 1;
 COMP "TUBE4B<4>" LOCATE = SITE "P106" LEVEL 1;
 COMP "TUBE4B<5>" LOCATE = SITE "P113" LEVEL 1;
 COMP "TUBE4B<6>" LOCATE = SITE "P117" LEVEL 1;
-COMP "RD_CLK1" LOCATE = SITE "P32" LEVEL 1;
+COMP "RD_CLK1" LOCATE = SITE "P56" LEVEL 1;
 COMP "RD_EMPTY" LOCATE = SITE "P34" LEVEL 1;
 COMP "TUBE4B<7>" LOCATE = SITE "P120" LEVEL 1;
 COMP "SCIN_COIN" LOCATE = SITE "P128" LEVEL 1;

@@ -22,7 +22,7 @@ NET "OTUBE<13>" LOC = "P23";
 NET "OTUBE<14>" LOC = "P25";
 NET "OTUBE<15>" LOC = "P26";
 //control pins for FIFO
-NET "RD_CLK1" LOC = "P32";
+NET "RD_CLK1" LOC = "P56";
 NET "RD_EN1" LOC = "P33";
 NET "RD_EMPTY" LOC = "P34";
 NET "RD_VALID" LOC = "P35";

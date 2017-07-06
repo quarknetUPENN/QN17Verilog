@@ -127,8 +127,8 @@ Analyzing hierarchy for module <main> in library <work>.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <main>.
-WARNING:Xst:2211 - "ipcore_dir/fif64x256.v" line 56: Instantiating black box module <fif64x256>.
-WARNING:Xst:2211 - "ipcore_dir/fif64x16.v" line 83: Instantiating black box module <fif64x16>.
+WARNING:Xst:2211 - "ipcore_dir/fif64x256.v" line 53: Instantiating black box module <fif64x256>.
+WARNING:Xst:2211 - "ipcore_dir/fif64x16.v" line 77: Instantiating black box module <fif64x16>.
 Module <main> is correct for synthesis.
  
 
@@ -138,8 +138,8 @@ Module <main> is correct for synthesis.
 
 Performing bidirectional port resolution...
 INFO:Xst:2679 - Register <bigcntr> in unit <main> has a constant value of 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ififo_rd_clk> in unit <main> has a constant value of 1 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <i> in unit <main> has a constant value of 100000 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <j> in unit <main> has a constant value of 11111111 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ofifo_din<0>> in unit <main> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ofifo_din<1>> in unit <main> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ofifo_din<2>> in unit <main> has a constant value of 1 during circuit operation. The register is replaced by logic.
@@ -148,28 +148,22 @@ INFO:Xst:2679 - Register <ofifo_din<4>> in unit <main> has a constant value of 1
 INFO:Xst:2679 - Register <ofifo_din<5>> in unit <main> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ofifo_din<6>> in unit <main> has a constant value of 1 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <ofifo_din<7>> in unit <main> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <ofifo_wr_clk> in unit <main> has a constant value of 1 during circuit operation. The register is replaced by logic.
 
 Synthesizing Unit <main>.
     Related source file is "main.v".
 WARNING:Xst:647 - Input <SCIN_COIN> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <ofifo_wr_en> is used but never assigned. This sourceless signal will be automatically connected to value 1.
-WARNING:Xst:653 - Signal <ofifo_rst> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:653 - Signal <ififo_wr_en> is used but never assigned. This sourceless signal will be automatically connected to value 1.
+WARNING:Xst:646 - Signal <photosynthesis> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <ififo_wr_clk> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:653 - Signal <ififo_rst> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:653 - Signal <ififo_rd_en> is used but never assigned. This sourceless signal will be automatically connected to value 1.
-WARNING:Xst:646 - Signal <ififo_dout<0:247>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Register <ofifo_wr_clk> equivalent to <ififo_rd_clk> has been removed
     Found 256-bit up counter for signal <bigcntr>.
     Found 8-bit up counter for signal <cntr>.
-    Found 1-bit register for signal <ififo_rd_clk>.
     Found 8-bit register for signal <ofifo_din<8:15>>.
     Found 256-bit up counter for signal <scinclk1>.
     Found 256-bit register for signal <tuberad>.
 INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <tuberad>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
     Summary:
 	inferred   3 Counter(s).
-	inferred 265 D-type flip-flop(s).
+	inferred 264 D-type flip-flop(s).
 Unit <main> synthesized.
 
 
@@ -179,8 +173,8 @@ HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 1
  8-bit up counter                                      : 1
-# Registers                                            : 265
- 1-bit register                                        : 265
+# Registers                                            : 264
+ 1-bit register                                        : 264
 
 =========================================================================
 
@@ -192,23 +186,19 @@ Reading core <ipcore_dir/fif64x256.ngc>.
 Reading core <ipcore_dir/fif64x16.ngc>.
 Loading core <fif64x256> for timing and area information for instance <ififo>.
 Loading core <fif64x16> for timing and area information for instance <ofifo>.
-WARNING:Xst:1426 - The value init of the FF/Latch ififo_rd_clk hinder the constant cleaning in the block main.
-   You should achieve better results by setting this init to 1.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 9
- Flip-Flops                                            : 9
+# Registers                                            : 8
+ Flip-Flops                                            : 8
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1426 - The value init of the FF/Latch ififo_rd_clk hinder the constant cleaning in the block main.
-   You should achieve better results by setting this init to 1.
 
 Optimizing unit <main> ...
 
@@ -238,8 +228,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 9
- Flip-Flops                                            : 9
+# Registers                                            : 8
+ Flip-Flops                                            : 8
 
 =========================================================================
 
@@ -280,17 +270,17 @@ Cell Usage :
 #      MUXCY                       : 5
 #      VCC                         : 2
 #      XORCY                       : 6
-# FlipFlops/Latches                : 210
+# FlipFlops/Latches                : 209
 #      FD                          : 8
 #      FDC                         : 105
 #      FDCE                        : 54
-#      FDE                         : 9
+#      FDE                         : 8
 #      FDP                         : 24
 #      FDPE                        : 10
 # RAMS                             : 9
 #      RAMB16_S36_S36              : 9
-# Clock Buffers                    : 2
-#      BUFG                        : 2
+# Clock Buffers                    : 1
+#      BUFG                        : 1
 # IO Buffers                       : 21
 #      IBUF                        : 1
 #      IBUFG                       : 1
@@ -302,13 +292,13 @@ Device utilization summary:
 
 Selected Device : 3s100etq144-5 
 
- Number of Slices:                      121  out of    960    12%  
- Number of Slice Flip Flops:            210  out of   1920    10%  
+ Number of Slices:                      120  out of    960    12%  
+ Number of Slice Flip Flops:            209  out of   1920    10%  
  Number of 4 input LUTs:                123  out of   1920     6%  
  Number of IOs:                          55
  Number of bonded IOBs:                  21  out of    108    19%  
  Number of BRAMs:                         9  out of      4   225% (*) 
- Number of GCLKs:                         2  out of     24     8%  
+ Number of GCLKs:                         1  out of     24     4%  
 
 WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
 
@@ -330,14 +320,14 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+----------------------------------------------------------------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                                                                              | Load  |
------------------------------------+----------------------------------------------------------------------------------------------------+-------+
-ififo_rd_clk1                      | BUFG                                                                                               | 112   |
-overflowLight_OBUF                 | NONE(ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i)| 61    |
-RD_CLK1                            | IBUFG+BUFG                                                                                         | 46    |
-ofifo/empty                        | NONE(ofifo_din_8)                                                                                  | 9     |
------------------------------------+----------------------------------------------------------------------------------------------------+-------+
+-----------------------------------+--------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                  | Load  |
+-----------------------------------+--------------------------------------------------------------------------------------------------------+-------+
+N1                                 | NONE(ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i)| 112   |
+overflowLight_OBUF                 | NONE(ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i)    | 61    |
+RD_CLK1                            | IBUFG+BUFG                                                                                             | 46    |
+ofifo/empty                        | NONE(ofifo_din_9)                                                                                      | 8     |
+-----------------------------------+--------------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -376,15 +366,15 @@ Timing Detail:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'ififo_rd_clk1'
+Timing constraint: Default period analysis for Clock 'N1'
   Clock period: 4.227ns (frequency: 236.572MHz)
   Total number of paths / destination ports: 414 / 187
 -------------------------------------------------------------------------
 Delay:               4.227ns (Levels of Logic = 3)
   Source:            ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_3 (FF)
   Destination:       ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i (FF)
-  Source Clock:      ififo_rd_clk1 rising
-  Destination Clock: ififo_rd_clk1 rising
+  Source Clock:      N1 rising
+  Destination Clock: N1 rising
 
   Data Path: ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/count_d1_3 to ififo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i
                                 Gate     Net
@@ -494,13 +484,13 @@ Offset:              5.962ns (Levels of Logic = 2)
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.01 secs
+Total CPU time to Xst completion: 9.86 secs
  
 --> 
 
-Total memory usage is 282156 kilobytes
+Total memory usage is 281772 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
-Number of infos    :   29 (   0 filtered)
+Number of warnings :   11 (   0 filtered)
+Number of infos    :   30 (   0 filtered)
 
