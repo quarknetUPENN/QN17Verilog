@@ -84,18 +84,18 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1499453793" xil_pn:in_ck="6199362150420967073" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1499453793">
+    <transform xil_pn:end_ts="1499462221" xil_pn:in_ck="6199362150420967073" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1499462221">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="main.v"/>
       <outfile xil_pn:name="testBench.v"/>
       <outfile xil_pn:name="tube.v"/>
     </transform>
-    <transform xil_pn:end_ts="1499453793" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7462218083049900823" xil_pn:start_ts="1499453793">
+    <transform xil_pn:end_ts="1499462169" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7462218083049900823" xil_pn:start_ts="1499462169">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1499453793" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5442216736751262951" xil_pn:start_ts="1499453793">
+    <transform xil_pn:end_ts="1499462169" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5442216736751262951" xil_pn:start_ts="1499462169">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -105,7 +105,7 @@
       <outfile xil_pn:name="ipcore_dir/fifo16x1024.ngc"/>
       <outfile xil_pn:name="ipcore_dir/fifo16x1024.v"/>
     </transform>
-    <transform xil_pn:end_ts="1499453793" xil_pn:in_ck="-3325627385244725698" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1499453793">
+    <transform xil_pn:end_ts="1499462221" xil_pn:in_ck="-3325627385244725698" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1499462221">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ipcore_dir/fifo16x1024.v"/>
@@ -113,7 +113,7 @@
       <outfile xil_pn:name="testBench.v"/>
       <outfile xil_pn:name="tube.v"/>
     </transform>
-    <transform xil_pn:end_ts="1499453799" xil_pn:in_ck="-3325627385244725698" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8812646285162175951" xil_pn:start_ts="1499453793">
+    <transform xil_pn:end_ts="1499462226" xil_pn:in_ck="-3325627385244725698" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8812646285162175951" xil_pn:start_ts="1499462221">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -123,7 +123,7 @@
       <outfile xil_pn:name="testBench_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1499453799" xil_pn:in_ck="-6302160742211018654" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3004015706954630149" xil_pn:start_ts="1499453799">
+    <transform xil_pn:end_ts="1499462226" xil_pn:in_ck="-6302160742211018654" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3004015706954630149" xil_pn:start_ts="1499462226">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>

@@ -34,7 +34,11 @@ module main( input clk100,
 				 output RD_VALID);
 
 	//the counter that counts on the system 100MHz clock 
+	//this is FOR the system
 	integer cntr = 0;
+	
+	//when should the fifo bring in data
+	reg fifoWrite = 0;
 	
 	//setting this to high prepares the whole system for another event
 	//this will clear all unsaved (not in RAM) data
@@ -57,13 +61,15 @@ module main( input clk100,
 	//ie, only when we are recording an event
 	wire tubeclk = SCIN_LATCH_Q && clk100;
 	
+	wire fifoclk = fifoWrite && clk100;
+	
 	//initialize the fifo that will hold all the data before it is sent to the rpi
 	//also set up light to turn on when it is full
-	reg [15:0] din;
+	reg [15:0] din = 0;
 	wire full;
 	//wire [0:9] wr_data_count;	
 	fifo16x1024 fifo( .rst(1'b0),
-							.wr_clk(clk100),
+							.wr_clk(fifoclk),
 							.din(din),
 							.wr_en(1'b1),
 							.full(full),
@@ -151,17 +157,14 @@ module main( input clk100,
 	
 	//the main loop!
 	always @ (posedge clk100) begin
-		
-		//start and keep counting up if we are in the middle of recording an event
-		if (SCIN_LATCH_Q) begin
-			cntr <= cntr + 1;
-		end
+		cntr <= cntr + 1;
 		
 		//time's up for the drift tubes to fire for this scintillator coincidence
 		//therefore, record all the clock cycles for all the tubes
 		
 		
 		case(cntr)
+			 256:  begin fifoWrite <= 1; 											end
 			 257:  begin din[15:8] <= data3A0; din[7:0] <= 8'b11000000; end
 			 258:  begin din[15:8] <= data3A1; din[7:0] <= 8'b11000100; end
 			 259:  begin din[15:8] <= data3A2; din[7:0] <= 8'b11000010; end
@@ -196,7 +199,7 @@ module main( input clk100,
 			 288:  begin din[15:8] <= data4B7; din[7:0] <= 8'b00101111; end
  
 		    //Once the data is read, clear it and reset everything 
-			 289:        CLR <= 1;                                 
+			 289:  begin CLR <= 1; fifoWrite <= 0; 							end                              
 			 //Once the clear is on, turn it off and reset the counter
 			 //to start looking for the next event	
 			 300:  begin cntr <= 0; CLR <= 0;                           end

@@ -9,10 +9,10 @@ SET_PREFERENCE verilogsim true
 SET_PREFERENCE vhdlsim false
 SET_PREFERENCE simulationfiles Behavioral
 SET_PREFERENCE busformat BusFormatAngleBracketNotRipped
-SET_PREFERENCE outputdirectory C:/Users/HEP/QN17Verilog/ipcore_dir/
-SET_PREFERENCE workingdirectory C:/Users/HEP/QN17Verilog/ipcore_dir/tmp/
-SET_PREFERENCE subworkingdirectory C:/Users/HEP/QN17Verilog/ipcore_dir/tmp/_cg/
-SET_PREFERENCE transientdirectory C:/Users/HEP/QN17Verilog/ipcore_dir/tmp/_cg/_dbg/
+SET_PREFERENCE outputdirectory C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/
+SET_PREFERENCE workingdirectory C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/tmp/
+SET_PREFERENCE subworkingdirectory C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/tmp/_cg/
+SET_PREFERENCE transientdirectory C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/tmp/_cg/_dbg/
 SET_PREFERENCE designentry Verilog
 SET_PREFERENCE flowvendor Other
 SET_PREFERENCE addpads false

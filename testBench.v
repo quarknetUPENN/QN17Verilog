@@ -71,6 +71,12 @@ module testBench;
 		// Wait 100 ns for global reset to finish
 		#100;
 		
+				
+		TUBE3A = 8'b00010000;
+		#30
+		TUBE3A[4] = 1'b0;
+		
+		#30
 		SCIN_COIN = 1;
 		#100; //simulate an event
 		SCIN_COIN = 0;
@@ -86,6 +92,14 @@ module testBench;
         
 		#20
 		{TUBE3A,TUBE3B,TUBE4A,TUBE4B} = 32'b0;
+		
+		#100
+		RD_EN = 1;
+		
+		#6000
+		RD_CLK = 1;
+		#20
+		RD_CLK = 0;
 	end
 	
 	//sim the clock
@@ -100,7 +114,7 @@ module testBench;
 	end
 	
 	initial begin
-		# 3000;
+		# 10000;
 		$finish();
 	end
       
