@@ -22,9 +22,9 @@ module Tube(input clk,
 				input clr,
 				input tubePin,
 				input gateEnable,                    
-				output [0:8] clk_cyc_data);
+				output [7:0] clk_cyc_data);
 				
-	reg [0:8] cntr;
+	reg [7:0] cntr;
 	assign clk_cyc_data = cntr;
 	
 	wire Q;

@@ -21,13 +21,13 @@
 module main( input clk100,
 				 output overflowLight,
 				 input SCIN_COIN,
-				 input [0:7] TUBE3A,
-				 input [0:7] TUBE3B,
-				 input [0:7] TUBE4A,
-				 input [0:7] TUBE4B,
+				 input [7:0] TUBE3A,
+				 input [7:0] TUBE3B,
+				 input [7:0] TUBE4A,
+				 input [7:0] TUBE4B,
 
 				 //RPi facing pins
-				 output [0:15] OTUBE,
+				 output [15:0] OTUBE,
 				 input RD_CLK,
 				 input RD_EN,
 				 output RD_EMPTY,
@@ -59,7 +59,7 @@ module main( input clk100,
 	
 	//initialize the fifo that will hold all the data before it is sent to the rpi
 	//also set up light to turn on when it is full
-	reg [0:15] din;
+	reg [15:0] din;
 	wire full;
 	//wire [0:9] wr_data_count;	
 	fifo16x1024 fifo( .rst(1'b0),
@@ -78,38 +78,38 @@ module main( input clk100,
 							
 	
 	//initialize wires and tubes for. every. tube.
-	wire [0:7] data3A0;
-	wire [0:7] data3A1;
-	wire [0:7] data3A2;
-	wire [0:7] data3A3;
-	wire [0:7] data3A4;
-	wire [0:7] data3A5;
-	wire [0:7] data3A6;
-	wire [0:7] data3A7;
-	wire [0:7] data3B0;
-	wire [0:7] data3B1;
-	wire [0:7] data3B2;
-	wire [0:7] data3B3;
-	wire [0:7] data3B4;
-	wire [0:7] data3B5;
-	wire [0:7] data3B6;
-	wire [0:7] data3B7;
-	wire [0:7] data4A0;
-	wire [0:7] data4A1;
-	wire [0:7] data4A2;
-	wire [0:7] data4A3;
-	wire [0:7] data4A4;
-	wire [0:7] data4A5;
-	wire [0:7] data4A6;
-	wire [0:7] data4A7;
-	wire [0:7] data4B0;
-	wire [0:7] data4B1;
-	wire [0:7] data4B2;
-	wire [0:7] data4B3;
-	wire [0:7] data4B4;
-	wire [0:7] data4B5;
-	wire [0:7] data4B6;
-	wire [0:7] data4B7;
+	wire [7:0] data3A0;
+	wire [7:0] data3A1;
+	wire [7:0] data3A2;
+	wire [7:0] data3A3;
+	wire [7:0] data3A4;
+	wire [7:0] data3A5;
+	wire [7:0] data3A6;
+	wire [7:0] data3A7;
+	wire [7:0] data3B0;
+	wire [7:0] data3B1;
+	wire [7:0] data3B2;
+	wire [7:0] data3B3;
+	wire [7:0] data3B4;
+	wire [7:0] data3B5;
+	wire [7:0] data3B6;
+	wire [7:0] data3B7;
+	wire [7:0] data4A0;
+	wire [7:0] data4A1;
+	wire [7:0] data4A2;
+	wire [7:0] data4A3;
+	wire [7:0] data4A4;
+	wire [7:0] data4A5;
+	wire [7:0] data4A6;
+	wire [7:0] data4A7;
+	wire [7:0] data4B0;
+	wire [7:0] data4B1;
+	wire [7:0] data4B2;
+	wire [7:0] data4B3;
+	wire [7:0] data4B4;
+	wire [7:0] data4B5;
+	wire [7:0] data4B6;
+	wire [7:0] data4B7;
 	
 	Tube tube3A0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[0]), .clk_cyc_data(data3A0), .gateEnable(SCIN_LATCH_Q));
 	Tube tube3A1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[1]), .clk_cyc_data(data3A1), .gateEnable(SCIN_LATCH_Q));
@@ -162,38 +162,38 @@ module main( input clk100,
 		
 		
 		case(cntr)
-			 257:  begin din[8:15] <= data3A0; din[0:7] <= 8'b11000000; end
-			 258:  begin din[8:15] <= data3A1; din[0:7] <= 8'b11000100; end
-			 259:  begin din[8:15] <= data3A2; din[0:7] <= 8'b11000010; end
-			 260:  begin din[8:15] <= data3A3; din[0:7] <= 8'b11000110; end
-			 261:  begin din[8:15] <= data3A4; din[0:7] <= 8'b11000001; end
-			 262:  begin din[8:15] <= data3A5; din[0:7] <= 8'b11000101; end
-			 263:  begin din[8:15] <= data3A6; din[0:7] <= 8'b11000011; end
-			 264:  begin din[8:15] <= data3A7; din[0:7] <= 8'b11000111; end
-			 265:  begin din[8:15] <= data3B0; din[0:7] <= 8'b11001000; end
-			 266:  begin din[8:15] <= data3B1; din[0:7] <= 8'b11001100; end
-			 267:  begin din[8:15] <= data3B2; din[0:7] <= 8'b11001010; end
-			 268:  begin din[8:15] <= data3B3; din[0:7] <= 8'b11001110; end
-			 269:  begin din[8:15] <= data3B4; din[0:7] <= 8'b11001001; end
-			 270:  begin din[8:15] <= data3B5; din[0:7] <= 8'b11001101; end
-			 271:  begin din[8:15] <= data3B6; din[0:7] <= 8'b11001011; end
-			 272:  begin din[8:15] <= data3B7; din[0:7] <= 8'b11001111; end
-			 273:  begin din[8:15] <= data4A0; din[0:7] <= 8'b00100000; end
-			 274:  begin din[8:15] <= data4A1; din[0:7] <= 8'b00100100; end
-			 275:  begin din[8:15] <= data4A2; din[0:7] <= 8'b00100010; end
-			 276:  begin din[8:15] <= data4A3; din[0:7] <= 8'b00100110; end
-			 277:  begin din[8:15] <= data4A4; din[0:7] <= 8'b00100001; end
-			 278:  begin din[8:15] <= data4A5; din[0:7] <= 8'b00100101; end
-			 279:  begin din[8:15] <= data4A6; din[0:7] <= 8'b00100011; end
-			 280:  begin din[8:15] <= data4A7; din[0:7] <= 8'b00100111; end
-			 281:  begin din[8:15] <= data4B0; din[0:7] <= 8'b00101000; end
-			 282:  begin din[8:15] <= data4B1; din[0:7] <= 8'b00101100; end
-			 283:  begin din[8:15] <= data4B2; din[0:7] <= 8'b00101010; end
-			 284:  begin din[8:15] <= data4B3; din[0:7] <= 8'b00101110; end
-			 285:  begin din[8:15] <= data4B4; din[0:7] <= 8'b00101001; end
-			 286:  begin din[8:15] <= data4B5; din[0:7] <= 8'b00101101; end
-			 287:  begin din[8:15] <= data4B6; din[0:7] <= 8'b00101011; end
-			 288:  begin din[8:15] <= data4B7; din[0:7] <= 8'b00101111; end
+			 257:  begin din[15:8] <= data3A0; din[7:0] <= 8'b11000000; end
+			 258:  begin din[15:8] <= data3A1; din[7:0] <= 8'b11000100; end
+			 259:  begin din[15:8] <= data3A2; din[7:0] <= 8'b11000010; end
+			 260:  begin din[15:8] <= data3A3; din[7:0] <= 8'b11000110; end
+			 261:  begin din[15:8] <= data3A4; din[7:0] <= 8'b11000001; end
+			 262:  begin din[15:8] <= data3A5; din[7:0] <= 8'b11000101; end
+			 263:  begin din[15:8] <= data3A6; din[7:0] <= 8'b11000011; end
+			 264:  begin din[15:8] <= data3A7; din[7:0] <= 8'b11000111; end
+			 265:  begin din[15:8] <= data3B0; din[7:0] <= 8'b11001000; end
+			 266:  begin din[15:8] <= data3B1; din[7:0] <= 8'b11001100; end
+			 267:  begin din[15:8] <= data3B2; din[7:0] <= 8'b11001010; end
+			 268:  begin din[15:8] <= data3B3; din[7:0] <= 8'b11001110; end
+			 269:  begin din[15:8] <= data3B4; din[7:0] <= 8'b11001001; end
+			 270:  begin din[15:8] <= data3B5; din[7:0] <= 8'b11001101; end
+			 271:  begin din[15:8] <= data3B6; din[7:0] <= 8'b11001011; end
+			 272:  begin din[15:8] <= data3B7; din[7:0] <= 8'b11001111; end
+			 273:  begin din[15:8] <= data4A0; din[7:0] <= 8'b00100000; end
+			 274:  begin din[15:8] <= data4A1; din[7:0] <= 8'b00100100; end
+			 275:  begin din[15:8] <= data4A2; din[7:0] <= 8'b00100010; end
+			 276:  begin din[15:8] <= data4A3; din[7:0] <= 8'b00100110; end
+			 277:  begin din[15:8] <= data4A4; din[7:0] <= 8'b00100001; end
+			 278:  begin din[15:8] <= data4A5; din[7:0] <= 8'b00100101; end
+			 279:  begin din[15:8] <= data4A6; din[7:0] <= 8'b00100011; end
+			 280:  begin din[15:8] <= data4A7; din[7:0] <= 8'b00100111; end
+			 281:  begin din[15:8] <= data4B0; din[7:0] <= 8'b00101000; end
+			 282:  begin din[15:8] <= data4B1; din[7:0] <= 8'b00101100; end
+			 283:  begin din[15:8] <= data4B2; din[7:0] <= 8'b00101010; end
+			 284:  begin din[15:8] <= data4B3; din[7:0] <= 8'b00101110; end
+			 285:  begin din[15:8] <= data4B4; din[7:0] <= 8'b00101001; end
+			 286:  begin din[15:8] <= data4B5; din[7:0] <= 8'b00101101; end
+			 287:  begin din[15:8] <= data4B6; din[7:0] <= 8'b00101011; end
+			 288:  begin din[15:8] <= data4B7; din[7:0] <= 8'b00101111; end
  
 		    //Once the data is read, clear it and reset everything 
 			 289:        CLR <= 1;                                 

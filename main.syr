@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -68,7 +68,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 24
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -143,11 +143,10 @@ Module <Tube> is correct for synthesis.
 =========================================================================
 
 Performing bidirectional port resolution...
-INFO:Xst:2679 - Register <din<3>> in unit <main> has a constant value of 0 during circuit operation. The register is replaced by logic.
 
 Synthesizing Unit <Tube>.
     Related source file is "tube.v".
-    Found 9-bit up counter for signal <cntr>.
+    Found 8-bit up counter for signal <cntr>.
     Summary:
 	inferred   1 Counter(s).
 Unit <Tube> synthesized.
@@ -155,15 +154,14 @@ Unit <Tube> synthesized.
 
 Synthesizing Unit <main>.
     Related source file is "main.v".
-    Register <din<1>> equivalent to <din<0>> has been removed
+    Register <din<7>> equivalent to <din<6>> has been removed
     Found 1-bit register for signal <CLR>.
     Found 32-bit up counter for signal <cntr>.
-    Found 1-bit register for signal <din<0>>.
-    Found 1-bit register for signal <din<2>>.
-    Found 12-bit register for signal <din<4:15>>.
+    Found 8-bit register for signal <din<15:8>>.
+    Found 7-bit register for signal <din<6:0>>.
     Summary:
 	inferred   1 Counter(s).
-	inferred  15 D-type flip-flop(s).
+	inferred  16 D-type flip-flop(s).
 Unit <main> synthesized.
 
 
@@ -173,9 +171,9 @@ HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 33
  32-bit up counter                                     : 1
- 9-bit up counter                                      : 32
-# Registers                                            : 15
- 1-bit register                                        : 15
+ 8-bit up counter                                      : 32
+# Registers                                            : 16
+ 1-bit register                                        : 16
 
 =========================================================================
 
@@ -192,53 +190,21 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 33
  32-bit up counter                                     : 1
- 9-bit up counter                                      : 32
-# Registers                                            : 15
- Flip-Flops                                            : 15
+ 8-bit up counter                                      : 32
+# Registers                                            : 16
+ Flip-Flops                                            : 16
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <tube4B6/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4B7/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4B5/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4B4/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4B3/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4B2/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4B1/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4B0/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4A7/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4A6/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4A5/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4A4/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4A3/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4A2/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4A1/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3B7/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube4A0/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3B6/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3B5/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3B4/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3B3/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3B2/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3B1/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3B0/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3A7/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3A6/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3A5/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3A4/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3A3/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3A2/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3A1/cntr_0> of sequential type is unconnected in block <main>.
-WARNING:Xst:2677 - Node <tube3A0/cntr_0> of sequential type is unconnected in block <main>.
 
 Optimizing unit <main> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 40.
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 43.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
@@ -247,6 +213,9 @@ INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2> in Unit <fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0> 
+FlipFlop cntr_0 has been replicated 1 time(s)
+FlipFlop cntr_2 has been replicated 1 time(s)
+FlipFlop cntr_5 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -254,8 +223,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 303
- Flip-Flops                                            : 303
+# Registers                                            : 307
+ Flip-Flops                                            : 307
 
 =========================================================================
 
@@ -284,30 +253,31 @@ Design Statistics
 # IOs                              : 55
 
 Cell Usage :
-# BELS                             : 1425
+# BELS                             : 1357
 #      GND                         : 2
-#      INV                         : 68
+#      INV                         : 69
 #      LUT1                        : 273
-#      LUT2                        : 45
+#      LUT2                        : 46
 #      LUT2_D                      : 1
-#      LUT2_L                      : 1
-#      LUT3                        : 65
-#      LUT3_D                      : 3
-#      LUT4                        : 183
+#      LUT3                        : 64
+#      LUT3_D                      : 13
+#      LUT3_L                      : 15
+#      LUT4                        : 167
 #      LUT4_D                      : 12
-#      LUT4_L                      : 5
-#      MUXCY                       : 445
-#      MUXF5                       : 2
+#      LUT4_L                      : 50
+#      MUXCY                       : 309
+#      MUXF5                       : 16
 #      VCC                         : 2
 #      XORCY                       : 318
-# FlipFlops/Latches                : 496
-#      FD                          : 13
+# FlipFlops/Latches                : 500
+#      FD                          : 14
 #      FDC                         : 92
 #      FDCE                        : 47
+#      FDE                         : 1
 #      FDP                         : 12
 #      FDPE                        : 5
-#      FDRE                        : 288
-#      FDS                         : 6
+#      FDRE                        : 291
+#      FDS                         : 5
 #      LDCE                        : 33
 # RAMS                             : 1
 #      RAMB16_S18_S18              : 1
@@ -324,9 +294,9 @@ Device utilization summary:
 
 Selected Device : 3s100etq144-5 
 
- Number of Slices:                      377  out of    960    39%  
- Number of Slice Flip Flops:            463  out of   1920    24%  
- Number of 4 input LUTs:                656  out of   1920    34%  
+ Number of Slices:                      393  out of    960    40%  
+ Number of Slice Flip Flops:            467  out of   1920    24%  
+ Number of 4 input LUTs:                710  out of   1920    36%  
  Number of IOs:                          55
  Number of bonded IOBs:                  55  out of    108    50%  
     IOB Flip Flops:                      33
@@ -355,7 +325,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)   | Load  |
 -----------------------------------+-------------------------+-------+
 RD_CLK                             | BUFGP                   | 70    |
-clk100                             | IBUF+BUFG               | 139   |
+clk100                             | IBUF+BUFG               | 143   |
 SCIN_LATCH_Q                       | NONE(SCIN_LATCH)        | 1     |
 tube4B7/Q                          | NONE(tube4B7/TUBE_LATCH)| 1     |
 tube4B6/Q                          | NONE(tube4B6/TUBE_LATCH)| 1     |
@@ -389,7 +359,7 @@ tube3A3/Q                          | NONE(tube3A3/TUBE_LATCH)| 1     |
 tube3A2/Q                          | NONE(tube3A2/TUBE_LATCH)| 1     |
 tube3A1/Q                          | NONE(tube3A1/TUBE_LATCH)| 1     |
 tube3A0/Q                          | NONE(tube3A0/TUBE_LATCH)| 1     |
-tubeclk1(tubeclk1:O)               | BUFG(*)(tube4B6/cntr_8) | 256   |
+tubeclk1(tubeclk1:O)               | BUFG(*)(tube4B6/cntr_0) | 256   |
 -----------------------------------+-------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -416,7 +386,7 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 6.359ns (Maximum Frequency: 157.261MHz)
+   Minimum period: 7.763ns (Maximum Frequency: 128.820MHz)
    Minimum input arrival time before clock: 4.312ns
    Maximum output required time after clock: 5.962ns
    Maximum combinational path delay: No path found
@@ -451,42 +421,30 @@ Delay:               4.078ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk100'
-  Clock period: 6.359ns (frequency: 157.261MHz)
-  Total number of paths / destination ports: 4453 / 220
+  Clock period: 7.763ns (frequency: 128.820MHz)
+  Total number of paths / destination ports: 4114 / 228
 -------------------------------------------------------------------------
-Delay:               6.359ns (Levels of Logic = 18)
-  Source:            cntr_4 (FF)
-  Destination:       din_10 (FF)
+Delay:               7.763ns (Levels of Logic = 6)
+  Source:            cntr_3 (FF)
+  Destination:       din_15 (FF)
   Source Clock:      clk100 rising
   Destination Clock: clk100 rising
 
-  Data Path: cntr_4 to din_10
+  Data Path: cntr_3 to din_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            29   0.514   1.224  cntr_4 (cntr_4)
-     LUT4_D:I0->O          3   0.612   0.481  din_8_cmp_eq001711 (N34)
-     LUT3:I2->O            8   0.612   0.673  din_8_cmp_eq00181 (din_8_cmp_eq0018)
-     LUT4:I2->O            1   0.612   0.000  din_8_mux0000_wg_lut<2> (din_8_mux0000_wg_lut<2>)
-     MUXCY:S->O            1   0.404   0.000  din_8_mux0000_wg_cy<2> (din_8_mux0000_wg_cy<2>)
-     MUXCY:CI->O           1   0.051   0.000  din_8_mux0000_wg_cy<3> (din_8_mux0000_wg_cy<3>)
-     MUXCY:CI->O           1   0.051   0.000  din_8_mux0000_wg_cy<4> (din_8_mux0000_wg_cy<4>)
-     MUXCY:CI->O           1   0.051   0.000  din_8_mux0000_wg_cy<5> (din_8_mux0000_wg_cy<5>)
-     MUXCY:CI->O           1   0.051   0.000  din_8_mux0000_wg_cy<6> (din_8_mux0000_wg_cy<6>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<7> (din_8_mux0000_wg_cy<7>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<8> (din_8_mux0000_wg_cy<8>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<9> (din_8_mux0000_wg_cy<9>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<10> (din_8_mux0000_wg_cy<10>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<11> (din_8_mux0000_wg_cy<11>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<12> (din_8_mux0000_wg_cy<12>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<13> (din_8_mux0000_wg_cy<13>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<14> (din_8_mux0000_wg_cy<14>)
-     MUXCY:CI->O           1   0.052   0.000  din_8_mux0000_wg_cy<15> (din_8_mux0000_wg_cy<15>)
-     MUXCY:CI->O           1   0.289   0.000  din_8_mux0000_wg_cy<16> (din_8_mux0000)
+     FDRE:C->Q            19   0.514   1.074  cntr_3 (cntr_3)
+     LUT4_D:I0->O         10   0.612   0.780  din_15_cmp_eq000721 (N43)
+     LUT3_D:I2->O          7   0.612   0.632  din_15_cmp_eq00071 (din_15_cmp_eq0007)
+     LUT4:I2->O            1   0.612   0.360  din_8_mux000061 (din_8_mux000061)
+     LUT4:I3->O            1   0.612   0.360  din_8_mux000093 (din_8_mux000093)
+     LUT4_L:I3->LO         1   0.612   0.103  din_8_mux0000103 (din_8_mux0000103)
+     LUT4:I3->O            1   0.612   0.000  din_8_mux0000226 (din_8_mux0000)
      FD:D                      0.268          din_8
     ----------------------------------------
-    Total                      6.359ns (3.980ns logic, 2.379ns route)
-                                       (62.6% logic, 37.4% route)
+    Total                      7.763ns (4.454ns logic, 3.309ns route)
+                                       (57.4% logic, 42.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'tubeclk1'
@@ -494,16 +452,16 @@ Timing constraint: Default period analysis for Clock 'tubeclk1'
   Total number of paths / destination ports: 1152 / 256
 -------------------------------------------------------------------------
 Delay:               3.286ns (Levels of Logic = 8)
-  Source:            tube4B6/cntr_7 (FF)
-  Destination:       tube4B6/cntr_1 (FF)
+  Source:            tube4B6/cntr_1 (FF)
+  Destination:       tube4B6/cntr_7 (FF)
   Source Clock:      tubeclk1 rising
   Destination Clock: tubeclk1 rising
 
-  Data Path: tube4B6/cntr_7 to tube4B6/cntr_1
+  Data Path: tube4B6/cntr_1 to tube4B6/cntr_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             2   0.514   0.532  tube4B6/cntr_7 (tube4B6/cntr_7)
+     FDRE:C->Q             2   0.514   0.532  tube4B6/cntr_1 (tube4B6/cntr_1)
      LUT1:I0->O            1   0.612   0.000  tube4B6/Mcount_cntr_cy<1>_rt (tube4B6/Mcount_cntr_cy<1>_rt)
      MUXCY:S->O            1   0.404   0.000  tube4B6/Mcount_cntr_cy<1> (tube4B6/Mcount_cntr_cy<1>)
      MUXCY:CI->O           1   0.051   0.000  tube4B6/Mcount_cntr_cy<2> (tube4B6/Mcount_cntr_cy<2>)
@@ -512,7 +470,7 @@ Delay:               3.286ns (Levels of Logic = 8)
      MUXCY:CI->O           1   0.051   0.000  tube4B6/Mcount_cntr_cy<5> (tube4B6/Mcount_cntr_cy<5>)
      MUXCY:CI->O           0   0.051   0.000  tube4B6/Mcount_cntr_cy<6> (tube4B6/Mcount_cntr_cy<6>)
      XORCY:CI->O           1   0.699   0.000  tube4B6/Mcount_cntr_xor<7> (Result<7>)
-     FDRE:D                    0.268          tube4B6/cntr_1
+     FDRE:D                    0.268          tube4B6/cntr_7
     ----------------------------------------
     Total                      3.286ns (2.755ns logic, 0.532ns route)
                                        (83.8% logic, 16.2% route)
@@ -1192,16 +1150,16 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'RD_CLK'
 -------------------------------------------------------------------------
 Offset:              5.962ns (Levels of Logic = 2)
   Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (RAM)
-  Destination:       OTUBE<0> (PAD)
+  Destination:       OTUBE<15> (PAD)
   Source Clock:      RD_CLK rising
 
-  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram to OTUBE<0>
+  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram to OTUBE<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      RAMB16_S18_S18:CLKB->DOB15    1   2.436   0.357  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (dout<15>)
      end scope: 'fifo'
-     OBUF:I->O                 3.169          OTUBE_0_OBUF (OTUBE<0>)
+     OBUF:I->O                 3.169          OTUBE_15_OBUF (OTUBE<15>)
     ----------------------------------------
     Total                      5.962ns (5.605ns logic, 0.357ns route)
                                        (94.0% logic, 6.0% route)
@@ -1209,14 +1167,14 @@ Offset:              5.962ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.12 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.96 secs
  
 --> 
 
-Total memory usage is 284780 kilobytes
+Total memory usage is 284332 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   65 (   0 filtered)
-Number of infos    :   10 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
 
