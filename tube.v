@@ -23,8 +23,8 @@ module Tube(input clk,
 				input tubePin,
 				input gateEnable,                    
 				output [7:0] clk_cyc_data);
-				
-	reg [7:0] cntr;
+	
+	reg [7:0] cntr = 0;
 	assign clk_cyc_data = cntr;
 	
 	wire Q;
@@ -34,7 +34,7 @@ module Tube(input clk,
 		.Q(Q),      				// Data output
 		.CLR(clr),  				// Asynchronous clear/reset input
 		.D(tubePin),      		// Data input
-		.G(~Q),      				// Gate input
+		.G(!Q),      				// Gate input
 		.GE(gateEnable)     				// Gate enable input
 	);
 

@@ -1,4 +1,4 @@
-NET "clk100" LOC = "P126"; 
+NET "clk100" LOC = "P126" | PERIOD = 10.0; 
 
 NET "overflowLight" LOC = "P20";
 

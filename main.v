@@ -38,7 +38,7 @@ module main( input clk100,
 	
 	//setting this to high prepares the whole system for another event
 	//this will clear all unsaved (not in RAM) data
-	reg CLR;
+	reg CLR = 0;
 	
 	//LDCE:  Transparent latch with Asynchronous Reset and Gate Enable.
 	//a latch that will hold high once SCIN_COIN pulses high until CLR'd

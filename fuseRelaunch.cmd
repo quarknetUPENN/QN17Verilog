@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_isim_beh.exe" -prj "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_beh.prj" "work.testBench" "work.glbl" 
