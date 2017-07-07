@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-07-06T13:37:03</DateModified>
+  <DateModified>2017-07-06T17:53:01</DateModified>
   <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>2017-07-06T10:48:01</SummaryTimeStamp>
-  <SavedFilePath>/raid/home/ashmansk/u/proj/quarknet/QN17Verilog/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/raid/home/ashmansk/u/proj/quarknet/QN17Verilog/</ImplementationReportsDirectory>
-  <DateInitialized>2017-06-28T17:49:48</DateInitialized>
-  <EnableMessageFiltering>false</EnableMessageFiltering>
+  <SummaryTimeStamp>2017-07-06T17:51:06</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/HEP/QN17Verilog/iseconfig/main.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/HEP/QN17Verilog</ImplementationReportsDirectory>
+  <DateInitialized>2017-07-06T15:55:21</DateInitialized>
+  <EnableMessageFiltering>true</EnableMessageFiltering>
  </header>
  <body>
   <viewgroup label="Design Overview" >
-   <view inputState="Unknown" program="implementation" ShowPartitionData="false" type="FPGASummary" file="main_summary.html" label="Summary" >
+   <view inputState="Unknown" program="implementation" ShowPartitionData="false" type="FPGASummary" file="main_summary.html" label="Summary" ExpandClockNets="false" >
     <toc-item title="Design Overview" target="Design Overview" />
     <toc-item title="Design Utilization Summary" target="Design Utilization Summary" />
     <toc-item title="Performance Summary" target="Performance Summary" />
@@ -19,7 +19,7 @@
     <toc-item title="Detailed Reports" target="Detailed Reports" />
    </view>
    <view inputState="Unknown" program="implementation" contextTags="FPGA_ONLY" hidden="true" type="HTML" file="main_envsettings.html" label="System Settings" />
-   <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="main_map.xrpt" showConstraints="0" label="IOB Properties" />
+   <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="main_map.xrpt" label="IOB Properties" />
    <view inputState="Translated" program="map" contextTags="FPGA_ONLY" hidden="true" type="Control_Sets" file="main_map.xrpt" label="Control Set Information" />
    <view inputState="Translated" program="map" locator="MAP_MODULE_HIERARCHY" contextTags="FPGA_ONLY" type="Module_Utilization" file="main_map.xrpt" label="Module Level Utilization" />
    <view inputState="Mapped" program="par" locator="CONSTRAINT_TABLE" contextTags="FPGA_ONLY" type="ConstraintsData" file="main.ptwx" label="Timing Constraints" translator="ptwxToTableXML.xslt" />

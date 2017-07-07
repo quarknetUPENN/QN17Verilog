@@ -22,8 +22,8 @@ NET "OTUBE<13>" LOC = "P23";
 NET "OTUBE<14>" LOC = "P25";
 NET "OTUBE<15>" LOC = "P26";
 //control pins for FIFO
-NET "RD_CLK1" LOC = "P56";
-NET "RD_EN1" LOC = "P33";
+NET "RD_CLK" LOC = "P56";
+NET "RD_EN" LOC = "P33";
 NET "RD_EMPTY" LOC = "P34";
 NET "RD_VALID" LOC = "P35";
 
@@ -66,5 +66,3 @@ NET "TUBE4B<4>" LOC = "P106";
 NET "TUBE4B<5>" LOC = "P113";
 NET "TUBE4B<6>" LOC = "P117";
 NET "TUBE4B<7>" LOC = "P120";
-
-

@@ -2,9 +2,9 @@
 Release 14.6 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 5
--n 3 -fastpaths -xml main.twx main.ncd -o main.twr main.pcf -ucf
-constraints.ucf
+C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -filter
+C:/Users/HEP/QN17Verilog/iseconfig/filter.filter -intstyle ise -v 3 -s 5 -n 3
+-fastpaths -xml main.twx main.ncd -o main.twr main.pcf -ucf constraints.ucf
 
 Design file:              main.ncd
 Physical constraint file: main.pcf
@@ -40,56 +40,74 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock RD_CLK1
+Setup/Hold to clock RD_CLK
 ------------+------------+------------+------------------+--------+
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-RD_EN1      |    2.520(R)|    0.864(R)|buffer_ofifo_clock|   0.000|
+RD_EN       |    2.633(R)|    0.694(R)|RD_CLK_BUFGP      |   0.000|
 ------------+------------+------------+------------------+--------+
 
-Clock RD_CLK1 to Pad
+Clock RD_CLK to Pad
 ------------+------------+------------------+--------+
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-OTUBE<0>    |    9.564(R)|buffer_ofifo_clock|   0.000|
-OTUBE<1>    |    9.297(R)|buffer_ofifo_clock|   0.000|
-OTUBE<2>    |    9.532(R)|buffer_ofifo_clock|   0.000|
-OTUBE<3>    |    9.308(R)|buffer_ofifo_clock|   0.000|
-OTUBE<4>    |    9.298(R)|buffer_ofifo_clock|   0.000|
-OTUBE<5>    |    9.549(R)|buffer_ofifo_clock|   0.000|
-OTUBE<6>    |    9.298(R)|buffer_ofifo_clock|   0.000|
-OTUBE<7>    |    9.532(R)|buffer_ofifo_clock|   0.000|
-OTUBE<8>    |    8.994(R)|buffer_ofifo_clock|   0.000|
-OTUBE<9>    |    8.785(R)|buffer_ofifo_clock|   0.000|
-OTUBE<10>   |    9.038(R)|buffer_ofifo_clock|   0.000|
-OTUBE<11>   |    8.785(R)|buffer_ofifo_clock|   0.000|
-OTUBE<12>   |    9.000(R)|buffer_ofifo_clock|   0.000|
-OTUBE<13>   |    9.009(R)|buffer_ofifo_clock|   0.000|
-OTUBE<14>   |    9.295(R)|buffer_ofifo_clock|   0.000|
-OTUBE<15>   |    9.298(R)|buffer_ofifo_clock|   0.000|
-RD_EMPTY    |    7.427(R)|buffer_ofifo_clock|   0.000|
-RD_VALID    |    7.436(R)|buffer_ofifo_clock|   0.000|
+OTUBE<0>    |    9.233(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<1>    |    8.994(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<2>    |    8.971(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<3>    |    8.987(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<4>    |    8.994(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<5>    |    8.864(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<6>    |    8.747(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<7>    |    8.747(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<8>    |    9.213(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<9>    |    8.972(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<10>   |    9.061(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<11>   |    9.072(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<12>   |    9.087(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<13>   |    9.087(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<14>   |    9.340(R)|RD_CLK_BUFGP      |   0.000|
+OTUBE<15>   |    9.359(R)|RD_CLK_BUFGP      |   0.000|
+RD_EMPTY    |    7.442(R)|RD_CLK_BUFGP      |   0.000|
+RD_VALID    |    7.310(R)|RD_CLK_BUFGP      |   0.000|
 ------------+------------+------------------+--------+
 
-Clock to Setup on destination clock RD_CLK1
+Clock clk100 to Pad
+-------------+------------+------------------+--------+
+             | clk (edge) |                  | Clock  |
+Destination  |   to PAD   |Internal Clock(s) | Phase  |
+-------------+------------+------------------+--------+
+overflowLight|    7.166(R)|clk100_IBUF       |   0.000|
+-------------+------------+------------------+--------+
+
+Clock to Setup on destination clock RD_CLK
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-RD_CLK1        |    3.636|         |         |         |
+RD_CLK         |    4.269|         |         |         |
+clk100         |    1.939|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk100
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+RD_CLK         |    1.755|         |         |         |
+clk100         |    9.064|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Jul 06 12:56:59 2017 
+Analysis completed Fri Jul 07 12:29:59 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 152 MB
+Peak Memory Usage: 174 MB
 
 
 

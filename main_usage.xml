@@ -4,30 +4,38 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="12">
-<DesignStatistics TimeStamp="Thu Jul 06 12:56:44 2017"><group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="12">
+<DeviceUsageSummary rev="22">
+<DesignStatistics TimeStamp="Fri Jul 07 12:29:19 2017"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="22">
 <attrib name="value" value="55"/></item>
-<item name="AGG_IO" rev="12">
+<item name="AGG_IO" rev="22">
 <attrib name="value" value="55"/></item>
-<item name="AGG_SLICE" rev="12">
-<attrib name="value" value="17"/></item>
-<item name="NUM_4_INPUT_LUT" rev="12">
-<attrib name="value" value="17"/></item>
-<item name="NUM_BONDED_IBUF" rev="12">
+<item name="AGG_SLICE" rev="22">
+<attrib name="value" value="364"/></item>
+<item name="NUM_4_INPUT_LUT" rev="22">
+<attrib name="value" value="619"/></item>
+<item name="NUM_BONDED_IBUF" rev="22">
 <attrib name="value" value="36"/></item>
-<item name="NUM_BONDED_IOB" rev="12">
+<item name="NUM_BONDED_IOB" rev="22">
 <attrib name="value" value="19"/></item>
-<item name="NUM_BUFGMUX" rev="12">
+<item name="NUM_BUFGMUX" rev="22">
+<attrib name="value" value="3"/></item>
+<item name="NUM_CYMUX" rev="22">
+<attrib name="value" value="436"/></item>
+<item name="NUM_IOB_LATCH" rev="22">
+<attrib name="value" value="33"/></item>
+<item name="NUM_LUT_RT" rev="22">
+<attrib name="value" value="273"/></item>
+<item name="NUM_RAMB16" rev="22">
 <attrib name="value" value="1"/></item>
-<item name="NUM_RAMB16" rev="12">
+<item name="NUM_SLICEL" rev="22">
+<attrib name="value" value="364"/></item>
+<item name="NUM_SLICE_FF" rev="22">
+<attrib name="value" value="453"/></item>
+<item name="NUM_XOR" rev="22">
+<attrib name="value" value="315"/></item>
+<item name="Xilinx Core fifo_generator_v9_3, Xilinx CORE Generator 14.6" rev="22">
 <attrib name="value" value="1"/></item>
-<item name="NUM_SLICEL" rev="12">
-<attrib name="value" value="17"/></item>
-<item name="NUM_SLICE_FF" rev="12">
-<attrib name="value" value="20"/></item>
-<item name="Xilinx Core fifo_generator_v9_3, Xilinx CORE Generator 14.6" rev="12">
-<attrib name="value" value="2"/></item>
 </group>
 </DesignStatistics>
 <CmdHistory>
