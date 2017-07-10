@@ -121,7 +121,7 @@ module testBench;
 	end 
 	
 	initial begin
-		# 100000;
+		# 50000;
 		$finish();
 	end
       

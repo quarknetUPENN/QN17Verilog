@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -129,7 +129,7 @@ Analyzing hierarchy for module <Tube> in library <work>.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <main>.
-WARNING:Xst:2211 - "ipcore_dir/fifo16x1024.v" line 70: Instantiating black box module <fifo16x1024>.
+WARNING:Xst:2211 - "ipcore_dir/fifo16x1024.v" line 69: Instantiating black box module <fifo16x1024>.
 Module <main> is correct for synthesis.
  
     Set user-defined property "INIT =  0" for instance <SCIN_LATCH> in unit <main>.
@@ -147,8 +147,10 @@ Performing bidirectional port resolution...
 Synthesizing Unit <Tube>.
     Related source file is "tube.v".
     Found 8-bit up counter for signal <cntr>.
+    Found 8-bit comparator less for signal <cntr$cmp_lt0000> created at line 45.
     Summary:
 	inferred   1 Counter(s).
+	inferred   1 Comparator(s).
 Unit <Tube> synthesized.
 
 
@@ -160,7 +162,7 @@ Synthesizing Unit <main>.
     Found 32-bit up counter for signal <cntr>.
     Found 8-bit register for signal <din<15:8>>.
     Found 7-bit register for signal <din<6:0>>.
-    Found 1-bit register for signal <fifoWrite>.
+    Found 1-bit register for signal <wr_en>.
     Summary:
 	inferred   2 Counter(s).
 	inferred  17 D-type flip-flop(s).
@@ -176,6 +178,8 @@ Macro Statistics
  8-bit up counter                                      : 32
 # Registers                                            : 17
  1-bit register                                        : 17
+# Comparators                                          : 32
+ 8-bit comparator less                                 : 32
 
 =========================================================================
 
@@ -184,3 +188,1011 @@ Macro Statistics
 =========================================================================
 
 Reading core <ipcore_dir/fifo16x1024.ngc>.
+Loading core <fifo16x1024> for timing and area information for instance <fifo>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 34
+ 32-bit up counter                                     : 2
+ 8-bit up counter                                      : 32
+# Registers                                            : 17
+ Flip-Flops                                            : 17
+# Comparators                                          : 32
+ 8-bit comparator less                                 : 32
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <main> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 47.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2> in Unit <fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2> in Unit <fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 337
+ Flip-Flops                                            : 337
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : main.ngr
+Top Level Output File Name         : main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 55
+
+Cell Usage :
+# BELS                             : 1619
+#      GND                         : 2
+#      INV                         : 71
+#      LUT1                        : 304
+#      LUT2                        : 44
+#      LUT2_D                      : 2
+#      LUT3                        : 62
+#      LUT3_D                      : 5
+#      LUT3_L                      : 1
+#      LUT4                        : 282
+#      LUT4_D                      : 4
+#      LUT4_L                      : 6
+#      MUXCY                       : 484
+#      VCC                         : 2
+#      XORCY                       : 350
+# FlipFlops/Latches                : 530
+#      FD                          : 4
+#      FD_1                        : 10
+#      FDC                         : 92
+#      FDCE                        : 47
+#      FDE                         : 1
+#      FDP                         : 12
+#      FDPE                        : 5
+#      FDR                         : 32
+#      FDRE                        : 288
+#      FDS_1                       : 6
+#      LDCE                        : 33
+# RAMS                             : 1
+#      RAMB16_S18_S18              : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 54
+#      IBUF                        : 35
+#      OBUF                        : 19
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100etq144-5 
+
+ Number of Slices:                      441  out of    960    45%  
+ Number of Slice Flip Flops:            498  out of   1920    25%  
+ Number of 4 input LUTs:                781  out of   1920    40%  
+ Number of IOs:                          55
+ Number of bonded IOBs:                  55  out of    108    50%  
+    IOB Flip Flops:                      32
+ Number of BRAMs:                         1  out of      4    25%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)   | Load  |
+-----------------------------------+-------------------------+-------+
+RD_CLK                             | BUFGP                   | 70    |
+clk100                             | IBUF+BUFG               | 173   |
+SCIN_LATCH_Q                       | NONE(SCIN_LATCH)        | 1     |
+tube4B7/Q                          | NONE(tube4B7/TUBE_LATCH)| 1     |
+tube4B6/Q                          | NONE(tube4B6/TUBE_LATCH)| 1     |
+tube4B5/Q                          | NONE(tube4B5/TUBE_LATCH)| 1     |
+tube4B4/Q                          | NONE(tube4B4/TUBE_LATCH)| 1     |
+tube4B3/Q                          | NONE(tube4B3/TUBE_LATCH)| 1     |
+tube4B2/Q                          | NONE(tube4B2/TUBE_LATCH)| 1     |
+tube4B1/Q                          | NONE(tube4B1/TUBE_LATCH)| 1     |
+tube4B0/Q                          | NONE(tube4B0/TUBE_LATCH)| 1     |
+tube4A7/Q                          | NONE(tube4A7/TUBE_LATCH)| 1     |
+tube4A6/Q                          | NONE(tube4A6/TUBE_LATCH)| 1     |
+tube4A5/Q                          | NONE(tube4A5/TUBE_LATCH)| 1     |
+tube4A4/Q                          | NONE(tube4A4/TUBE_LATCH)| 1     |
+tube4A3/Q                          | NONE(tube4A3/TUBE_LATCH)| 1     |
+tube4A2/Q                          | NONE(tube4A2/TUBE_LATCH)| 1     |
+tube4A1/Q                          | NONE(tube4A1/TUBE_LATCH)| 1     |
+tube4A0/Q                          | NONE(tube4A0/TUBE_LATCH)| 1     |
+tube3B7/Q                          | NONE(tube3B7/TUBE_LATCH)| 1     |
+tube3B6/Q                          | NONE(tube3B6/TUBE_LATCH)| 1     |
+tube3B5/Q                          | NONE(tube3B5/TUBE_LATCH)| 1     |
+tube3B4/Q                          | NONE(tube3B4/TUBE_LATCH)| 1     |
+tube3B3/Q                          | NONE(tube3B3/TUBE_LATCH)| 1     |
+tube3B2/Q                          | NONE(tube3B2/TUBE_LATCH)| 1     |
+tube3B1/Q                          | NONE(tube3B1/TUBE_LATCH)| 1     |
+tube3B0/Q                          | NONE(tube3B0/TUBE_LATCH)| 1     |
+tube3A7/Q                          | NONE(tube3A7/TUBE_LATCH)| 1     |
+tube3A6/Q                          | NONE(tube3A6/TUBE_LATCH)| 1     |
+tube3A5/Q                          | NONE(tube3A5/TUBE_LATCH)| 1     |
+tube3A4/Q                          | NONE(tube3A4/TUBE_LATCH)| 1     |
+tube3A3/Q                          | NONE(tube3A3/TUBE_LATCH)| 1     |
+tube3A2/Q                          | NONE(tube3A2/TUBE_LATCH)| 1     |
+tube3A1/Q                          | NONE(tube3A1/TUBE_LATCH)| 1     |
+tube3A0/Q                          | NONE(tube3A0/TUBE_LATCH)| 1     |
+tubeclk1(tubeclk1:O)               | BUFG(*)(tube4B7/cntr_0) | 256   |
+-----------------------------------+-------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
+Control Signal                                                                                                                           | Buffer(FF name)                                                                                                   | Load  |
+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
+fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<1>(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1:Q)| NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_0)| 40    |
+fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<0>(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0:Q)| NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0)| 40    |
+fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<1>(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1:Q)| NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_0)    | 40    |
+CLR(CLR:Q)                                                                                                                               | NONE(SCIN_LATCH)                                                                                                  | 33    |
+fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<2>(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2:Q)| NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i)            | 23    |
+N0(XST_GND:G)                                                                                                                            | NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN)                                          | 6     |
+fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb1:O)  | NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0)                                          | 3     |
+fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2:Q)             | NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i)             | 2     |
+fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb1:O)  | NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0)                                          | 2     |
+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 7.642ns (Maximum Frequency: 130.852MHz)
+   Minimum input arrival time before clock: 4.728ns
+   Maximum output required time after clock: 6.282ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'RD_CLK'
+  Clock period: 4.078ns (frequency: 245.218MHz)
+  Total number of paths / destination ports: 268 / 88
+-------------------------------------------------------------------------
+Delay:               4.078ns (Levels of Logic = 3)
+  Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_6 (FF)
+  Destination:       fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_1 (FF)
+  Source Clock:      RD_CLK rising
+  Destination Clock: RD_CLK rising
+
+  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_6 to fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.514   0.509  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_6 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg<6>)
+     LUT4:I0->O            5   0.612   0.541  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_xor00021 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_xor0002)
+     LUT4_D:I3->O          2   0.612   0.410  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_xor000611 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_xor0006_bdd0)
+     LUT3:I2->O            1   0.612   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_xor00071 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_xor0007)
+     FDC:D                     0.268          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_1
+    ----------------------------------------
+    Total                      4.078ns (2.618ns logic, 1.460ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk100'
+  Clock period: 7.642ns (frequency: 130.852MHz)
+  Total number of paths / destination ports: 3769 / 224
+-------------------------------------------------------------------------
+Delay:               3.821ns (Levels of Logic = 2)
+  Source:            wr_en (FF)
+  Destination:       fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (RAM)
+  Source Clock:      clk100 falling
+  Destination Clock: clk100 rising
+
+  Data Path: wr_en to fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD_1:C->Q             2   0.514   0.532  wr_en (wr_en)
+     begin scope: 'fifo'
+     LUT2:I0->O           33   0.612   1.073  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/ram_wr_en_i1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en)
+     RAMB16_S18_S18:WEA        1.090          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram
+    ----------------------------------------
+    Total                      3.821ns (2.216ns logic, 1.605ns route)
+                                       (58.0% logic, 42.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'tubeclk1'
+  Clock period: 3.977ns (frequency: 251.458MHz)
+  Total number of paths / destination ports: 3200 / 512
+-------------------------------------------------------------------------
+Delay:               3.977ns (Levels of Logic = 2)
+  Source:            tube4B7/cntr_3 (FF)
+  Destination:       tube4B7/cntr_0 (FF)
+  Source Clock:      tubeclk1 rising
+  Destination Clock: tubeclk1 rising
+
+  Data Path: tube4B7/cntr_3 to tube4B7/cntr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.514   0.603  tube4B7/cntr_3 (tube4B7/cntr_3)
+     LUT4:I0->O            1   0.612   0.509  tube4B7/cntr_and000025 (tube4B7/cntr_and000025)
+     LUT3:I0->O            8   0.612   0.643  tube4B7/cntr_and000040 (tube4B7/cntr_and0000)
+     FDRE:CE                   0.483          tube4B7/cntr_0
+    ----------------------------------------
+    Total                      3.977ns (2.221ns logic, 1.756ns route)
+                                       (55.8% logic, 44.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'RD_CLK'
+  Total number of paths / destination ports: 24 / 24
+-------------------------------------------------------------------------
+Offset:              4.312ns (Levels of Logic = 4)
+  Source:            RD_EN (PAD)
+  Destination:       fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i (FF)
+  Destination Clock: RD_CLK rising
+
+  Data Path: RD_EN to fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.106   0.603  RD_EN_IBUF (RD_EN_IBUF)
+     begin scope: 'fifo'
+     LUT2:I0->O           21   0.612   1.111  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/ram_rd_en_i1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_rd_en)
+     LUT3:I0->O            2   0.612   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_or00001 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_or0000)
+     FDP:D                     0.268          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i
+    ----------------------------------------
+    Total                      4.312ns (2.598ns logic, 1.714ns route)
+                                       (60.2% logic, 39.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'SCIN_LATCH_Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.447ns (Levels of Logic = 1)
+  Source:            SCIN_COIN (PAD)
+  Destination:       SCIN_LATCH (LATCH)
+  Destination Clock: SCIN_LATCH_Q rising
+
+  Data Path: SCIN_COIN to SCIN_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            34   1.106   1.073  SCIN_COIN_IBUF (SCIN_COIN_IBUF)
+     LDCE:D                    0.268          SCIN_LATCH
+    ----------------------------------------
+    Total                      2.447ns (1.374ns logic, 1.073ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4B7/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4B<7> (PAD)
+  Destination:       tube4B7/TUBE_LATCH (LATCH)
+  Destination Clock: tube4B7/Q rising
+
+  Data Path: TUBE4B<7> to tube4B7/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4B_7_IBUF (TUBE4B_7_IBUF)
+     LDCE:D                    0.268          tube4B7/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4B6/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4B<6> (PAD)
+  Destination:       tube4B6/TUBE_LATCH (LATCH)
+  Destination Clock: tube4B6/Q rising
+
+  Data Path: TUBE4B<6> to tube4B6/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4B_6_IBUF (TUBE4B_6_IBUF)
+     LDCE:D                    0.268          tube4B6/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4B5/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4B<5> (PAD)
+  Destination:       tube4B5/TUBE_LATCH (LATCH)
+  Destination Clock: tube4B5/Q rising
+
+  Data Path: TUBE4B<5> to tube4B5/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4B_5_IBUF (TUBE4B_5_IBUF)
+     LDCE:D                    0.268          tube4B5/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4B4/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4B<4> (PAD)
+  Destination:       tube4B4/TUBE_LATCH (LATCH)
+  Destination Clock: tube4B4/Q rising
+
+  Data Path: TUBE4B<4> to tube4B4/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4B_4_IBUF (TUBE4B_4_IBUF)
+     LDCE:D                    0.268          tube4B4/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4B3/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4B<3> (PAD)
+  Destination:       tube4B3/TUBE_LATCH (LATCH)
+  Destination Clock: tube4B3/Q rising
+
+  Data Path: TUBE4B<3> to tube4B3/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4B_3_IBUF (TUBE4B_3_IBUF)
+     LDCE:D                    0.268          tube4B3/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4B2/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4B<2> (PAD)
+  Destination:       tube4B2/TUBE_LATCH (LATCH)
+  Destination Clock: tube4B2/Q rising
+
+  Data Path: TUBE4B<2> to tube4B2/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4B_2_IBUF (TUBE4B_2_IBUF)
+     LDCE:D                    0.268          tube4B2/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4B1/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4B<1> (PAD)
+  Destination:       tube4B1/TUBE_LATCH (LATCH)
+  Destination Clock: tube4B1/Q rising
+
+  Data Path: TUBE4B<1> to tube4B1/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4B_1_IBUF (TUBE4B_1_IBUF)
+     LDCE:D                    0.268          tube4B1/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4B0/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4B<0> (PAD)
+  Destination:       tube4B0/TUBE_LATCH (LATCH)
+  Destination Clock: tube4B0/Q rising
+
+  Data Path: TUBE4B<0> to tube4B0/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4B_0_IBUF (TUBE4B_0_IBUF)
+     LDCE:D                    0.268          tube4B0/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4A7/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4A<7> (PAD)
+  Destination:       tube4A7/TUBE_LATCH (LATCH)
+  Destination Clock: tube4A7/Q rising
+
+  Data Path: TUBE4A<7> to tube4A7/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4A_7_IBUF (TUBE4A_7_IBUF)
+     LDCE:D                    0.268          tube4A7/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4A6/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4A<6> (PAD)
+  Destination:       tube4A6/TUBE_LATCH (LATCH)
+  Destination Clock: tube4A6/Q rising
+
+  Data Path: TUBE4A<6> to tube4A6/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4A_6_IBUF (TUBE4A_6_IBUF)
+     LDCE:D                    0.268          tube4A6/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4A5/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4A<5> (PAD)
+  Destination:       tube4A5/TUBE_LATCH (LATCH)
+  Destination Clock: tube4A5/Q rising
+
+  Data Path: TUBE4A<5> to tube4A5/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4A_5_IBUF (TUBE4A_5_IBUF)
+     LDCE:D                    0.268          tube4A5/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4A4/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4A<4> (PAD)
+  Destination:       tube4A4/TUBE_LATCH (LATCH)
+  Destination Clock: tube4A4/Q rising
+
+  Data Path: TUBE4A<4> to tube4A4/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4A_4_IBUF (TUBE4A_4_IBUF)
+     LDCE:D                    0.268          tube4A4/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4A3/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4A<3> (PAD)
+  Destination:       tube4A3/TUBE_LATCH (LATCH)
+  Destination Clock: tube4A3/Q rising
+
+  Data Path: TUBE4A<3> to tube4A3/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4A_3_IBUF (TUBE4A_3_IBUF)
+     LDCE:D                    0.268          tube4A3/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4A2/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4A<2> (PAD)
+  Destination:       tube4A2/TUBE_LATCH (LATCH)
+  Destination Clock: tube4A2/Q rising
+
+  Data Path: TUBE4A<2> to tube4A2/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4A_2_IBUF (TUBE4A_2_IBUF)
+     LDCE:D                    0.268          tube4A2/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4A1/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4A<1> (PAD)
+  Destination:       tube4A1/TUBE_LATCH (LATCH)
+  Destination Clock: tube4A1/Q rising
+
+  Data Path: TUBE4A<1> to tube4A1/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4A_1_IBUF (TUBE4A_1_IBUF)
+     LDCE:D                    0.268          tube4A1/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube4A0/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE4A<0> (PAD)
+  Destination:       tube4A0/TUBE_LATCH (LATCH)
+  Destination Clock: tube4A0/Q rising
+
+  Data Path: TUBE4A<0> to tube4A0/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE4A_0_IBUF (TUBE4A_0_IBUF)
+     LDCE:D                    0.268          tube4A0/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3B7/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3B<7> (PAD)
+  Destination:       tube3B7/TUBE_LATCH (LATCH)
+  Destination Clock: tube3B7/Q rising
+
+  Data Path: TUBE3B<7> to tube3B7/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3B_7_IBUF (TUBE3B_7_IBUF)
+     LDCE:D                    0.268          tube3B7/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3B6/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3B<6> (PAD)
+  Destination:       tube3B6/TUBE_LATCH (LATCH)
+  Destination Clock: tube3B6/Q rising
+
+  Data Path: TUBE3B<6> to tube3B6/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3B_6_IBUF (TUBE3B_6_IBUF)
+     LDCE:D                    0.268          tube3B6/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3B5/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3B<5> (PAD)
+  Destination:       tube3B5/TUBE_LATCH (LATCH)
+  Destination Clock: tube3B5/Q rising
+
+  Data Path: TUBE3B<5> to tube3B5/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3B_5_IBUF (TUBE3B_5_IBUF)
+     LDCE:D                    0.268          tube3B5/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3B4/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3B<4> (PAD)
+  Destination:       tube3B4/TUBE_LATCH (LATCH)
+  Destination Clock: tube3B4/Q rising
+
+  Data Path: TUBE3B<4> to tube3B4/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3B_4_IBUF (TUBE3B_4_IBUF)
+     LDCE:D                    0.268          tube3B4/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3B3/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3B<3> (PAD)
+  Destination:       tube3B3/TUBE_LATCH (LATCH)
+  Destination Clock: tube3B3/Q rising
+
+  Data Path: TUBE3B<3> to tube3B3/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3B_3_IBUF (TUBE3B_3_IBUF)
+     LDCE:D                    0.268          tube3B3/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3B2/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3B<2> (PAD)
+  Destination:       tube3B2/TUBE_LATCH (LATCH)
+  Destination Clock: tube3B2/Q rising
+
+  Data Path: TUBE3B<2> to tube3B2/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3B_2_IBUF (TUBE3B_2_IBUF)
+     LDCE:D                    0.268          tube3B2/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3B1/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3B<1> (PAD)
+  Destination:       tube3B1/TUBE_LATCH (LATCH)
+  Destination Clock: tube3B1/Q rising
+
+  Data Path: TUBE3B<1> to tube3B1/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3B_1_IBUF (TUBE3B_1_IBUF)
+     LDCE:D                    0.268          tube3B1/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3B0/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3B<0> (PAD)
+  Destination:       tube3B0/TUBE_LATCH (LATCH)
+  Destination Clock: tube3B0/Q rising
+
+  Data Path: TUBE3B<0> to tube3B0/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3B_0_IBUF (TUBE3B_0_IBUF)
+     LDCE:D                    0.268          tube3B0/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3A7/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3A<7> (PAD)
+  Destination:       tube3A7/TUBE_LATCH (LATCH)
+  Destination Clock: tube3A7/Q rising
+
+  Data Path: TUBE3A<7> to tube3A7/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3A_7_IBUF (TUBE3A_7_IBUF)
+     LDCE:D                    0.268          tube3A7/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3A6/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3A<6> (PAD)
+  Destination:       tube3A6/TUBE_LATCH (LATCH)
+  Destination Clock: tube3A6/Q rising
+
+  Data Path: TUBE3A<6> to tube3A6/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3A_6_IBUF (TUBE3A_6_IBUF)
+     LDCE:D                    0.268          tube3A6/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3A5/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3A<5> (PAD)
+  Destination:       tube3A5/TUBE_LATCH (LATCH)
+  Destination Clock: tube3A5/Q rising
+
+  Data Path: TUBE3A<5> to tube3A5/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3A_5_IBUF (TUBE3A_5_IBUF)
+     LDCE:D                    0.268          tube3A5/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3A4/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3A<4> (PAD)
+  Destination:       tube3A4/TUBE_LATCH (LATCH)
+  Destination Clock: tube3A4/Q rising
+
+  Data Path: TUBE3A<4> to tube3A4/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3A_4_IBUF (TUBE3A_4_IBUF)
+     LDCE:D                    0.268          tube3A4/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3A3/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3A<3> (PAD)
+  Destination:       tube3A3/TUBE_LATCH (LATCH)
+  Destination Clock: tube3A3/Q rising
+
+  Data Path: TUBE3A<3> to tube3A3/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3A_3_IBUF (TUBE3A_3_IBUF)
+     LDCE:D                    0.268          tube3A3/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3A2/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3A<2> (PAD)
+  Destination:       tube3A2/TUBE_LATCH (LATCH)
+  Destination Clock: tube3A2/Q rising
+
+  Data Path: TUBE3A<2> to tube3A2/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3A_2_IBUF (TUBE3A_2_IBUF)
+     LDCE:D                    0.268          tube3A2/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3A1/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3A<1> (PAD)
+  Destination:       tube3A1/TUBE_LATCH (LATCH)
+  Destination Clock: tube3A1/Q rising
+
+  Data Path: TUBE3A<1> to tube3A1/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3A_1_IBUF (TUBE3A_1_IBUF)
+     LDCE:D                    0.268          tube3A1/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'tube3A0/Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            TUBE3A<0> (PAD)
+  Destination:       tube3A0/TUBE_LATCH (LATCH)
+  Destination Clock: tube3A0/Q rising
+
+  Data Path: TUBE3A<0> to tube3A0/TUBE_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.357  TUBE3A_0_IBUF (TUBE3A_0_IBUF)
+     LDCE:D                    0.268          tube3A0/TUBE_LATCH
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk100'
+  Total number of paths / destination ports: 64 / 64
+-------------------------------------------------------------------------
+Offset:              4.728ns (Levels of Logic = 2)
+  Source:            SCIN_COIN (PAD)
+  Destination:       cntr_0 (FF)
+  Destination Clock: clk100 falling
+
+  Data Path: SCIN_COIN to cntr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            34   1.106   1.142  SCIN_COIN_IBUF (SCIN_COIN_IBUF)
+     LUT2:I1->O           32   0.612   1.073  cntr_and00001 (cntr_and0000)
+     FDRE:R                    0.795          cntr_0
+    ----------------------------------------
+    Total                      4.728ns (2.513ns logic, 2.215ns route)
+                                       (53.1% logic, 46.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk100'
+  Total number of paths / destination ports: 11 / 2
+-------------------------------------------------------------------------
+Offset:              6.282ns (Levels of Logic = 4)
+  Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7 (FF)
+  Destination:       RD_EMPTY (PAD)
+  Source Clock:      clk100 rising
+
+  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7 to RD_EMPTY
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.514   0.509  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7 (wr_data_count<7>)
+     end scope: 'fifo'
+     LUT4:I0->O            1   0.612   0.509  RD_EMPTY37 (RD_EMPTY37)
+     LUT4:I0->O            1   0.612   0.357  RD_EMPTY39 (RD_EMPTY_OBUF)
+     OBUF:I->O                 3.169          RD_EMPTY_OBUF (RD_EMPTY)
+    ----------------------------------------
+    Total                      6.282ns (4.907ns logic, 1.375ns route)
+                                       (78.1% logic, 21.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'RD_CLK'
+  Total number of paths / destination ports: 17 / 17
+-------------------------------------------------------------------------
+Offset:              5.962ns (Levels of Logic = 2)
+  Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (RAM)
+  Destination:       OTUBE<15> (PAD)
+  Source Clock:      RD_CLK rising
+
+  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram to OTUBE<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S18_S18:CLKB->DOB15    1   2.436   0.357  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram (dout<15>)
+     end scope: 'fifo'
+     OBUF:I->O                 3.169          OTUBE_15_OBUF (OTUBE<15>)
+    ----------------------------------------
+    Total                      5.962ns (5.605ns logic, 0.357ns route)
+                                       (94.0% logic, 6.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.28 secs
+ 
+--> 
+
+Total memory usage is 286636 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

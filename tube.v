@@ -35,7 +35,7 @@ module Tube(input clk,
 		.CLR(clr),  				// Asynchronous clear/reset input
 		.D(tubePin),      		// Data input
 		.G(!Q),      				// Gate input
-		.GE(gateEnable)     				// Gate enable input
+		.GE(gateEnable)     		// Gate enable input
 	);
 
 	always @ (posedge clk) begin
@@ -43,7 +43,7 @@ module Tube(input clk,
 			cntr <= 0;
 		end else begin 
 			if ((Q == 0) && (cntr < 255)) begin //keeping counting as long as Q doesn't go high
-				cntr <= cntr + 1;
+				cntr <= cntr + 1;       			//also freeze cntr at no larger than 255 to prevent rollover
 			end 
 		end
 	end

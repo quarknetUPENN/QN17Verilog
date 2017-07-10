@@ -38,409 +38,361 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 Timing constraint: NET "clk100_IBUF1" PERIOD = 10 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 5292 paths analyzed, 1265 endpoints analyzed, 15 failing endpoints
- 15 timing errors detected. (15 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  14.486ns.
+ 7481 paths analyzed, 1515 endpoints analyzed, 18 failing endpoints
+ 18 timing errors detected. (18 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  14.162ns.
 --------------------------------------------------------------------------------
 
-Paths for end point din_9 (SLICE_X22Y23.CIN), 217 paths
+Paths for end point din_10 (SLICE_X22Y24.BY), 267 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.243ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tube3B7/cntr_1 (FF)
-  Destination:          din_9 (FF)
+Slack (setup path):     -2.081ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A2/cntr_2 (FF)
+  Destination:          din_10 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      4.244ns (Levels of Logic = 8)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -2.999ns (1.544 - 4.543)
+  Data Path Delay:      4.526ns (Levels of Logic = 9)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.555ns (1.543 - 4.098)
   Source Clock:         tubeclk rising at 0.000ns
   Destination Clock:    clk100_IBUF falling at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tube3B7/cntr_1 to din_9
+  Maximum Data Path: tube4A2/cntr_2 to din_10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X27Y11.YQ      Tcko                  0.511   tube3B7/cntr<0>
-                                                       tube3B7/cntr_1
-    SLICE_X22Y16.F1      net (fanout=2)        1.160   tube3B7/cntr<1>
-    SLICE_X22Y16.COUT    Topcyf                1.011   din_9_mux0000_wg_cy<3>
-                                                       din_9_mux0000_wg_lut<2>
-                                                       din_9_mux0000_wg_cy<2>
-                                                       din_9_mux0000_wg_cy<3>
-    SLICE_X22Y17.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<3>
-    SLICE_X22Y17.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<5>
-                                                       din_9_mux0000_wg_cy<4>
-                                                       din_9_mux0000_wg_cy<5>
-    SLICE_X22Y18.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<5>
-    SLICE_X22Y18.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<7>
-                                                       din_9_mux0000_wg_cy<6>
-                                                       din_9_mux0000_wg_cy<7>
-    SLICE_X22Y19.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<7>
-    SLICE_X22Y19.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<9>
-                                                       din_9_mux0000_wg_cy<8>
-                                                       din_9_mux0000_wg_cy<9>
-    SLICE_X22Y20.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<9>
-    SLICE_X22Y20.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<11>
-                                                       din_9_mux0000_wg_cy<10>
-                                                       din_9_mux0000_wg_cy<11>
-    SLICE_X22Y21.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<11>
-    SLICE_X22Y21.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<13>
-                                                       din_9_mux0000_wg_cy<12>
-                                                       din_9_mux0000_wg_cy<13>
-    SLICE_X22Y22.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<13>
-    SLICE_X22Y22.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<15>
-                                                       din_9_mux0000_wg_cy<14>
-                                                       din_9_mux0000_wg_cy<15>
-    SLICE_X22Y23.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<15>
-    SLICE_X22Y23.CLK     Tcinck                0.884   din<9>
-                                                       din_9_mux0000_wg_cy<16>
-                                                       din_9_mux0000_rt
-                                                       din_9
+    SLICE_X25Y9.XQ       Tcko                  0.514   tube4A2/cntr<2>
+                                                       tube4A2/cntr_2
+    SLICE_X22Y16.G3      net (fanout=3)        1.057   tube4A2/cntr<2>
+    SLICE_X22Y16.COUT    Topcyg                0.984   din_10_mux0000_wg_cy<1>
+                                                       din_10_mux0000_wg_lut<1>
+                                                       din_10_mux0000_wg_cy<1>
+    SLICE_X22Y17.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<1>
+    SLICE_X22Y17.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<3>
+                                                       din_10_mux0000_wg_cy<2>
+                                                       din_10_mux0000_wg_cy<3>
+    SLICE_X22Y18.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<3>
+    SLICE_X22Y18.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<5>
+                                                       din_10_mux0000_wg_cy<4>
+                                                       din_10_mux0000_wg_cy<5>
+    SLICE_X22Y19.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<5>
+    SLICE_X22Y19.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<7>
+                                                       din_10_mux0000_wg_cy<6>
+                                                       din_10_mux0000_wg_cy<7>
+    SLICE_X22Y20.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<7>
+    SLICE_X22Y20.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<9>
+                                                       din_10_mux0000_wg_cy<8>
+                                                       din_10_mux0000_wg_cy<9>
+    SLICE_X22Y21.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<9>
+    SLICE_X22Y21.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<11>
+                                                       din_10_mux0000_wg_cy<10>
+                                                       din_10_mux0000_wg_cy<11>
+    SLICE_X22Y22.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<11>
+    SLICE_X22Y22.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<13>
+                                                       din_10_mux0000_wg_cy<12>
+                                                       din_10_mux0000_wg_cy<13>
+    SLICE_X22Y23.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<13>
+    SLICE_X22Y23.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<15>
+                                                       din_10_mux0000_wg_cy<14>
+                                                       din_10_mux0000_wg_cy<15>
+    SLICE_X22Y24.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<15>
+    SLICE_X22Y24.XB      Tcinxb                0.431   din<10>
+                                                       din_10_mux0000_wg_cy<16>
+    SLICE_X22Y24.BY      net (fanout=1)        0.416   din_10_mux0000
+    SLICE_X22Y24.CLK     Tdick                 0.333   din<10>
+                                                       din_10
     -------------------------------------------------  ---------------------------
-    Total                                      4.244ns (3.084ns logic, 1.160ns route)
-                                                       (72.7% logic, 27.3% route)
+    Total                                      4.526ns (3.053ns logic, 1.473ns route)
+                                                       (67.5% logic, 32.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -1.966ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tube4A3/cntr_1 (FF)
-  Destination:          din_9 (FF)
+Slack (setup path):     -1.823ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A4/cntr_2 (FF)
+  Destination:          din_10 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      3.955ns (Levels of Logic = 8)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -3.011ns (1.544 - 4.555)
+  Data Path Delay:      4.277ns (Levels of Logic = 8)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.546ns (1.543 - 4.089)
   Source Clock:         tubeclk rising at 0.000ns
   Destination Clock:    clk100_IBUF falling at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tube4A3/cntr_1 to din_9
+  Maximum Data Path: tube4A4/cntr_2 to din_10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y10.YQ      Tcko                  0.511   tube4A3/cntr<0>
-                                                       tube4A3/cntr_1
-    SLICE_X22Y16.G2      net (fanout=2)        0.898   tube4A3/cntr<1>
-    SLICE_X22Y16.COUT    Topcyg                0.984   din_9_mux0000_wg_cy<3>
-                                                       din_9_mux0000_wg_lut<3>
-                                                       din_9_mux0000_wg_cy<3>
-    SLICE_X22Y17.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<3>
-    SLICE_X22Y17.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<5>
-                                                       din_9_mux0000_wg_cy<4>
-                                                       din_9_mux0000_wg_cy<5>
-    SLICE_X22Y18.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<5>
-    SLICE_X22Y18.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<7>
-                                                       din_9_mux0000_wg_cy<6>
-                                                       din_9_mux0000_wg_cy<7>
-    SLICE_X22Y19.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<7>
-    SLICE_X22Y19.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<9>
-                                                       din_9_mux0000_wg_cy<8>
-                                                       din_9_mux0000_wg_cy<9>
-    SLICE_X22Y20.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<9>
-    SLICE_X22Y20.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<11>
-                                                       din_9_mux0000_wg_cy<10>
-                                                       din_9_mux0000_wg_cy<11>
-    SLICE_X22Y21.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<11>
-    SLICE_X22Y21.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<13>
-                                                       din_9_mux0000_wg_cy<12>
-                                                       din_9_mux0000_wg_cy<13>
-    SLICE_X22Y22.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<13>
-    SLICE_X22Y22.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<15>
-                                                       din_9_mux0000_wg_cy<14>
-                                                       din_9_mux0000_wg_cy<15>
-    SLICE_X22Y23.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<15>
-    SLICE_X22Y23.CLK     Tcinck                0.884   din<9>
-                                                       din_9_mux0000_wg_cy<16>
-                                                       din_9_mux0000_rt
-                                                       din_9
+    SLICE_X26Y16.XQ      Tcko                  0.515   tube4A4/cntr<2>
+                                                       tube4A4/cntr_2
+    SLICE_X22Y17.G4      net (fanout=3)        0.920   tube4A4/cntr<2>
+    SLICE_X22Y17.COUT    Topcyg                0.984   din_10_mux0000_wg_cy<3>
+                                                       din_10_mux0000_wg_lut<3>
+                                                       din_10_mux0000_wg_cy<3>
+    SLICE_X22Y18.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<3>
+    SLICE_X22Y18.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<5>
+                                                       din_10_mux0000_wg_cy<4>
+                                                       din_10_mux0000_wg_cy<5>
+    SLICE_X22Y19.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<5>
+    SLICE_X22Y19.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<7>
+                                                       din_10_mux0000_wg_cy<6>
+                                                       din_10_mux0000_wg_cy<7>
+    SLICE_X22Y20.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<7>
+    SLICE_X22Y20.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<9>
+                                                       din_10_mux0000_wg_cy<8>
+                                                       din_10_mux0000_wg_cy<9>
+    SLICE_X22Y21.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<9>
+    SLICE_X22Y21.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<11>
+                                                       din_10_mux0000_wg_cy<10>
+                                                       din_10_mux0000_wg_cy<11>
+    SLICE_X22Y22.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<11>
+    SLICE_X22Y22.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<13>
+                                                       din_10_mux0000_wg_cy<12>
+                                                       din_10_mux0000_wg_cy<13>
+    SLICE_X22Y23.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<13>
+    SLICE_X22Y23.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<15>
+                                                       din_10_mux0000_wg_cy<14>
+                                                       din_10_mux0000_wg_cy<15>
+    SLICE_X22Y24.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<15>
+    SLICE_X22Y24.XB      Tcinxb                0.431   din<10>
+                                                       din_10_mux0000_wg_cy<16>
+    SLICE_X22Y24.BY      net (fanout=1)        0.416   din_10_mux0000
+    SLICE_X22Y24.CLK     Tdick                 0.333   din<10>
+                                                       din_10
     -------------------------------------------------  ---------------------------
-    Total                                      3.955ns (3.057ns logic, 0.898ns route)
-                                                       (77.3% logic, 22.7% route)
+    Total                                      4.277ns (2.941ns logic, 1.336ns route)
+                                                       (68.8% logic, 31.2% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -1.964ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tube3B2/cntr_1 (FF)
-  Destination:          din_9 (FF)
+Slack (setup path):     -1.809ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A5/cntr_2 (FF)
+  Destination:          din_10 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      3.953ns (Levels of Logic = 6)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -3.011ns (1.544 - 4.555)
+  Data Path Delay:      4.259ns (Levels of Logic = 7)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.550ns (1.543 - 4.093)
   Source Clock:         tubeclk rising at 0.000ns
   Destination Clock:    clk100_IBUF falling at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tube3B2/cntr_1 to din_9
+  Maximum Data Path: tube4A5/cntr_2 to din_10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y12.YQ      Tcko                  0.567   tube3B2/cntr<0>
-                                                       tube3B2/cntr_1
-    SLICE_X22Y18.G3      net (fanout=2)        1.066   tube3B2/cntr<1>
-    SLICE_X22Y18.COUT    Topcyg                0.984   din_9_mux0000_wg_cy<7>
-                                                       din_9_mux0000_wg_lut<7>
-                                                       din_9_mux0000_wg_cy<7>
-    SLICE_X22Y19.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<7>
-    SLICE_X22Y19.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<9>
-                                                       din_9_mux0000_wg_cy<8>
-                                                       din_9_mux0000_wg_cy<9>
-    SLICE_X22Y20.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<9>
-    SLICE_X22Y20.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<11>
-                                                       din_9_mux0000_wg_cy<10>
-                                                       din_9_mux0000_wg_cy<11>
-    SLICE_X22Y21.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<11>
-    SLICE_X22Y21.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<13>
-                                                       din_9_mux0000_wg_cy<12>
-                                                       din_9_mux0000_wg_cy<13>
-    SLICE_X22Y22.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<13>
-    SLICE_X22Y22.COUT    Tbyp                  0.113   din_9_mux0000_wg_cy<15>
-                                                       din_9_mux0000_wg_cy<14>
-                                                       din_9_mux0000_wg_cy<15>
-    SLICE_X22Y23.CIN     net (fanout=1)        0.000   din_9_mux0000_wg_cy<15>
-    SLICE_X22Y23.CLK     Tcinck                0.884   din<9>
-                                                       din_9_mux0000_wg_cy<16>
-                                                       din_9_mux0000_rt
-                                                       din_9
+    SLICE_X24Y16.XQ      Tcko                  0.515   tube4A5/cntr<2>
+                                                       tube4A5/cntr_2
+    SLICE_X22Y18.F1      net (fanout=3)        0.988   tube4A5/cntr<2>
+    SLICE_X22Y18.COUT    Topcyf                1.011   din_10_mux0000_wg_cy<5>
+                                                       din_10_mux0000_wg_lut<4>
+                                                       din_10_mux0000_wg_cy<4>
+                                                       din_10_mux0000_wg_cy<5>
+    SLICE_X22Y19.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<5>
+    SLICE_X22Y19.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<7>
+                                                       din_10_mux0000_wg_cy<6>
+                                                       din_10_mux0000_wg_cy<7>
+    SLICE_X22Y20.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<7>
+    SLICE_X22Y20.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<9>
+                                                       din_10_mux0000_wg_cy<8>
+                                                       din_10_mux0000_wg_cy<9>
+    SLICE_X22Y21.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<9>
+    SLICE_X22Y21.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<11>
+                                                       din_10_mux0000_wg_cy<10>
+                                                       din_10_mux0000_wg_cy<11>
+    SLICE_X22Y22.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<11>
+    SLICE_X22Y22.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<13>
+                                                       din_10_mux0000_wg_cy<12>
+                                                       din_10_mux0000_wg_cy<13>
+    SLICE_X22Y23.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<13>
+    SLICE_X22Y23.COUT    Tbyp                  0.113   din_10_mux0000_wg_cy<15>
+                                                       din_10_mux0000_wg_cy<14>
+                                                       din_10_mux0000_wg_cy<15>
+    SLICE_X22Y24.CIN     net (fanout=1)        0.000   din_10_mux0000_wg_cy<15>
+    SLICE_X22Y24.XB      Tcinxb                0.431   din<10>
+                                                       din_10_mux0000_wg_cy<16>
+    SLICE_X22Y24.BY      net (fanout=1)        0.416   din_10_mux0000
+    SLICE_X22Y24.CLK     Tdick                 0.333   din<10>
+                                                       din_10
     -------------------------------------------------  ---------------------------
-    Total                                      3.953ns (2.887ns logic, 1.066ns route)
-                                                       (73.0% logic, 27.0% route)
+    Total                                      4.259ns (2.855ns logic, 1.404ns route)
+                                                       (67.0% logic, 33.0% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point din_15 (SLICE_X23Y26.BY), 256 paths
+Paths for end point din_15 (SLICE_X24Y27.BY), 267 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.124ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tube4A3/cntr_7 (FF)
+Slack (setup path):     -1.896ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A6/cntr_7 (FF)
   Destination:          din_15 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      4.113ns (Levels of Logic = 8)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -3.011ns (1.542 - 4.553)
+  Data Path Delay:      4.330ns (Levels of Logic = 7)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.566ns (1.537 - 4.103)
   Source Clock:         tubeclk rising at 0.000ns
   Destination Clock:    clk100_IBUF falling at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tube4A3/cntr_7 to din_15
+  Maximum Data Path: tube4A6/cntr_7 to din_15
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y13.YQ      Tcko                  0.511   tube4A3/cntr<6>
-                                                       tube4A3/cntr_7
-    SLICE_X23Y19.G4      net (fanout=2)        1.031   tube4A3/cntr<7>
-    SLICE_X23Y19.COUT    Topcyg                0.871   din_15_mux0000_wg_cy<3>
-                                                       din_15_mux0000_wg_lut<3>
-                                                       din_15_mux0000_wg_cy<3>
-    SLICE_X23Y20.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<3>
-    SLICE_X23Y20.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<5>
-                                                       din_15_mux0000_wg_cy<4>
+    SLICE_X21Y11.YQ      Tcko                  0.511   tube4A6/cntr<6>
+                                                       tube4A6/cntr_7
+    SLICE_X24Y21.G3      net (fanout=3)        1.090   tube4A6/cntr<7>
+    SLICE_X24Y21.COUT    Topcyg                0.984   din_15_mux0000_wg_cy<5>
+                                                       din_15_mux0000_wg_lut<5>
                                                        din_15_mux0000_wg_cy<5>
-    SLICE_X23Y21.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<5>
-    SLICE_X23Y21.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<7>
+    SLICE_X24Y22.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<5>
+    SLICE_X24Y22.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<7>
                                                        din_15_mux0000_wg_cy<6>
                                                        din_15_mux0000_wg_cy<7>
-    SLICE_X23Y22.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<7>
-    SLICE_X23Y22.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<9>
+    SLICE_X24Y23.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<7>
+    SLICE_X24Y23.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<9>
                                                        din_15_mux0000_wg_cy<8>
                                                        din_15_mux0000_wg_cy<9>
-    SLICE_X23Y23.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<9>
-    SLICE_X23Y23.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<11>
+    SLICE_X24Y24.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<9>
+    SLICE_X24Y24.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<11>
                                                        din_15_mux0000_wg_cy<10>
                                                        din_15_mux0000_wg_cy<11>
-    SLICE_X23Y24.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<11>
-    SLICE_X23Y24.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<13>
+    SLICE_X24Y25.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<11>
+    SLICE_X24Y25.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<13>
                                                        din_15_mux0000_wg_cy<12>
                                                        din_15_mux0000_wg_cy<13>
-    SLICE_X23Y25.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<13>
-    SLICE_X23Y25.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<15>
+    SLICE_X24Y26.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<13>
+    SLICE_X24Y26.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<15>
                                                        din_15_mux0000_wg_cy<14>
                                                        din_15_mux0000_wg_cy<15>
-    SLICE_X23Y26.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<15>
-    SLICE_X23Y26.XB      Tcinxb                0.352   din<15>
+    SLICE_X24Y27.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<15>
+    SLICE_X24Y27.XB      Tcinxb                0.431   din<15>
                                                        din_15_mux0000_wg_cy<16>
-    SLICE_X23Y26.BY      net (fanout=1)        0.416   din_15_mux0000
-    SLICE_X23Y26.CLK     Tdick                 0.314   din<15>
+    SLICE_X24Y27.BY      net (fanout=1)        0.416   din_15_mux0000
+    SLICE_X24Y27.CLK     Tdick                 0.333   din<15>
                                                        din_15
     -------------------------------------------------  ---------------------------
-    Total                                      4.113ns (2.666ns logic, 1.447ns route)
-                                                       (64.8% logic, 35.2% route)
+    Total                                      4.330ns (2.824ns logic, 1.506ns route)
+                                                       (65.2% logic, 34.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.043ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tube4A1/cntr_7 (FF)
+Slack (setup path):     -1.863ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A0/cntr_7 (FF)
   Destination:          din_15 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      4.034ns (Levels of Logic = 9)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -3.009ns (1.542 - 4.551)
+  Data Path Delay:      4.303ns (Levels of Logic = 9)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.560ns (1.537 - 4.097)
   Source Clock:         tubeclk rising at 0.000ns
   Destination Clock:    clk100_IBUF falling at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tube4A1/cntr_7 to din_15
+  Maximum Data Path: tube4A0/cntr_7 to din_15
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y15.YQ      Tcko                  0.567   tube4A1/cntr<6>
-                                                       tube4A1/cntr_7
-    SLICE_X23Y18.F2      net (fanout=2)        0.653   tube4A1/cntr<7>
-    SLICE_X23Y18.COUT    Topcyf                1.011   din_15_mux0000_wg_cy<1>
+    SLICE_X23Y13.YQ      Tcko                  0.511   tube4A0/cntr<6>
+                                                       tube4A0/cntr_7
+    SLICE_X24Y19.F4      net (fanout=3)        0.810   tube4A0/cntr<7>
+    SLICE_X24Y19.COUT    Topcyf                1.011   din_15_mux0000_wg_cy<1>
                                                        din_15_mux0000_wg_lut<0>
                                                        din_15_mux0000_wg_cy<0>
                                                        din_15_mux0000_wg_cy<1>
-    SLICE_X23Y19.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<1>
-    SLICE_X23Y19.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<3>
+    SLICE_X24Y20.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<1>
+    SLICE_X24Y20.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<3>
                                                        din_15_mux0000_wg_cy<2>
                                                        din_15_mux0000_wg_cy<3>
-    SLICE_X23Y20.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<3>
-    SLICE_X23Y20.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<5>
+    SLICE_X24Y21.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<3>
+    SLICE_X24Y21.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<5>
                                                        din_15_mux0000_wg_cy<4>
                                                        din_15_mux0000_wg_cy<5>
-    SLICE_X23Y21.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<5>
-    SLICE_X23Y21.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<7>
+    SLICE_X24Y22.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<5>
+    SLICE_X24Y22.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<7>
                                                        din_15_mux0000_wg_cy<6>
                                                        din_15_mux0000_wg_cy<7>
-    SLICE_X23Y22.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<7>
-    SLICE_X23Y22.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<9>
+    SLICE_X24Y23.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<7>
+    SLICE_X24Y23.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<9>
                                                        din_15_mux0000_wg_cy<8>
                                                        din_15_mux0000_wg_cy<9>
-    SLICE_X23Y23.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<9>
-    SLICE_X23Y23.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<11>
+    SLICE_X24Y24.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<9>
+    SLICE_X24Y24.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<11>
                                                        din_15_mux0000_wg_cy<10>
                                                        din_15_mux0000_wg_cy<11>
-    SLICE_X23Y24.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<11>
-    SLICE_X23Y24.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<13>
+    SLICE_X24Y25.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<11>
+    SLICE_X24Y25.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<13>
                                                        din_15_mux0000_wg_cy<12>
                                                        din_15_mux0000_wg_cy<13>
-    SLICE_X23Y25.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<13>
-    SLICE_X23Y25.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<15>
+    SLICE_X24Y26.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<13>
+    SLICE_X24Y26.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<15>
                                                        din_15_mux0000_wg_cy<14>
                                                        din_15_mux0000_wg_cy<15>
-    SLICE_X23Y26.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<15>
-    SLICE_X23Y26.XB      Tcinxb                0.352   din<15>
+    SLICE_X24Y27.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<15>
+    SLICE_X24Y27.XB      Tcinxb                0.431   din<15>
                                                        din_15_mux0000_wg_cy<16>
-    SLICE_X23Y26.BY      net (fanout=1)        0.416   din_15_mux0000
-    SLICE_X23Y26.CLK     Tdick                 0.314   din<15>
+    SLICE_X24Y27.BY      net (fanout=1)        0.416   din_15_mux0000
+    SLICE_X24Y27.CLK     Tdick                 0.333   din<15>
                                                        din_15
     -------------------------------------------------  ---------------------------
-    Total                                      4.034ns (2.965ns logic, 1.069ns route)
-                                                       (73.5% logic, 26.5% route)
+    Total                                      4.303ns (3.077ns logic, 1.226ns route)
+                                                       (71.5% logic, 28.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.023ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tube3B7/cntr_7 (FF)
+Slack (setup path):     -1.831ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A2/cntr_7 (FF)
   Destination:          din_15 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      4.026ns (Levels of Logic = 8)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -2.997ns (1.542 - 4.539)
+  Data Path Delay:      4.273ns (Levels of Logic = 9)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.558ns (1.537 - 4.095)
   Source Clock:         tubeclk rising at 0.000ns
   Destination Clock:    clk100_IBUF falling at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tube3B7/cntr_7 to din_15
+  Maximum Data Path: tube4A2/cntr_7 to din_15
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X27Y14.YQ      Tcko                  0.511   tube3B7/cntr<6>
-                                                       tube3B7/cntr_7
-    SLICE_X23Y19.F3      net (fanout=2)        0.804   tube3B7/cntr<7>
-    SLICE_X23Y19.COUT    Topcyf                1.011   din_15_mux0000_wg_cy<3>
-                                                       din_15_mux0000_wg_lut<2>
+    SLICE_X25Y11.YQ      Tcko                  0.511   tube4A2/cntr<6>
+                                                       tube4A2/cntr_7
+    SLICE_X24Y19.G4      net (fanout=3)        0.807   tube4A2/cntr<7>
+    SLICE_X24Y19.COUT    Topcyg                0.984   din_15_mux0000_wg_cy<1>
+                                                       din_15_mux0000_wg_lut<1>
+                                                       din_15_mux0000_wg_cy<1>
+    SLICE_X24Y20.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<1>
+    SLICE_X24Y20.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<3>
                                                        din_15_mux0000_wg_cy<2>
                                                        din_15_mux0000_wg_cy<3>
-    SLICE_X23Y20.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<3>
-    SLICE_X23Y20.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<5>
+    SLICE_X24Y21.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<3>
+    SLICE_X24Y21.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<5>
                                                        din_15_mux0000_wg_cy<4>
                                                        din_15_mux0000_wg_cy<5>
-    SLICE_X23Y21.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<5>
-    SLICE_X23Y21.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<7>
+    SLICE_X24Y22.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<5>
+    SLICE_X24Y22.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<7>
                                                        din_15_mux0000_wg_cy<6>
                                                        din_15_mux0000_wg_cy<7>
-    SLICE_X23Y22.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<7>
-    SLICE_X23Y22.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<9>
+    SLICE_X24Y23.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<7>
+    SLICE_X24Y23.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<9>
                                                        din_15_mux0000_wg_cy<8>
                                                        din_15_mux0000_wg_cy<9>
-    SLICE_X23Y23.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<9>
-    SLICE_X23Y23.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<11>
+    SLICE_X24Y24.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<9>
+    SLICE_X24Y24.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<11>
                                                        din_15_mux0000_wg_cy<10>
                                                        din_15_mux0000_wg_cy<11>
-    SLICE_X23Y24.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<11>
-    SLICE_X23Y24.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<13>
+    SLICE_X24Y25.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<11>
+    SLICE_X24Y25.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<13>
                                                        din_15_mux0000_wg_cy<12>
                                                        din_15_mux0000_wg_cy<13>
-    SLICE_X23Y25.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<13>
-    SLICE_X23Y25.COUT    Tbyp                  0.103   din_15_mux0000_wg_cy<15>
+    SLICE_X24Y26.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<13>
+    SLICE_X24Y26.COUT    Tbyp                  0.113   din_15_mux0000_wg_cy<15>
                                                        din_15_mux0000_wg_cy<14>
                                                        din_15_mux0000_wg_cy<15>
-    SLICE_X23Y26.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<15>
-    SLICE_X23Y26.XB      Tcinxb                0.352   din<15>
+    SLICE_X24Y27.CIN     net (fanout=1)        0.000   din_15_mux0000_wg_cy<15>
+    SLICE_X24Y27.XB      Tcinxb                0.431   din<15>
                                                        din_15_mux0000_wg_cy<16>
-    SLICE_X23Y26.BY      net (fanout=1)        0.416   din_15_mux0000
-    SLICE_X23Y26.CLK     Tdick                 0.314   din<15>
+    SLICE_X24Y27.BY      net (fanout=1)        0.416   din_15_mux0000
+    SLICE_X24Y27.CLK     Tdick                 0.333   din<15>
                                                        din_15
     -------------------------------------------------  ---------------------------
-    Total                                      4.026ns (2.806ns logic, 1.220ns route)
-                                                       (69.7% logic, 30.3% route)
+    Total                                      4.273ns (3.050ns logic, 1.223ns route)
+                                                       (71.4% logic, 28.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point din_11 (SLICE_X20Y24.CIN), 217 paths
+Paths for end point din_11 (SLICE_X21Y24.BY), 267 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.100ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tube4A2/cntr_3 (FF)
-  Destination:          din_11 (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      4.108ns (Levels of Logic = 9)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -2.992ns (1.547 - 4.539)
-  Source Clock:         tubeclk rising at 0.000ns
-  Destination Clock:    clk100_IBUF falling at 5.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: tube4A2/cntr_3 to din_11
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X29Y16.YQ      Tcko                  0.511   tube4A2/cntr<2>
-                                                       tube4A2/cntr_3
-    SLICE_X20Y16.G1      net (fanout=2)        0.938   tube4A2/cntr<3>
-    SLICE_X20Y16.COUT    Topcyg                0.984   din_11_mux0000_wg_cy<1>
-                                                       din_11_mux0000_wg_lut<1>
-                                                       din_11_mux0000_wg_cy<1>
-    SLICE_X20Y17.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<1>
-    SLICE_X20Y17.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<3>
-                                                       din_11_mux0000_wg_cy<2>
-                                                       din_11_mux0000_wg_cy<3>
-    SLICE_X20Y18.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<3>
-    SLICE_X20Y18.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<5>
-                                                       din_11_mux0000_wg_cy<4>
-                                                       din_11_mux0000_wg_cy<5>
-    SLICE_X20Y19.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<5>
-    SLICE_X20Y19.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<7>
-                                                       din_11_mux0000_wg_cy<6>
-                                                       din_11_mux0000_wg_cy<7>
-    SLICE_X20Y20.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<7>
-    SLICE_X20Y20.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<9>
-                                                       din_11_mux0000_wg_cy<8>
-                                                       din_11_mux0000_wg_cy<9>
-    SLICE_X20Y21.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<9>
-    SLICE_X20Y21.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<11>
-                                                       din_11_mux0000_wg_cy<10>
-                                                       din_11_mux0000_wg_cy<11>
-    SLICE_X20Y22.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<11>
-    SLICE_X20Y22.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<13>
-                                                       din_11_mux0000_wg_cy<12>
-                                                       din_11_mux0000_wg_cy<13>
-    SLICE_X20Y23.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<13>
-    SLICE_X20Y23.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<15>
-                                                       din_11_mux0000_wg_cy<14>
-                                                       din_11_mux0000_wg_cy<15>
-    SLICE_X20Y24.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<15>
-    SLICE_X20Y24.CLK     Tcinck                0.884   din<11>
-                                                       din_11_mux0000_wg_cy<16>
-                                                       din_11_mux0000_rt
-                                                       din_11
-    -------------------------------------------------  ---------------------------
-    Total                                      4.108ns (3.170ns logic, 0.938ns route)
-                                                       (77.2% logic, 22.8% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     -2.051ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     -1.751ns (requirement - (data path - clock path skew + uncertainty))
   Source:               tube4A1/cntr_3 (FF)
   Destination:          din_11 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      4.045ns (Levels of Logic = 9)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -3.006ns (1.547 - 4.553)
+  Data Path Delay:      4.206ns (Levels of Logic = 9)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.545ns (1.547 - 4.092)
   Source Clock:         tubeclk rising at 0.000ns
   Destination Clock:    clk100_IBUF falling at 5.000ns
   Clock Uncertainty:    0.000ns
@@ -449,188 +401,238 @@ Slack (setup path):     -2.051ns (requirement - (data path - clock path skew + u
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y13.YQ      Tcko                  0.567   tube4A1/cntr<2>
+    SLICE_X24Y12.YQ      Tcko                  0.567   tube4A1/cntr<2>
                                                        tube4A1/cntr_3
-    SLICE_X20Y16.F4      net (fanout=2)        0.792   tube4A1/cntr<3>
-    SLICE_X20Y16.COUT    Topcyf                1.011   din_11_mux0000_wg_cy<1>
+    SLICE_X21Y16.F3      net (fanout=3)        0.825   tube4A1/cntr<3>
+    SLICE_X21Y16.COUT    Topcyf                1.011   din_11_mux0000_wg_cy<1>
                                                        din_11_mux0000_wg_lut<0>
                                                        din_11_mux0000_wg_cy<0>
                                                        din_11_mux0000_wg_cy<1>
-    SLICE_X20Y17.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<1>
-    SLICE_X20Y17.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<3>
+    SLICE_X21Y17.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<1>
+    SLICE_X21Y17.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<3>
                                                        din_11_mux0000_wg_cy<2>
                                                        din_11_mux0000_wg_cy<3>
-    SLICE_X20Y18.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<3>
-    SLICE_X20Y18.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<5>
+    SLICE_X21Y18.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<3>
+    SLICE_X21Y18.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<5>
                                                        din_11_mux0000_wg_cy<4>
                                                        din_11_mux0000_wg_cy<5>
-    SLICE_X20Y19.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<5>
-    SLICE_X20Y19.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<7>
+    SLICE_X21Y19.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<5>
+    SLICE_X21Y19.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<7>
                                                        din_11_mux0000_wg_cy<6>
                                                        din_11_mux0000_wg_cy<7>
-    SLICE_X20Y20.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<7>
-    SLICE_X20Y20.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<9>
+    SLICE_X21Y20.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<7>
+    SLICE_X21Y20.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<9>
                                                        din_11_mux0000_wg_cy<8>
                                                        din_11_mux0000_wg_cy<9>
-    SLICE_X20Y21.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<9>
-    SLICE_X20Y21.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<11>
+    SLICE_X21Y21.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<9>
+    SLICE_X21Y21.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<11>
                                                        din_11_mux0000_wg_cy<10>
                                                        din_11_mux0000_wg_cy<11>
-    SLICE_X20Y22.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<11>
-    SLICE_X20Y22.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<13>
+    SLICE_X21Y22.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<11>
+    SLICE_X21Y22.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<13>
                                                        din_11_mux0000_wg_cy<12>
                                                        din_11_mux0000_wg_cy<13>
-    SLICE_X20Y23.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<13>
-    SLICE_X20Y23.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<15>
+    SLICE_X21Y23.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<13>
+    SLICE_X21Y23.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<15>
                                                        din_11_mux0000_wg_cy<14>
                                                        din_11_mux0000_wg_cy<15>
-    SLICE_X20Y24.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<15>
-    SLICE_X20Y24.CLK     Tcinck                0.884   din<11>
+    SLICE_X21Y24.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<15>
+    SLICE_X21Y24.XB      Tcinxb                0.352   din<11>
                                                        din_11_mux0000_wg_cy<16>
-                                                       din_11_mux0000_rt
+    SLICE_X21Y24.BY      net (fanout=1)        0.416   din_11_mux0000
+    SLICE_X21Y24.CLK     Tdick                 0.314   din<11>
                                                        din_11
     -------------------------------------------------  ---------------------------
-    Total                                      4.045ns (3.253ns logic, 0.792ns route)
-                                                       (80.4% logic, 19.6% route)
+    Total                                      4.206ns (2.965ns logic, 1.241ns route)
+                                                       (70.5% logic, 29.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.020ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               tube4A5/cntr_3 (FF)
+Slack (setup path):     -1.672ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4B0/cntr_3 (FF)
   Destination:          din_11 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      4.018ns (Levels of Logic = 8)(Component delays alone exceeds constraint)
-  Clock Path Skew:      -3.002ns (1.547 - 4.549)
+  Data Path Delay:      4.131ns (Levels of Logic = 6)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.541ns (1.547 - 4.088)
   Source Clock:         tubeclk rising at 0.000ns
   Destination Clock:    clk100_IBUF falling at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: tube4A5/cntr_3 to din_11
+  Maximum Data Path: tube4B0/cntr_3 to din_11
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y12.YQ      Tcko                  0.567   tube4A5/cntr<2>
-                                                       tube4A5/cntr_3
-    SLICE_X20Y17.F1      net (fanout=2)        0.878   tube4A5/cntr<3>
-    SLICE_X20Y17.COUT    Topcyf                1.011   din_11_mux0000_wg_cy<3>
+    SLICE_X31Y15.YQ      Tcko                  0.511   tube4B0/cntr<2>
+                                                       tube4B0/cntr_3
+    SLICE_X21Y19.F3      net (fanout=3)        1.115   tube4B0/cntr<3>
+    SLICE_X21Y19.COUT    Topcyf                1.011   din_11_mux0000_wg_cy<7>
+                                                       din_11_mux0000_wg_lut<6>
+                                                       din_11_mux0000_wg_cy<6>
+                                                       din_11_mux0000_wg_cy<7>
+    SLICE_X21Y20.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<7>
+    SLICE_X21Y20.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<9>
+                                                       din_11_mux0000_wg_cy<8>
+                                                       din_11_mux0000_wg_cy<9>
+    SLICE_X21Y21.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<9>
+    SLICE_X21Y21.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<11>
+                                                       din_11_mux0000_wg_cy<10>
+                                                       din_11_mux0000_wg_cy<11>
+    SLICE_X21Y22.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<11>
+    SLICE_X21Y22.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<13>
+                                                       din_11_mux0000_wg_cy<12>
+                                                       din_11_mux0000_wg_cy<13>
+    SLICE_X21Y23.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<13>
+    SLICE_X21Y23.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<15>
+                                                       din_11_mux0000_wg_cy<14>
+                                                       din_11_mux0000_wg_cy<15>
+    SLICE_X21Y24.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<15>
+    SLICE_X21Y24.XB      Tcinxb                0.352   din<11>
+                                                       din_11_mux0000_wg_cy<16>
+    SLICE_X21Y24.BY      net (fanout=1)        0.416   din_11_mux0000
+    SLICE_X21Y24.CLK     Tdick                 0.314   din<11>
+                                                       din_11
+    -------------------------------------------------  ---------------------------
+    Total                                      4.131ns (2.600ns logic, 1.531ns route)
+                                                       (62.9% logic, 37.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.637ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube3B5/cntr_3 (FF)
+  Destination:          din_11 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.092ns (Levels of Logic = 8)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -2.545ns (1.547 - 4.092)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube3B5/cntr_3 to din_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y13.YQ      Tcko                  0.511   tube3B5/cntr<2>
+                                                       tube3B5/cntr_3
+    SLICE_X21Y17.F3      net (fanout=3)        0.870   tube3B5/cntr<3>
+    SLICE_X21Y17.COUT    Topcyf                1.011   din_11_mux0000_wg_cy<3>
                                                        din_11_mux0000_wg_lut<2>
                                                        din_11_mux0000_wg_cy<2>
                                                        din_11_mux0000_wg_cy<3>
-    SLICE_X20Y18.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<3>
-    SLICE_X20Y18.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<5>
+    SLICE_X21Y18.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<3>
+    SLICE_X21Y18.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<5>
                                                        din_11_mux0000_wg_cy<4>
                                                        din_11_mux0000_wg_cy<5>
-    SLICE_X20Y19.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<5>
-    SLICE_X20Y19.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<7>
+    SLICE_X21Y19.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<5>
+    SLICE_X21Y19.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<7>
                                                        din_11_mux0000_wg_cy<6>
                                                        din_11_mux0000_wg_cy<7>
-    SLICE_X20Y20.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<7>
-    SLICE_X20Y20.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<9>
+    SLICE_X21Y20.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<7>
+    SLICE_X21Y20.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<9>
                                                        din_11_mux0000_wg_cy<8>
                                                        din_11_mux0000_wg_cy<9>
-    SLICE_X20Y21.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<9>
-    SLICE_X20Y21.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<11>
+    SLICE_X21Y21.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<9>
+    SLICE_X21Y21.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<11>
                                                        din_11_mux0000_wg_cy<10>
                                                        din_11_mux0000_wg_cy<11>
-    SLICE_X20Y22.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<11>
-    SLICE_X20Y22.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<13>
+    SLICE_X21Y22.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<11>
+    SLICE_X21Y22.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<13>
                                                        din_11_mux0000_wg_cy<12>
                                                        din_11_mux0000_wg_cy<13>
-    SLICE_X20Y23.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<13>
-    SLICE_X20Y23.COUT    Tbyp                  0.113   din_11_mux0000_wg_cy<15>
+    SLICE_X21Y23.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<13>
+    SLICE_X21Y23.COUT    Tbyp                  0.103   din_11_mux0000_wg_cy<15>
                                                        din_11_mux0000_wg_cy<14>
                                                        din_11_mux0000_wg_cy<15>
-    SLICE_X20Y24.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<15>
-    SLICE_X20Y24.CLK     Tcinck                0.884   din<11>
+    SLICE_X21Y24.CIN     net (fanout=1)        0.000   din_11_mux0000_wg_cy<15>
+    SLICE_X21Y24.XB      Tcinxb                0.352   din<11>
                                                        din_11_mux0000_wg_cy<16>
-                                                       din_11_mux0000_rt
+    SLICE_X21Y24.BY      net (fanout=1)        0.416   din_11_mux0000
+    SLICE_X21Y24.CLK     Tdick                 0.314   din<11>
                                                        din_11
     -------------------------------------------------  ---------------------------
-    Total                                      4.018ns (3.140ns logic, 0.878ns route)
-                                                       (78.1% logic, 21.9% route)
+    Total                                      4.092ns (2.806ns logic, 1.286ns route)
+                                                       (68.6% logic, 31.4% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "clk100_IBUF1" PERIOD = 10 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point tube4B2/cntr_0 (SLICE_X25Y12.SR), 1 path
+Paths for end point tube3A5/cntr_4 (SLICE_X17Y22.SR), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.233ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.146ns (requirement - (clock path skew + uncertainty - data path))
   Source:               CLR (FF)
-  Destination:          tube4B2/cntr_0 (FF)
+  Destination:          tube3A5/cntr_4 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      3.245ns (Levels of Logic = 0)
-  Clock Path Skew:      3.012ns (4.544 - 1.532)
+  Data Path Delay:      2.720ns (Levels of Logic = 0)
+  Clock Path Skew:      2.574ns (4.106 - 1.532)
   Source Clock:         clk100_IBUF rising at 10.000ns
   Destination Clock:    tubeclk rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: CLR to tube4B2/cntr_0
+  Minimum Data Path: CLR to tube3A5/cntr_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
     SLICE_X26Y28.YQ      Tcko                  0.454   CLR
                                                        CLR
-    SLICE_X25Y12.SR      net (fanout=162)      2.300   CLR
-    SLICE_X25Y12.CLK     Tcksr       (-Th)    -0.491   tube4B2/cntr<0>
-                                                       tube4B2/cntr_0
+    SLICE_X17Y22.SR      net (fanout=162)      1.775   CLR
+    SLICE_X17Y22.CLK     Tcksr       (-Th)    -0.491   tube3A5/cntr<4>
+                                                       tube3A5/cntr_4
     -------------------------------------------------  ---------------------------
-    Total                                      3.245ns (0.945ns logic, 2.300ns route)
-                                                       (29.1% logic, 70.9% route)
+    Total                                      2.720ns (0.945ns logic, 1.775ns route)
+                                                       (34.7% logic, 65.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point tube4B2/cntr_1 (SLICE_X25Y12.SR), 1 path
+Paths for end point tube3A5/cntr_5 (SLICE_X17Y22.SR), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.233ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.146ns (requirement - (clock path skew + uncertainty - data path))
   Source:               CLR (FF)
-  Destination:          tube4B2/cntr_1 (FF)
+  Destination:          tube3A5/cntr_5 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      3.245ns (Levels of Logic = 0)
-  Clock Path Skew:      3.012ns (4.544 - 1.532)
+  Data Path Delay:      2.720ns (Levels of Logic = 0)
+  Clock Path Skew:      2.574ns (4.106 - 1.532)
   Source Clock:         clk100_IBUF rising at 10.000ns
   Destination Clock:    tubeclk rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: CLR to tube4B2/cntr_1
+  Minimum Data Path: CLR to tube3A5/cntr_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
     SLICE_X26Y28.YQ      Tcko                  0.454   CLR
                                                        CLR
-    SLICE_X25Y12.SR      net (fanout=162)      2.300   CLR
-    SLICE_X25Y12.CLK     Tcksr       (-Th)    -0.491   tube4B2/cntr<0>
-                                                       tube4B2/cntr_1
+    SLICE_X17Y22.SR      net (fanout=162)      1.775   CLR
+    SLICE_X17Y22.CLK     Tcksr       (-Th)    -0.491   tube3A5/cntr<4>
+                                                       tube3A5/cntr_5
     -------------------------------------------------  ---------------------------
-    Total                                      3.245ns (0.945ns logic, 2.300ns route)
-                                                       (29.1% logic, 70.9% route)
+    Total                                      2.720ns (0.945ns logic, 1.775ns route)
+                                                       (34.7% logic, 65.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point tube4B2/cntr_2 (SLICE_X25Y13.SR), 1 path
+Paths for end point tube3A5/cntr_6 (SLICE_X17Y23.SR), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.233ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.146ns (requirement - (clock path skew + uncertainty - data path))
   Source:               CLR (FF)
-  Destination:          tube4B2/cntr_2 (FF)
+  Destination:          tube3A5/cntr_6 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      3.245ns (Levels of Logic = 0)
-  Clock Path Skew:      3.012ns (4.544 - 1.532)
+  Data Path Delay:      2.720ns (Levels of Logic = 0)
+  Clock Path Skew:      2.574ns (4.106 - 1.532)
   Source Clock:         clk100_IBUF rising at 10.000ns
   Destination Clock:    tubeclk rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path: CLR to tube4B2/cntr_2
+  Minimum Data Path: CLR to tube3A5/cntr_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
     SLICE_X26Y28.YQ      Tcko                  0.454   CLR
                                                        CLR
-    SLICE_X25Y13.SR      net (fanout=162)      2.300   CLR
-    SLICE_X25Y13.CLK     Tcksr       (-Th)    -0.491   tube4B2/cntr<2>
-                                                       tube4B2/cntr_2
+    SLICE_X17Y23.SR      net (fanout=162)      1.775   CLR
+    SLICE_X17Y23.CLK     Tcksr       (-Th)    -0.491   tube3A5/cntr<6>
+                                                       tube3A5/cntr_6
     -------------------------------------------------  ---------------------------
-    Total                                      3.245ns (0.945ns logic, 2.300ns route)
-                                                       (29.1% logic, 70.9% route)
+    Total                                      2.720ns (0.945ns logic, 1.775ns route)
+                                                       (34.7% logic, 65.3% route)
 
 --------------------------------------------------------------------------------
 
@@ -676,32 +678,32 @@ Clock to Setup on destination clock clk100
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk100         |    9.330|    4.747|    7.243|    9.616|
+clk100         |    9.582|    3.910|    7.081|    9.561|
 ---------------+---------+---------+---------+---------+
 
 
 Timing summary:
 ---------------
 
-Timing errors: 15  Score: 23913  (Setup/Max: 23913, Hold: 0)
+Timing errors: 18  Score: 18877  (Setup/Max: 18877, Hold: 0)
 
-Constraints cover 5292 paths, 0 nets, and 1900 connections
+Constraints cover 7481 paths, 0 nets, and 2431 connections
 
 Design statistics:
-   Minimum period:  14.486ns{1}   (Maximum frequency:  69.032MHz)
+   Minimum period:  14.162ns{1}   (Maximum frequency:  70.611MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Mon Jul 10 16:13:49 2017 
+Analysis completed Mon Jul 10 17:18:24 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 166 MB
+Peak Memory Usage: 167 MB
 
 
 
