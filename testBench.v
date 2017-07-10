@@ -95,11 +95,18 @@ module testBench;
 		
 		#100
 		RD_EN = 1;
-		
-		#6000
-		RD_CLK = 1;
-		#20
-		RD_CLK = 0;
+
+	
+	end
+	
+	
+	initial begin
+		while (1) begin
+			RD_CLK = 0;
+			#500;
+			RD_CLK = 1;
+			#500;
+		end
 	end
 	
 	//sim the clock
@@ -111,10 +118,10 @@ module testBench;
 			clk100 = 1;
 			# (CLOCK_PERIOD/2);
 		end
-	end
+	end 
 	
 	initial begin
-		# 10000;
+		# 100000;
 		$finish();
 	end
       

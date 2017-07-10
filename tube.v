@@ -41,9 +41,11 @@ module Tube(input clk,
 	always @ (posedge clk) begin
 		if (clr) begin //set cntr to 0 if we are clearing
 			cntr <= 0;
-		end else if ((Q == 0) && (cntr < 256)) begin //keeping counting as long as Q doesn't go high
-			cntr <= cntr + 1;
-		end 
+		end else begin 
+			if ((Q == 0) && (cntr < 255)) begin //keeping counting as long as Q doesn't go high
+				cntr <= cntr + 1;
+			end 
+		end
 	end
 	
   

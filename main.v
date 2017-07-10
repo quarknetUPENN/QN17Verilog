@@ -37,7 +37,8 @@ module main( input clk100,
 	//this is FOR the system
 	integer cntr = 0;
 	
-	//when should the fifo bring in data
+	integer busyCntr = 0;
+	
 	reg fifoWrite = 0;
 	
 	//setting this to high prepares the whole system for another event
@@ -61,31 +62,29 @@ module main( input clk100,
 	//ie, only when we are recording an event
 	wire tubeclk = SCIN_LATCH_Q && clk100;
 	
-	wire fifoclk = fifoWrite && clk100;
-	
-	//initialize the fifo that will hold all the data before it is sent to the rpi
+		//initialize the fifo that will hold all the data before it is sent to the rpi
 	//also set up light to turn on when it is full
 	reg [15:0] din = 0;
 	wire full;
-	//wire [0:9] wr_data_count;	
+	wire [0:9] wr_data_count;	
 	fifo16x1024 fifo( .rst(1'b0),
-							.wr_clk(fifoclk),
+							.wr_clk(clk100),
 							.din(din),
-							.wr_en(1'b1),
+							.wr_en(fifoWrite),
 							.full(full),
-							//.wr_data_count(wr_data_count),
+							.wr_data_count(wr_data_count),
 							.rd_clk(RD_CLK),
 							.rd_en(RD_EN),
-							.empty(RD_EMPTY),
+							//.empty(RD_EMPTY),
 							.valid(RD_VALID),
-							.dout(OTUBE) );
+							.dout(OTUBE));
 	assign overflowLight = full;
 							
-							
+	assign RD_EMPTY = (wr_data_count == 0);						
 	
 	//initialize wires and tubes for. every. tube.
 	wire [7:0] data3A0;
-	wire [7:0] data3A1;
+	wire [7:0] data3A1; 
 	wire [7:0] data3A2;
 	wire [7:0] data3A3;
 	wire [7:0] data3A4;
@@ -153,19 +152,16 @@ module main( input clk100,
 	Tube tube4B6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[6]), .clk_cyc_data(data4B6), .gateEnable(SCIN_LATCH_Q));
 	Tube tube4B7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[7]), .clk_cyc_data(data4B7), .gateEnable(SCIN_LATCH_Q));
 	
-	
-	
-	//the main loop!
-	always @ (posedge clk100) begin
-		cntr <= cntr + 1;
-		
-		//time's up for the drift tubes to fire for this scintillator coincidence
-		//therefore, record all the clock cycles for all the tubes
-		
+	always @ (negedge clk100) begin
+		if (SCIN_COIN) begin
+			cntr <= 0;
+		end
+		if (SCIN_LATCH_Q) begin
+			cntr <= cntr + 1;
+		end
 		
 		case(cntr)
-			 256:  begin fifoWrite <= 1; 											end
-			 257:  begin din[15:8] <= data3A0; din[7:0] <= 8'b11000000; end
+			 257:  begin din[15:8] <= data3A0; din[7:0] <= 8'b11000000; fifoWrite <= 1;  end
 			 258:  begin din[15:8] <= data3A1; din[7:0] <= 8'b11000100; end
 			 259:  begin din[15:8] <= data3A2; din[7:0] <= 8'b11000010; end
 			 260:  begin din[15:8] <= data3A3; din[7:0] <= 8'b11000110; end
@@ -197,15 +193,28 @@ module main( input clk100,
 			 286:  begin din[15:8] <= data4B5; din[7:0] <= 8'b00101101; end
 			 287:  begin din[15:8] <= data4B6; din[7:0] <= 8'b00101011; end
 			 288:  begin din[15:8] <= data4B7; din[7:0] <= 8'b00101111; end
- 
-		    //Once the data is read, clear it and reset everything 
-			 289:  begin CLR <= 1; fifoWrite <= 0; 							end                              
-			 //Once the clear is on, turn it off and reset the counter
-			 //to start looking for the next event	
-			 300:  begin cntr <= 0; CLR <= 0;                           end
- 
-			 default: din <= 8'b11111111;
+			 289:  begin din <= 16'b1111111111111111;							end
+			 290:  begin fifoWrite <= 0;											end
+			 default: din <= 16'b1111111111111111;
+		endcase
+	end
+	
+	
+	//the main loop!
+	always @ (posedge clk100) begin
+		busyCntr <= busyCntr + 1;
 
+		//time's up for the drift tubes to fire for this scintillator coincidence
+		//therefore, record all the clock cycles for all the tubes
+		
+		if (SCIN_COIN) begin
+			busyCntr <= 0;
+		end
+		
+		
+		case(busyCntr)
+			289: CLR <= 1;
+			300: CLR <= 0;
 		endcase
 	end
 	

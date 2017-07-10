@@ -1,5 +1,4 @@
 verilog isim_temp "tube.v"
-verilog isim_temp "ipcore_dir/fifo16x1024.v"
 verilog isim_temp "main.v"
 verilog isim_temp "testBench.v"
 verilog isim_temp "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v"
