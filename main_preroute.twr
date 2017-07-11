@@ -1,0 +1,740 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -filter
+C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/iseconfig/filter.filter
+-intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml main_preroute.twx main_map.ncd -o
+main_preroute.twr main.pcf -ucf constraints.ucf
+
+Design file:              main_map.ncd
+Physical constraint file: main.pcf
+Device,package,speed:     xc3s100e,tq144,-5 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3284 - This timing report was generated using estimated delay 
+   information.  For accurate numbers, please refer to the post Place and Route 
+   timing report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "clk100_IBUF1" PERIOD = 10 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 4696 paths analyzed, 727 endpoints analyzed, 256 failing endpoints
+ 256 timing errors detected. (0 setup errors, 256 hold errors, 0 component switching limit errors)
+ Minimum period is   9.460ns.
+--------------------------------------------------------------------------------
+
+Paths for end point din_11 (SLICEL.CIN), 253 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.270ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A1/cntr_3 (FF)
+  Destination:          din_11 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.018ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A1/cntr_3 to din_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A1/cntr<3>
+                                                       tube4A1/cntr_3
+    SLICEL.F1            net (fanout=1)     e  0.100   tube4A1/cntr<3>
+    SLICEL.COUT          Topcyf                1.011   din_11_mux0000_wg_cy<1>
+                                                       din_11_mux0000_wg_lut<0>
+                                                       din_11_mux0000_wg_cy<0>
+                                                       din_11_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<3>
+                                                       din_11_mux0000_wg_cy<2>
+                                                       din_11_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<5>
+                                                       din_11_mux0000_wg_cy<4>
+                                                       din_11_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<7>
+                                                       din_11_mux0000_wg_cy<6>
+                                                       din_11_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<9>
+                                                       din_11_mux0000_wg_cy<8>
+                                                       din_11_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<11>
+                                                       din_11_mux0000_wg_cy<10>
+                                                       din_11_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<13>
+                                                       din_11_mux0000_wg_cy<12>
+                                                       din_11_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<15>
+                                                       din_11_mux0000_wg_cy<14>
+                                                       din_11_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<11>
+                                                       din_11_mux0000_wg_cy<16>
+                                                       din_11_mux0000_rt
+                                                       din_11
+    -------------------------------------------------  ---------------------------
+    Total                                      4.018ns (3.118ns logic, 0.900ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.270ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A0/cntr_3 (FF)
+  Destination:          din_11 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.018ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A0/cntr_3 to din_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A0/cntr<3>
+                                                       tube4A0/cntr_3
+    SLICEL.F2            net (fanout=1)     e  0.100   tube4A0/cntr<3>
+    SLICEL.COUT          Topcyf                1.011   din_11_mux0000_wg_cy<1>
+                                                       din_11_mux0000_wg_lut<0>
+                                                       din_11_mux0000_wg_cy<0>
+                                                       din_11_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<3>
+                                                       din_11_mux0000_wg_cy<2>
+                                                       din_11_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<5>
+                                                       din_11_mux0000_wg_cy<4>
+                                                       din_11_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<7>
+                                                       din_11_mux0000_wg_cy<6>
+                                                       din_11_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<9>
+                                                       din_11_mux0000_wg_cy<8>
+                                                       din_11_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<11>
+                                                       din_11_mux0000_wg_cy<10>
+                                                       din_11_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<13>
+                                                       din_11_mux0000_wg_cy<12>
+                                                       din_11_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<15>
+                                                       din_11_mux0000_wg_cy<14>
+                                                       din_11_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<11>
+                                                       din_11_mux0000_wg_cy<16>
+                                                       din_11_mux0000_rt
+                                                       din_11
+    -------------------------------------------------  ---------------------------
+    Total                                      4.018ns (3.118ns logic, 0.900ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.410ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A2/cntr_3 (FF)
+  Destination:          din_11 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      3.878ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A2/cntr_3 to din_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A2/cntr<3>
+                                                       tube4A2/cntr_3
+    SLICEL.G1            net (fanout=1)     e  0.100   tube4A2/cntr<3>
+    SLICEL.COUT          Topcyg                0.871   din_11_mux0000_wg_cy<1>
+                                                       din_11_mux0000_wg_lut<1>
+                                                       din_11_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<3>
+                                                       din_11_mux0000_wg_cy<2>
+                                                       din_11_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<5>
+                                                       din_11_mux0000_wg_cy<4>
+                                                       din_11_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<7>
+                                                       din_11_mux0000_wg_cy<6>
+                                                       din_11_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<9>
+                                                       din_11_mux0000_wg_cy<8>
+                                                       din_11_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<11>
+                                                       din_11_mux0000_wg_cy<10>
+                                                       din_11_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<13>
+                                                       din_11_mux0000_wg_cy<12>
+                                                       din_11_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_11_mux0000_wg_cy<15>
+                                                       din_11_mux0000_wg_cy<14>
+                                                       din_11_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_11_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<11>
+                                                       din_11_mux0000_wg_cy<16>
+                                                       din_11_mux0000_rt
+                                                       din_11
+    -------------------------------------------------  ---------------------------
+    Total                                      3.878ns (2.978ns logic, 0.900ns route)
+                                                       (76.8% logic, 23.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point din_13 (SLICEL.CIN), 253 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.270ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A1/cntr_5 (FF)
+  Destination:          din_13 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.018ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A1/cntr_5 to din_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A1/cntr<5>
+                                                       tube4A1/cntr_5
+    SLICEL.F1            net (fanout=1)     e  0.100   tube4A1/cntr<5>
+    SLICEL.COUT          Topcyf                1.011   din_13_mux0000_wg_cy<1>
+                                                       din_13_mux0000_wg_lut<0>
+                                                       din_13_mux0000_wg_cy<0>
+                                                       din_13_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<3>
+                                                       din_13_mux0000_wg_cy<2>
+                                                       din_13_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<5>
+                                                       din_13_mux0000_wg_cy<4>
+                                                       din_13_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<7>
+                                                       din_13_mux0000_wg_cy<6>
+                                                       din_13_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<9>
+                                                       din_13_mux0000_wg_cy<8>
+                                                       din_13_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<11>
+                                                       din_13_mux0000_wg_cy<10>
+                                                       din_13_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<13>
+                                                       din_13_mux0000_wg_cy<12>
+                                                       din_13_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<15>
+                                                       din_13_mux0000_wg_cy<14>
+                                                       din_13_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<13>
+                                                       din_13_mux0000_wg_cy<16>
+                                                       din_13_mux0000_rt
+                                                       din_13
+    -------------------------------------------------  ---------------------------
+    Total                                      4.018ns (3.118ns logic, 0.900ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.270ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A0/cntr_5 (FF)
+  Destination:          din_13 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.018ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A0/cntr_5 to din_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A0/cntr<5>
+                                                       tube4A0/cntr_5
+    SLICEL.F2            net (fanout=1)     e  0.100   tube4A0/cntr<5>
+    SLICEL.COUT          Topcyf                1.011   din_13_mux0000_wg_cy<1>
+                                                       din_13_mux0000_wg_lut<0>
+                                                       din_13_mux0000_wg_cy<0>
+                                                       din_13_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<3>
+                                                       din_13_mux0000_wg_cy<2>
+                                                       din_13_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<5>
+                                                       din_13_mux0000_wg_cy<4>
+                                                       din_13_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<7>
+                                                       din_13_mux0000_wg_cy<6>
+                                                       din_13_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<9>
+                                                       din_13_mux0000_wg_cy<8>
+                                                       din_13_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<11>
+                                                       din_13_mux0000_wg_cy<10>
+                                                       din_13_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<13>
+                                                       din_13_mux0000_wg_cy<12>
+                                                       din_13_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<15>
+                                                       din_13_mux0000_wg_cy<14>
+                                                       din_13_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<13>
+                                                       din_13_mux0000_wg_cy<16>
+                                                       din_13_mux0000_rt
+                                                       din_13
+    -------------------------------------------------  ---------------------------
+    Total                                      4.018ns (3.118ns logic, 0.900ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.410ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A2/cntr_5 (FF)
+  Destination:          din_13 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      3.878ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A2/cntr_5 to din_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A2/cntr<5>
+                                                       tube4A2/cntr_5
+    SLICEL.G1            net (fanout=1)     e  0.100   tube4A2/cntr<5>
+    SLICEL.COUT          Topcyg                0.871   din_13_mux0000_wg_cy<1>
+                                                       din_13_mux0000_wg_lut<1>
+                                                       din_13_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<3>
+                                                       din_13_mux0000_wg_cy<2>
+                                                       din_13_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<5>
+                                                       din_13_mux0000_wg_cy<4>
+                                                       din_13_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<7>
+                                                       din_13_mux0000_wg_cy<6>
+                                                       din_13_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<9>
+                                                       din_13_mux0000_wg_cy<8>
+                                                       din_13_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<11>
+                                                       din_13_mux0000_wg_cy<10>
+                                                       din_13_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<13>
+                                                       din_13_mux0000_wg_cy<12>
+                                                       din_13_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_13_mux0000_wg_cy<15>
+                                                       din_13_mux0000_wg_cy<14>
+                                                       din_13_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_13_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<13>
+                                                       din_13_mux0000_wg_cy<16>
+                                                       din_13_mux0000_rt
+                                                       din_13
+    -------------------------------------------------  ---------------------------
+    Total                                      3.878ns (2.978ns logic, 0.900ns route)
+                                                       (76.8% logic, 23.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point din_9 (SLICEL.CIN), 253 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.270ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A1/cntr_1 (FF)
+  Destination:          din_9 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.018ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A1/cntr_1 to din_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A1/cntr<1>
+                                                       tube4A1/cntr_1
+    SLICEL.F1            net (fanout=1)     e  0.100   tube4A1/cntr<1>
+    SLICEL.COUT          Topcyf                1.011   din_9_mux0000_wg_cy<1>
+                                                       din_9_mux0000_wg_lut<0>
+                                                       din_9_mux0000_wg_cy<0>
+                                                       din_9_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<3>
+                                                       din_9_mux0000_wg_cy<2>
+                                                       din_9_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<5>
+                                                       din_9_mux0000_wg_cy<4>
+                                                       din_9_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<7>
+                                                       din_9_mux0000_wg_cy<6>
+                                                       din_9_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<9>
+                                                       din_9_mux0000_wg_cy<8>
+                                                       din_9_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<11>
+                                                       din_9_mux0000_wg_cy<10>
+                                                       din_9_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<13>
+                                                       din_9_mux0000_wg_cy<12>
+                                                       din_9_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<15>
+                                                       din_9_mux0000_wg_cy<14>
+                                                       din_9_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<9>
+                                                       din_9_mux0000_wg_cy<16>
+                                                       din_9_mux0000_rt
+                                                       din_9
+    -------------------------------------------------  ---------------------------
+    Total                                      4.018ns (3.118ns logic, 0.900ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.270ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A0/cntr_1 (FF)
+  Destination:          din_9 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.018ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A0/cntr_1 to din_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A0/cntr<1>
+                                                       tube4A0/cntr_1
+    SLICEL.F2            net (fanout=1)     e  0.100   tube4A0/cntr<1>
+    SLICEL.COUT          Topcyf                1.011   din_9_mux0000_wg_cy<1>
+                                                       din_9_mux0000_wg_lut<0>
+                                                       din_9_mux0000_wg_cy<0>
+                                                       din_9_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<3>
+                                                       din_9_mux0000_wg_cy<2>
+                                                       din_9_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<5>
+                                                       din_9_mux0000_wg_cy<4>
+                                                       din_9_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<7>
+                                                       din_9_mux0000_wg_cy<6>
+                                                       din_9_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<9>
+                                                       din_9_mux0000_wg_cy<8>
+                                                       din_9_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<11>
+                                                       din_9_mux0000_wg_cy<10>
+                                                       din_9_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<13>
+                                                       din_9_mux0000_wg_cy<12>
+                                                       din_9_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<15>
+                                                       din_9_mux0000_wg_cy<14>
+                                                       din_9_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<9>
+                                                       din_9_mux0000_wg_cy<16>
+                                                       din_9_mux0000_rt
+                                                       din_9
+    -------------------------------------------------  ---------------------------
+    Total                                      4.018ns (3.118ns logic, 0.900ns route)
+                                                       (77.6% logic, 22.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.410ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               tube4A2/cntr_1 (FF)
+  Destination:          din_9 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      3.878ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.712ns (1.657 - 2.369)
+  Source Clock:         tubeclk rising at 0.000ns
+  Destination Clock:    clk100_IBUF falling at 5.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: tube4A2/cntr_1 to din_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.XQ            Tcko                  0.514   tube4A2/cntr<1>
+                                                       tube4A2/cntr_1
+    SLICEL.G1            net (fanout=1)     e  0.100   tube4A2/cntr<1>
+    SLICEL.COUT          Topcyg                0.871   din_9_mux0000_wg_cy<1>
+                                                       din_9_mux0000_wg_lut<1>
+                                                       din_9_mux0000_wg_cy<1>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<1>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<3>
+                                                       din_9_mux0000_wg_cy<2>
+                                                       din_9_mux0000_wg_cy<3>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<3>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<5>
+                                                       din_9_mux0000_wg_cy<4>
+                                                       din_9_mux0000_wg_cy<5>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<5>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<7>
+                                                       din_9_mux0000_wg_cy<6>
+                                                       din_9_mux0000_wg_cy<7>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<7>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<9>
+                                                       din_9_mux0000_wg_cy<8>
+                                                       din_9_mux0000_wg_cy<9>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<9>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<11>
+                                                       din_9_mux0000_wg_cy<10>
+                                                       din_9_mux0000_wg_cy<11>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<11>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<13>
+                                                       din_9_mux0000_wg_cy<12>
+                                                       din_9_mux0000_wg_cy<13>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<13>
+    SLICEL.COUT          Tbyp                  0.103   din_9_mux0000_wg_cy<15>
+                                                       din_9_mux0000_wg_cy<14>
+                                                       din_9_mux0000_wg_cy<15>
+    SLICEL.CIN           net (fanout=1)     e  0.100   din_9_mux0000_wg_cy<15>
+    SLICEL.CLK           Tcinck                0.872   din<9>
+                                                       din_9_mux0000_wg_cy<16>
+                                                       din_9_mux0000_rt
+                                                       din_9
+    -------------------------------------------------  ---------------------------
+    Total                                      3.878ns (2.978ns logic, 0.900ns route)
+                                                       (76.8% logic, 23.2% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "clk100_IBUF1" PERIOD = 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point tube3A0/cntr_1 (SLICEL.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      -0.123ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               tubeCntr_1 (FF)
+  Destination:          tube3A0/cntr_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.589ns (Levels of Logic = 0)
+  Clock Path Skew:      0.712ns (2.369 - 1.657)
+  Source Clock:         clk100_IBUF rising at 10.000ns
+  Destination Clock:    tubeclk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: tubeCntr_1 to tube3A0/cntr_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.409   tubeCntr<0>
+                                                       tubeCntr_1
+    SLICEL.BX            net (fanout=34)    e  0.100   tubeCntr<1>
+    SLICEL.CLK           Tckdi       (-Th)    -0.080   tube3A0/cntr<1>
+                                                       tube3A0/cntr_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.589ns (0.489ns logic, 0.100ns route)
+                                                       (83.0% logic, 17.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point tube3A0/cntr_3 (SLICEL.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      -0.123ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               tubeCntr_3 (FF)
+  Destination:          tube3A0/cntr_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.589ns (Levels of Logic = 0)
+  Clock Path Skew:      0.712ns (2.369 - 1.657)
+  Source Clock:         clk100_IBUF rising at 10.000ns
+  Destination Clock:    tubeclk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: tubeCntr_3 to tube3A0/cntr_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.409   tubeCntr<2>
+                                                       tubeCntr_3
+    SLICEL.BX            net (fanout=34)    e  0.100   tubeCntr<3>
+    SLICEL.CLK           Tckdi       (-Th)    -0.080   tube3A0/cntr<3>
+                                                       tube3A0/cntr_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.589ns (0.489ns logic, 0.100ns route)
+                                                       (83.0% logic, 17.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point tube3A0/cntr_5 (SLICEL.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      -0.123ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               tubeCntr_5 (FF)
+  Destination:          tube3A0/cntr_5 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.589ns (Levels of Logic = 0)
+  Clock Path Skew:      0.712ns (2.369 - 1.657)
+  Source Clock:         clk100_IBUF rising at 10.000ns
+  Destination Clock:    tubeclk rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: tubeCntr_5 to tube3A0/cntr_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICEL.YQ            Tcko                  0.409   tubeCntr<4>
+                                                       tubeCntr_5
+    SLICEL.BX            net (fanout=34)    e  0.100   tubeCntr<5>
+    SLICEL.CLK           Tckdi       (-Th)    -0.080   tube3A0/cntr<5>
+                                                       tube3A0/cntr_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.589ns (0.489ns logic, 0.100ns route)
+                                                       (83.0% logic, 17.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "clk100_IBUF1" PERIOD = 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 7.236ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 1.382ns (Tbpwl)
+  Physical resource: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram/CLKA
+  Logical resource: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A/CLKA
+  Location pin: RAMB16.CLKA
+  Clock network: clk100_IBUF
+--------------------------------------------------------------------------------
+Slack: 7.236ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 1.382ns (Tbpwh)
+  Physical resource: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram/CLKA
+  Logical resource: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A/CLKA
+  Location pin: RAMB16.CLKA
+  Clock network: clk100_IBUF
+--------------------------------------------------------------------------------
+Slack: 7.237ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.763ns (361.925MHz) (Tbp)
+  Physical resource: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram/CLKA
+  Logical resource: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A/CLKA
+  Location pin: RAMB16.CLKA
+  Clock network: clk100_IBUF
+--------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk100
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk100         |    5.439|    2.416|    4.730|    5.442|
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 256  Score: 26496  (Setup/Max: 0, Hold: 26496)
+
+Constraints cover 4696 paths, 0 nets, and 1783 connections
+
+Design statistics:
+   Minimum period:   9.460ns{1}   (Maximum frequency: 105.708MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Jul 11 13:56:40 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 162 MB
+
+
+

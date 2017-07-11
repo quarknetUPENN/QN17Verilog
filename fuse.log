@@ -1,5 +1,5 @@
-Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_isim_beh.exe -prj C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_beh.prj work.testBench work.glbl 
-ISim P.68d (signature 0x7708f090)
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_isim_beh.exe -prj C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_beh.prj work.testBench work.glbl 
+ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
@@ -7,9 +7,9 @@ Analyzing Verilog file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/tube.v"
 Analyzing Verilog file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/ipcore_dir/fifo16x1024.v" into library work
 Analyzing Verilog file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" into library work
 Analyzing Verilog file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench.v" into library work
-Analyzing Verilog file "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 69: Port empty is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 74: Port empty is not connected to this instance
 Completed static elaboration
 Compiling module LDCE
 Compiling module fifo_generator_v9_3_sync_stage(C...
@@ -17,13 +17,14 @@ Compiling module fifo_generator_v9_3_bhv_ver_as(C...
 Compiling module FIFO_GENERATOR_V9_3_CONV_VER(C_C...
 Compiling module FIFO_GENERATOR_V9_3(C_DATA_COUNT...
 Compiling module fifo16x1024
+Compiling module FDCE
 Compiling module Tube
 Compiling module main
 Compiling module testBench
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 7 sub-compilation(s) to finish...
-Compiled 10 Verilog Units
+Waiting for 8 sub-compilation(s) to finish...
+Compiled 11 Verilog Units
 Built simulation executable C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_isim_beh.exe
-Fuse Memory Usage: 33192 KB
-Fuse CPU Usage: 749 ms
+Fuse Memory Usage: 33224 KB
+Fuse CPU Usage: 811 ms

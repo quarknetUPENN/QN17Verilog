@@ -1,16 +1,16 @@
-Release 14.6 - xst P.68d (nt64)
+Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: main.prj
 
@@ -129,7 +129,7 @@ Analyzing hierarchy for module <Tube> in library <work>.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <main>.
-WARNING:Xst:2211 - "ipcore_dir/fifo16x1024.v" line 69: Instantiating black box module <fifo16x1024>.
+WARNING:Xst:2211 - "ipcore_dir/fifo16x1024.v" line 79: Instantiating black box module <fifo16x1024>.
 Module <main> is correct for synthesis.
  
     Set user-defined property "INIT =  0" for instance <SCIN_LATCH> in unit <main>.
@@ -146,11 +146,9 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <Tube>.
     Related source file is "tube.v".
-    Found 8-bit up counter for signal <cntr>.
-    Found 8-bit comparator less for signal <cntr$cmp_lt0000> created at line 45.
+    Found 8-bit register for signal <cntr>.
     Summary:
-	inferred   1 Counter(s).
-	inferred   1 Comparator(s).
+	inferred   8 D-type flip-flop(s).
 Unit <Tube> synthesized.
 
 
@@ -162,10 +160,13 @@ Synthesizing Unit <main>.
     Found 32-bit up counter for signal <cntr>.
     Found 8-bit register for signal <din<15:8>>.
     Found 7-bit register for signal <din<6:0>>.
+    Found 8-bit up counter for signal <tubeCntr>.
+    Found 8-bit comparator less for signal <tubeCntr$cmp_lt0000> created at line 191.
     Found 1-bit register for signal <wr_en>.
     Summary:
-	inferred   2 Counter(s).
+	inferred   3 Counter(s).
 	inferred  17 D-type flip-flop(s).
+	inferred   1 Comparator(s).
 Unit <main> synthesized.
 
 
@@ -173,13 +174,14 @@ Unit <main> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 34
+# Counters                                             : 3
  32-bit up counter                                     : 2
- 8-bit up counter                                      : 32
-# Registers                                            : 17
+ 8-bit up counter                                      : 1
+# Registers                                            : 49
  1-bit register                                        : 17
-# Comparators                                          : 32
- 8-bit comparator less                                 : 32
+ 8-bit register                                        : 32
+# Comparators                                          : 1
+ 8-bit comparator less                                 : 1
 
 =========================================================================
 
@@ -194,13 +196,13 @@ Loading core <fifo16x1024> for timing and area information for instance <fifo>.
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 34
+# Counters                                             : 3
  32-bit up counter                                     : 2
- 8-bit up counter                                      : 32
-# Registers                                            : 17
- Flip-Flops                                            : 17
-# Comparators                                          : 32
- 8-bit comparator less                                 : 32
+ 8-bit up counter                                      : 1
+# Registers                                            : 273
+ Flip-Flops                                            : 273
+# Comparators                                          : 1
+ 8-bit comparator less                                 : 1
 
 =========================================================================
 
@@ -212,11 +214,11 @@ Optimizing unit <main> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 47.
-INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 42.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
-INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2> in Unit <fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
@@ -228,8 +230,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 337
- Flip-Flops                                            : 337
+# Registers                                            : 345
+ Flip-Flops                                            : 345
 
 =========================================================================
 
@@ -258,37 +260,38 @@ Design Statistics
 # IOs                              : 55
 
 Cell Usage :
-# BELS                             : 1619
+# BELS                             : 811
 #      GND                         : 2
-#      INV                         : 71
-#      LUT1                        : 304
-#      LUT2                        : 44
-#      LUT2_D                      : 2
-#      LUT3                        : 62
+#      INV                         : 40
+#      LUT1                        : 87
+#      LUT2                        : 45
+#      LUT2_D                      : 1
+#      LUT3                        : 27
 #      LUT3_D                      : 5
-#      LUT3_L                      : 1
-#      LUT4                        : 282
+#      LUT3_L                      : 2
+#      LUT4                        : 221
 #      LUT4_D                      : 4
 #      LUT4_L                      : 6
-#      MUXCY                       : 484
+#      MUXCY                       : 267
 #      VCC                         : 2
-#      XORCY                       : 350
-# FlipFlops/Latches                : 530
+#      XORCY                       : 102
+# FlipFlops/Latches                : 538
 #      FD                          : 4
-#      FD_1                        : 10
+#      FD_1                        : 11
 #      FDC                         : 92
 #      FDCE                        : 47
-#      FDE                         : 1
+#      FDE                         : 257
 #      FDP                         : 12
 #      FDPE                        : 5
 #      FDR                         : 32
-#      FDRE                        : 288
-#      FDS_1                       : 6
+#      FDRE                        : 39
+#      FDS_1                       : 5
+#      FDSE                        : 1
 #      LDCE                        : 33
 # RAMS                             : 1
 #      RAMB16_S18_S18              : 1
-# Clock Buffers                    : 3
-#      BUFG                        : 2
+# Clock Buffers                    : 4
+#      BUFG                        : 3
 #      BUFGP                       : 1
 # IO Buffers                       : 54
 #      IBUF                        : 35
@@ -300,14 +303,14 @@ Device utilization summary:
 
 Selected Device : 3s100etq144-5 
 
- Number of Slices:                      441  out of    960    45%  
- Number of Slice Flip Flops:            498  out of   1920    25%  
- Number of 4 input LUTs:                781  out of   1920    40%  
+ Number of Slices:                      409  out of    960    42%  
+ Number of Slice Flip Flops:            506  out of   1920    26%  
+ Number of 4 input LUTs:                438  out of   1920    22%  
  Number of IOs:                          55
  Number of bonded IOBs:                  55  out of    108    50%  
     IOB Flip Flops:                      32
  Number of BRAMs:                         1  out of      4    25%  
- Number of GCLKs:                         3  out of     24    12%  
+ Number of GCLKs:                         4  out of     24    16%  
 
 ---------------------------
 Partition Resource Summary:
@@ -331,9 +334,10 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)   | Load  |
 -----------------------------------+-------------------------+-------+
 RD_CLK                             | BUFGP                   | 70    |
-clk100                             | IBUF+BUFG               | 173   |
-SCIN_LATCH_Q                       | NONE(SCIN_LATCH)        | 1     |
+clk100                             | IBUF+BUFG               | 181   |
+SCIN_LATCH_Q                       | BUFG                    | 1     |
 tube4B7/Q                          | NONE(tube4B7/TUBE_LATCH)| 1     |
+tubeclk1(tubeclk1:O)               | BUFG(*)(tube4B7/cntr_7) | 256   |
 tube4B6/Q                          | NONE(tube4B6/TUBE_LATCH)| 1     |
 tube4B5/Q                          | NONE(tube4B5/TUBE_LATCH)| 1     |
 tube4B4/Q                          | NONE(tube4B4/TUBE_LATCH)| 1     |
@@ -365,7 +369,6 @@ tube3A3/Q                          | NONE(tube3A3/TUBE_LATCH)| 1     |
 tube3A2/Q                          | NONE(tube3A2/TUBE_LATCH)| 1     |
 tube3A1/Q                          | NONE(tube3A1/TUBE_LATCH)| 1     |
 tube3A0/Q                          | NONE(tube3A0/TUBE_LATCH)| 1     |
-tubeclk1(tubeclk1:O)               | BUFG(*)(tube4B7/cntr_0) | 256   |
 -----------------------------------+-------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -394,7 +397,7 @@ Speed Grade: -5
 
    Minimum period: 7.642ns (Maximum Frequency: 130.852MHz)
    Minimum input arrival time before clock: 4.728ns
-   Maximum output required time after clock: 6.282ns
+   Maximum output required time after clock: 6.160ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -428,7 +431,7 @@ Delay:               4.078ns (Levels of Logic = 3)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk100'
   Clock period: 7.642ns (frequency: 130.852MHz)
-  Total number of paths / destination ports: 3769 / 224
+  Total number of paths / destination ports: 4184 / 247
 -------------------------------------------------------------------------
 Delay:               3.821ns (Levels of Logic = 2)
   Source:            wr_en (FF)
@@ -447,29 +450,6 @@ Delay:               3.821ns (Levels of Logic = 2)
     ----------------------------------------
     Total                      3.821ns (2.216ns logic, 1.605ns route)
                                        (58.0% logic, 42.0% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'tubeclk1'
-  Clock period: 3.977ns (frequency: 251.458MHz)
-  Total number of paths / destination ports: 3200 / 512
--------------------------------------------------------------------------
-Delay:               3.977ns (Levels of Logic = 2)
-  Source:            tube4B7/cntr_3 (FF)
-  Destination:       tube4B7/cntr_0 (FF)
-  Source Clock:      tubeclk1 rising
-  Destination Clock: tubeclk1 rising
-
-  Data Path: tube4B7/cntr_3 to tube4B7/cntr_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDRE:C->Q             3   0.514   0.603  tube4B7/cntr_3 (tube4B7/cntr_3)
-     LUT4:I0->O            1   0.612   0.509  tube4B7/cntr_and000025 (tube4B7/cntr_and000025)
-     LUT3:I0->O            8   0.612   0.643  tube4B7/cntr_and000040 (tube4B7/cntr_and0000)
-     FDRE:CE                   0.483          tube4B7/cntr_0
-    ----------------------------------------
-    Total                      3.977ns (2.221ns logic, 1.756ns route)
-                                       (55.8% logic, 44.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'RD_CLK'
@@ -1144,23 +1124,23 @@ Offset:              4.728ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk100'
   Total number of paths / destination ports: 11 / 2
 -------------------------------------------------------------------------
-Offset:              6.282ns (Levels of Logic = 4)
-  Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7 (FF)
+Offset:              6.160ns (Levels of Logic = 4)
+  Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_3 (FF)
   Destination:       RD_EMPTY (PAD)
   Source Clock:      clk100 rising
 
-  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7 to RD_EMPTY
+  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_3 to RD_EMPTY
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              1   0.514   0.509  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7 (wr_data_count<7>)
+     FDC:C->Q              1   0.514   0.509  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_3 (wr_data_count<3>)
      end scope: 'fifo'
-     LUT4:I0->O            1   0.612   0.509  RD_EMPTY37 (RD_EMPTY37)
-     LUT4:I0->O            1   0.612   0.357  RD_EMPTY39 (RD_EMPTY_OBUF)
+     LUT4:I0->O            1   0.612   0.387  RD_EMPTY39_SW0 (N53)
+     LUT4:I2->O            1   0.612   0.357  RD_EMPTY39 (RD_EMPTY_OBUF)
      OBUF:I->O                 3.169          RD_EMPTY_OBUF (RD_EMPTY)
     ----------------------------------------
-    Total                      6.282ns (4.907ns logic, 1.375ns route)
-                                       (78.1% logic, 21.9% route)
+    Total                      6.160ns (4.907ns logic, 1.253ns route)
+                                       (79.7% logic, 20.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'RD_CLK'
@@ -1185,12 +1165,12 @@ Offset:              5.962ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.28 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.21 secs
  
 --> 
 
-Total memory usage is 286636 kilobytes
+Total memory usage is 284776 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

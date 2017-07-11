@@ -21,30 +21,51 @@
 module Tube(input clk,
 				input clr,
 				input tubePin,
-				input gateEnable,                    
+				input gateEnable,
+				input [7:0] tubeCntr,
 				output [7:0] clk_cyc_data);
 	
 	reg [7:0] cntr = 0;
 	assign clk_cyc_data = cntr;
 	
 	wire Q;
+//	wire SCIN_LOCK;
+//	
+//	FDCE #(
+//		.INIT(1'b0)
+//	) LATCH1 (
+//		.Q(Q),
+//		.CLR(clr),
+//		.D(1'b1),
+//		.C(tubePin & ~SCIN_LOCK),
+//		.CE(gateEnable)
+//	);
+//	FDCE #(
+//		.INIT(1'b0)
+//	) LATCH2 (
+//		.Q(SCIN_LOCK),
+//		.CLR(clr),
+//		.D(1'b1),
+//		.C(Q),
+//		.CE(gateEnable)
+//	);
+		
+	
 	LDCE #(
 		.INIT(1'b0) 				// Initial value of latch (1'b0 or 1'b1)
 	) TUBE_LATCH (
 		.Q(Q),      				// Data output
 		.CLR(clr),  				// Asynchronous clear/reset input
 		.D(tubePin),      		// Data input
-		.G(!Q),      				// Gate input
+		.G(~Q),      				// Gate input
 		.GE(gateEnable)     		// Gate enable input
 	);
 
+	
+
 	always @ (posedge clk) begin
-		if (clr) begin //set cntr to 0 if we are clearing
-			cntr <= 0;
-		end else begin 
-			if ((Q == 0) && (cntr < 255)) begin //keeping counting as long as Q doesn't go high
-				cntr <= cntr + 1;       			//also freeze cntr at no larger than 255 to prevent rollover
-			end 
+		if (Q == 0) begin
+			cntr <= tubeCntr;
 		end
 	end
 	

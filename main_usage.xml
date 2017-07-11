@@ -4,39 +4,39 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="28">
-<DesignStatistics TimeStamp="Mon Jul 10 17:17:55 2017"><group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="28">
+<DeviceUsageSummary rev="49">
+<DesignStatistics TimeStamp="Tue Jul 11 16:04:30 2017"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="49">
 <attrib name="value" value="55"/></item>
-<item name="AGG_IO" rev="28">
+<item name="AGG_IO" rev="49">
 <attrib name="value" value="55"/></item>
-<item name="AGG_SLICE" rev="28">
-<attrib name="value" value="447"/></item>
-<item name="NUM_4_INPUT_LUT" rev="28">
-<attrib name="value" value="752"/></item>
-<item name="NUM_BONDED_IBUF" rev="28">
+<item name="AGG_SLICE" rev="49">
+<attrib name="value" value="389"/></item>
+<item name="NUM_4_INPUT_LUT" rev="49">
+<attrib name="value" value="411"/></item>
+<item name="NUM_BONDED_IBUF" rev="49">
 <attrib name="value" value="36"/></item>
-<item name="NUM_BONDED_IOB" rev="28">
+<item name="NUM_BONDED_IOB" rev="49">
 <attrib name="value" value="19"/></item>
-<item name="NUM_BUFGMUX" rev="28">
-<attrib name="value" value="3"/></item>
-<item name="NUM_CYMUX" rev="28">
-<attrib name="value" value="484"/></item>
-<item name="NUM_IOB_LATCH" rev="28">
+<item name="NUM_BUFGMUX" rev="49">
+<attrib name="value" value="4"/></item>
+<item name="NUM_CYMUX" rev="49">
+<attrib name="value" value="267"/></item>
+<item name="NUM_IOB_LATCH" rev="49">
 <attrib name="value" value="32"/></item>
-<item name="NUM_LUT_RT" rev="28">
-<attrib name="value" value="304"/></item>
-<item name="NUM_RAMB16" rev="28">
+<item name="NUM_LUT_RT" rev="49">
+<attrib name="value" value="87"/></item>
+<item name="NUM_RAMB16" rev="49">
 <attrib name="value" value="1"/></item>
-<item name="NUM_SLICEL" rev="28">
-<attrib name="value" value="447"/></item>
-<item name="NUM_SLICE_FF" rev="28">
-<attrib name="value" value="497"/></item>
-<item name="NUM_SLICE_LATCH" rev="28">
+<item name="NUM_SLICEL" rev="49">
+<attrib name="value" value="389"/></item>
+<item name="NUM_SLICE_FF" rev="49">
+<attrib name="value" value="505"/></item>
+<item name="NUM_SLICE_LATCH" rev="49">
 <attrib name="value" value="1"/></item>
-<item name="NUM_XOR" rev="28">
-<attrib name="value" value="355"/></item>
-<item name="Xilinx Core fifo_generator_v9_3, Xilinx CORE Generator 14.6" rev="28">
+<item name="NUM_XOR" rev="49">
+<attrib name="value" value="109"/></item>
+<item name="Xilinx Core fifo_generator_v9_3, Xilinx CORE Generator 14.6" rev="49">
 <attrib name="value" value="1"/></item>
 </group>
 </DesignStatistics>
