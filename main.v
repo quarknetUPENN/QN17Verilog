@@ -1,3 +1,4 @@
+`default_nettype none
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
@@ -47,8 +48,6 @@
 	integer cntr = 0;
 	//busyCntr will always be counting up, regardless of everything else
 	integer busyCntr = 0;
-	//the global counter for all the tubes
-	reg [7:0] tubeCntr = 1;
 	
 	//setting this to high prepares the whole system for another event
 	//this will clear all unsaved (not in FIFO) data
@@ -86,7 +85,7 @@
 	wire [0:9] wr_data_count;
 	reg wr_en = 0;
 	fifo16x1024 fifo( .rst(1'b0),
-							.wr_clk(clk100),
+							.wr_clk(clk50),
 							.din(din),
 							.wr_en(wr_en),
 							.full(full),
@@ -100,44 +99,44 @@
 							
 	
 	//initialize wires and tubes for. every. tube.
-	wire [7:0] data3A0;  Tube tube3A0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[0]), .clk_cyc_data(data3A0), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3A1;  Tube tube3A1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[1]), .clk_cyc_data(data3A1), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3A2;  Tube tube3A2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[2]), .clk_cyc_data(data3A2), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3A3;  Tube tube3A3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[3]), .clk_cyc_data(data3A3), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3A4;  Tube tube3A4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[4]), .clk_cyc_data(data3A4), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3A5;  Tube tube3A5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[5]), .clk_cyc_data(data3A5), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3A6;  Tube tube3A6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[6]), .clk_cyc_data(data3A6), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3A7;  Tube tube3A7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[7]), .clk_cyc_data(data3A7), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3B0;  Tube tube3B0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[0]), .clk_cyc_data(data3B0), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3B1;  Tube tube3B1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[1]), .clk_cyc_data(data3B1), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3B2;  Tube tube3B2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[2]), .clk_cyc_data(data3B2), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3B3;  Tube tube3B3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[3]), .clk_cyc_data(data3B3), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3B4;  Tube tube3B4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[4]), .clk_cyc_data(data3B4), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3B5;  Tube tube3B5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[5]), .clk_cyc_data(data3B5), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3B6;  Tube tube3B6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[6]), .clk_cyc_data(data3B6), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data3B7;  Tube tube3B7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[7]), .clk_cyc_data(data3B7), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4A0;  Tube tube4A0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[0]), .clk_cyc_data(data4A0), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4A1;  Tube tube4A1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[1]), .clk_cyc_data(data4A1), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4A2;  Tube tube4A2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[2]), .clk_cyc_data(data4A2), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4A3;  Tube tube4A3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[3]), .clk_cyc_data(data4A3), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4A4;  Tube tube4A4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[4]), .clk_cyc_data(data4A4), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4A5;  Tube tube4A5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[5]), .clk_cyc_data(data4A5), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4A6;  Tube tube4A6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[6]), .clk_cyc_data(data4A6), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4A7;  Tube tube4A7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[7]), .clk_cyc_data(data4A7), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4B0;  Tube tube4B0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[0]), .clk_cyc_data(data4B0), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4B1;  Tube tube4B1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[1]), .clk_cyc_data(data4B1), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4B2;  Tube tube4B2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[2]), .clk_cyc_data(data4B2), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4B3;  Tube tube4B3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[3]), .clk_cyc_data(data4B3), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4B4;  Tube tube4B4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[4]), .clk_cyc_data(data4B4), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4B5;  Tube tube4B5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[5]), .clk_cyc_data(data4B5), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4B6;  Tube tube4B6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[6]), .clk_cyc_data(data4B6), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));
-	wire [7:0] data4B7;  Tube tube4B7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[7]), .clk_cyc_data(data4B7), .gateEnable(SCIN_LATCH_Q), .tubeCntr(tubeCntr));	
+	wire [7:0] data3A0;  Tube tube3A0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[0]), .clk_cyc_data(data3A0), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A1;  Tube tube3A1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[1]), .clk_cyc_data(data3A1), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A2;  Tube tube3A2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[2]), .clk_cyc_data(data3A2), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A3;  Tube tube3A3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[3]), .clk_cyc_data(data3A3), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A4;  Tube tube3A4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[4]), .clk_cyc_data(data3A4), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A5;  Tube tube3A5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[5]), .clk_cyc_data(data3A5), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A6;  Tube tube3A6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[6]), .clk_cyc_data(data3A6), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A7;  Tube tube3A7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[7]), .clk_cyc_data(data3A7), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B0;  Tube tube3B0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[0]), .clk_cyc_data(data3B0), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B1;  Tube tube3B1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[1]), .clk_cyc_data(data3B1), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B2;  Tube tube3B2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[2]), .clk_cyc_data(data3B2), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B3;  Tube tube3B3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[3]), .clk_cyc_data(data3B3), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B4;  Tube tube3B4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[4]), .clk_cyc_data(data3B4), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B5;  Tube tube3B5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[5]), .clk_cyc_data(data3B5), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B6;  Tube tube3B6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[6]), .clk_cyc_data(data3B6), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B7;  Tube tube3B7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[7]), .clk_cyc_data(data3B7), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A0;  Tube tube4A0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[0]), .clk_cyc_data(data4A0), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A1;  Tube tube4A1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[1]), .clk_cyc_data(data4A1), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A2;  Tube tube4A2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[2]), .clk_cyc_data(data4A2), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A3;  Tube tube4A3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[3]), .clk_cyc_data(data4A3), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A4;  Tube tube4A4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[4]), .clk_cyc_data(data4A4), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A5;  Tube tube4A5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[5]), .clk_cyc_data(data4A5), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A6;  Tube tube4A6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[6]), .clk_cyc_data(data4A6), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A7;  Tube tube4A7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[7]), .clk_cyc_data(data4A7), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B0;  Tube tube4B0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[0]), .clk_cyc_data(data4B0), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B1;  Tube tube4B1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[1]), .clk_cyc_data(data4B1), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B2;  Tube tube4B2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[2]), .clk_cyc_data(data4B2), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B3;  Tube tube4B3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[3]), .clk_cyc_data(data4B3), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B4;  Tube tube4B4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[4]), .clk_cyc_data(data4B4), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B5;  Tube tube4B5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[5]), .clk_cyc_data(data4B5), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B6;  Tube tube4B6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[6]), .clk_cyc_data(data4B6), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B7;  Tube tube4B7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[7]), .clk_cyc_data(data4B7), .gateEnable(SCIN_LATCH_Q));	
 	
 	// set up the reading output protocol
 	assign RD_EMPTY = (wr_data_count == 0);						
 
 	
-	always @ (negedge clk100) begin
+	always @ (negedge clk50) begin
 		if (SCIN_COIN) begin
 			cntr <= 0;
 		end
@@ -186,38 +185,36 @@
 	
 	 
 	//deal with the clear logic, which is independant of the r/w logic for the tubes
-	always @ (posedge clk100) begin
+	always @ (posedge clk50) begin
 		busyCntr <= busyCntr + 1;
 		if (SCIN_COIN) begin
 			busyCntr <= 0;
 		end
 		
 		case(busyCntr)
-			289: begin CLR <= 1; tubeCntr <= 1; end
+			289: begin CLR <= 1; end
 			300: CLR <= 0;
 		endcase
-		
-		if (SCIN_LATCH_Q && tubeCntr < 255) begin 
-			tubeCntr <= tubeCntr + 1;       			
-		end 
 	end
 	
-
+	
     reg [31:0] mycounter = 0;
+	 
     always @ (posedge clk50) begin
-	mycounter <= mycounter + 1;
+			mycounter <= mycounter + 1;
     end
 
 	
     // Chipscope integrated logic analyzer & controller
     wire [35:0] ila_control;
     wire [31:0] ila_trig0;
-    chipscope_ila ila(.CONTROL(ila_control), .CLK(clk50), 
-		      .TRIG0(ila_trig0));
+    chipscope_ila ila(.CONTROL(ila_control), 
+							 .CLK(clk50), 
+							 .TRIG0(ila_trig0));
     chipscope_icon icon(.CONTROL0(ila_control));
-    assign ila_trig0[31:0] = mycounter;
-
-
+    assign ila_trig0[29:0] = mycounter[29:0];
+    assign ila_trig0[30] = RD_EN;
+	 assign ila_trig0[31] = SCIN_COIN;
 	
 
 endmodule

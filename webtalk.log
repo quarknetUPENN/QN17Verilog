@@ -1,10 +1,10 @@
-Release 14.7 - WebTalk (P.20131013)
+Release 14.6 - WebTalk (P.68d)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
 Project Information
 --------------------
 ProjectID=312C80182ACD4EE4B70CF5C5932915B8
-ProjectIteration=62
+ProjectIteration=64
 
 WebTalk Summary
 ----------------
@@ -13,4 +13,4 @@ INFO:WebTalk:2 - WebTalk is enabled.
 INFO:WebTalk:8 - WebTalk Install setting is ON.
 INFO:WebTalk:6 - WebTalk User setting is ON.
 
-INFO:WebTalk:5 - /raid/home/ashmansk/u/proj/quarknet/QN17Verilog/usage_statistics_webtalk.html WebTalk report has not been sent to Xilinx.  Please check your network and proxy settings.  For additional details about this file, please refer to the WebTalk help file at /raid/opt/Xilinx/14.7/ISE_DS/ISE/data/reports/webtalk_introduction.html
+INFO:WebTalk:5 - C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/usage_statistics_webtalk.html WebTalk report has not been sent to Xilinx.  Please check your network and proxy settings.  For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/14.6/ISE_DS/ISE/data/reports/webtalk_introduction.html

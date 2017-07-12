@@ -22,7 +22,6 @@ module Tube(input clk,
 				input clr,
 				input tubePin,
 				input gateEnable,
-				input [7:0] tubeCntr,
 				output [7:0] clk_cyc_data);
 	
 	reg [7:0] cntr = 0;
@@ -64,8 +63,12 @@ module Tube(input clk,
 	
 
 	always @ (posedge clk) begin
-		if (Q == 0) begin
-			cntr <= tubeCntr;
+		if (clr == 1) begin
+			cntr <= 0;
+		end else begin 
+			if (Q == 0 && cntr < 255) begin
+				cntr <= cntr + 1;
+			end
 		end
 	end
 	
