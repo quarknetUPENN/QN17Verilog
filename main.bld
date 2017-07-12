@@ -1,20 +1,84 @@
-Release 14.7 ngdbuild P.20131013 (nt64)
+Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe -filter
-iseconfig/filter.filter -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc
-constraints.ucf -p xc3s100e-tq144-5 main.ngc main.ngd
+Command Line: /raid/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
+-filter iseconfig/filter.filter -intstyle ise -dd _ngo -sd ipcore_dir -nt
+timestamp -uc constraints.ucf -p xc3s100e-tq144-5 main.ngc main.ngd
 
-Reading NGO file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.ngc" ...
+Reading NGO file "/raid/home/ashmansk/u/proj/quarknet/QN17Verilog/main.ngc" ...
 Loading design module "ipcore_dir/fifo16x1024.ngc"...
+Loading design module "ipcore_dir/chipscope_ila.ngc"...
+Loading design module "ipcore_dir/chipscope_icon.ngc"...
+Applying constraints in "ipcore_dir/chipscope_ila.ncf" to module "ila"...
+Checking Constraint Associations...
+Applying constraints in "ipcore_dir/chipscope_icon.ncf" to module "icon"...
+WARNING:ConstraintSystem:190 - The TNM 'J_CLK', does not directly or indirectly
+   drive any flip-flops, latches and/or RAMS and cannot be actively used by the
+   referencing Period constraint 'TS_J_CLK'. If clock manager blocks are
+   directly or indirectly driven, a new TNM and PERIOD are derived only if the
+   PERIOD constraint is the only referencing constraint and if an output of the
+   clock manager block drives flip-flops, latches or RAMs.  
+   This TNM is used in the following user groups and/or specifications:
+   <TIMESPEC TS_J_CLK = PERIOD J_CLK 30 ns ;> [ipcore_dir/chipscope_icon.ncf(2)]
+   <TIMESPEC TS_U_TO_J = FROM U_CLK TO J_CLK 15 ns ;>
+   [ipcore_dir/chipscope_icon.ncf(6)]
+   <TIMESPEC TS_J_TO_D = FROM J_CLK TO D_CLK TIG ;>
+   [ipcore_dir/chipscope_icon.ncf(8)]
+   <TIMESPEC TS_D_TO_J = FROM D_CLK TO J_CLK TIG ;>
+   [ipcore_dir/chipscope_icon.ncf(9)]
+
+WARNING:ConstraintSystem:197 - The following specification is invalid because
+   the referenced TNM constraint was removed:
+   <TIMESPEC TS_J_CLK = PERIOD J_CLK 30 ns ;> [ipcore_dir/chipscope_icon.ncf(2)]
+
+WARNING:ConstraintSystem:197 - The following specification is invalid because
+   the referenced TNM constraint was removed:
+   <TIMESPEC TS_U_TO_J = FROM U_CLK TO J_CLK 15 ns ;>
+   [ipcore_dir/chipscope_icon.ncf(6)]
+
+WARNING:ConstraintSystem:197 - The following specification is invalid because
+   the referenced TNM constraint was removed:
+   <TIMESPEC TS_J_TO_D = FROM J_CLK TO D_CLK TIG ;>
+   [ipcore_dir/chipscope_icon.ncf(8)]
+
+WARNING:ConstraintSystem:197 - The following specification is invalid because
+   the referenced TNM constraint was removed:
+   <TIMESPEC TS_D_TO_J = FROM D_CLK TO J_CLK TIG ;>
+   [ipcore_dir/chipscope_icon.ncf(9)]
+
+Checking Constraint Associations...
+INFO:NgdBuild:981 - Could not find any associations for the following
+   constraint:
+       '<NET "U0/U_ICON/*/iDRCK_LOCAL" TNM_NET = J_CLK ;>
+   [ipcore_dir/chipscope_icon.ncf(1)]'
 Gathering constraint information from source properties...
 Done.
 
 Annotating constraints to design from ucf file "constraints.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_J_CLK = PERIOD "J_CLK"
+   30000.000000000 pS HIGH 50.000000000 %;>: Unable to find an active 'TNM' or
+   'TimeGrp' constraint named 'J_CLK'.
+
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_U_TO_J = FROM "U_CLK" TO
+   "J_CLK" 15000.000000000 pS;>: Unable to find an active 'TimeGrp' or 'TNM' or
+   'TPSync' constraint named 'J_CLK'.
+
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_J_TO_D = FROM "J_CLK" TO
+   "D_CLK" TIG;>: Unable to find an active 'TimeGrp' or 'TNM' or 'TPSync'
+   constraint named 'J_CLK'.
+
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_D_TO_J = FROM "D_CLK" TO
+   "J_CLK" TIG;>: Unable to find an active 'TimeGrp' or 'TNM' or 'TPSync'
+   constraint named 'J_CLK'.
+
 INFO:ConstraintSystem - The Period constraint <PERIOD = 10.0;>
    [constraints.ucf(1)], is specified using the Net Period method which is not
+   recommended. Please use the Timespec PERIOD method.
+
+INFO:ConstraintSystem - The Period constraint <NET "clk50" PERIOD = 20.0;>
+   [constraints.ucf(2)], is specified using the Net Period method which is not
    recommended. Please use the Timespec PERIOD method.
 
 Done...
@@ -30,9 +94,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   0
+  Number of warnings:   9
 
-Total memory usage is 159792 kilobytes
+Total memory usage is 463856 kilobytes
 
 Writing NGD file "main.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec

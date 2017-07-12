@@ -1,4 +1,5 @@
 NET "clk100" LOC = "P126" | PERIOD = 10.0; 
+NET "clk50" PERIOD = 20.0;
 
 NET "overflowLight" LOC = "P20";
 

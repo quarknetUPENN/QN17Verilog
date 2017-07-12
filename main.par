@@ -1,15 +1,15 @@
-Release 14.7 par P.20131013 (nt64)
+Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-HEP-PC::  Tue Jul 11 16:04:34 2017
+xray::  Wed Jul 12 14:55:00 2017
 
-par -filter "C:/Users/HEP/Documents/Quarknet
-2017/QN17Verilog/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1
-main_map.ncd main.ncd main.pcf 
+par -filter
+/raid/home/ashmansk/u/proj/quarknet/QN17Verilog/iseconfig/filter.filter -w
+-intstyle ise -ol high -t 1 main_map.ncd main.ncd main.pcf 
 
 
 Constraints file: main.pcf.
-Loading device for application Rf_Device from file '3s100e.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+Loading device for application Rf_Device from file '3s100e.nph' in environment /raid/opt/Xilinx/14.7/ISE_DS/ISE/.
    "main" is an NCD, version 3.2, device xc3s100e, package tq144, speed -5
 
 Initializing temperature to 85.000 Celsius. (default - Range: -40.000 to 100.000 Celsius)
@@ -17,6 +17,7 @@ Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.320 Volts)
 
 
 Device speed data version:  "PRODUCTION 1.27 2013-10-13".
+
 
 
 Design Summary Report:
@@ -38,162 +39,112 @@ Design Summary Report:
    Number of External Bidir IOBs                  0
 
 
-   Number of BUFGMUXs                        4 out of 24     16%
-   Number of RAMB16s                         1 out of 4      25%
-   Number of Slices                        389 out of 960    40%
-      Number of SLICEMs                      0 out of 480     0%
+   Number of BSCANs                          1 out of 1     100%
+   Number of BUFGMUXs                        6 out of 24     25%
+   Number of DCMs                            1 out of 2      50%
+   Number of RAMB16s                         3 out of 4      75%
+   Number of Slices                        634 out of 960    66%
+      Number of SLICEMs                     50 out of 480    10%
 
 
 
 Overall effort level (-ol):   High 
-Placer effort level (-pl):    High 
-Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
 Starting initial Timing Analysis.  REAL time: 2 secs 
 Finished initial Timing Analysis.  REAL time: 2 secs 
 
-
-Starting Placer
-Total REAL time at the beginning of Placer: 2 secs 
-Total CPU  time at the beginning of Placer: 1 secs 
-
-Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:fb25fcb5) REAL time: 2 secs 
-
-Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:fb25fcb5) REAL time: 2 secs 
-
-Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:fb25fcb5) REAL time: 2 secs 
-
-WARNING:Place:414 - The input design contains local clock signal(s). To get a better result, we recommend users run map
-   with the "-timing" option set before starting the placement.
-Phase 4.2  Initial Clock and IO Placement
-
-Phase 4.2  Initial Clock and IO Placement (Checksum:1e6f7d1d) REAL time: 4 secs 
-
-Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:1e6f7d1d) REAL time: 4 secs 
-
-Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:1e6f7d1d) REAL time: 4 secs 
-
-Phase 7.8  Global Placement
-.........
-.....................
-...
-...................................................................
-........
-..........
-...........................................................................
-........
-Phase 7.8  Global Placement (Checksum:a33e50ea) REAL time: 6 secs 
-
-Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:a33e50ea) REAL time: 6 secs 
-
-Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:b89967b) REAL time: 7 secs 
-
-Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:b89967b) REAL time: 7 secs 
-
-Total REAL time to Placer completion: 7 secs 
-Total CPU  time to Placer completion: 6 secs 
-Writing design to file main.ncd
-
-
-
 Starting Router
 
 
-Phase  1  : 2438 unrouted;      REAL time: 9 secs 
+Phase  1  : 4282 unrouted;      REAL time: 3 secs 
 
-Phase  2  : 2132 unrouted;      REAL time: 9 secs 
+Phase  2  : 3423 unrouted;      REAL time: 3 secs 
 
-Phase  3  : 564 unrouted;      REAL time: 9 secs 
+Phase  3  : 1143 unrouted;      REAL time: 3 secs 
 
-Phase  4  : 613 unrouted; (Setup:9499, Hold:209512, Component Switching Limit:0)     REAL time: 9 secs 
+Phase  4  : 1182 unrouted; (Setup:10197, Hold:141867, Component Switching Limit:0)     REAL time: 3 secs 
 
-Phase  5  : 0 unrouted; (Setup:12862, Hold:210168, Component Switching Limit:0)     REAL time: 10 secs 
+Phase  5  : 0 unrouted; (Setup:16880, Hold:210385, Component Switching Limit:0)     REAL time: 5 secs 
 
 Updating file: main.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Setup:12862, Hold:210168, Component Switching Limit:0)     REAL time: 11 secs 
+Phase  6  : 0 unrouted; (Setup:16880, Hold:210385, Component Switching Limit:0)     REAL time: 5 secs 
 
-Phase  7  : 0 unrouted; (Setup:11058, Hold:209476, Component Switching Limit:0)     REAL time: 14 secs 
+Phase  7  : 0 unrouted; (Setup:16677, Hold:215677, Component Switching Limit:0)     REAL time: 9 secs 
 
-Phase  8  : 0 unrouted; (Setup:11058, Hold:209476, Component Switching Limit:0)     REAL time: 14 secs 
+Phase  8  : 0 unrouted; (Setup:16677, Hold:215677, Component Switching Limit:0)     REAL time: 9 secs 
 
-Phase  9  : 0 unrouted; (Setup:11053, Hold:207946, Component Switching Limit:0)     REAL time: 14 secs 
-WARNING:Route:455 - CLK Net:tube3B0/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube3B1/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube3B2/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube3B3/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube3B4/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube3B5/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4A2/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube3B6/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube3B7/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4B0/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4B1/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4B3/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4B4/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4B5/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4B6/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4B7/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+Phase  9  : 0 unrouted; (Setup:16677, Hold:213230, Component Switching Limit:0)     REAL time: 9 secs 
 WARNING:Route:455 - CLK Net:tube3A0/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube3A1/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4A7/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4A6/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube3A2/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4A5/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube3A3/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B0/Q may have excessive skew because 
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube3A4/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B1/Q may have excessive skew because 
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube3A5/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B2/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube3A6/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B3/Q may have excessive skew because 
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube3A7/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube4A0/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B4/Q may have excessive skew because 
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube4A1/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube4B2/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B5/Q may have excessive skew because 
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4A2/Q may have excessive skew because 
+      1 CLK pins and 8 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B6/Q may have excessive skew because 
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube4A3/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B7/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4B0/Q may have excessive skew because 
+      1 CLK pins and 7 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube4A4/Q may have excessive skew because 
-      1 CLK pins and 4 NON_CLK pins failed to route using a CLK template.
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4B1/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4A5/Q may have excessive skew because 
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4B2/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4A6/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4B3/Q may have excessive skew because 
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4A7/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4B4/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4B5/Q may have excessive skew because 
+      1 CLK pins and 5 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4B6/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube4B7/Q may have excessive skew because 
+      1 CLK pins and 6 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:ila_control<13> may have excessive skew because 
+      1 CLK pins and 3 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 14 secs 
-Total CPU time to Router completion: 12 secs 
+Total REAL time to Router completion: 9 secs 
+Total CPU time to Router completion: 9 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -211,77 +162,85 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|         clk100_IBUF | BUFGMUX_X1Y10| No   |  103 |  0.025     |  0.058      |
+|               clk50 | BUFGMUX_X2Y11| No   |  148 |  0.031     |  0.064      |
 +---------------------+--------------+------+------+------------+-------------+
-|        RD_CLK_BUFGP |  BUFGMUX_X2Y1| No   |   39 |  0.025     |  0.060      |
+|      ila_control<0> |  BUFGMUX_X1Y1| No   |   83 |  0.026     |  0.059      |
 +---------------------+--------------+------+------+------------+-------------+
-|                bufQ | BUFGMUX_X2Y11| No   |    1 |  0.000     |  0.049      |
+|        clk100_IBUFG | BUFGMUX_X1Y10| No   |  115 |  0.034     |  0.067      |
 +---------------------+--------------+------+------+------------+-------------+
-|             tubeclk |  BUFGMUX_X1Y0| No   |  128 |  0.024     |  0.058      |
+|        RD_CLK_BUFGP |  BUFGMUX_X2Y1| No   |   49 |  0.018     |  0.052      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B0/Q |         Local|      |    5 |  0.000     |  1.715      |
+|                bufQ | BUFGMUX_X1Y11| No   |    1 |  0.000     |  0.053      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B1/Q |         Local|      |    5 |  0.000     |  1.660      |
+|             tubeclk |  BUFGMUX_X1Y0| No   |  194 |  0.020     |  0.054      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B2/Q |         Local|      |    5 |  0.000     |  1.595      |
+|           tube3A0/Q |         Local|      |    6 |  0.000     |  1.136      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B3/Q |         Local|      |    5 |  0.000     |  1.378      |
+|           tube3A1/Q |         Local|      |    7 |  0.000     |  1.464      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B4/Q |         Local|      |    5 |  0.000     |  2.054      |
+|           tube3A2/Q |         Local|      |    7 |  0.000     |  1.194      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B5/Q |         Local|      |    5 |  0.000     |  1.582      |
+|           tube3A3/Q |         Local|      |    6 |  0.000     |  1.594      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A2/Q |         Local|      |    5 |  0.000     |  1.407      |
+|           tube3B0/Q |         Local|      |    8 |  0.000     |  1.575      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B6/Q |         Local|      |    5 |  0.000     |  2.055      |
+|           tube3A4/Q |         Local|      |    7 |  0.000     |  1.381      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B7/Q |         Local|      |    5 |  0.000     |  1.473      |
+|           tube3B1/Q |         Local|      |    6 |  0.000     |  1.491      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B0/Q |         Local|      |    5 |  0.000     |  1.712      |
+|           tube3A5/Q |         Local|      |    8 |  0.000     |  1.383      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B1/Q |         Local|      |    5 |  0.000     |  1.701      |
+|           tube3B2/Q |         Local|      |    7 |  0.000     |  1.384      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B3/Q |         Local|      |    5 |  0.000     |  2.049      |
+|           tube3A6/Q |         Local|      |    8 |  0.000     |  1.733      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B4/Q |         Local|      |    5 |  0.000     |  1.679      |
+|           tube3B3/Q |         Local|      |    8 |  0.000     |  1.330      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B5/Q |         Local|      |    5 |  0.000     |  1.614      |
+|           tube3A7/Q |         Local|      |    6 |  0.000     |  1.551      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B6/Q |         Local|      |    5 |  0.000     |  1.164      |
+|           tube4A0/Q |         Local|      |    8 |  0.000     |  1.606      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B7/Q |         Local|      |    5 |  0.000     |  1.308      |
+|           tube3B4/Q |         Local|      |    8 |  0.000     |  1.551      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A0/Q |         Local|      |    5 |  0.000     |  1.348      |
+|           tube4A1/Q |         Local|      |    8 |  0.000     |  1.924      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A1/Q |         Local|      |    5 |  0.000     |  1.283      |
+|           tube3B5/Q |         Local|      |    6 |  0.000     |  1.568      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A7/Q |         Local|      |    5 |  0.000     |  1.279      |
+|           tube4A2/Q |         Local|      |    9 |  0.000     |  1.555      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A6/Q |         Local|      |    5 |  0.000     |  1.099      |
+|           tube3B6/Q |         Local|      |    8 |  0.000     |  1.967      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A2/Q |         Local|      |    5 |  0.000     |  1.544      |
+|           tube4A3/Q |         Local|      |    7 |  0.000     |  1.638      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A5/Q |         Local|      |    5 |  0.000     |  1.099      |
+|           tube3B7/Q |         Local|      |    7 |  0.000     |  2.023      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A3/Q |         Local|      |    5 |  0.000     |  1.645      |
+|           tube4B0/Q |         Local|      |    8 |  0.000     |  1.785      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A4/Q |         Local|      |    5 |  0.000     |  1.745      |
+|           tube4A4/Q |         Local|      |    6 |  0.000     |  1.322      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A5/Q |         Local|      |    5 |  0.000     |  1.551      |
+|           tube4B1/Q |         Local|      |    7 |  0.000     |  1.575      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A6/Q |         Local|      |    5 |  0.000     |  1.668      |
+|           tube4A5/Q |         Local|      |    6 |  0.000     |  1.099      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A7/Q |         Local|      |    5 |  0.000     |  1.745      |
+|           tube4B2/Q |         Local|      |    7 |  0.000     |  1.663      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A0/Q |         Local|      |    5 |  0.000     |  1.739      |
+|           tube4A6/Q |         Local|      |    7 |  0.000     |  1.099      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A1/Q |         Local|      |    5 |  0.000     |  1.852      |
+|           tube4B3/Q |         Local|      |    6 |  0.000     |  1.550      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B2/Q |         Local|      |    5 |  0.000     |  1.473      |
+|           tube4A7/Q |         Local|      |    7 |  0.000     |  1.260      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A3/Q |         Local|      |    5 |  0.000     |  1.528      |
+|           tube4B4/Q |         Local|      |    7 |  0.000     |  1.373      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A4/Q |         Local|      |    5 |  0.000     |  1.390      |
+|           tube4B5/Q |         Local|      |    6 |  0.000     |  1.406      |
++---------------------+--------------+------+------+------------+-------------+
+|           tube4B6/Q |         Local|      |    7 |  0.000     |  1.119      |
++---------------------+--------------+------+------+------------+-------------+
+|           tube4B7/Q |         Local|      |    7 |  0.000     |  1.307      |
++---------------------+--------------+------+------+------------+-------------+
+| icon/U0/iUPDATE_OUT |         Local|      |    1 |  0.000     |  1.702      |
++---------------------+--------------+------+------+------------+-------------+
+|     ila_control<13> |         Local|      |    4 |  0.000     |  1.909      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -292,7 +251,7 @@ the minimum and maximum path delays which includes logic delays.
 * The fanout is the number of component pins not the individual BEL loads,
 for example SLICE loads not FF loads.
 
-Timing Score: 218999 (Setup: 11053, Hold: 207946, Component Switching Limit: 0)
+Timing Score: 229907 (Setup: 16677, Hold: 213230, Component Switching Limit: 0)
 
 WARNING:Par:468 - Your design did not meet timing.  The following are some suggestions to assist you to meet timing in
    your design.
@@ -311,6 +270,8 @@ WARNING:Par:468 - Your design did not meet timing.  The following are some sugge
    TechXclusives->Timing Closure" for tips and suggestions for meeting timing
    in your design.
 
+Number of Timing Constraints that were not applied: 3
+
 Asterisk (*) preceding a constraint indicates it was not met.
    This may be due to a setup or hold violation.
 
@@ -318,26 +279,63 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-* NET "clk100_IBUF1" PERIOD = 10 ns HIGH 50 | SETUP       |    -1.592ns|    13.184ns|      18|       11053
-  %                                         | HOLD        |    -1.590ns|            |     255|      207946
+* NET "clk100_IBUFG1" PERIOD = 10 ns HIGH 5 | SETUP       |    -1.950ns|    13.900ns|      22|       16677
+  0%                                        | HOLD        |    -1.561ns|            |     256|      213230
+----------------------------------------------------------------------------------------------------------
+  TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    13.639ns|     1.361ns|       0|           0
+   TO TIMEGRP "U_CLK" 15 ns                 |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "clk50" PERIOD = 20 ns HIGH 50%       | SETUP       |    14.324ns|     5.676ns|       0|           0
+                                            | HOLD        |     0.614ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  PERIOD analysis for net "clk501" derived  | MINPERIOD   |    14.546ns|     5.454ns|       0|           0
+  from  NET "clk100_IBUFG1" PERIOD = 10 ns  |             |            |            |        |            
+  HIGH 50%                                  |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_D2_TO_T2_path" TIG               | SETUP       |         N/A|     5.453ns|     N/A|           0
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_J2_TO_D2_path" TIG               | N/A         |         N/A|         N/A|     N/A|         N/A
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_J3_TO_D2_path" TIG               | N/A         |         N/A|         N/A|     N/A|         N/A
+----------------------------------------------------------------------------------------------------------
+  PATH "TS_J4_TO_D2_path" TIG               | MAXDELAY    |         N/A|     6.693ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
 
 
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for clk100_IBUFG1
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|clk100_IBUFG1                  |     10.000ns|     13.900ns|      2.727ns|          278|            0|         4696|            0|
+| clk501                        |     20.000ns|      5.454ns|          N/A|            0|            0|            0|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
 1 constraint not met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
 
 
 Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 15 secs 
-Total CPU time to PAR completion: 13 secs 
+Total REAL time to PAR completion: 10 secs 
+Total CPU time to PAR completion: 9 secs 
 
-Peak Memory Usage:  284 MB
+Peak Memory Usage:  597 MB
 
-Placement: Completed - No errors found.
+Placer: Placement generated during map.
 Routing: Completed - No errors found.
-Timing: Completed - 273 errors found.
+Timing: Completed - 278 errors found.
 
 Number of error messages: 0
 Number of warning messages: 34

@@ -1,3 +1,5 @@
 verilog work "tube.v"
 verilog work "ipcore_dir/fifo16x1024.v"
+verilog work "ipcore_dir/chipscope_ila.v"
+verilog work "ipcore_dir/chipscope_icon.v"
 verilog work "main.v"

@@ -33,6 +33,15 @@
 				 output RD_EMPTY,
 				 output RD_VALID);
 
+
+    wire clk100_fb;
+    wire clk50;
+    DCM_SP #(.CLKIN_PERIOD(10.0), .CLKDV_DIVIDE(2),
+	     .CLK_FEEDBACK("2X"))
+    dcm_clk100 (.RST(1'b0), .CLKIN(clk100), .CLKDV(clk50),
+		.CLK2X(clk100_fb), .CLKFB(clk100_fb));
+
+
 	//two counters that count with the sys 100MHz clock, counting up from the falling edge of SCIN_COIN
 	//cntr will freeze when SCIN_LATCH_Q drops low, aka when CLR goes high
 	integer cntr = 0;
@@ -193,7 +202,22 @@
 		end 
 	end
 	
+
+    reg [31:0] mycounter = 0;
+    always @ (posedge clk50) begin
+	mycounter <= mycounter + 1;
+    end
+
 	
+    // Chipscope integrated logic analyzer & controller
+    wire [35:0] ila_control;
+    wire [31:0] ila_trig0;
+    chipscope_ila ila(.CONTROL(ila_control), .CLK(clk50), 
+		      .TRIG0(ila_trig0));
+    chipscope_icon icon(.CONTROL0(ila_control));
+    assign ila_trig0[31:0] = mycounter;
+
+
 	
 
 endmodule
