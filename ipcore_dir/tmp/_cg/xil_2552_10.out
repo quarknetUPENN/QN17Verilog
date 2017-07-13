@@ -87,7 +87,7 @@ SET_PARAMETER exclude_from_data_storage_7 false
 SET_PARAMETER exclude_from_data_storage_16 false
 SET_PARAMETER exclude_from_data_storage_8 false
 SET_PARAMETER exclude_from_data_storage_9 false
-SET_PARAMETER trigger_port_width_1 32
+SET_PARAMETER trigger_port_width_1 64
 SET_PARAMETER trigger_port_width_2 8
 SET_PARAMETER trigger_port_width_3 8
 SET_PARAMETER trigger_port_width_4 8

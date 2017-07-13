@@ -1,0 +1,124 @@
+Release 14.6 Map P.68d (nt64)
+Xilinx Map Application Log File for Design 'chipscope_ila'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s100e-tq144-5 -cm area -ir off -pr off
+-c 100 -o chipscope_ila_map.ncd chipscope_ila.ngd chipscope_ila.pcf 
+Target Device  : xc3s100e
+Target Package : tq144
+Target Speed   : -5
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Thu Jul 13 10:19:08 2017
+
+Mapping design into LUTs...
+WARNING:MapLib:701 - Signal CLK connected to top level port CLK has been
+   removed.
+WARNING:MapLib:701 - Signal CONTROL<0> connected to top level port CONTROL<0>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<9> connected to top level port CONTROL<9>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<1> connected to top level port CONTROL<1>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<13> connected to top level port CONTROL<13>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<5> connected to top level port CONTROL<5>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<4> connected to top level port CONTROL<4>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<12> connected to top level port CONTROL<12>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<14> connected to top level port CONTROL<14>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<20> connected to top level port CONTROL<20>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<6> connected to top level port CONTROL<6>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<3> connected to top level port CONTROL<3>
+   has been removed.
+WARNING:MapLib:701 - Signal CONTROL<8> connected to top level port CONTROL<8>
+   has been removed.
+WARNING:MapLib:701 - Signal TRIG0<31> connected to top level port TRIG0<31> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<30> connected to top level port TRIG0<30> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<29> connected to top level port TRIG0<29> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<28> connected to top level port TRIG0<28> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<27> connected to top level port TRIG0<27> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<26> connected to top level port TRIG0<26> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<25> connected to top level port TRIG0<25> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<24> connected to top level port TRIG0<24> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<23> connected to top level port TRIG0<23> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<22> connected to top level port TRIG0<22> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<21> connected to top level port TRIG0<21> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<20> connected to top level port TRIG0<20> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<19> connected to top level port TRIG0<19> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<18> connected to top level port TRIG0<18> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<17> connected to top level port TRIG0<17> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<16> connected to top level port TRIG0<16> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<15> connected to top level port TRIG0<15> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<14> connected to top level port TRIG0<14> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<13> connected to top level port TRIG0<13> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<12> connected to top level port TRIG0<12> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<11> connected to top level port TRIG0<11> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<10> connected to top level port TRIG0<10> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<9> connected to top level port TRIG0<9> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<8> connected to top level port TRIG0<8> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<7> connected to top level port TRIG0<7> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<6> connected to top level port TRIG0<6> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<5> connected to top level port TRIG0<5> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<4> connected to top level port TRIG0<4> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<3> connected to top level port TRIG0<3> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<2> connected to top level port TRIG0<2> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<1> connected to top level port TRIG0<1> has
+   been removed.
+WARNING:MapLib:701 - Signal TRIG0<0> connected to top level port TRIG0<0> has
+   been removed.
+Running directed packing...
+Running delay-based LUT packing...
+Running related packing...
+Updating timing models...
+ERROR:Pack:198 - NCD was not produced.  All logic was removed from the design. 
+   This is usually due to having no input or output PAD connections in the
+   design and no nets or symbols marked as 'SAVE'.  You can either add PADs or
+   'SAVE' attributes to the design, or run 'map -u' to disable logic trimming in
+   the mapper.  For more information on trimming issues search the Xilinx
+   Answers database for "ERROR:Pack:198" and read the Master Answer Record for
+   MAP Trimming Issues.
+
+Mapping completed.
+See MAP report file "chipscope_ila_map.mrp" for details.
+Problem encountered during the packing phase.
+
+Design Summary
+--------------
+Number of errors   :   1
+Number of warnings :  45

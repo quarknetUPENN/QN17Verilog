@@ -33,16 +33,16 @@ This TNM is used in the following user groups and/or specifications:
     &apos;<arg fmt="%s" index="1">&lt;NET &quot;U0/U_ICON/*/iDRCK_LOCAL&quot; TNM_NET = J_CLK ;&gt; [ipcore_dir/chipscope_icon.ncf(1)]</arg>&apos;
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="56" delta="old" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_J_CLK = PERIOD &quot;J_CLK&quot; 30000.000000000 pS HIGH 50.000000000 %;&gt;</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TNM&apos; or &apos;TimeGrp&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">J_CLK</arg>&apos;.
+<msg type="warning" file="ConstraintSystem" num="56" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_J_CLK = PERIOD &quot;J_CLK&quot; 30000.000000000 pS HIGH 50.000000000 %;&gt;</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TNM&apos; or &apos;TimeGrp&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">J_CLK</arg>&apos;.
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="56" delta="old" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_U_TO_J = FROM &quot;U_CLK&quot; TO &quot;J_CLK&quot; 15000.000000000 pS;&gt;</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TimeGrp&apos; or &apos;TNM&apos; or &apos;TPSync&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">J_CLK</arg>&apos;.
+<msg type="warning" file="ConstraintSystem" num="56" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_U_TO_J = FROM &quot;U_CLK&quot; TO &quot;J_CLK&quot; 15000.000000000 pS;&gt;</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TimeGrp&apos; or &apos;TNM&apos; or &apos;TPSync&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">J_CLK</arg>&apos;.
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="56" delta="old" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_J_TO_D = FROM &quot;J_CLK&quot; TO &quot;D_CLK&quot; TIG;&gt;</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TimeGrp&apos; or &apos;TNM&apos; or &apos;TPSync&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">J_CLK</arg>&apos;.
+<msg type="warning" file="ConstraintSystem" num="56" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_J_TO_D = FROM &quot;J_CLK&quot; TO &quot;D_CLK&quot; TIG;&gt;</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TimeGrp&apos; or &apos;TNM&apos; or &apos;TPSync&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">J_CLK</arg>&apos;.
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="56" delta="old" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_D_TO_J = FROM &quot;D_CLK&quot; TO &quot;J_CLK&quot; TIG;&gt;</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TimeGrp&apos; or &apos;TNM&apos; or &apos;TPSync&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">J_CLK</arg>&apos;.
+<msg type="warning" file="ConstraintSystem" num="56" delta="new" >Constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_D_TO_J = FROM &quot;D_CLK&quot; TO &quot;J_CLK&quot; TIG;&gt;</arg>: Unable to find an active <arg fmt="%s" index="2">&apos;TimeGrp&apos; or &apos;TNM&apos; or &apos;TPSync&apos;</arg> constraint named &apos;<arg fmt="%s" index="3">J_CLK</arg>&apos;.
 </msg>
 
 <msg type="info" file="ConstraintSystem" num="0" >The Period constraint &lt;PERIOD = 10.0;&gt; [constraints.ucf(1)], is specified using the Net Period method which is not recommended. Please use the Timespec PERIOD method.

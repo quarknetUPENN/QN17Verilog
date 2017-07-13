@@ -1,10 +1,5 @@
 The following files were generated for 'chipscope_ila' in directory
-/raid/home/ashmansk/u/proj/quarknet/QN17Verilog/ipcore_dir/
-
-ISE file generator:
-   Add description here...
-
-   * chipscope_ila_flist.txt
+C:\Users\HEP\Documents\Quarknet 2017\QN17Verilog\ipcore_dir\
 
 XCO file generator:
    Generate an XCO file for compatibility with legacy flows.

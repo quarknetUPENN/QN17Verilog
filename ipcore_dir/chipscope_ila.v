@@ -5,10 +5,10 @@
 //   ____  ____
 //  /   /\/   /
 // /___/  \  /    Vendor     : Xilinx
-// \   \   \/     Version    : 14.7
+// \   \   \/     Version    : 14.6
 //  \   \         Application: Xilinx CORE Generator
 //  /   /         Filename   : chipscope_ila.v
-// /___/   /\     Timestamp  : Wed Jul 12 13:38:23 EDT 2017
+// /___/   /\     Timestamp  : Thu Jul 13 10:52:56 Eastern Daylight Time 2017
 // \   \  /  \
 //  \___\/\___\
 //
@@ -26,6 +26,6 @@ module chipscope_ila(
 
 inout [35 : 0] CONTROL;
 input CLK;
-input [31 : 0] TRIG0;
+input [63 : 0] TRIG0;
 
 endmodule

@@ -198,23 +198,30 @@
 	end
 	
 	
-    reg [31:0] mycounter = 0;
+    reg [10:0] mycounter = 0;
 	 
     always @ (posedge clk50) begin
-			mycounter <= mycounter + 1;
+			mycounter <= mycounter + 1; 
     end
-
-	
-    // Chipscope integrated logic analyzer & controller
-    wire [35:0] ila_control;
-    wire [31:0] ila_trig0;
+	 
+	 // configure ChipScope 
+	 wire [35:0] ila_control;
+    wire [63:0] ila_trig0;
     chipscope_ila ila(.CONTROL(ila_control), 
 							 .CLK(clk50), 
 							 .TRIG0(ila_trig0));
     chipscope_icon icon(.CONTROL0(ila_control));
-    assign ila_trig0[29:0] = mycounter[29:0];
-    assign ila_trig0[30] = RD_EN;
-	 assign ila_trig0[31] = SCIN_COIN;
-	
+    assign ila_trig0[7:0] = TUBE3A;
+	 assign ila_trig0[15:8] = TUBE3B;
+	 assign ila_trig0[23:16] = TUBE4A;
+	 assign ila_trig0[31:24] = TUBE4B;
+	 assign ila_trig0[47:32] = OTUBE;
+	 assign ila_trig0 [48] = RD_EMPTY;
+	 assign ila_trig0 [49] = RD_VALID;
+	 assign ila_trig0 [50] = RD_CLK;
+    assign ila_trig0[51] = RD_EN; 
+	 assign ila_trig0[52] = SCIN_COIN;
+	 assign ila_trig0[63:53]= mycounter;
+
 
 endmodule

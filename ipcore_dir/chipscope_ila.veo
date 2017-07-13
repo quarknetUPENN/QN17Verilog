@@ -5,10 +5,10 @@
 //   ____  ____
 //  /   /\/   /
 // /___/  \  /    Vendor     : Xilinx
-// \   \   \/     Version    : 14.7
+// \   \   \/     Version    : 14.6
 //  \   \         Application: Xilinx CORE Generator
 //  /   /         Filename   : chipscope_ila.veo
-// /___/   /\     Timestamp  : Wed Jul 12 13:38:23 EDT 2017
+// /___/   /\     Timestamp  : Thu Jul 13 10:52:56 Eastern Daylight Time 2017
 // \   \  /  \
 //  \___\/\___\
 //
@@ -23,7 +23,7 @@
 chipscope_ila YourInstanceName (
     .CONTROL(CONTROL), // INOUT BUS [35:0]
     .CLK(CLK), // IN
-    .TRIG0(TRIG0) // IN BUS [31:0]
+    .TRIG0(TRIG0) // IN BUS [63:0]
 );
 
 // INST_TAG_END ------ End INSTANTIATION Template ---------
