@@ -1,4 +1,4 @@
-Release 14.6 Map P.68d (nt64)
+Release 14.7 Map P.20131013 (nt64)
 Xilinx Map Application Log File for Design 'main'
 
 Design Information
@@ -11,7 +11,7 @@ Target Device  : xc3s100e
 Target Package : tq144
 Target Speed   : -5
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Thu Jul 13 11:02:59 2017
+Mapped Date    : Mon Jul 17 17:33:52 2017
 
 Mapping design into LUTs...
 Running directed packing...
@@ -19,45 +19,45 @@ Running delay-based LUT packing...
 Updating timing models...
 Running timing-driven placement...
 Total REAL time at the beginning of Placer: 5 secs 
-Total CPU  time at the beginning of Placer: 4 secs 
+Total CPU  time at the beginning of Placer: 5 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:6c083fad) REAL time: 5 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:cf61490d) REAL time: 6 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:6c083fad) REAL time: 5 secs 
+Phase 2.7  Design Feasibility Check (Checksum:cf61490d) REAL time: 6 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:d92c0a75) REAL time: 5 secs 
+Phase 3.31  Local Placement Optimization (Checksum:4df9006) REAL time: 6 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:49e86be) REAL time: 7 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:d1ea148b) REAL time: 8 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:49e86be) REAL time: 7 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:d1ea148b) REAL time: 8 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:49e86be) REAL time: 7 secs 
+Phase 6.36  Local Placement Optimization (Checksum:d1ea148b) REAL time: 8 secs 
 
 Phase 7.8  Global Placement
-............
-..................................................................................
-.........
-.............................
-Phase 7.8  Global Placement (Checksum:abf80224) REAL time: 8 secs 
+......
+...................................................................................................
+......
+...........................
+Phase 7.8  Global Placement (Checksum:1cc325fe) REAL time: 10 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:abf80224) REAL time: 8 secs 
+Phase 8.5  Local Placement Optimization (Checksum:1cc325fe) REAL time: 10 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:bea50da0) REAL time: 12 secs 
+Phase 9.18  Placement Optimization (Checksum:6ea3f5ae) REAL time: 21 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:bea50da0) REAL time: 12 secs 
+Phase 10.5  Local Placement Optimization (Checksum:6ea3f5ae) REAL time: 21 secs 
 
-Total REAL time to Placer completion: 12 secs 
-Total CPU  time to Placer completion: 11 secs 
+Total REAL time to Placer completion: 21 secs 
+Total CPU  time to Placer completion: 21 secs 
 Running physical synthesis...
 
 Physical synthesis completed.
@@ -73,18 +73,18 @@ Design Summary:
 Number of errors:      0
 Number of warnings:    1
 Logic Utilization:
-  Total Number Slice Registers:         917 out of   1,920   47%
-    Number used as Flip Flops:          883
+  Total Number Slice Registers:       1,174 out of   1,920   61%
+    Number used as Flip Flops:        1,140
     Number used as Latches:              34
-  Number of 4 input LUTs:               690 out of   1,920   35%
+  Number of 4 input LUTs:             1,665 out of   1,920   86%
 Logic Distribution:
-  Number of occupied Slices:            732 out of     960   76%
-    Number of Slices containing only related logic:     732 out of     732 100%
-    Number of Slices containing unrelated logic:          0 out of     732   0%
+  Number of occupied Slices:            949 out of     960   98%
+    Number of Slices containing only related logic:     949 out of     949 100%
+    Number of Slices containing unrelated logic:          0 out of     949   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,054 out of   1,920   54%
-    Number used as logic:               559
-    Number used as a route-thru:        364
+  Total Number of 4 input LUTs:       1,805 out of   1,920   94%
+    Number used as logic:             1,534
+    Number used as a route-thru:        140
     Number used as Shift registers:     131
 
   The Slice Logic Distribution report is not meaningful if the design is
@@ -92,15 +92,15 @@ Logic Distribution:
 
   Number of bonded IOBs:                 55 out of     108   50%
   Number of RAMB16s:                      4 out of       4  100%
-  Number of BUFGMUXs:                     5 out of      24   20%
+  Number of BUFGMUXs:                     6 out of      24   25%
   Number of DCMs:                         1 out of       2   50%
   Number of BSCANs:                       1 out of       1  100%
 
-Average Fanout of Non-Clock Nets:                2.93
+Average Fanout of Non-Clock Nets:                3.41
 
-Peak Memory Usage:  325 MB
-Total REAL time to MAP completion:  16 secs 
-Total CPU time to MAP completion:   15 secs 
+Peak Memory Usage:  337 MB
+Total REAL time to MAP completion:  26 secs 
+Total CPU time to MAP completion:   25 secs 
 
 Mapping completed.
 See MAP report file "main_map.mrp" for details.

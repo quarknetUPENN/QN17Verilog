@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-07-13T10:44:48</DateModified>
+  <DateModified>2017-07-17T17:37:35</DateModified>
   <ModuleName>main</ModuleName>
-  <SummaryTimeStamp>2017-07-13T10:24:39</SummaryTimeStamp>
+  <SummaryTimeStamp>2017-07-17T17:35:01</SummaryTimeStamp>
   <SavedFilePath>C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/iseconfig/main.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog\</ImplementationReportsDirectory>
   <DateInitialized>2017-07-06T15:55:21</DateInitialized>
@@ -17,6 +17,169 @@
     <toc-item title="Performance Summary" target="Performance Summary" />
     <toc-item title="Failing Constraints" target="Failing Constraints" />
     <toc-item title="Detailed Reports" target="Detailed Reports" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
    </view>
    <view inputState="Unknown" program="implementation" contextTags="FPGA_ONLY" hidden="true" type="HTML" file="main_envsettings.html" label="System Settings" />
    <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="main_map.xrpt" showConstraints="0" label="IOB Properties" />

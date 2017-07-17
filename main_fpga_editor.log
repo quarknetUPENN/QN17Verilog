@@ -1,21 +1,268 @@
-#:C0     
+#:C119   
 #Xilinx FPGA Editor Command Log File
 #Editor Version:
 #:V   NT M2.1 P.20131013
 #Current Working Directory:
 #:D   C:\Users\HEP\Documents\Quarknet 2017\QN17Verilog
 #Date/Time:
-#:T   Tue Jul 11 15:35:04 2017
+#:T   Mon Jul 17 16:02:35 2017
 #------------------------------
 	#Reading C:\Users\HEP\Documents\Quarknet 2017\QN17Verilog\main.ncd...
 	#Loading device for application Rf_Device from file '3s100e.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
 	#   "main" is an NCD, version 3.2, device xc3s100e, package tq144, speed -5
-	#Design creation date: 2017.07.11.19.33.12
+	#Design creation date: 2017.07.17.19.53.18
 	#Building chip graphics...
 	#Loading speed info...
 	#1
-select -k net 'tube3A0/Q'
+unselect -all
 	#2
-unselect net 'tube3A0/Q'
+select -k net 'tube4A0/cntr_mux0000<6>'
 	#3
-select -k net 'tube4A0/Q'
+hilite -c tomato
+	#4
+unselect -all
+	#5
+unselect -all
+	#6
+unselect -all
+	#7
+hilite -c turquoise
+	#WARNING:FPGAEditor:48 - Nothing to hilite -- there is nothing selected.
+	#8
+hilite -c tomato
+	#WARNING:FPGAEditor:48 - Nothing to hilite -- there is nothing selected.
+	#9
+select -k net 'cntr<6>'
+	#10
+unselect net 'cntr<6>'
+	#11
+select -k net 'cntr<8>'
+	#12
+unselect net 'cntr<8>'
+	#13
+select -k net 'cntr_and0000'
+	#14
+select -k net 'cntr<31>'
+	#15
+select -k net 'cntr<30>'
+	#16
+select -k net 'cntr<29>'
+	#17
+select -k net 'cntr<28>'
+	#18
+select -k net 'cntr<27>'
+	#19
+select -k net 'cntr<26>'
+	#20
+select -k net 'cntr<25>'
+	#21
+select -k net 'cntr<24>'
+	#22
+select -k net 'cntr<23>'
+	#23
+select -k net 'cntr<22>'
+	#24
+select -k net 'cntr<21>'
+	#25
+select -k net 'cntr<20>'
+	#26
+select -k net 'cntr<19>'
+	#27
+select -k net 'cntr<18>'
+	#28
+select -k net 'cntr<17>'
+	#29
+select -k net 'cntr<16>'
+	#30
+select -k net 'cntr<15>'
+	#31
+select -k net 'cntr<14>'
+	#32
+select -k net 'cntr<13>'
+	#33
+select -k net 'cntr<12>'
+	#34
+select -k net 'cntr<11>'
+	#35
+select -k net 'cntr<10>'
+	#36
+select -k net 'cntr<9>'
+	#37
+select -k net 'cntr<8>'
+	#38
+select -k net 'cntr<7>'
+	#39
+select -k net 'cntr<6>'
+	#40
+select -k net 'cntr<5>'
+	#41
+select -k net 'cntr<4>'
+	#42
+select -k net 'cntr<3>'
+	#43
+select -k net 'cntr<2>'
+	#44
+select -k net 'cntr<1>'
+	#45
+select -k net 'cntr<0>'
+	#46
+unselect net 'cntr_and0000'
+	#47
+unselect net 'cntr<31>'
+	#48
+unselect net 'cntr<30>'
+	#49
+unselect net 'cntr<29>'
+	#50
+unselect net 'cntr<28>'
+	#51
+unselect net 'cntr<27>'
+	#52
+unselect net 'cntr<26>'
+	#53
+unselect net 'cntr<25>'
+	#54
+unselect net 'cntr<24>'
+	#55
+unselect net 'cntr<23>'
+	#56
+unselect net 'cntr<22>'
+	#57
+unselect net 'cntr<21>'
+	#58
+unselect net 'cntr<20>'
+	#59
+unselect net 'cntr<19>'
+	#60
+unselect net 'cntr<18>'
+	#61
+unselect net 'cntr<17>'
+	#62
+unselect net 'cntr<16>'
+	#63
+unselect net 'cntr<15>'
+	#64
+unselect net 'cntr<14>'
+	#65
+unselect net 'cntr<13>'
+	#66
+unselect net 'cntr<12>'
+	#67
+unselect net 'cntr<11>'
+	#68
+unselect net 'cntr<10>'
+	#69
+unselect net 'cntr<9>'
+	#70
+unselect net 'cntr<8>'
+	#71
+unselect net 'cntr<7>'
+	#72
+unselect net 'cntr<6>'
+	#73
+unselect net 'cntr<5>'
+	#74
+unselect net 'cntr<4>'
+	#75
+unselect net 'cntr<3>'
+	#76
+unselect net 'cntr<2>'
+	#77
+unselect net 'cntr<1>'
+	#78
+hilite -c tomato
+	#79
+unselect net 'cntr<0>'
+	#80
+select -k net 'cntr<1>'
+	#81
+unselect net 'cntr<1>'
+	#82
+select -k net 'cntr<0>'
+	#83
+hilite -c yellow
+	#84
+hilite -c yellow
+	#85
+unselect net 'cntr<0>'
+	#86
+select -k net 'cntr<11>'
+	#87
+unselect net 'cntr<11>'
+	#88
+select -k net 'cntr<0>'
+	#89
+unselect net 'cntr<0>'
+	#90
+select -k net 'cntr<4>'
+	#91
+unselect net 'cntr<4>'
+	#92
+select -k net 'cntr<3>'
+	#93
+unselect net 'cntr<3>'
+	#94
+select -k net 'cntr<1>'
+	#95
+unselect net 'cntr<1>'
+	#96
+select -k net 'cntr<7>'
+	#97
+unselect net 'cntr<7>'
+	#98
+select -k net 'cntr<11>'
+	#99
+unselect net 'cntr<11>'
+	#100
+select -k net 'cntr<14>'
+	#101
+unselect -all
+	#102
+unselect -all
+	#103
+unselect -all
+	#104
+select wire 'HUNIHEX(-12243,1608)'
+	#node = HUNIHEX(-12243,1608)
+	#105
+unselect -all
+	#106
+select wire 'HUNIHEX(-5328,1607)'
+	#node = HUNIHEX(-5328,1607)
+	#107
+unselect -all
+	#108
+select net 'N6'
+	#net "N6"
+	#109
+unselect -all
+	#110
+select wire 'HUNIHEX(-5328,1579)'
+	#node = HUNIHEX(-5328,1579)
+	#111
+unselect -all
+	#112
+select wire 'HUNIHEX(-5328,1579)'
+	#node = HUNIHEX(-5328,1579)
+	#113
+unselect -all
+	#114
+select wire 'HUNIHEX(5952,1583)'
+	#node = HUNIHEX(5952,1583)
+	#115
+post ila
+	#Building all ILA Capture Units ...
+	#116
+unpost ila
+	#117
+unselect -all
+	#118
+unselect -all
+	#119
+unselect -all
+	#120
+select -k comp 'din<10>'
+	#121
+unselect -all
+	#122
+unselect -all

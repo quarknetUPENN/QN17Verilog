@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.68d on Thu Jul 13 11:03:15 2017
+// Written by: Map P.20131013 on Mon Jul 17 17:34:17 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -58,6 +58,8 @@ COMP "RD_EN" LOCATE = SITE "P33" LEVEL 1;
 COMP "RD_CLK" LOCATE = SITE "P56" LEVEL 1;
 COMP "clk100" LOCATE = SITE "P126" LEVEL 1;
 COMP "SCIN_COIN" LOCATE = SITE "P128" LEVEL 1;
+NET "RD_CLK_BUFGP/IBUFG" BEL "RD_CLK_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+NET "clk100_IBUFG1" BEL "clk100_IBUFG_BUFG.GCLKMUX" USELOCALCONNECT;
 PIN
         fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s3_noinit.ram/dpram.dp18x18.ram.A_pins<11>
         = BEL
@@ -78,28 +80,28 @@ PIN
         = BEL
         "ila/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_NO_TB.I_RT1.U_RAM/G_BRAM[2].U_BRAM/ram_rt1_s1_s32_if.ram_rt1_s1_s32_i.B"
         PINNAME CLKB;
-TIMEGRP D_CLK = BEL "din_15" BEL "din_14" BEL "din_13" BEL "din_10" BEL
-        "din_12" BEL "din_11" BEL "din_9" BEL "din_8" BEL "din_6" BEL "din_2"
-        BEL "wr_en" BEL "cntr_0" BEL "cntr_1" BEL "cntr_2" BEL "cntr_3" BEL
-        "cntr_4" BEL "cntr_5" BEL "cntr_6" BEL "cntr_7" BEL "cntr_8" BEL
-        "cntr_9" BEL "cntr_10" BEL "cntr_11" BEL "cntr_12" BEL "cntr_13" BEL
-        "cntr_14" BEL "cntr_15" BEL "cntr_16" BEL "cntr_17" BEL "cntr_18" BEL
-        "cntr_19" BEL "cntr_20" BEL "cntr_21" BEL "cntr_22" BEL "cntr_23" BEL
-        "cntr_24" BEL "cntr_25" BEL "cntr_26" BEL "cntr_27" BEL "cntr_28" BEL
-        "cntr_29" BEL "cntr_30" BEL "cntr_31" BEL "mycounter_0" BEL
-        "mycounter_1" BEL "mycounter_2" BEL "mycounter_3" BEL "mycounter_4"
-        BEL "mycounter_5" BEL "mycounter_6" BEL "mycounter_7" BEL
-        "mycounter_8" BEL "mycounter_9" BEL "mycounter_10" BEL "busyCntr_0"
-        BEL "busyCntr_1" BEL "busyCntr_2" BEL "busyCntr_3" BEL "busyCntr_4"
-        BEL "busyCntr_5" BEL "busyCntr_6" BEL "busyCntr_7" BEL "busyCntr_8"
-        BEL "busyCntr_9" BEL "busyCntr_10" BEL "busyCntr_11" BEL "busyCntr_12"
-        BEL "busyCntr_13" BEL "busyCntr_14" BEL "busyCntr_15" BEL
-        "busyCntr_16" BEL "busyCntr_17" BEL "busyCntr_18" BEL "busyCntr_19"
-        BEL "busyCntr_20" BEL "busyCntr_21" BEL "busyCntr_22" BEL
-        "busyCntr_23" BEL "busyCntr_24" BEL "busyCntr_25" BEL "busyCntr_26"
-        BEL "busyCntr_27" BEL "busyCntr_28" BEL "busyCntr_29" BEL
-        "busyCntr_30" BEL "busyCntr_31" BEL "din_5" BEL "din_4" BEL "din_3"
-        BEL "din_1" BEL "din_0" BEL "CLR" BEL
+TIMEGRP D_CLK = BEL "din_8" BEL "din_6" BEL "din_2" BEL "wr_en" BEL "cntr_0"
+        BEL "cntr_1" BEL "cntr_2" BEL "cntr_3" BEL "cntr_4" BEL "cntr_5" BEL
+        "cntr_6" BEL "cntr_7" BEL "cntr_8" BEL "cntr_9" BEL "cntr_10" BEL
+        "cntr_11" BEL "cntr_12" BEL "cntr_13" BEL "cntr_14" BEL "cntr_15" BEL
+        "cntr_16" BEL "cntr_17" BEL "cntr_18" BEL "cntr_19" BEL "cntr_20" BEL
+        "cntr_21" BEL "cntr_22" BEL "cntr_23" BEL "cntr_24" BEL "cntr_25" BEL
+        "cntr_26" BEL "cntr_27" BEL "cntr_28" BEL "cntr_29" BEL "cntr_30" BEL
+        "cntr_31" BEL "busyCntr_0" BEL "busyCntr_1" BEL "busyCntr_2" BEL
+        "busyCntr_3" BEL "busyCntr_4" BEL "busyCntr_5" BEL "busyCntr_6" BEL
+        "busyCntr_7" BEL "busyCntr_8" BEL "busyCntr_9" BEL "busyCntr_10" BEL
+        "busyCntr_11" BEL "busyCntr_12" BEL "busyCntr_13" BEL "busyCntr_14"
+        BEL "busyCntr_15" BEL "busyCntr_16" BEL "busyCntr_17" BEL
+        "busyCntr_18" BEL "busyCntr_19" BEL "busyCntr_20" BEL "busyCntr_21"
+        BEL "busyCntr_22" BEL "busyCntr_23" BEL "busyCntr_24" BEL
+        "busyCntr_25" BEL "busyCntr_26" BEL "busyCntr_27" BEL "busyCntr_28"
+        BEL "busyCntr_29" BEL "busyCntr_30" BEL "busyCntr_31" BEL
+        "mycounter_0" BEL "mycounter_1" BEL "mycounter_2" BEL "mycounter_3"
+        BEL "mycounter_4" BEL "mycounter_5" BEL "mycounter_6" BEL
+        "mycounter_7" BEL "mycounter_8" BEL "mycounter_9" BEL "din_15" BEL
+        "din_14" BEL "din_11" BEL "din_13" BEL "din_12" BEL "din_10" BEL
+        "din_9" BEL "din_3" BEL "din_5" BEL "din_4" BEL "din_1" BEL "din_0"
+        BEL "CLR" BEL
         "fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i"
         BEL
         "fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i"
@@ -835,7 +837,7 @@ TIMEGRP D_CLK = BEL "din_15" BEL "din_14" BEL "din_13" BEL "din_10" BEL
 TIMEGRP D2_CLK = BEL "ila/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC";
 TIMEGRP U_CLK = BEL "icon/U0/U_ICON/U_iDATA_CMD";
 NET "clk50" PERIOD = 20 ns HIGH 50%;
-NET "clk100_IBUFG" PERIOD = 10 ns HIGH 50%;
+NET "clk100_IBUFG1" PERIOD = 10 ns HIGH 50%;
 TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" TO TIMEGRP "U_CLK" 15 ns;
 TIMEGRP "FFS" = FFS(*);
 PATH TS_D2_TO_T2_path = FROM TIMEGRP "D2_CLK" TO TIMEGRP "FFS";
