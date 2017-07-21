@@ -18,65 +18,53 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+//a module that controls each tube counter (one for each tube); output is sent to the FIFO
 module Tube(input clk,
 				input clr,
 				input tubePin,
 				input gateEnable,
-				input shiftFreeze,
-				input validateOut,
 				output [7:0] clk_cyc_data);
 				
-	localparam prior_clk_cyc = 7;
+	localparam prior_clk_cyc = 8 ; //the number of clock cycles we want to look back
 	
 	reg [7:0] cntr = 0;
-	assign clk_cyc_data = (cntr + prior_clk_cyc);
+	assign clk_cyc_data = (cntr); //the output (sent into the FIFO) 
 	
-	wire Q;		
+	wire Q; //output of LDCE
+	reg [7:0] shiftReg = 8'h0; // initializing shift register	
 	
 	LDCE #(
 		.INIT(1'b0) 				// Initial value of latch (1'b0 or 1'b1)
 	) TUBE_LATCH (
 		.Q(Q),      				// Data output
 		.CLR(clr),  				// Asynchronous clear/reset input
-		.D(tubePin),      		// Data input
+		.D(shiftReg[7]),      		// Data input
 		.G(~Q),      				// Gate input
 		.GE(gateEnable)     		// Gate enable input
 	);
 	
 	
-	reg [7:0] shiftReg = 8'h0;
 	
 	always @ (posedge clk) begin
-		if (clr == 1) begin
-			shiftReg = 0;
-		end else begin 
-			if (~shiftFreeze) begin
-				shiftReg = shiftReg << 1;
-				shiftReg[0] = tubePin;
-			end
-		end
+	//if shiftFreeze is not set, update the first bit of shiftReg to the value of tubePin, 
+	//and move it along shiftReg on the rising edge of the clock; this way, the location 
+	//of the value within shiftReg gives us the # of clk cycles
+			shiftReg = shiftReg << 1;
+			shiftReg[0] = tubePin;
 	end
 
 	
-	wire tubeclk = gateEnable && clk;
-	reg [3:0] i = 0;
+	wire tubeclk = gateEnable && clk; //tubeclk only runs when SCIN_LATCH_Q is high
+	
 
-	always @ (posedge tubeclk) begin
-		if (clr == 1) begin
+	always @ (posedge tubeclk or posedge clr) begin
+		if (clr == 1) begin //if clr is set, reset the counter to 0
 			cntr <= 0;
 		end else begin 
-			if (Q == 0 && cntr < (255-prior_clk_cyc)) begin
-				cntr <= cntr + 1;
-			end else begin
-				if (validateOut == 1) begin
-				
-					for (i = 0; i < 8; i = i+1) begin
-						if (shiftReg[i] == 1) begin
-							cntr <= (-i);//(prior_clk_cyc-(i) -prior_clk_cyc);
-						end 
-					end
-					
-				end
+			// if there has not yet been a coincidence and the counter
+			// is less than 255, continue counting
+			if (Q == 0 && cntr < (255)) begin 
+				cntr <= cntr + 1;				
 			end
 		end
 	end

@@ -65,49 +65,29 @@ module testBench;
 		TUBE4A = 0;
 		TUBE4B = 0;
 		RD_CLK = 0;
-		RD_EN = 0;
+		RD_EN = 1;
 
 
 		// Wait 100 ns for global reset to finish
 		#100;
 		
 				
-		TUBE3A = 8'b00010000;
-		#30
-		TUBE3A[4] = 1'b0;
+		TUBE4B = 8'b00000001;
+		#40
+		TUBE4B[0] = 1'b0;
 		
-		#30
 		SCIN_COIN = 1;
+		TUBE3B[2] = 1;
 		#100; //simulate an event
 		SCIN_COIN = 0;
-		
-		#30
-		TUBE3A = 8'b00010000;
-		#30
-		TUBE3B = 8'b00001000;
-		#40
-		TUBE4A = 8'b00000010;
-		#20
-		TUBE4B = 8'b00000001;
-        
-		#20
-		{TUBE3A,TUBE3B,TUBE4A,TUBE4B} = 32'b0;
-		
-		#100
-		RD_EN = 1;
+		# 40
+		TUBE3A[7] = 1'b1; 
+		# 20 ;
+
 
 	
 	end
 	
-	
-	initial begin
-		while (1) begin
-			RD_CLK = 0;
-			#500;
-			RD_CLK = 1;
-			#500;
-		end
-	end
 	
 	//sim the clock
 	localparam CLOCK_PERIOD = 10.0;
@@ -120,8 +100,18 @@ module testBench;
 		end
 	end 
 	
+	localparam RD_CLOCK_PERIOD = 500.0;
 	initial begin
-		# 50000;
+		while (1) begin
+			RD_CLK = 0;
+			# (RD_CLOCK_PERIOD/2);
+			RD_CLK = 1;
+			# (RD_CLOCK_PERIOD/2);
+		end
+	end 
+	
+	initial begin
+		# 100000;
 		$finish();
 	end
       
