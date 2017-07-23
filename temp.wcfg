@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testBench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="30" />
+   <wvobject fp_name="/testBench/overflowLight" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">overflowLight</obj_property>
+      <obj_property name="ObjectShortName">overflowLight</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/OTUBE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">OTUBE[15:0]</obj_property>
+      <obj_property name="ObjectShortName">OTUBE[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/RD_EMPTY" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RD_EMPTY</obj_property>
+      <obj_property name="ObjectShortName">RD_EMPTY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/RD_VALID" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RD_VALID</obj_property>
+      <obj_property name="ObjectShortName">RD_VALID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/clk100" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk100</obj_property>
+      <obj_property name="ObjectShortName">clk100</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/SCIN_COIN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SCIN_COIN</obj_property>
+      <obj_property name="ObjectShortName">SCIN_COIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/TUBE3A" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">TUBE3A[7:0]</obj_property>
+      <obj_property name="ObjectShortName">TUBE3A[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/TUBE3B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">TUBE3B[7:0]</obj_property>
+      <obj_property name="ObjectShortName">TUBE3B[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/TUBE4A" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">TUBE4A[7:0]</obj_property>
+      <obj_property name="ObjectShortName">TUBE4A[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/TUBE4B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">TUBE4B[7:0]</obj_property>
+      <obj_property name="ObjectShortName">TUBE4B[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/RD_CLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RD_CLK</obj_property>
+      <obj_property name="ObjectShortName">RD_CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/RD_EN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RD_EN</obj_property>
+      <obj_property name="ObjectShortName">RD_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/CLOCK_PERIOD" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">CLOCK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLOCK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/RD_CLOCK_PERIOD" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">RD_CLOCK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">RD_CLOCK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider15" type="divider">
+      <obj_property name="label">New Divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo_rd_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_rd_en</obj_property>
+      <obj_property name="ObjectShortName">fifo_rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fifo_valid</obj_property>
+      <obj_property name="ObjectShortName">fifo_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/rd_clk_q" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_clk_q</obj_property>
+      <obj_property name="ObjectShortName">rd_clk_q</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider18" type="divider">
+      <obj_property name="label">New Divider</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/wr_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_clk</obj_property>
+      <obj_property name="ObjectShortName">wr_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/rd_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_clk</obj_property>
+      <obj_property name="ObjectShortName">rd_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[15:0]</obj_property>
+      <obj_property name="ObjectShortName">din[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/wr_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/rd_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/full" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">full</obj_property>
+      <obj_property name="ObjectShortName">full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testBench/uut/fifo/wr_data_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_data_count[9:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data_count[9:0]</obj_property>
+   </wvobject>
+</wave_config>

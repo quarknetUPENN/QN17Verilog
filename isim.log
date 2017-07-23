@@ -5,6 +5,11 @@ This is a Full version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
+# run all
+Simulator is doing circuit initialization process.
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
+Finished circuit initialization process.
+Stopped at time : 100 us : File "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench.v" Line 115
 # restart
 # run all
 Simulator is doing circuit initialization process.

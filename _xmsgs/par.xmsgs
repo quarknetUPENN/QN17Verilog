@@ -49,10 +49,6 @@
    <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
-<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube3A1/Q</arg> may have excessive skew because 
-   <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
-</msg>
-
 <msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube4A6/Q</arg> may have excessive skew because 
    <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
@@ -66,10 +62,6 @@
 </msg>
 
 <msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube3A6/Q</arg> may have excessive skew because 
-   <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
-</msg>
-
-<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube3B4/Q</arg> may have excessive skew because 
    <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
@@ -113,15 +105,11 @@
    <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
-<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube3A7/Q</arg> may have excessive skew because 
-   <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
-</msg>
-
 <msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube3B5/Q</arg> may have excessive skew because 
    <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
-<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube4A3/Q</arg> may have excessive skew because 
+<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube4B1/Q</arg> may have excessive skew because 
    <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
@@ -133,7 +121,19 @@
    <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
-<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube4B1/Q</arg> may have excessive skew because 
+<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube3A1/Q</arg> may have excessive skew because 
+   <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
+</msg>
+
+<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube3A7/Q</arg> may have excessive skew because 
+   <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
+</msg>
+
+<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube3B4/Q</arg> may have excessive skew because 
+   <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
+</msg>
+
+<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">tube4A3/Q</arg> may have excessive skew because 
    <arg fmt="%d" index="2">1</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 

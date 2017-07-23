@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: main.prj
 
@@ -132,9 +132,9 @@ Analyzing hierarchy for module <Tube> in library <work> with parameters.
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing top module <main>.
-WARNING:Xst:2211 - "ipcore_dir/fifo16x1024.v" line 125: Instantiating black box module <fifo16x1024>.
-WARNING:Xst:2211 - "ipcore_dir/chipscope_ila.v" line 280: Instantiating black box module <chipscope_ila>.
-WARNING:Xst:2211 - "ipcore_dir/chipscope_icon.v" line 283: Instantiating black box module <chipscope_icon>.
+WARNING:Xst:2211 - "ipcore_dir/fifo16x1024.v" line 144: Instantiating black box module <fifo16x1024>.
+WARNING:Xst:2211 - "ipcore_dir/chipscope_ila.v" line 299: Instantiating black box module <chipscope_ila>.
+WARNING:Xst:2211 - "ipcore_dir/chipscope_icon.v" line 302: Instantiating black box module <chipscope_icon>.
 Module <main> is correct for synthesis.
  
     Set user-defined property "CLKDV_DIVIDE =  2.000000" for instance <dcm_clk100> in unit <main>.
@@ -152,6 +152,8 @@ Module <main> is correct for synthesis.
     Set user-defined property "FACTORY_JF =  C080" for instance <dcm_clk100> in unit <main>.
     Set user-defined property "PHASE_SHIFT =  0" for instance <dcm_clk100> in unit <main>.
     Set user-defined property "STARTUP_WAIT =  FALSE" for instance <dcm_clk100> in unit <main>.
+    Set user-defined property "INIT =  0" for instance <RD_CLK_DELAY_1> in unit <main>.
+    Set user-defined property "INIT =  0" for instance <RD_CLK_DELAY_2> in unit <main>.
     Set user-defined property "INIT =  0" for instance <SCIN_LATCH> in unit <main>.
     Set user-defined property "INIT =  0" for instance <VALID_LATCH> in unit <main>.
     Set user-defined property "SYN_BLACK_BOX =  1" for instance <ila> in unit <main>.
@@ -192,14 +194,15 @@ Synthesizing Unit <main>.
     Found 32-bit up counter for signal <cntr>.
     Found 14-bit register for signal <din<15:2>>.
     Found 1-bit register for signal <din<0>>.
-    Found 1-bit register for signal <fifo_rd_en>.
-    Found 1-bit xor2 for signal <fifo_rd_en$xor0000> created at line 58.
-    Found 1-bit register for signal <old_rd_clk>.
-    Found 1-bit register for signal <valid_latch_clr>.
+    Found 8-bit up counter for signal <dup>.
+    Found 16-bit comparator equal for signal <dup$cmp_eq0000> created at line 84.
+    Found 16-bit register for signal <oldOTUBE>.
+    Found 8-bit up counter for signal <rd_en_cntr>.
     Found 1-bit register for signal <wr_en>.
     Summary:
-	inferred   2 Counter(s).
-	inferred  20 D-type flip-flop(s).
+	inferred   4 Counter(s).
+	inferred  33 D-type flip-flop(s).
+	inferred   1 Comparator(s).
 Unit <main> synthesized.
 
 
@@ -207,15 +210,15 @@ Unit <main> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 34
+# Counters                                             : 36
  32-bit up counter                                     : 2
- 8-bit up counter                                      : 32
-# Registers                                            : 276
- 1-bit register                                        : 276
-# Comparators                                          : 32
+ 8-bit up counter                                      : 34
+# Registers                                            : 274
+ 1-bit register                                        : 273
+ 16-bit register                                       : 1
+# Comparators                                          : 33
+ 16-bit comparator equal                               : 1
  8-bit comparator less                                 : 32
-# Xors                                                 : 1
- 1-bit xor2                                            : 1
 
 =========================================================================
 
@@ -234,15 +237,14 @@ Loading core <chipscope_icon> for timing and area information for instance <icon
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 34
+# Counters                                             : 36
  32-bit up counter                                     : 2
- 8-bit up counter                                      : 32
-# Registers                                            : 276
- Flip-Flops                                            : 276
-# Comparators                                          : 32
+ 8-bit up counter                                      : 34
+# Registers                                            : 291
+ Flip-Flops                                            : 291
+# Comparators                                          : 33
+ 16-bit comparator equal                               : 1
  8-bit comparator less                                 : 32
-# Xors                                                 : 1
- 1-bit xor2                                            : 1
 
 =========================================================================
 
@@ -256,7 +258,7 @@ Optimizing unit <Tube> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 92.
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 95.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
@@ -307,8 +309,8 @@ Unit <main> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 340
- Flip-Flops                                            : 340
+# Registers                                            : 371
+ Flip-Flops                                            : 371
 # Shift Registers                                      : 32
  8-bit shift register                                  : 32
 
@@ -339,36 +341,35 @@ Design Statistics
 # IOs                              : 55
 
 Cell Usage :
-# BELS                             : 1984
+# BELS                             : 1974
 #      GND                         : 4
-#      INV                         : 78
-#      LUT1                        : 355
-#      LUT2                        : 74
-#      LUT3                        : 87
+#      INV                         : 80
+#      LUT1                        : 367
+#      LUT2                        : 91
+#      LUT3                        : 118
 #      LUT3_L                      : 1
-#      LUT4                        : 384
+#      LUT4                        : 402
 #      LUT4_D                      : 2
 #      LUT4_L                      : 2
-#      MUXCY                       : 484
+#      MUXCY                       : 370
 #      MUXCY_L                     : 69
-#      MUXF5                       : 30
+#      MUXF5                       : 38
 #      MUXF6                       : 9
 #      VCC                         : 4
-#      XORCY                       : 401
-# FlipFlops/Latches                : 942
-#      FD                          : 100
-#      FD_1                        : 12
+#      XORCY                       : 417
+# FlipFlops/Latches                : 973
+#      FD                          : 124
+#      FD_1                        : 5
 #      FDC                         : 93
-#      FDCE                        : 327
-#      FDE                         : 35
+#      FDCE                        : 329
+#      FDE                         : 43
 #      FDP                         : 77
 #      FDPE                        : 71
 #      FDR                         : 74
-#      FDR_1                       : 2
 #      FDRE                        : 97
 #      FDRS                        : 4
 #      FDS                         : 10
-#      FDS_1                       : 5
+#      FDS_1                       : 11
 #      LDC                         : 1
 #      LDCE                        : 34
 # RAMS                             : 4
@@ -378,8 +379,8 @@ Cell Usage :
 #      SRL16                       : 96
 #      SRL16E                      : 1
 #      SRLC16E                     : 66
-# Clock Buffers                    : 5
-#      BUFG                        : 5
+# Clock Buffers                    : 6
+#      BUFG                        : 6
 # IO Buffers                       : 55
 #      IBUF                        : 35
 #      IBUFG                       : 1
@@ -395,15 +396,15 @@ Device utilization summary:
 
 Selected Device : 3s100etq144-5 
 
- Number of Slices:                      777  out of    960    80%  
- Number of Slice Flip Flops:            942  out of   1920    49%  
- Number of 4 input LUTs:               1146  out of   1920    59%  
-    Number used as logic:               983
+ Number of Slices:                      808  out of    960    84%  
+ Number of Slice Flip Flops:            973  out of   1920    50%  
+ Number of 4 input LUTs:               1226  out of   1920    63%  
+    Number used as logic:              1063
     Number used as Shift registers:     163
  Number of IOs:                          55
  Number of bonded IOBs:                  55  out of    108    50%  
  Number of BRAMs:                         4  out of      4   100%  
- Number of GCLKs:                         5  out of     24    20%  
+ Number of GCLKs:                         6  out of     24    25%  
  Number of DCMs:                          1  out of      2    50%  
 
 ---------------------------
@@ -427,11 +428,12 @@ Clock Information:
 ----------------------------------------------------------------------+------------------------------------------------+-------+
 Clock Signal                                                          | Clock buffer(FF name)                          | Load  |
 ----------------------------------------------------------------------+------------------------------------------------+-------+
-clk100                                                                | dcm_clk100:CLKDV                               | 245   |
+clk100                                                                | dcm_clk100:CLKDV                               | 244   |
 clk100                                                                | IBUFG+BUFG                                     | 425   |
 icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1                                 | BUFG                                           | 150   |
 icon/CONTROL0<13>(icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_LCE:O)| NONE(*)(ila/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC)| 1     |
 icon/U0/iUPDATE_OUT                                                   | NONE(icon/U0/U_ICON/U_iDATA_CMD)               | 1     |
+fifo_rd_en1(fifo_rd_en1:O)                                            | BUFG(*)(oldOTUBE_0)                            | 32    |
 SCIN_LATCH_Q                                                          | BUFG                                           | 1     |
 RD_VALID_OBUF                                                         | NONE(VALID_LATCH)                              | 1     |
 tube3A0/tubeclk1(tube4B7/tubeclk1:O)                                  | BUFG(*)(tube4B7/cntr_7)                        | 256   |
@@ -468,7 +470,7 @@ tube3A2/Q                                                             | NONE(tub
 tube3A1/Q                                                             | NONE(tube3A1/TUBE_LATCH)                       | 1     |
 tube3A0/Q                                                             | NONE(tube3A0/TUBE_LATCH)                       | 1     |
 ----------------------------------------------------------------------+------------------------------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
+(*) These 3 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -486,7 +488,7 @@ fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<0>(fifo/U0/xst_
 fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg<1>(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1:Q)| NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_0)           | 40    |
 fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg<2>(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_reg_2:Q)| NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i)                   | 23    |
 icon/U0/U_ICON/U_CMD/iSEL_n(icon/U0/U_ICON/U_CMD/U_SEL_n:O)                                                                              | NONE(icon/U0/U_ICON/U_CMD/G_TARGET[10].I_NE0.U_TARGET)                                                                   | 10    |
-N0(XST_GND:G)                                                                                                                            | NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN)                                                 | 6     |
+N0(XST_GND:G)                                                                                                                            | NONE(RD_CLK_DELAY_1)                                                                                                     | 8     |
 ila/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/iCLR(ila/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_CLEAR:O)                                                | NONE(ila/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT0)                                                                       | 4     |
 ila/U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/iCLR(ila/U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/U_CLEAR:O)                                              | NONE(ila/U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/U_DOUT0)                                                                      | 4     |
 ila/U0/I_NO_D.U_ILA/U_STAT/U_DSL1/iCLR(ila/U0/I_NO_D.U_ILA/U_STAT/U_DSL1/U_CLEAR:O)                                                      | NONE(ila/U0/I_NO_D.U_ILA/U_STAT/U_DSL1/U_DOUT0)                                                                          | 4     |
@@ -494,11 +496,11 @@ fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_comb(fifo/U0/xst_fi
 fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rst_d2:Q)             | NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i)                    | 2     |
 fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_comb1:O)  | NONE(fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0)                                                 | 2     |
 ila/U0/I_NO_D.U_ILA/iARM(ila/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_GEN_DELAY[3].U_FD:Q)                                                     | NONE(ila/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_FDCE)                                                                            | 2     |
+fifo_rd_en1(fifo_rd_en1:O)                                                                                                               | NONE(VALID_LATCH)                                                                                                        | 1     |
 icon/CONTROL0<13>(icon/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_LCE:O)                                                                   | NONE(ila/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_FDPE)                                                                            | 1     |
 icon/U0/U_ICON/iSEL_n(icon/U0/U_ICON/U_iSEL_n:O)                                                                                         | NONE(icon/U0/U_ICON/U_iDATA_CMD)                                                                                         | 1     |
 ila/U0/I_NO_D.U_ILA/U_STAT/ACTRESET_pulse(ila/U0/I_NO_D.U_ILA/U_STAT/U_RESET_EDGE/I_H2L.U_DOUT:Q)                                        | NONE(ila/U0/I_NO_D.U_ILA/U_STAT/U_RISING)                                                                                | 1     |
 ila/U0/I_NO_D.U_ILA/iRESET<1>(ila/U0/I_NO_D.U_ILA/U_RST/G_RST[1].U_RST:Q)                                                                | NONE(ila/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_OREG.I_YES_OREG.U_OREG)                                         | 1     |
-valid_latch_clr(valid_latch_clr:Q)                                                                                                       | NONE(VALID_LATCH)                                                                                                        | 1     |
 -----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-------+
 
 Timing Summary:
@@ -507,7 +509,7 @@ Speed Grade: -5
 
    Minimum period: 7.970ns (Maximum Frequency: 125.472MHz)
    Minimum input arrival time before clock: 7.024ns
-   Maximum output required time after clock: 6.328ns
+   Maximum output required time after clock: 6.183ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -516,26 +518,28 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk100'
-  Clock period: 4.068ns (frequency: 245.797MHz)
-  Total number of paths / destination ports: 4793 / 869
+  Clock period: 4.958ns (frequency: 201.676MHz)
+  Total number of paths / destination ports: 3967 / 865
 -------------------------------------------------------------------------
-Delay:               4.068ns (Levels of Logic = 2)
-  Source:            ila/U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/U_GEN_DELAY[1].U_FD (FF)
-  Destination:       ila/U0/I_NO_D.U_ILA/U_RST/G_RST[0].U_RST (FF)
-  Source Clock:      clk100 rising
-  Destination Clock: clk100 rising
+Delay:               4.958ns (Levels of Logic = 4)
+  Source:            RD_CLK_DELAY_2 (FF)
+  Destination:       fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i (FF)
+  Source Clock:      clk100 falling 0.5X
+  Destination Clock: clk100 rising 0.5X
 
-  Data Path: ila/U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/U_GEN_DELAY[1].U_FD to ila/U0/I_NO_D.U_ILA/U_RST/G_RST[0].U_RST
+  Data Path: RD_CLK_DELAY_2 to fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              2   0.514   0.532  U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/U_GEN_DELAY[1].U_FD (U0/I_NO_D.U_ILA/U_RST/HALT_pulse)
-     LUT3:I0->O            1   0.612   0.360  U0/I_NO_D.U_ILA/U_RST/U_PRST1 (U0/I_NO_D.U_ILA/U_RST/PRE_RESET1)
-     LUT4:I3->O            8   0.612   0.643  U0/I_NO_D.U_ILA/U_RST/U_PRST0 (U0/I_NO_D.U_ILA/U_RST/PRE_RESET0)
-     FDS:S                     0.795          U0/I_NO_D.U_ILA/U_RST/G_RST[0].U_RST
+     FDCE:C->Q             1   0.514   0.509  RD_CLK_DELAY_2 (rd_clk_2)
+     LUT2:I0->O            6   0.612   0.721  fifo_rd_en1 (fifo_rd_en1)
+     begin scope: 'fifo'
+     LUT2:I0->O           21   0.612   1.111  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/ram_rd_en_i1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_rd_en)
+     LUT3:I0->O            2   0.612   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_or00001 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_or0000)
+     FDP:D                     0.268          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i
     ----------------------------------------
-    Total                      4.068ns (2.533ns logic, 1.535ns route)
-                                       (62.3% logic, 37.7% route)
+    Total                      4.958ns (2.618ns logic, 2.340ns route)
+                                       (52.8% logic, 47.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1'
@@ -587,6 +591,36 @@ Delay:               2.202ns (Levels of Logic = 1)
                                        (63.3% logic, 36.7% route)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'fifo_rd_en1'
+  Clock period: 3.763ns (frequency: 265.749MHz)
+  Total number of paths / destination ports: 200 / 24
+-------------------------------------------------------------------------
+Delay:               3.763ns (Levels of Logic = 9)
+  Source:            oldOTUBE_0 (FF)
+  Destination:       dup_0 (FF)
+  Source Clock:      fifo_rd_en1 rising
+  Destination Clock: fifo_rd_en1 rising
+
+  Data Path: oldOTUBE_0 to dup_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.514   0.509  oldOTUBE_0 (oldOTUBE_0)
+     LUT4:I0->O            1   0.612   0.000  Mcompar_dup_cmp_eq0000_lut<0> (Mcompar_dup_cmp_eq0000_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  Mcompar_dup_cmp_eq0000_cy<0> (Mcompar_dup_cmp_eq0000_cy<0>)
+     MUXCY:CI->O           1   0.051   0.000  Mcompar_dup_cmp_eq0000_cy<1> (Mcompar_dup_cmp_eq0000_cy<1>)
+     MUXCY:CI->O           1   0.051   0.000  Mcompar_dup_cmp_eq0000_cy<2> (Mcompar_dup_cmp_eq0000_cy<2>)
+     MUXCY:CI->O           1   0.051   0.000  Mcompar_dup_cmp_eq0000_cy<3> (Mcompar_dup_cmp_eq0000_cy<3>)
+     MUXCY:CI->O           1   0.051   0.000  Mcompar_dup_cmp_eq0000_cy<4> (Mcompar_dup_cmp_eq0000_cy<4>)
+     MUXCY:CI->O           1   0.051   0.000  Mcompar_dup_cmp_eq0000_cy<5> (Mcompar_dup_cmp_eq0000_cy<5>)
+     MUXCY:CI->O           1   0.051   0.000  Mcompar_dup_cmp_eq0000_cy<6> (Mcompar_dup_cmp_eq0000_cy<6>)
+     MUXCY:CI->O           8   0.289   0.643  Mcompar_dup_cmp_eq0000_cy<7> (Mcompar_dup_cmp_eq0000_cy<7>)
+     FDE:CE                    0.483          dup_0
+    ----------------------------------------
+    Total                      3.763ns (2.611ns logic, 1.152ns route)
+                                       (69.4% logic, 30.6% route)
+
+=========================================================================
 Timing constraint: Default period analysis for Clock 'tube3A0/tubeclk1'
   Clock period: 3.977ns (frequency: 251.458MHz)
   Total number of paths / destination ports: 3200 / 512
@@ -636,7 +670,7 @@ Offset:              7.024ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk100'
-  Total number of paths / destination ports: 136 / 134
+  Total number of paths / destination ports: 124 / 124
 -------------------------------------------------------------------------
 Offset:              4.729ns (Levels of Logic = 2)
   Source:            SCIN_COIN (PAD)
@@ -677,23 +711,23 @@ Offset:              2.448ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk100'
   Total number of paths / destination ports: 27 / 18
 -------------------------------------------------------------------------
-Offset:              6.328ns (Levels of Logic = 4)
-  Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_6 (FF)
+Offset:              6.183ns (Levels of Logic = 4)
+  Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_0 (FF)
   Destination:       RD_EMPTY (PAD)
   Source Clock:      clk100 rising 0.5X
 
-  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_6 to RD_EMPTY
+  Data Path: fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_0 to RD_EMPTY
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.514   0.532  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_6 (wr_data_count<6>)
+     FDC:C->Q              1   0.514   0.509  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_0 (wr_data_count<0>)
      end scope: 'fifo'
-     LUT4:I0->O            1   0.612   0.509  RD_EMPTY37 (RD_EMPTY37)
-     LUT4:I0->O            2   0.612   0.380  RD_EMPTY39 (RD_EMPTY_OBUF)
+     LUT4:I0->O            1   0.612   0.387  RD_EMPTY12 (RD_EMPTY12)
+     LUT4:I2->O            2   0.612   0.380  RD_EMPTY39 (RD_EMPTY_OBUF)
      OBUF:I->O                 3.169          RD_EMPTY_OBUF (RD_EMPTY)
     ----------------------------------------
-    Total                      6.328ns (4.907ns logic, 1.421ns route)
-                                       (77.5% logic, 22.5% route)
+    Total                      6.183ns (4.907ns logic, 1.276ns route)
+                                       (79.4% logic, 20.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'RD_VALID_OBUF'
@@ -740,12 +774,12 @@ WARNING:Xst:616 - Invalid property "SYN_BLACK_BOX 1": Did not attach to icon.
 WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to icon.
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 15.39 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 18.09 secs
  
 --> 
 
-Total memory usage is 285736 kilobytes
+Total memory usage is 290984 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    7 (   0 filtered)

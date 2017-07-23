@@ -10,13 +10,14 @@ Analyzing Verilog file "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBen
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 WARNING:HDLCompiler:1016 - "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 40: Port CLK0 is not connected to this instance
-WARNING:HDLCompiler:1016 - "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 125: Port empty is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 144: Port empty is not connected to this instance
 Completed static elaboration
 Compiling module dcm_sp_clock_divide_by_2
 Compiling module dcm_sp_maximum_period_check(cloc...
 Compiling module dcm_sp_maximum_period_check(cloc...
 Compiling module dcm_sp_clock_lost
 Compiling module DCM_SP(CLKDV_DIVIDE=2,CLK_FEEDBA...
+Compiling module FDCE
 Compiling module BUFG
 Compiling module LDCE
 Compiling module fifo_generator_v9_3_sync_stage(C...
@@ -29,8 +30,8 @@ Compiling module main
 Compiling module testBench
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 13 sub-compilation(s) to finish...
-Compiled 16 Verilog Units
+Waiting for 14 sub-compilation(s) to finish...
+Compiled 17 Verilog Units
 Built simulation executable C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_isim_beh.exe
-Fuse Memory Usage: 34920 KB
-Fuse CPU Usage: 890 ms
+Fuse Memory Usage: 35188 KB
+Fuse CPU Usage: 905 ms

@@ -44,31 +44,50 @@
 		
 		
 
-	reg fifo_rd_en = 0;
-	reg old_rd_clk = 0;
-	reg valid_latch_clr = 0;
+	wire fifo_rd_en;
 	
-	always @ (negedge clk50) begin
+	reg [7:0] rd_en_cntr = 0;
+	reg [7:0] dup = 0;
+	
+	reg [15:0] oldOTUBE = 16'b1111111111111111;
 
-		//check to see if there has been a posedge on RD_CLK and if RD_EN is high
-		//if both of these are true, then put new data on the bus by pusing fifo_rd_en
-		//since this is firing on the negedge of the fifo_rd_clk, fifo_rd_en will be high for exactly one posedge of clk50
-		//the RPi won't read this until some microseconds later on its falling edge
+	wire rd_clk_1;
+	wire rd_clk_2;
 
-		if (( RD_CLK != old_rd_clk) && (RD_CLK == 1) && RD_EN) begin
-			 fifo_rd_en = 1;
-		end else begin
-			 fifo_rd_en = 0;
+	FDCE #(
+		.INIT(1'b0) 				// Initial value of latch (0)
+	) RD_CLK_DELAY_1 (					// Latch name
+		.Q(rd_clk_1),      	// Data output
+		.CLR(1'b0),  				// Asynchronous clear/reset input
+		.D(RD_CLK),      			// Data input
+		.C(~clk50),      			// Gate input
+		.CE(1'b1)     				// Gate enable input
+	);
+	
+	FDCE #(
+		.INIT(1'b0) 				// Initial value of latch (0)
+	) RD_CLK_DELAY_2 (					// Latch name
+		.Q(rd_clk_2),      	// Data output
+		.CLR(1'b0),  				// Asynchronous clear/reset input
+		.D(rd_clk_1),      			// Data input
+		.C(~clk50),      			// Gate input
+		.CE(1'b1)     				// Gate enable input
+	);
+	
+	
+	//wire rd_clk_edge;
+	assign fifo_rd_en = (!rd_clk_2) && rd_clk_1;
+	
+	always @ (posedge fifo_rd_en) begin
+		rd_en_cntr <= rd_en_cntr + 1;
+		
+		if(oldOTUBE == OTUBE) begin
+			dup <= dup + 1;
 		end
 		
-		if (( RD_CLK != old_rd_clk) && (RD_CLK == 0) && RD_EN) begin
-			 valid_latch_clr = 1;
-		end else begin
-			 valid_latch_clr = 0;
-		end
-
-		old_rd_clk <= RD_CLK;
+		oldOTUBE <= OTUBE;
 	end
+	
 
 	//two counters that count with the sys 100MHz clock, counting up from the falling edge of SCIN_COIN
 	//cntr will freeze when SCIN_LATCH_Q drops low, aka when CLR goes high
@@ -105,7 +124,7 @@
 		.INIT(1'b0) 				// Initial value of latch (0)
 	) VALID_LATCH (					// Latch name
 		.Q(RD_VALID),      	// Data output
-		.CLR(valid_latch_clr),  				// Asynchronous clear/reset input
+		.CLR(fifo_rd_en),  				// Asynchronous clear/reset input
 		.D(fifo_valid),      		// Data input
 		.G(~RD_VALID),      			// Gate input
 		.GE(1'b1)     				// Gate enable input
@@ -281,7 +300,7 @@
 							 .CLK(clk100), 
 							 .TRIG0(ila_trig0));
     chipscope_icon icon(.CONTROL0(ila_control));
-    assign ila_trig0[7:0] = TUBE3A;
+    assign ila_trig0[7:0] = dup;
 	 assign ila_trig0[15:8] = TUBE3B;
 	 assign ila_trig0[23:16] = TUBE4A;
 	 assign ila_trig0[31:24] = TUBE4B; 
@@ -293,7 +312,9 @@
 	 assign ila_trig0[36] = RD_EN; 
 	 assign ila_trig0[52:37] = OTUBE;
 	 assign ila_trig0[53] = CLR;
-	 assign ila_trig0[63:54] = wr_data_count;
+	 assign ila_trig0[61:54] = rd_en_cntr;
+	 assign ila_trig0[62] = clk50;
+	 assign ila_trig0[63] = fifo_rd_en;
  
 
 endmodule
