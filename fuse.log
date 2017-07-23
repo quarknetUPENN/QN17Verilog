@@ -33,5 +33,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 14 sub-compilation(s) to finish...
 Compiled 17 Verilog Units
 Built simulation executable C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/testBench_isim_beh.exe
-Fuse Memory Usage: 35188 KB
-Fuse CPU Usage: 905 ms
+Fuse Memory Usage: 34928 KB
+Fuse CPU Usage: 858 ms

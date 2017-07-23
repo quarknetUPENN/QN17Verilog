@@ -139,7 +139,7 @@
 	//also set up light to turn on when it is full
 	reg [15:0] din = 0;
 	wire full;
-	wire [0:9] wr_data_count;
+	wire [9:0] wr_data_count;
 	reg wr_en = 0;
 	fifo16x1024 fifo( .rst(1'b0),
 							.wr_clk(clk50),
@@ -149,7 +149,7 @@
 							.wr_data_count(wr_data_count),
 							.rd_clk(clk50),
 							.rd_en(fifo_rd_en),
-							//.empty(RD_EMPTY),  for some reason, this doesn't seem to work as it should - as in, random uS-scale delays for no reason?
+							.empty(RD_EMPTY),  //for some reason, this doesn't seem to work as it should - as in, random uS-scale delays for no reason?
 							.valid(fifo_valid),
 							.dout(OTUBE));
 	assign overflowLight = full;
@@ -190,7 +190,7 @@
 	wire [7:0] data4B7;  Tube tube4B7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[7]), .clk_cyc_data(data4B7), .gateEnable(SCIN_LATCH_Q));	
 	
 	// set up the reading output protocol
-	assign RD_EMPTY = (wr_data_count == 0); //wr_data_count gives the amount of data in the FIFO						
+	//assign RD_EMPTY = (wr_data_count == 0); //wr_data_count gives the amount of data in the FIFO						
 
 
 	always @ (negedge clk50) begin
@@ -204,7 +204,7 @@
 		end
 		
 		//din[15:8] == tube time; din [7:0] = tube name
-		//refer to FPGA Layout for more info
+		//refer to FPGA Layout for more info on the tube name
 		case(cntr)
 			 257:  begin din[15:8] <= data3A0; din[7:0] <= 8'b00000011; wr_en <= 1;  end
 			 258:  begin din[15:8] <= data3A1; din[7:0] <= 8'b00100011; end
@@ -300,19 +300,14 @@
 							 .CLK(clk100), 
 							 .TRIG0(ila_trig0));
     chipscope_icon icon(.CONTROL0(ila_control));
-    assign ila_trig0[7:0] = dup;
-	 assign ila_trig0[15:8] = TUBE3B;
-	 assign ila_trig0[23:16] = TUBE4A;
-	 assign ila_trig0[31:24] = TUBE4B; 
+	 assign ila_trig0[31:0] = cntr;
 	 assign ila_trig0[32] = SCIN_COIN;
 	 
 	 assign ila_trig0[33] = RD_EMPTY;
 	 assign ila_trig0[34] = RD_VALID;
 	 assign ila_trig0[35] = RD_CLK;
-	 assign ila_trig0[36] = RD_EN; 
-	 assign ila_trig0[52:37] = OTUBE;
-	 assign ila_trig0[53] = CLR;
-	 assign ila_trig0[61:54] = rd_en_cntr;
+	 assign ila_trig0[51:36] = OTUBE;
+	 assign ila_trig0[61:52] = wr_data_count;
 	 assign ila_trig0[62] = clk50;
 	 assign ila_trig0[63] = fifo_rd_en;
  
