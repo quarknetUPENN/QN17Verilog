@@ -76,7 +76,7 @@
 	
 	
 	//wire rd_clk_edge;
-	assign fifo_rd_en = (!rd_clk_2) && rd_clk_1;
+	assign fifo_rd_en = (!rd_clk_2) && rd_clk_1 && RD_EN;
 	
 	always @ (posedge fifo_rd_en) begin
 		rd_en_cntr <= rd_en_cntr + 1;
@@ -196,11 +196,10 @@
 	always @ (negedge clk50) begin
 		if (SCIN_COIN) begin
 			cntr <= 0; //once we get a coincidence, reset the counter to 0
-		end
-
-
-		if (SCIN_LATCH_Q) begin 
-			cntr <= cntr + 1; //keep counting as long as SCIN_LATCH_Q is high
+		end else begin
+			if (SCIN_LATCH_Q) begin 
+				cntr <= cntr + 1; //keep counting as long as SCIN_LATCH_Q is high
+			end
 		end
 		
 		//din[15:8] == tube time; din [7:0] = tube name

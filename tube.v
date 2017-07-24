@@ -28,7 +28,7 @@ module Tube(input clk,
 	localparam prior_clk_cyc = 8 ; //the number of clock cycles we want to look back
 	
 	reg [7:0] cntr = 0;
-	assign clk_cyc_data = (cntr); //the output (sent into the FIFO) 
+	assign clk_cyc_data = cntr; //the output (sent into the FIFO) 
 	
 	wire Q; //output of LDCE
 	reg [7:0] shiftReg = 8'h0; // initializing shift register	
@@ -46,9 +46,6 @@ module Tube(input clk,
 	
 	
 	always @ (posedge clk) begin
-	//if shiftFreeze is not set, update the first bit of shiftReg to the value of tubePin, 
-	//and move it along shiftReg on the rising edge of the clock; this way, the location 
-	//of the value within shiftReg gives us the # of clk cycles
 			shiftReg = shiftReg << 1;
 			shiftReg[0] = tubePin;
 	end
@@ -56,7 +53,6 @@ module Tube(input clk,
 	
 	wire tubeclk = gateEnable && clk; //tubeclk only runs when SCIN_LATCH_Q is high
 	
-
 	always @ (posedge tubeclk or posedge clr) begin
 		if (clr == 1) begin //if clr is set, reset the counter to 0
 			cntr <= 0;

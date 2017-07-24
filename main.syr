@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: main.prj
 
@@ -133,8 +133,8 @@ Analyzing hierarchy for module <Tube> in library <work> with parameters.
 =========================================================================
 Analyzing top module <main>.
 WARNING:Xst:2211 - "ipcore_dir/fifo16x1024.v" line 144: Instantiating black box module <fifo16x1024>.
-WARNING:Xst:2211 - "ipcore_dir/chipscope_ila.v" line 299: Instantiating black box module <chipscope_ila>.
-WARNING:Xst:2211 - "ipcore_dir/chipscope_icon.v" line 302: Instantiating black box module <chipscope_icon>.
+WARNING:Xst:2211 - "ipcore_dir/chipscope_ila.v" line 298: Instantiating black box module <chipscope_ila>.
+WARNING:Xst:2211 - "ipcore_dir/chipscope_icon.v" line 301: Instantiating black box module <chipscope_icon>.
 Module <main> is correct for synthesis.
  
     Set user-defined property "CLKDV_DIVIDE =  2.000000" for instance <dcm_clk100> in unit <main>.
@@ -177,7 +177,7 @@ Performing bidirectional port resolution...
 Synthesizing Unit <Tube>.
     Related source file is "tube.v".
     Found 8-bit up counter for signal <cntr>.
-    Found 8-bit comparator less for signal <cntr$cmp_lt0000> created at line 66.
+    Found 8-bit comparator less for signal <cntr$cmp_lt0000> created at line 62.
     Found 8-bit register for signal <shiftReg>.
     Summary:
 	inferred   1 Counter(s).
@@ -188,7 +188,6 @@ Unit <Tube> synthesized.
 
 Synthesizing Unit <main>.
     Related source file is "main.v".
-WARNING:Xst:647 - Input <RD_EN> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Register <din<1>> equivalent to <din<0>> has been removed
     Found 32-bit up counter for signal <busyCntr>.
     Found 1-bit register for signal <CLR>.
@@ -339,12 +338,12 @@ Design Statistics
 # IOs                              : 55
 
 Cell Usage :
-# BELS                             : 1911
+# BELS                             : 1910
 #      GND                         : 4
 #      INV                         : 78
 #      LUT1                        : 355
-#      LUT2                        : 91
-#      LUT3                        : 118
+#      LUT2                        : 89
+#      LUT3                        : 119
 #      LUT3_L                      : 1
 #      LUT4                        : 391
 #      LUT4_D                      : 2
@@ -379,8 +378,8 @@ Cell Usage :
 #      SRLC16E                     : 66
 # Clock Buffers                    : 5
 #      BUFG                        : 5
-# IO Buffers                       : 54
-#      IBUF                        : 34
+# IO Buffers                       : 55
+#      IBUF                        : 35
 #      IBUFG                       : 1
 #      OBUF                        : 19
 # DCMs                             : 1
@@ -394,13 +393,13 @@ Device utilization summary:
 
 Selected Device : 3s100etq144-5 
 
- Number of Slices:                      795  out of    960    82%  
+ Number of Slices:                      794  out of    960    82%  
  Number of Slice Flip Flops:            941  out of   1920    49%  
- Number of 4 input LUTs:               1201  out of   1920    62%  
-    Number used as logic:              1038
+ Number of 4 input LUTs:               1200  out of   1920    62%  
+    Number used as logic:              1037
     Number used as Shift registers:     163
  Number of IOs:                          55
- Number of bonded IOBs:                  54  out of    108    50%  
+ Number of bonded IOBs:                  55  out of    108    50%  
  Number of BRAMs:                         4  out of      4   100%  
  Number of GCLKs:                         5  out of     24    20%  
  Number of DCMs:                          1  out of      2    50%  
@@ -529,7 +528,7 @@ Delay:               4.928ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDCE:C->Q             1   0.514   0.509  RD_CLK_DELAY_2 (rd_clk_2)
-     LUT2:I0->O            5   0.612   0.690  fifo_rd_en1 (fifo_rd_en)
+     LUT3:I0->O            5   0.612   0.690  fifo_rd_en1 (fifo_rd_en)
      begin scope: 'fifo'
      LUT2:I0->O           21   0.612   1.111  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/ram_rd_en_i1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_rd_en)
      LUT3:I0->O            2   0.612   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_or00001 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_or0000)
@@ -611,6 +610,29 @@ Delay:               3.977ns (Levels of Logic = 2)
                                        (55.8% logic, 44.2% route)
 
 =========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk100'
+  Total number of paths / destination ports: 124 / 124
+-------------------------------------------------------------------------
+Offset:              5.398ns (Levels of Logic = 5)
+  Source:            RD_EN (PAD)
+  Destination:       fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i (FF)
+  Destination Clock: clk100 rising 0.5X
+
+  Data Path: RD_EN to fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.387  RD_EN_IBUF (RD_EN_IBUF)
+     LUT3:I2->O            5   0.612   0.690  fifo_rd_en1 (fifo_rd_en)
+     begin scope: 'fifo'
+     LUT2:I0->O           21   0.612   1.111  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/ram_rd_en_i1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_rd_en)
+     LUT3:I0->O            2   0.612   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_or00001 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i_or0000)
+     FDP:D                     0.268          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i
+    ----------------------------------------
+    Total                      5.398ns (3.210ns logic, 2.188ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'icon/U0/U_ICON/I_YES_BSCAN.U_BS/DRCK1'
   Total number of paths / destination ports: 194 / 170
 -------------------------------------------------------------------------
@@ -636,30 +658,10 @@ Offset:              7.024ns (Levels of Logic = 5)
                                        (41.7% logic, 58.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk100'
-  Total number of paths / destination ports: 99 / 99
--------------------------------------------------------------------------
-Offset:              4.729ns (Levels of Logic = 2)
-  Source:            SCIN_COIN (PAD)
-  Destination:       cntr_0 (FF)
-  Destination Clock: clk100 falling 0.5X
-
-  Data Path: SCIN_COIN to cntr_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            35   1.106   1.143  SCIN_COIN_IBUF (SCIN_COIN_IBUF)
-     LUT2:I1->O           32   0.612   1.073  cntr_and00001 (cntr_and0000)
-     FDRE:R                    0.795          cntr_0
-    ----------------------------------------
-    Total                      4.729ns (2.513ns logic, 2.216ns route)
-                                       (53.1% logic, 46.9% route)
-
-=========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'SCIN_LATCH_Q'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              2.448ns (Levels of Logic = 1)
+Offset:              2.456ns (Levels of Logic = 1)
   Source:            SCIN_COIN (PAD)
   Destination:       SCIN_LATCH (LATCH)
   Destination Clock: SCIN_LATCH_Q rising
@@ -668,11 +670,11 @@ Offset:              2.448ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            35   1.106   1.074  SCIN_COIN_IBUF (SCIN_COIN_IBUF)
+     IBUF:I->O            66   1.106   1.082  SCIN_COIN_IBUF (SCIN_COIN_IBUF)
      LDCE:D                    0.268          SCIN_LATCH
     ----------------------------------------
-    Total                      2.448ns (1.374ns logic, 1.074ns route)
-                                       (56.1% logic, 43.9% route)
+    Total                      2.456ns (1.374ns logic, 1.082ns route)
+                                       (55.9% logic, 44.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk100'
@@ -740,13 +742,13 @@ WARNING:Xst:616 - Invalid property "SYN_NOPRUNE 1": Did not attach to icon.
 
 
 Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 18.25 secs
+Total CPU time to Xst completion: 17.99 secs
  
 --> 
 
-Total memory usage is 289960 kilobytes
+Total memory usage is 290728 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    8 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
 Number of infos    :    9 (   0 filtered)
 
