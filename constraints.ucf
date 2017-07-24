@@ -1,32 +1,32 @@
 NET "clk100" LOC = "P126" | PERIOD = 10.0; 
 NET "clk50" PERIOD = 20.0;
 
-NET "overflowLight" LOC = "P20";
+NET "overflowLight" LOC = "P20"| IOSTANDARD= "LVTTL";
 
 #--------------------------------#
 #-----RPi Communication Pins-----#
 #--------------------------------#
-NET "OTUBE<0>" LOC = "P142";
-NET "OTUBE<1>" LOC = "P2";	 
-NET "OTUBE<2>" LOC = "P3";	
-NET "OTUBE<3>" LOC = "P4";
-NET "OTUBE<4>" LOC = "P5";
-NET "OTUBE<5>" LOC = "P139";
-NET "OTUBE<6>" LOC = "P7";
-NET "OTUBE<7>" LOC = "P8";
-NET "OTUBE<8>" LOC = "P15";
-NET "OTUBE<9>" LOC = "P14";	 
-NET "OTUBE<10>" LOC = "P21";	
-NET "OTUBE<11>" LOC = "P17";
-NET "OTUBE<12>" LOC = "P22";
-NET "OTUBE<13>" LOC = "P23";
-NET "OTUBE<14>" LOC = "P25";
-NET "OTUBE<15>" LOC = "P26";
+NET "OTUBE<0>" LOC = "P142"| IOSTANDARD= "LVTTL";
+NET "OTUBE<1>" LOC = "P2"| IOSTANDARD= "LVTTL";	 
+NET "OTUBE<2>" LOC = "P3"| IOSTANDARD= "LVTTL";	
+NET "OTUBE<3>" LOC = "P4"| IOSTANDARD= "LVTTL";
+NET "OTUBE<4>" LOC = "P5"| IOSTANDARD= "LVTTL";
+NET "OTUBE<5>" LOC = "P139"| IOSTANDARD= "LVTTL";
+NET "OTUBE<6>" LOC = "P7"| IOSTANDARD= "LVTTL";
+NET "OTUBE<7>" LOC = "P8"| IOSTANDARD= "LVTTL";
+NET "OTUBE<8>" LOC = "P15"| IOSTANDARD= "LVTTL";
+NET "OTUBE<9>" LOC = "P14"| IOSTANDARD= "LVTTL";	 
+NET "OTUBE<10>" LOC = "P21"| IOSTANDARD= "LVTTL";	
+NET "OTUBE<11>" LOC = "P17"| IOSTANDARD= "LVTTL";
+NET "OTUBE<12>" LOC = "P22"| IOSTANDARD= "LVTTL";
+NET "OTUBE<13>" LOC = "P23"| IOSTANDARD= "LVTTL";
+NET "OTUBE<14>" LOC = "P25"| IOSTANDARD= "LVTTL";
+NET "OTUBE<15>" LOC = "P26"| IOSTANDARD= "LVTTL";
 //control pins for FIFO
-NET "RD_CLK" LOC = "P33";
-NET "RD_EN" LOC = "P56";
-NET "RD_EMPTY" LOC = "P34";
-NET "RD_VALID" LOC = "P35";
+NET "RD_CLK" LOC = "P33" | IOSTANDARD= "LVTTL";
+NET "RD_EN" LOC = "P56" | IOSTANDARD= "LVTTL";
+NET "RD_EMPTY" LOC = "P34" | IOSTANDARD= "LVTTL";
+NET "RD_VALID" LOC = "P35" | IOSTANDARD= "LVTTL";
 
 #--------------------------------#
 #---------Tube Data Pins---------#
