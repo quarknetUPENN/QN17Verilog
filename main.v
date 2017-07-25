@@ -35,59 +35,14 @@
 				 output RD_VALID);
 
 	 // slows clk100 (100MHz) to clk50 (50 MHz), needed in order to meet timing constraints
-    wire clk100_fb;
-    wire clk50;
-    DCM_SP #(.CLKIN_PERIOD(10.0), .CLKDV_DIVIDE(2),
-	     .CLK_FEEDBACK("2X"))
-    dcm_clk100 (.RST(1'b0), .CLKIN(clk100), .CLKDV(clk50),
+	 wire clk100_fb;
+	 wire clk50;
+	 DCM_SP #(.CLKIN_PERIOD(10.0), .CLKDV_DIVIDE(2),
+		  .CLK_FEEDBACK("2X"))
+	 dcm_clk100 (.RST(1'b0), .CLKIN(clk100), .CLKDV(clk50),
 		.CLK2X(clk100_fb), .CLKFB(clk100_fb));
 		
 		
-
-	wire fifo_rd_en;
-	
-	reg [7:0] rd_en_cntr = 0;
-	reg [7:0] dup = 0;
-	
-	reg [15:0] oldOTUBE = 16'b1111111111111111;
-
-	wire rd_clk_1;
-	wire rd_clk_2;
-
-	FDCE #(
-		.INIT(1'b0) 				// Initial value of latch (0)
-	) RD_CLK_DELAY_1 (					// Latch name
-		.Q(rd_clk_1),      	// Data output
-		.CLR(1'b0),  				// Asynchronous clear/reset input
-		.D(RD_CLK),      			// Data input
-		.C(~clk50),      			// Gate input
-		.CE(1'b1)     				// Gate enable input
-	);
-	
-	FDCE #(
-		.INIT(1'b0) 				// Initial value of latch (0)
-	) RD_CLK_DELAY_2 (					// Latch name
-		.Q(rd_clk_2),      	// Data output
-		.CLR(1'b0),  				// Asynchronous clear/reset input
-		.D(rd_clk_1),      			// Data input
-		.C(~clk50),      			// Gate input
-		.CE(1'b1)     				// Gate enable input
-	);
-	
-	
-	//wire rd_clk_edge;
-	assign fifo_rd_en = (!rd_clk_2) && rd_clk_1 && RD_EN;
-	
-	always @ (posedge fifo_rd_en) begin
-		rd_en_cntr <= rd_en_cntr + 1;
-		
-		if(oldOTUBE == OTUBE) begin
-			dup <= dup + 1;
-		end
-		
-		oldOTUBE <= OTUBE;
-	end
-	
 
 	//two counters that count with the sys 100MHz clock, counting up from the falling edge of SCIN_COIN
 	//cntr will freeze when SCIN_LATCH_Q drops low, aka when CLR goes high
@@ -99,11 +54,11 @@
 	//this will clear all unsaved (not in FIFO) data
 	reg CLR = 0;
 	
-	//LDCE:  Transparent latch with Asynchronous Reset and Gate Enable.
-	//a latch that will hold high once SCIN_COIN pulses high until CLR'd
+	//a latch to keep track of when we are recording data.  it goes high when we get a coincidence and stays that 
+	//way until clear, which goes high at 255 clock cycles after
 	wire SCIN_LATCH_Q;
 	wire bufQ;
-	//BUFG: clock buffer, allows us to feed Q back into the LDCE as the gate
+	//BUFG: clock buffer, allows us to feed Q back into the LDCE as the gate without compromising timing
    BUFG BUFG_inst (
       .O(bufQ),     // Clock buffer output
       .I(SCIN_LATCH_Q)      // Clock buffer input
@@ -117,9 +72,33 @@
 		.G(~bufQ),      			// Gate input
 		.GE(1'b1)     				// Gate enable input
 	);
+
+	//process the RD_CLK from the RPi
+	wire fifo_rd_en;
+	wire rd_clk_1;
+	wire rd_clk_2;
+	FDCE #(
+		.INIT(1'b0) 				// Initial value of latch (0)
+	) RD_CLK_DELAY_1 (					// Latch name
+		.Q(rd_clk_1),      	// Data output
+		.CLR(1'b0),  				// Asynchronous clear/reset input
+		.D(RD_CLK),      			// Data input
+		.C(~clk50),      			// Gate input
+		.CE(1'b1)     				// Gate enable input
+	);
+	FDCE #(
+		.INIT(1'b0) 				// Initial value of latch (0)
+	) RD_CLK_DELAY_2 (					// Latch name
+		.Q(rd_clk_2),      	// Data output
+		.CLR(1'b0),  				// Asynchronous clear/reset input
+		.D(rd_clk_1),      			// Data input
+		.C(~clk50),      			// Gate input
+		.CE(1'b1)     				// Gate enable input
+	);
+	assign fifo_rd_en = (!rd_clk_2) && rd_clk_1 && RD_EN;	
 	
+	//latch to hold the valid bit from the fifo high long enough for the RPi to read
 	wire fifo_valid;
-	
 	LDCE #(
 		.INIT(1'b0) 				// Initial value of latch (0)
 	) VALID_LATCH (					// Latch name
@@ -131,66 +110,60 @@
 	);
 	
 						
-	//a 100 MHz clock that is only pulsing when SCIN_LATCH_Q is high
-	//ie, only when we are recording an event
-	wire tubeclk = clk100;
-	
 	//initialize the fifo that will hold all the data before it is sent to the rpi
 	//also set up light to turn on when it is full
 	reg [15:0] din = 0;
-	wire full;
 	wire [9:0] wr_data_count;
 	reg wr_en = 0;
 	fifo16x1024 fifo( .rst(1'b0),
 							.wr_clk(clk50),
 							.din(din),
 							.wr_en(wr_en),
-							.full(full),
+							.full(overflowLight),
 							.wr_data_count(wr_data_count),
 							.rd_clk(clk50),
 							.rd_en(fifo_rd_en),
-							.empty(RD_EMPTY),  //for some reason, this doesn't seem to work as it should - as in, random uS-scale delays for no reason?
+							//.empty(RD_EMPTY),  //for some reason, this doesn't seem to work as it should - as in, random uS-scale delays for no reason?
 							.valid(fifo_valid),
 							.dout(OTUBE));
-	assign overflowLight = full;
 							
 	
 	//initialize wires and tubes for. every. tube.
-	wire [7:0] data3A0;  Tube tube3A0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[0]), .clk_cyc_data(data3A0), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3A1;  Tube tube3A1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[1]), .clk_cyc_data(data3A1), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3A2;  Tube tube3A2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[2]), .clk_cyc_data(data3A2), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3A3;  Tube tube3A3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[3]), .clk_cyc_data(data3A3), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3A4;  Tube tube3A4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[4]), .clk_cyc_data(data3A4), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3A5;  Tube tube3A5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[5]), .clk_cyc_data(data3A5), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3A6;  Tube tube3A6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[6]), .clk_cyc_data(data3A6), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3A7;  Tube tube3A7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3A[7]), .clk_cyc_data(data3A7), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3B0;  Tube tube3B0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[0]), .clk_cyc_data(data3B0), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3B1;  Tube tube3B1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[1]), .clk_cyc_data(data3B1), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3B2;  Tube tube3B2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[2]), .clk_cyc_data(data3B2), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3B3;  Tube tube3B3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[3]), .clk_cyc_data(data3B3), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3B4;  Tube tube3B4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[4]), .clk_cyc_data(data3B4), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3B5;  Tube tube3B5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[5]), .clk_cyc_data(data3B5), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3B6;  Tube tube3B6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[6]), .clk_cyc_data(data3B6), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data3B7;  Tube tube3B7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE3B[7]), .clk_cyc_data(data3B7), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4A0;  Tube tube4A0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[0]), .clk_cyc_data(data4A0), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4A1;  Tube tube4A1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[1]), .clk_cyc_data(data4A1), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4A2;  Tube tube4A2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[2]), .clk_cyc_data(data4A2), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4A3;  Tube tube4A3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[3]), .clk_cyc_data(data4A3), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4A4;  Tube tube4A4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[4]), .clk_cyc_data(data4A4), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4A5;  Tube tube4A5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[5]), .clk_cyc_data(data4A5), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4A6;  Tube tube4A6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[6]), .clk_cyc_data(data4A6), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4A7;  Tube tube4A7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4A[7]), .clk_cyc_data(data4A7), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4B0;  Tube tube4B0 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[0]), .clk_cyc_data(data4B0), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4B1;  Tube tube4B1 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[1]), .clk_cyc_data(data4B1), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4B2;  Tube tube4B2 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[2]), .clk_cyc_data(data4B2), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4B3;  Tube tube4B3 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[3]), .clk_cyc_data(data4B3), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4B4;  Tube tube4B4 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[4]), .clk_cyc_data(data4B4), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4B5;  Tube tube4B5 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[5]), .clk_cyc_data(data4B5), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4B6;  Tube tube4B6 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[6]), .clk_cyc_data(data4B6), .gateEnable(SCIN_LATCH_Q));
-	wire [7:0] data4B7;  Tube tube4B7 (.clk(tubeclk), .clr(CLR), .tubePin(TUBE4B[7]), .clk_cyc_data(data4B7), .gateEnable(SCIN_LATCH_Q));	
+	wire [7:0] data3A0;  Tube tube3A0 (.clk(clk100), .clr(CLR), .tubePin(TUBE3A[0]), .clk_cyc_data(data3A0), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A1;  Tube tube3A1 (.clk(clk100), .clr(CLR), .tubePin(TUBE3A[1]), .clk_cyc_data(data3A1), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A2;  Tube tube3A2 (.clk(clk100), .clr(CLR), .tubePin(TUBE3A[2]), .clk_cyc_data(data3A2), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A3;  Tube tube3A3 (.clk(clk100), .clr(CLR), .tubePin(TUBE3A[3]), .clk_cyc_data(data3A3), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A4;  Tube tube3A4 (.clk(clk100), .clr(CLR), .tubePin(TUBE3A[4]), .clk_cyc_data(data3A4), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A5;  Tube tube3A5 (.clk(clk100), .clr(CLR), .tubePin(TUBE3A[5]), .clk_cyc_data(data3A5), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A6;  Tube tube3A6 (.clk(clk100), .clr(CLR), .tubePin(TUBE3A[6]), .clk_cyc_data(data3A6), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3A7;  Tube tube3A7 (.clk(clk100), .clr(CLR), .tubePin(TUBE3A[7]), .clk_cyc_data(data3A7), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B0;  Tube tube3B0 (.clk(clk100), .clr(CLR), .tubePin(TUBE3B[0]), .clk_cyc_data(data3B0), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B1;  Tube tube3B1 (.clk(clk100), .clr(CLR), .tubePin(TUBE3B[1]), .clk_cyc_data(data3B1), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B2;  Tube tube3B2 (.clk(clk100), .clr(CLR), .tubePin(TUBE3B[2]), .clk_cyc_data(data3B2), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B3;  Tube tube3B3 (.clk(clk100), .clr(CLR), .tubePin(TUBE3B[3]), .clk_cyc_data(data3B3), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B4;  Tube tube3B4 (.clk(clk100), .clr(CLR), .tubePin(TUBE3B[4]), .clk_cyc_data(data3B4), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B5;  Tube tube3B5 (.clk(clk100), .clr(CLR), .tubePin(TUBE3B[5]), .clk_cyc_data(data3B5), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B6;  Tube tube3B6 (.clk(clk100), .clr(CLR), .tubePin(TUBE3B[6]), .clk_cyc_data(data3B6), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data3B7;  Tube tube3B7 (.clk(clk100), .clr(CLR), .tubePin(TUBE3B[7]), .clk_cyc_data(data3B7), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A0;  Tube tube4A0 (.clk(clk100), .clr(CLR), .tubePin(TUBE4A[0]), .clk_cyc_data(data4A0), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A1;  Tube tube4A1 (.clk(clk100), .clr(CLR), .tubePin(TUBE4A[1]), .clk_cyc_data(data4A1), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A2;  Tube tube4A2 (.clk(clk100), .clr(CLR), .tubePin(TUBE4A[2]), .clk_cyc_data(data4A2), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A3;  Tube tube4A3 (.clk(clk100), .clr(CLR), .tubePin(TUBE4A[3]), .clk_cyc_data(data4A3), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A4;  Tube tube4A4 (.clk(clk100), .clr(CLR), .tubePin(TUBE4A[4]), .clk_cyc_data(data4A4), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A5;  Tube tube4A5 (.clk(clk100), .clr(CLR), .tubePin(TUBE4A[5]), .clk_cyc_data(data4A5), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A6;  Tube tube4A6 (.clk(clk100), .clr(CLR), .tubePin(TUBE4A[6]), .clk_cyc_data(data4A6), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4A7;  Tube tube4A7 (.clk(clk100), .clr(CLR), .tubePin(TUBE4A[7]), .clk_cyc_data(data4A7), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B0;  Tube tube4B0 (.clk(clk100), .clr(CLR), .tubePin(TUBE4B[0]), .clk_cyc_data(data4B0), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B1;  Tube tube4B1 (.clk(clk100), .clr(CLR), .tubePin(TUBE4B[1]), .clk_cyc_data(data4B1), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B2;  Tube tube4B2 (.clk(clk100), .clr(CLR), .tubePin(TUBE4B[2]), .clk_cyc_data(data4B2), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B3;  Tube tube4B3 (.clk(clk100), .clr(CLR), .tubePin(TUBE4B[3]), .clk_cyc_data(data4B3), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B4;  Tube tube4B4 (.clk(clk100), .clr(CLR), .tubePin(TUBE4B[4]), .clk_cyc_data(data4B4), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B5;  Tube tube4B5 (.clk(clk100), .clr(CLR), .tubePin(TUBE4B[5]), .clk_cyc_data(data4B5), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B6;  Tube tube4B6 (.clk(clk100), .clr(CLR), .tubePin(TUBE4B[6]), .clk_cyc_data(data4B6), .gateEnable(SCIN_LATCH_Q));
+	wire [7:0] data4B7;  Tube tube4B7 (.clk(clk100), .clr(CLR), .tubePin(TUBE4B[7]), .clk_cyc_data(data4B7), .gateEnable(SCIN_LATCH_Q));	
 	
 	// set up the reading output protocol
-	//assign RD_EMPTY = (wr_data_count == 0); //wr_data_count gives the amount of data in the FIFO						
+	assign RD_EMPTY = (wr_data_count == 0); //wr_data_count gives the amount of data in the FIFO						
 
 
 	always @ (negedge clk50) begin
@@ -202,7 +175,7 @@
 			end
 		end
 		
-		//din[15:8] == tube time; din [7:0] = tube name
+		//din[15:8] = tube time in clock cycles; din [7:0] = tube name
 		//refer to FPGA Layout for more info on the tube name
 		case(cntr)
 			 257:  begin din[15:8] <= data3A0; din[7:0] <= 8'b00000011; wr_en <= 1;  end
@@ -237,7 +210,7 @@
 			 286:  begin din[15:8] <= data4B5; din[7:0] <= 8'b10110100; end
 			 287:  begin din[15:8] <= data4B6; din[7:0] <= 8'b11010100; end
 			 288:  begin din[15:8] <= data4B7; din[7:0] <= 8'b11110100; end
-			 289:  begin din <= 16'b1111111111111111;							end
+			 289:  begin din <= 16'b1111111111111111;							end //stop flag
 			 290:  begin wr_en <= 0;												end
 			 default: din <= 16'b1111111111111111;
 		endcase
@@ -246,7 +219,7 @@
 	 
 	//reg [9:0] mycounter = 0;
 
-	//deal with the clear logic, which is independant of the r/w logic for the tubes
+	//deal with the clear logic, which is independent of the r/w logic for the tubes
 	//cntr control the writing until 290, and is then reset; busyCntr is in line with counter
 	//until counter is reset, busyCntr's only purpose is to control CLR
 	always @ (posedge clk50) begin
@@ -292,23 +265,23 @@
 //	 assign ila_trig0[53] = clk50;
 //	 assign ila_trig0[63:55]= mycounter; 
 
-	 //configure ChipScope 
-	 wire [35:0] ila_control;
-    wire [63:0] ila_trig0;
-    chipscope_ila ila(.CONTROL(ila_control), 
-							 .CLK(clk100), 
-							 .TRIG0(ila_trig0));
-    chipscope_icon icon(.CONTROL0(ila_control));
-	 assign ila_trig0[31:0] = cntr;
-	 assign ila_trig0[32] = SCIN_COIN;
-	 
-	 assign ila_trig0[33] = RD_EMPTY;
-	 assign ila_trig0[34] = RD_VALID;
-	 assign ila_trig0[35] = RD_CLK;
-	 assign ila_trig0[51:36] = OTUBE;
-	 assign ila_trig0[61:52] = wr_data_count;
-	 assign ila_trig0[62] = clk50;
-	 assign ila_trig0[63] = fifo_rd_en;
- 
+//	 //configure ChipScope 
+//	 wire [35:0] ila_control;
+//    wire [63:0] ila_trig0;
+//    chipscope_ila ila(.CONTROL(ila_control), 
+//							 .CLK(clk100), 
+//							 .TRIG0(ila_trig0));
+//    chipscope_icon icon(.CONTROL0(ila_control));
+//	 assign ila_trig0[31:0] = cntr;
+//	 assign ila_trig0[32] = SCIN_COIN;
+//	 
+//	 assign ila_trig0[33] = RD_EMPTY;
+//	 assign ila_trig0[34] = RD_VALID;
+//	 assign ila_trig0[35] = RD_CLK;
+//	 assign ila_trig0[51:36] = OTUBE;
+//	 assign ila_trig0[61:52] = wr_data_count;
+//	 assign ila_trig0[62] = clk50;
+//	 assign ila_trig0[63] = fifo_rd_en;
+// 
 
 endmodule
