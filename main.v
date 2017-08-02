@@ -33,6 +33,8 @@
 				 input RD_EN,
 				 output RD_EMPTY,
 				 output RD_VALID);
+				 
+	 //reg SCIN_COIN = 0;
 
 	 // slows clk100 (100MHz) to clk50 (50 MHz), needed in order to meet timing constraints
 	 wire clk100_fb;
@@ -178,6 +180,7 @@
 		//din[15:8] = tube time in clock cycles; din [7:0] = tube name
 		//refer to FPGA Layout for more info on the tube name
 		case(cntr)
+			 256:  begin if (wr_data_count > 990) begin cntr <= 290; end end
 			 257:  begin din[15:8] <= data3A0; din[7:0] <= 8'b00000011; wr_en <= 1;  end
 			 258:  begin din[15:8] <= data3A1; din[7:0] <= 8'b00100011; end
 			 259:  begin din[15:8] <= data3A2; din[7:0] <= 8'b01000011; end
@@ -235,7 +238,16 @@
 		
 		//mycounter <= mycounter + 1; 
 	end
-	
+//	
+//	integer scin_cntr = 0;
+//	always @ (posedge clk50) begin
+//		scin_cntr <= scin_cntr + 1;
+//		case(scin_cntr)
+//			350: SCIN_COIN = 1;
+//			352: begin scin_cntr <= 0; SCIN_COIN = 0; end
+//		endcase
+//	end
+//	
 
 ////	 
 //	  //configure ChipScope 

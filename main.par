@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-HEP-PC::  Tue Jul 25 17:49:50 2017
+HEP-PC::  Wed Aug 02 08:48:40 2017
 
 par -filter "C:/Users/HEP/Documents/Quarknet
 2017/QN17Verilog/iseconfig/filter.filter" -w -intstyle ise -ol high -t 1
@@ -22,12 +22,12 @@ Device speed data version:  "PRODUCTION 1.27 2013-10-13".
 
 Design Summary Report:
 
- Number of External IOBs                          55 out of 108    50%
+ Number of External IOBs                          54 out of 108    50%
 
-   Number of External Input IOBs                 36
+   Number of External Input IOBs                 35
 
-      Number of External Input IBUFs             36
-        Number of LOCed External Input IBUFs     36 out of 36    100%
+      Number of External Input IBUFs             35
+        Number of LOCed External Input IBUFs     35 out of 35    100%
 
 
    Number of External Output IOBs                19
@@ -42,7 +42,7 @@ Design Summary Report:
    Number of BUFGMUXs                        4 out of 24     16%
    Number of DCMs                            1 out of 2      50%
    Number of RAMB16s                         1 out of 4      25%
-   Number of Slices                        488 out of 960    50%
+   Number of Slices                        536 out of 960    55%
       Number of SLICEMs                     29 out of 480     6%
 
 
@@ -56,21 +56,21 @@ Finished initial Timing Analysis.  REAL time: 4 secs
 Starting Router
 
 
-Phase  1  : 3263 unrouted;      REAL time: 5 secs 
+Phase  1  : 3516 unrouted;      REAL time: 5 secs 
 
-Phase  2  : 2735 unrouted;      REAL time: 5 secs 
+Phase  2  : 2956 unrouted;      REAL time: 5 secs 
 
-Phase  3  : 603 unrouted;      REAL time: 5 secs 
+Phase  3  : 693 unrouted;      REAL time: 5 secs 
 
-Phase  4  : 603 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  4  : 693 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
 
 Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
 
 Updating file: main.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
 Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 WARNING:Route:455 - CLK Net:RD_VALID_OBUF may have excessive skew because 
@@ -80,6 +80,8 @@ WARNING:Route:455 - CLK Net:tube3A4/Q may have excessive skew because
 WARNING:Route:455 - CLK Net:tube3B2/Q may have excessive skew because 
       1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube4A0/Q may have excessive skew because 
+      1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:tube3B6/Q may have excessive skew because 
       1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube4A4/Q may have excessive skew because 
       1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
@@ -137,8 +139,6 @@ WARNING:Route:455 - CLK Net:tube4A7/Q may have excessive skew because
       1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:tube4B5/Q may have excessive skew because 
       1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:tube3B6/Q may have excessive skew because 
-      1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 
 Total REAL time to Router completion: 7 secs 
 Total CPU time to Router completion: 6 secs 
@@ -159,79 +159,79 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|               clk50 | BUFGMUX_X2Y11| No   |  145 |  0.029     |  0.063      |
+|               clk50 | BUFGMUX_X2Y11| No   |  174 |  0.031     |  0.064      |
 +---------------------+--------------+------+------+------------+-------------+
-|     tube3A0/tubeclk |  BUFGMUX_X2Y1| No   |  128 |  0.025     |  0.058      |
+|     tube3A0/tubeclk |  BUFGMUX_X2Y1| No   |  128 |  0.024     |  0.057      |
 +---------------------+--------------+------+------+------------+-------------+
-|                bufQ |  BUFGMUX_X1Y0| No   |    1 |  0.000     |  0.053      |
+|                bufQ |  BUFGMUX_X1Y0| No   |    1 |  0.000     |  0.049      |
 +---------------------+--------------+------+------+------------+-------------+
-|        clk100_IBUFG | BUFGMUX_X1Y10| No   |   29 |  0.027     |  0.060      |
+|        clk100_IBUFG | BUFGMUX_X1Y10| No   |   29 |  0.030     |  0.063      |
 +---------------------+--------------+------+------+------------+-------------+
-|       RD_VALID_OBUF |         Local|      |    2 |  0.000     |  0.830      |
+|       RD_VALID_OBUF |         Local|      |    2 |  0.000     |  1.289      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A4/Q |         Local|      |    2 |  0.000     |  1.051      |
+|           tube3A4/Q |         Local|      |    2 |  0.000     |  1.284      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B2/Q |         Local|      |    2 |  0.000     |  1.300      |
+|           tube3B2/Q |         Local|      |    2 |  0.000     |  0.834      |
 +---------------------+--------------+------+------+------------+-------------+
 |           tube4A0/Q |         Local|      |    2 |  0.000     |  1.053      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A4/Q |         Local|      |    2 |  0.000     |  1.057      |
+|           tube3B6/Q |         Local|      |    2 |  0.000     |  1.051      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B2/Q |         Local|      |    2 |  0.000     |  1.049      |
+|           tube4A4/Q |         Local|      |    2 |  0.000     |  1.058      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A1/Q |         Local|      |    2 |  0.000     |  1.274      |
+|           tube4B2/Q |         Local|      |    2 |  0.000     |  1.006      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B6/Q |         Local|      |    2 |  0.000     |  1.300      |
+|           tube3A1/Q |         Local|      |    2 |  0.000     |  1.039      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A5/Q |         Local|      |    2 |  0.000     |  1.049      |
+|           tube4B6/Q |         Local|      |    2 |  0.000     |  1.058      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B3/Q |         Local|      |    2 |  0.000     |  1.293      |
+|           tube3A5/Q |         Local|      |    2 |  0.000     |  1.025      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A1/Q |         Local|      |    2 |  0.000     |  1.263      |
+|           tube3B3/Q |         Local|      |    2 |  0.000     |  1.299      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B7/Q |         Local|      |    2 |  0.000     |  1.345      |
+|           tube4A1/Q |         Local|      |    2 |  0.000     |  1.054      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A5/Q |         Local|      |    2 |  0.000     |  1.061      |
+|           tube3B7/Q |         Local|      |    2 |  0.000     |  1.053      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B3/Q |         Local|      |    2 |  0.000     |  1.053      |
+|           tube4A5/Q |         Local|      |    2 |  0.000     |  1.052      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A2/Q |         Local|      |    2 |  0.000     |  1.313      |
+|           tube4B3/Q |         Local|      |    2 |  0.000     |  1.055      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B0/Q |         Local|      |    2 |  0.000     |  1.230      |
+|           tube3A2/Q |         Local|      |    2 |  0.000     |  0.823      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B7/Q |         Local|      |    2 |  0.000     |  1.052      |
+|           tube3B0/Q |         Local|      |    2 |  0.000     |  1.062      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A6/Q |         Local|      |    2 |  0.000     |  1.051      |
+|           tube4B7/Q |         Local|      |    2 |  0.000     |  1.297      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B4/Q |         Local|      |    2 |  0.000     |  1.025      |
+|           tube3A6/Q |         Local|      |    2 |  0.000     |  1.293      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A2/Q |         Local|      |    2 |  0.000     |  1.238      |
+|           tube3B4/Q |         Local|      |    2 |  0.000     |  1.261      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B0/Q |         Local|      |    2 |  0.000     |  1.263      |
+|           tube4A2/Q |         Local|      |    2 |  0.000     |  0.820      |
++---------------------+--------------+------+------+------------+-------------+
+|           tube4B0/Q |         Local|      |    2 |  0.000     |  1.048      |
 +---------------------+--------------+------+------+------------+-------------+
 |           tube4A6/Q |         Local|      |    2 |  0.000     |  1.052      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B4/Q |         Local|      |    2 |  0.000     |  1.060      |
+|           tube4B4/Q |         Local|      |    2 |  0.000     |  1.051      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A3/Q |         Local|      |    2 |  0.000     |  1.010      |
+|           tube3A3/Q |         Local|      |    2 |  0.000     |  1.053      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B1/Q |         Local|      |    2 |  0.000     |  1.301      |
+|           tube3B1/Q |         Local|      |    2 |  0.000     |  1.249      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A7/Q |         Local|      |    2 |  0.000     |  1.050      |
+|           tube3A7/Q |         Local|      |    2 |  0.000     |  1.055      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3B5/Q |         Local|      |    2 |  0.000     |  1.468      |
+|           tube3B5/Q |         Local|      |    2 |  0.000     |  1.049      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A3/Q |         Local|      |    2 |  0.000     |  1.053      |
+|           tube4A3/Q |         Local|      |    2 |  0.000     |  1.061      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B1/Q |         Local|      |    2 |  0.000     |  1.051      |
+|           tube4B1/Q |         Local|      |    2 |  0.000     |  1.038      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube3A0/Q |         Local|      |    2 |  0.000     |  1.300      |
+|           tube3A0/Q |         Local|      |    2 |  0.000     |  1.053      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4A7/Q |         Local|      |    2 |  0.000     |  1.263      |
+|           tube4A7/Q |         Local|      |    2 |  0.000     |  1.058      |
 +---------------------+--------------+------+------+------------+-------------+
-|           tube4B5/Q |         Local|      |    2 |  0.000     |  1.055      |
-+---------------------+--------------+------+------+------------+-------------+
-|           tube3B6/Q |         Local|      |    2 |  0.000     |  1.030      |
+|           tube4B5/Q |         Local|      |    2 |  0.000     |  1.053      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -253,11 +253,12 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  NET "clk100_IBUFG1" PERIOD = 10 ns HIGH 5 | SETUP       |     5.113ns|     4.887ns|       0|           0
-  0%                                        | HOLD        |     1.397ns|            |       0|           0
+  NET "clk100_IBUFG1" PERIOD = 10 ns HIGH 5 | SETUP       |     5.317ns|     4.683ns|       0|           0
+  0%                                        | HOLD        |     1.376ns|            |       0|           0
+                                            | MINLOWPULSE |     5.200ns|     4.800ns|       0|           0
 ----------------------------------------------------------------------------------------------------------
-  NET "clk50" PERIOD = 20 ns HIGH 50%       | SETUP       |     4.784ns|    10.432ns|       0|           0
-                                            | HOLD        |     0.782ns|            |       0|           0
+  NET "clk50" PERIOD = 20 ns HIGH 50%       | SETUP       |     3.078ns|    13.844ns|       0|           0
+                                            | HOLD        |     0.783ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
   PERIOD analysis for net "clk501" derived  | MINPERIOD   |    14.546ns|     5.454ns|       0|           0
   from  NET "clk100_IBUFG1" PERIOD = 10 ns  |             |            |            |        |            
@@ -275,7 +276,7 @@ Derived Constraints for clk100_IBUFG1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|clk100_IBUFG1                  |     10.000ns|      4.887ns|      2.727ns|            0|            0|         3200|            0|
+|clk100_IBUFG1                  |     10.000ns|      4.800ns|      2.727ns|            0|            0|         3200|            0|
 | clk501                        |     20.000ns|      5.454ns|          N/A|            0|            0|            0|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -289,7 +290,7 @@ All signals are completely routed.
 Total REAL time to PAR completion: 7 secs 
 Total CPU time to PAR completion: 6 secs 
 
-Peak Memory Usage:  273 MB
+Peak Memory Usage:  276 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

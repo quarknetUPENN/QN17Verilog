@@ -71,20 +71,20 @@ module testBench;
 		// Wait 100 ns for global reset to finish
 		#100;
 		
-				
-		TUBE4B = 8'b00000001;
+		SCIN_COIN = 1;
+		#60
+		SCIN_COIN = 0;
+
+		#60
+		TUBE4B[0] = 1'b1;
 		#40
 		TUBE4B[0] = 1'b0;
 		
-		SCIN_COIN = 1;
-		TUBE3B[2] = 1;
-		#100; //simulate an event
-		SCIN_COIN = 0;
-		# 40
-		TUBE3A[7] = 1'b1; 
-		# 20 ;
-
-
+		#10000
+		RD_CLK = 1;
+		#10000
+		RD_CLK = 0;
+		
 	
 	end
 	
@@ -100,15 +100,7 @@ module testBench;
 		end
 	end 
 	
-	localparam RD_CLOCK_PERIOD = 500.0;
-	initial begin
-		while (1) begin
-			RD_CLK = 0;
-			# (RD_CLOCK_PERIOD/2);
-			RD_CLK = 1;
-			# (RD_CLOCK_PERIOD/2);
-		end
-	end 
+
 	
 	initial begin
 		# 100000;

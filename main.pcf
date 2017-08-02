@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Jul 25 17:49:47 2017
+// Written by: Map P.20131013 on Wed Aug 02 08:48:35 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -57,7 +57,6 @@ COMP "overflowLight" LOCATE = SITE "P20" LEVEL 1;
 COMP "RD_EN" LOCATE = SITE "P56" LEVEL 1;
 COMP "RD_CLK" LOCATE = SITE "P33" LEVEL 1;
 COMP "clk100" LOCATE = SITE "P126" LEVEL 1;
-COMP "SCIN_COIN" LOCATE = SITE "P128" LEVEL 1;
 NET "clk100_IBUFG1" BEL "clk100_IBUFG_BUFG.GCLKMUX" USELOCALCONNECT;
 NET "clk50" PERIOD = 20 ns HIGH 50%;
 NET "clk100_IBUFG1" PERIOD = 10 ns HIGH 50%;

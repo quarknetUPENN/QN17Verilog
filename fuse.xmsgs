@@ -5,10 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 40: Port <arg fmt="%s" index="1">CLK0</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 42: Port <arg fmt="%s" index="1">CLK0</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 144: Port <arg fmt="%s" index="1">empty</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/HEP/Documents/Quarknet 2017/QN17Verilog/main.v" Line 120: Port <arg fmt="%s" index="1">empty</arg> is not connected to this instance
 </msg>
 
 </messages>
