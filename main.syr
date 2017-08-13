@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> Reading design: main.prj
 
@@ -123,7 +123,7 @@ Analysis of file <"main.prj"> succeeded.
 Analyzing hierarchy for module <main> in library <work>.
 
 Analyzing hierarchy for module <Tube> in library <work> with parameters.
-	prior_clk_cyc = "00000000000000000000000000001000"
+	prior_clk_cyc = "00000000000000000000000000000111"
 
 
 =========================================================================
@@ -153,7 +153,7 @@ Module <main> is correct for synthesis.
     Set user-defined property "INIT =  0" for instance <RD_CLK_DELAY_2> in unit <main>.
     Set user-defined property "INIT =  0" for instance <VALID_LATCH> in unit <main>.
 Analyzing module <Tube> in library <work>.
-	prior_clk_cyc = 32'sb00000000000000000000000000001000
+	prior_clk_cyc = 32'sb00000000000000000000000000000111
 Module <Tube> is correct for synthesis.
  
     Set user-defined property "INIT =  0" for instance <TUBE_LATCH> in unit <Tube>.
@@ -168,10 +168,10 @@ Synthesizing Unit <Tube>.
     Related source file is "tube.v".
     Found 8-bit up counter for signal <cntr>.
     Found 8-bit comparator less for signal <cntr$cmp_lt0000> created at line 62.
-    Found 8-bit register for signal <shiftReg>.
+    Found 7-bit register for signal <shiftReg>.
     Summary:
 	inferred   1 Counter(s).
-	inferred   8 D-type flip-flop(s).
+	inferred   7 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 Unit <Tube> synthesized.
 
@@ -186,12 +186,10 @@ Synthesizing Unit <main>.
     Found 10-bit comparator lessequal for signal <cntr$cmp_le0000> created at line 183.
     Found 14-bit register for signal <din<15:2>>.
     Found 1-bit register for signal <din<0>>.
-    Found 32-bit up counter for signal <scin_cntr>.
-    Found 1-bit register for signal <SCIN_COIN>.
     Found 1-bit register for signal <wr_en>.
     Summary:
-	inferred   3 Counter(s).
-	inferred  18 D-type flip-flop(s).
+	inferred   2 Counter(s).
+	inferred  17 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 Unit <main> synthesized.
 
@@ -200,11 +198,11 @@ Unit <main> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 35
- 32-bit up counter                                     : 3
+# Counters                                             : 34
+ 32-bit up counter                                     : 2
  8-bit up counter                                      : 32
-# Registers                                            : 274
- 1-bit register                                        : 274
+# Registers                                            : 241
+ 1-bit register                                        : 241
 # Comparators                                          : 34
  10-bit comparator greater                             : 1
  10-bit comparator lessequal                           : 1
@@ -223,11 +221,11 @@ Loading core <fifo16x1024> for timing and area information for instance <fifo>.
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 35
- 32-bit up counter                                     : 3
+# Counters                                             : 34
+ 32-bit up counter                                     : 2
  8-bit up counter                                      : 32
-# Registers                                            : 276
- Flip-Flops                                            : 276
+# Registers                                            : 243
+ Flip-Flops                                            : 243
 # Comparators                                          : 34
  10-bit comparator greater                             : 1
  10-bit comparator lessequal                           : 1
@@ -245,7 +243,7 @@ Optimizing unit <Tube> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 63.
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 59.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_1> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
@@ -258,48 +256,48 @@ INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/r
 Final Macro Processing ...
 
 Processing Unit <main> :
-	Found 8-bit shift register for signal <tube4B7/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4B6/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4B5/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4B4/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4B3/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4B2/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4B1/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4B0/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4A7/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4A6/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4A5/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4A4/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4A3/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4A2/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4A1/shiftReg_7>.
-	Found 8-bit shift register for signal <tube4A0/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3B7/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3B6/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3B5/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3B4/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3B3/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3B2/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3B1/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3B0/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3A7/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3A6/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3A5/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3A4/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3A3/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3A2/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3A1/shiftReg_7>.
-	Found 8-bit shift register for signal <tube3A0/shiftReg_7>.
+	Found 7-bit shift register for signal <tube4B7/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4B6/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4B5/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4B4/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4B3/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4B2/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4B1/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4B0/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4A7/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4A6/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4A5/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4A4/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4A3/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4A2/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4A1/shiftReg_6>.
+	Found 7-bit shift register for signal <tube4A0/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3B7/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3B6/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3B5/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3B4/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3B3/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3B2/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3B1/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3B0/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3A7/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3A6/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3A5/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3A4/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3A3/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3A2/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3A1/shiftReg_6>.
+	Found 7-bit shift register for signal <tube3A0/shiftReg_6>.
 Unit <main> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 372
- Flip-Flops                                            : 372
+# Registers                                            : 339
+ Flip-Flops                                            : 339
 # Shift Registers                                      : 32
- 8-bit shift register                                  : 32
+ 7-bit shift register                                  : 32
 
 =========================================================================
 
@@ -325,31 +323,31 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 54
+# IOs                              : 55
 
 Cell Usage :
-# BELS                             : 1765
+# BELS                             : 1649
 #      GND                         : 2
-#      INV                         : 73
-#      LUT1                        : 335
+#      INV                         : 72
+#      LUT1                        : 304
 #      LUT2                        : 73
-#      LUT3                        : 63
-#      LUT4                        : 272
+#      LUT3                        : 61
+#      LUT4                        : 262
 #      LUT4_D                      : 4
 #      LUT4_L                      : 32
-#      MUXCY                       : 522
-#      MUXF5                       : 5
+#      MUXCY                       : 484
+#      MUXF5                       : 3
 #      VCC                         : 2
-#      XORCY                       : 382
-# FlipFlops/Latches                : 598
-#      FD                          : 37
+#      XORCY                       : 350
+# FlipFlops/Latches                : 565
+#      FD                          : 36
 #      FD_1                        : 9
 #      FDC                         : 92
 #      FDCE                        : 305
 #      FDE                         : 1
 #      FDP                         : 12
 #      FDPE                        : 5
-#      FDR                         : 64
+#      FDR                         : 32
 #      FDRE                        : 32
 #      FDS_1                       : 7
 #      LDCE                        : 34
@@ -359,8 +357,8 @@ Cell Usage :
 #      SRL16                       : 32
 # Clock Buffers                    : 4
 #      BUFG                        : 4
-# IO Buffers                       : 54
-#      IBUF                        : 34
+# IO Buffers                       : 55
+#      IBUF                        : 35
 #      IBUFG                       : 1
 #      OBUF                        : 19
 # DCMs                             : 1
@@ -372,13 +370,13 @@ Device utilization summary:
 
 Selected Device : 3s100etq144-5 
 
- Number of Slices:                      500  out of    960    52%  
- Number of Slice Flip Flops:            598  out of   1920    31%  
- Number of 4 input LUTs:                884  out of   1920    46%  
-    Number used as logic:               852
+ Number of Slices:                      476  out of    960    49%  
+ Number of Slice Flip Flops:            565  out of   1920    29%  
+ Number of 4 input LUTs:                840  out of   1920    43%  
+    Number used as logic:               808
     Number used as Shift registers:      32
- Number of IOs:                          54
- Number of bonded IOBs:                  54  out of    108    50%  
+ Number of IOs:                          55
+ Number of bonded IOBs:                  55  out of    108    50%  
  Number of BRAMs:                         1  out of      4    25%  
  Number of GCLKs:                         4  out of     24    16%  
  Number of DCMs:                          1  out of      2    50%  
@@ -404,7 +402,7 @@ Clock Information:
 ------------------------------------+-------------------------+-------+
 Clock Signal                        | Clock buffer(FF name)   | Load  |
 ------------------------------------+-------------------------+-------+
-clk100                              | dcm_clk100:CLKDV        | 277   |
+clk100                              | dcm_clk100:CLKDV        | 244   |
 SCIN_LATCH_Q                        | BUFG                    | 1     |
 RD_VALID_OBUF                       | NONE(VALID_LATCH)       | 1     |
 tube3A0/tubeclk1(tube4B7/tubeclk1:O)| BUFG(*)(tube4B7/cntr_7) | 256   |
@@ -480,7 +478,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk100'
   Clock period: 5.354ns (frequency: 186.784MHz)
-  Total number of paths / destination ports: 9500 / 527
+  Total number of paths / destination ports: 7846 / 430
 -------------------------------------------------------------------------
 Delay:               5.354ns (Levels of Logic = 4)
   Source:            fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_3 (FF)
@@ -494,7 +492,7 @@ Delay:               5.354ns (Levels of Logic = 4)
     ----------------------------------------  ------------
      FDC:C->Q              2   0.514   0.532  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_3 (wr_data_count<3>)
      end scope: 'fifo'
-     LUT4:I0->O            1   0.612   0.387  cntr_cmp_gt0000219_SW0 (N131)
+     LUT4:I0->O            1   0.612   0.387  cntr_cmp_gt0000219_SW0 (N112)
      LUT4_D:I2->O          4   0.612   0.529  cntr_cmp_gt0000219 (cntr_cmp_gt0000)
      LUT3:I2->O           32   0.612   1.073  cntr_not00011 (cntr_not0001)
      FDRE:CE                   0.483          cntr_0
@@ -527,7 +525,7 @@ Delay:               3.855ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk100'
-  Total number of paths / destination ports: 57 / 57
+  Total number of paths / destination ports: 121 / 121
 -------------------------------------------------------------------------
 Offset:              5.481ns (Levels of Logic = 5)
   Source:            RD_EN (PAD)
@@ -547,6 +545,25 @@ Offset:              5.481ns (Levels of Logic = 5)
     ----------------------------------------
     Total                      5.481ns (3.210ns logic, 2.271ns route)
                                        (58.6% logic, 41.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'SCIN_LATCH_Q'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.447ns (Levels of Logic = 1)
+  Source:            SCIN_COIN (PAD)
+  Destination:       SCIN_LATCH (LATCH)
+  Destination Clock: SCIN_LATCH_Q rising
+
+  Data Path: SCIN_COIN to SCIN_LATCH
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            34   1.106   1.073  SCIN_COIN_IBUF (SCIN_COIN_IBUF)
+     LDCE:D                    0.268          SCIN_LATCH
+    ----------------------------------------
+    Total                      2.447ns (1.374ns logic, 1.073ns route)
+                                       (56.1% logic, 43.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk100'
@@ -592,12 +609,12 @@ Offset:              4.137ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.76 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.92 secs
  
 --> 
 
-Total memory usage is 285032 kilobytes
+Total memory usage is 284960 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

@@ -76,11 +76,11 @@ module testBench;
 		SCIN_COIN = 0;
 
 		#60
-		TUBE4B[0] = 1'b1;
+		TUBE3A[0] = 1'b1;
 		#40
-		TUBE4B[0] = 1'b0;
+		TUBE3A[0] = 1'b0;
 		
-		#10000
+		#9990
 		RD_CLK = 1;
 		#10000
 		RD_CLK = 0;

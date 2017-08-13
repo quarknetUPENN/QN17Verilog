@@ -19,26 +19,26 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 //a module that controls each tube counter (one for each tube); output is sent to the FIFO
-module Tube(input clk,
+ module Tube(input clk,
 				input clr,
 				input tubePin,
 				input gateEnable,
 				output [7:0] clk_cyc_data);
 				
-	localparam prior_clk_cyc = 8 ; //the number of clock cycles we want to look back
+	localparam prior_clk_cyc = 7 ; //the number of clock cycles we want to look back
 	
 	reg [7:0] cntr = 0;
 	assign clk_cyc_data = cntr; //the output (sent into the FIFO) 
 	
 	wire Q; //output of LDCE
-	reg [7:0] shiftReg = 8'h0; // initializing shift register	
+	reg [6:0] shiftReg = 7'h0; // initializing shift register	
 	
 	LDCE #(
 		.INIT(1'b0) 				// Initial value of latch (1'b0 or 1'b1)
 	) TUBE_LATCH (
 		.Q(Q),      				// Data output
 		.CLR(clr),  				// Asynchronous clear/reset input
-		.D(shiftReg[7]),      		// Data input
+		.D(shiftReg[6]),      		// Data input
 		.G(~Q),      				// Gate input
 		.GE(gateEnable)     		// Gate enable input
 	);

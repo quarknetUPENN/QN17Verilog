@@ -97,7 +97,7 @@
 		.C(~clk50),      			// Gate input
 		.CE(1'b1)     				// Gate enable input
 	);
-	assign fifo_rd_en = (!rd_clk_2) && rd_clk_1 && RD_EN;	
+	assign fifo_rd_en = !rd_clk_2 && rd_clk_1 && RD_EN;	
 	
 	//latch to hold the valid bit from the fifo high long enough for the RPi to read
 	wire fifo_valid;
@@ -238,16 +238,16 @@
 		
 		//mycounter <= mycounter + 1; 
 	end
-//	
-//	integer scin_cntr = 0;
-//	always @ (posedge clk50) begin
-//		scin_cntr <= scin_cntr + 1;
-//		case(scin_cntr)
-//			350: SCIN_COIN = 1;
-//			352: begin scin_cntr <= 0; SCIN_COIN = 0; end
-//		endcase
-//	end
-//	
+	
+	//integer scin_cntr = 0;
+	//always @ (posedge clk50) begin
+		//scin_cntr <= scin_cntr + 1;
+		//case(scin_cntr)
+			//350: SCIN_COIN = 1;
+			//352: begin scin_cntr <= 0; SCIN_COIN = 0; end
+		//endcase
+	//end
+	
 
 ////	 
 //	  //configure ChipScope 
